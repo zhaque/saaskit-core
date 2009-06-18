@@ -4,24 +4,49 @@
 #+LANGUAGE:  en
 #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t TeX:nil LaTeX:nil skip:nil d:nil tags:not-in-toc
 
-Django SAAS kit is an example Django project integrating
-django-subscription and django-muaccount applications to achieve
-multi-user accounts with custom domain, that are characteristic for
-Software As A Service-type (SAAS) services.
-
 * Getting started
   To start the project, after cloning Git repository, run:
 
   1. make -C upstream/ init
   2. cd project
-  3. python manage.py syncdb --noinput
-  4. python manage.py loaddata exampledata.json
+  3. python manage.py syncdb
+  4. python manage.py loaddata exampledata.json (optional, to populate
+     django-subscription&django-muaccounts databases)
   5. python manage.py runserver
 
   Project includes as Git sumodules or downloads from
   upstream/Makefile all needed Django applications; only requirements
   are Python (2.5 or higher, but may work on earlier versions of
   Python) and stable release of Django (1.0.2 at this moment).
+* Django applications
+** django-authopenid
+   http://bitbucket.org/benoitc/django-authopenid/wiki/Home
+*** django-registration
+    http://bitbucket.org/ubernostrum/django-registration/wiki/Home
+** django-page-cms
+   http://code.google.com/p/django-page-cms/
+*** django-mptt
+    http://code.google.com/p/django-mptt/
+*** html5lib
+    http://code.google.com/p/html5lib/
+** django-profiles
+   http://bitbucket.org/ubernostrum/django-profiles/wiki/Home
+** django-notification
+   http://github.com/jtauber/django-notification/tree
+** django-mailer
+   http://github.com/jtauber/django-mailer/tree/master
+** django-faq
+   http://github.com/howiworkdaily/django-faq/tree/master
+** django-pipes
+   http://github.com/mallipeddi/django-pipes/tree/master
+** django-quotas
+   http://github.com/mpasternacki/django-quotas/tree/master
+** django-subscription
+   http://github.com/CrowdSense/django-subscription/tree/master
+** django-muaccounts
+   http://github.com/CrowdSense/django-muaccounts/tree/master
+** django-prepaid
+   http://github.com/CrowdSense/django-prepaid/tree/master
 * Default data set
   By loading exampledata.json, data is populated with:
   - Silver Membership monthly recurring plan, linked to Silver Member group,
@@ -75,6 +100,3 @@ Software As A Service-type (SAAS) services.
    Such warnings are not important, since they only indicate that
    system-wide installation of django-registration is not used, and
    project-local checkout is used instead.
-* License
-  Dual licensed under the MIT (MIT-LICENSE.txt)
-  and GPL (GPL-LICENSE.txt) licenses.

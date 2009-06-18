@@ -2,21 +2,30 @@
                                 ===============
 
 Author: Maciej Pasternacki <maciej@pasternacki.net>
-Date: 2009/06/17 15:50:01
+Date: 2009/06/18 21:11:13
 
-
-Django SAAS kit is an example Django project integrating
-django-subscription and django-muaccount applications to achieve
-multi-user accounts with custom domain, that are characteristic for
-Software As A Service-type (SAAS) services.
 
 Table of Contents
 =================
 1 Getting started
-2 Default data set
-3 Runtime environment
-    3.1 Warnings at startup
-4 License
+2 Django applications
+    2.1 django-authopenid
+        2.1.1 django-registration
+    2.2 django-page-cms
+        2.2.1 django-mptt
+        2.2.2 html5lib
+    2.3 django-profiles
+    2.4 django-notification
+    2.5 django-mailer
+    2.6 django-faq
+    2.7 django-pipes
+    2.8 django-quotas
+    2.9 django-subscription
+    2.10 django-muaccounts
+    2.11 django-prepaid
+3 Default data set
+4 Runtime environment
+    4.1 Warnings at startup
 
 
 1 Getting started
@@ -25,8 +34,9 @@ Table of Contents
 
   1. make -C upstream/ init
   2. cd project
-  3. python manage.py syncdb --noinput
-  4. python manage.py loaddata exampledata.json
+  3. python manage.py syncdb
+  4. python manage.py loaddata exampledata.json (optional, to populate
+     django-subscription&django-muaccounts databases)
   5. python manage.py runserver
 
   Project includes as Git sumodules or downloads from
@@ -34,7 +44,66 @@ Table of Contents
   are Python (2.5 or higher, but may work on earlier versions of
   Python) and stable release of Django (1.0.2 at this moment).
 
-2 Default data set
+2 Django applications
+~~~~~~~~~~~~~~~~~~~~~
+
+2.1 django-authopenid
+=====================
+   [http://bitbucket.org/benoitc/django-authopenid/wiki/Home]
+
+2.1.1 django-registration
+-------------------------
+    [http://bitbucket.org/ubernostrum/django-registration/wiki/Home]
+
+2.2 django-page-cms
+===================
+   [http://code.google.com/p/django-page-cms/]
+
+2.2.1 django-mptt
+-----------------
+    [http://code.google.com/p/django-mptt/]
+
+2.2.2 html5lib
+--------------
+    [http://code.google.com/p/html5lib/]
+
+2.3 django-profiles
+===================
+   [http://bitbucket.org/ubernostrum/django-profiles/wiki/Home]
+
+2.4 django-notification
+=======================
+   [http://github.com/jtauber/django-notification/tree]
+
+2.5 django-mailer
+=================
+   [http://github.com/jtauber/django-mailer/tree/master]
+
+2.6 django-faq
+==============
+   [http://github.com/howiworkdaily/django-faq/tree/master]
+
+2.7 django-pipes
+================
+   [http://github.com/mallipeddi/django-pipes/tree/master]
+
+2.8 django-quotas
+=================
+   [http://github.com/mpasternacki/django-quotas/tree/master]
+
+2.9 django-subscription
+=======================
+   [http://github.com/CrowdSense/django-subscription/tree/master]
+
+2.10 django-muaccounts
+======================
+   [http://github.com/CrowdSense/django-muaccounts/tree/master]
+
+2.11 django-prepaid
+===================
+   [http://github.com/CrowdSense/django-prepaid/tree/master]
+
+3 Default data set
 ~~~~~~~~~~~~~~~~~~
   By loading exampledata.json, data is populated with:
   - Silver Membership monthly recurring plan, linked to Silver Member group,
@@ -55,7 +124,7 @@ Table of Contents
   - test3 user, password "test", with no plan selected, member of
     "gold" account
 
-3 Runtime environment
+4 Runtime environment
 ~~~~~~~~~~~~~~~~~~~~~
   Project is expected to run on localhost, port 8000 (or any other
   port set in MUACCOUNTS_PORT).  For all sites to work correctly,
@@ -77,7 +146,7 @@ Table of Contents
   in templates/subscription/subscription_detail.html and set PAYPAL_TEST to False in
   project/settings.py.
 
-3.1 Warnings at startup
+4.1 Warnings at startup
 =======================
    When some of dependencies are installed system-wide (especially if
    installed with easy_install), Django may issue warnings similar to
@@ -92,8 +161,3 @@ Table of Contents
    Such warnings are not important, since they only indicate that
    system-wide installation of django-registration is not used, and
    project-local checkout is used instead.
-
-4 License
-~~~~~~~~~
-  Dual licensed under the MIT (MIT-LICENSE.txt)
-  and GPL (GPL-LICENSE.txt) licenses.

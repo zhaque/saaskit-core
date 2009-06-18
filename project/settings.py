@@ -97,6 +97,7 @@ INSTALLED_APPS = (
     'mailer',
     'faq',
     'django_pipes',
+    'quotas',
     'muaccounts',
     'subscription',
     'prepaid',

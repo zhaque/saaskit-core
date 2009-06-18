@@ -90,10 +90,12 @@ INSTALLED_APPS = (
     'paypal.standard.ipn',
     'registration',
     'django_authopenid',
+    'profiles',
     'mptt',
     'pages',
     'muaccounts',
     'subscription',
+    'crowdsense',
 )
 
 from django.conf import global_settings
@@ -102,6 +104,8 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django_authopenid.context_processors.authopenid',
     'pages.context_processors.media',
     )
+
+AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
 
 PAGE_TAGGING = False
 PAGE_TINYMCE = False

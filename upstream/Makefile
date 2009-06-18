@@ -4,14 +4,15 @@ PYTHON_OPENID_VERSION=2.2.4
 DJANGO_MPTT_RELEASE=119
 HTML5LIB_RELEASE=18c3325ee5
 DJANGO_PAGE_CMS_RELEASE=571
+DJANGO_PROFILES_RELEASE=v0.2
 
 PYTHON_OPENID_ARCHIVE=python-openid-$(PYTHON_OPENID_VERSION).tar.bz2
 PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON_OPENID_ARCHIVE)
 
 init: .gitignore _submodules.stamp \
 	django-registration.stamp django-authopenid.stamp python-openid.stamp \
-	django-mptt.stamp html5lib.stamp django-page-cms.stamp
-
+	django-mptt.stamp html5lib.stamp django-page-cms.stamp \
+	django-profiles.stamp
 
 _submodules.stamp:
 	cd .. && git submodule update --init
@@ -52,6 +53,11 @@ django-page-cms.stamp:
 	date > $@
 
 
+django-profiles.stamp:
+	hg clone -r $(DJANGO_PROFILES_RELEASE) http://bitbucket.org/ubernostrum/django-profiles/
+	date > $@
+
+
 .gitignore: Makefile
 	echo .gitignore > .gitignore
 	echo \*.stamp >> .gitignore
@@ -61,3 +67,4 @@ django-page-cms.stamp:
 	echo django-mptt >> .gitignore
 	echo html5lib >> .gitignore
 	echo django-page-cms >> .gitignore
+	echo django-profiles >> .gitignore

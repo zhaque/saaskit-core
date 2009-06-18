@@ -19,3 +19,6 @@
 [submodule "upstream/django-mailer"]
 	path = upstream/django-mailer
 	url = git://github.com/jtauber/django-mailer.git
+[submodule "upstream/django-faq"]
+	path = upstream/django-faq
+	url = git://github.com/howiworkdaily/django-faq.git

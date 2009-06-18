@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'pages',
     'notification',
     'mailer',
+    'faq',
     'muaccounts',
     'subscription',
     'prepaid',

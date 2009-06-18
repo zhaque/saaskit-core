@@ -1,5 +1,8 @@
 # Django settings for project project.
 
+import os.path
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -35,17 +38,17 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, '..', 'static')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '+*q3$z(d1@hi^p%645&636$n7r@=w!m)(z9@k9&9s9_7uh%a+s'
@@ -61,6 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_authopenid.middleware.OpenIDMiddleware',
     'muaccounts.middleware.MUAccountsMiddleware',
 )
 
@@ -83,13 +87,16 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'paypal.standard.ipn',
     'registration',
+    'django_authopenid',
     'muaccounts',
     'subscription',
 )
 
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request', )
+    'django.core.context_processors.request',
+    'django_authopenid.context_processors.authopenid',
+    )
 
 PAYPAL_TEST = True
 PAYPAL_RECEIVER_EMAIL='example@example.com'

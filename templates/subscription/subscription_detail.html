@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+
+{% block title %} Details for {{object.name}}. {% endblock %} 
+{% block body %}
+
+<h1>{{object.name}}</h1>
+<p>{{object.description}}</p>
+
+<p>{{object.get_pricing_display}}</p>
+
+{% if usersubscription %}
+{% if usersubscription.active %}
+{% if usersubscription.cancelled %}
+<p><strong>You have cancelled subscription to this plan.</strong>
+You may still resubscribe if you wish!</p>
+{{form.sandbox}}
+{% else %}
+<p><strong>You are subscribed to this plan.</strong>
+  You may <a href="{{cancel_url}}">cancel at paypal</a> if you
+  wish.</p>
+{% endif %}
+{% else %}
+<p><strong>You did not cancel your old plan.</strong>
+  <a href="{{cancel_url}}">Cancel it at paypal</a> now!</p>
+{% endif %}
+{% else %}{% if change_denied_reasons %}
+<p><strong>You cannot switch to this plan.</strong> Reasons:
+<ul>{% for reason in change_denied_reasons %}<li>{{reason}}</li>{% endfor %}</ul>
+{% else %}
+<p>Sign up for this plan!</p>
+{{form.sandbox}}
+{% endif %}{% endif %}
+
+{% endblock %}

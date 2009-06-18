@@ -66,6 +66,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django_authopenid.middleware.OpenIDMiddleware',
     'muaccounts.middleware.MUAccountsMiddleware',
+    'django.middleware.doc.XViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'project.urls'
@@ -88,6 +90,8 @@ INSTALLED_APPS = (
     'paypal.standard.ipn',
     'registration',
     'django_authopenid',
+    'mptt',
+    'pages',
     'muaccounts',
     'subscription',
 )
@@ -96,7 +100,16 @@ from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'django_authopenid.context_processors.authopenid',
+    'pages.context_processors.media',
     )
+
+PAGE_TAGGING = False
+PAGE_TINYMCE = False
+PAGE_LANGUAGES = (                      # need to be filled,
+    ('en-us', 'US English'),
+    ('en-gb', 'British English'),
+)
+DEFAULT_PAGE_TEMPLATE = 'page.html'
 
 PAYPAL_TEST = True
 PAYPAL_RECEIVER_EMAIL='example@example.com'

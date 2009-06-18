@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     (r'^accounts/', include('django_authopenid.urls')),
     (r'^accounts/mua/', include('muaccounts.urls')),
     (r'^sub/', include('subscription.urls')),
+    (r'^pages/', include('pages.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
 )

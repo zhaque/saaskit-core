@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'pages',
     'muaccounts',
     'subscription',
+    'prepaid',
     'crowdsense',
 )
 

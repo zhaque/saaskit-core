@@ -94,6 +94,7 @@ INSTALLED_APPS = (
     'mptt',
     'pages',
     'notification',
+    'mailer',
     'muaccounts',
     'subscription',
     'prepaid',

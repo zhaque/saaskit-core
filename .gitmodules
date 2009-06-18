@@ -16,3 +16,6 @@
 [submodule "upstream/django-notification"]
 	path = upstream/django-notification
 	url = git://github.com/jtauber/django-notification.git
+[submodule "upstream/django-mailer"]
+	path = upstream/django-mailer
+	url = git://github.com/jtauber/django-mailer.git

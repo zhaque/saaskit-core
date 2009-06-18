@@ -2,7 +2,7 @@
                                 ===============
 
 Author: Maciej Pasternacki <maciej@pasternacki.net>
-Date: 2009/06/18 21:11:13
+Date: 2009/06/18 21:16:45
 
 
 Table of Contents
@@ -43,6 +43,14 @@ Table of Contents
   upstream/Makefile all needed Django applications; only requirements
   are Python (2.5 or higher, but may work on earlier versions of
   Python) and stable release of Django (1.0.2 at this moment).
+
+  To download dependencies (step 1), following programs are needed:
+  - make,
+  - git,
+  - mercurial,
+  - subversion,
+  - wget,
+  - tar accepting "-j" option (any recent GNU tar).
 
 2 Django applications
 ~~~~~~~~~~~~~~~~~~~~~

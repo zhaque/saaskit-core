@@ -3,7 +3,6 @@
 {% block title %} Hello. {% endblock %} 
 {% block body %}
 <h1>Main page.</h1>
-{{request.urlconf}}
 {% if user.is_authenticated %}
 <p>Hello, <em>{{user}}</em></p>
 <ul>

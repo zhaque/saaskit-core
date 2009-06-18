@@ -22,3 +22,6 @@
 [submodule "upstream/django-faq"]
 	path = upstream/django-faq
 	url = git://github.com/howiworkdaily/django-faq.git
+[submodule "upstream/django-pipes"]
+	path = upstream/django-pipes
+	url = git://github.com/mallipeddi/django-pipes.git

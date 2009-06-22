@@ -97,6 +97,7 @@ INSTALLED_APPS = (
     'mailer',
     'faq',
     'django_pipes',
+    'tagging',
     'quotas',
     'muaccounts',
     'subscription',
@@ -113,7 +114,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 
 AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
 
-PAGE_TAGGING = False
+PAGE_TAGGING = True
 PAGE_TINYMCE = False
 PAGE_LANGUAGES = (                      # need to be filled,
     ('en-us', 'US English'),

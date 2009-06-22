@@ -5,6 +5,7 @@ DJANGO_MPTT_RELEASE=119
 HTML5LIB_RELEASE=18c3325ee5
 DJANGO_PAGE_CMS_RELEASE=571
 DJANGO_PROFILES_RELEASE=v0.2
+DJANGO_TAGGING_RELEASE=155
 
 PYTHON_OPENID_ARCHIVE=python-openid-$(PYTHON_OPENID_VERSION).tar.bz2
 PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON_OPENID_ARCHIVE)
@@ -12,7 +13,7 @@ PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON
 init: .gitignore _submodules.stamp \
 	django-registration.stamp django-authopenid.stamp python-openid.stamp \
 	django-mptt.stamp html5lib.stamp django-page-cms.stamp \
-	django-profiles.stamp
+	django-profiles.stamp django-tagging.stamp
 
 _submodules.stamp:
 	cd .. && git submodule update --init
@@ -58,6 +59,11 @@ django-profiles.stamp:
 	date > $@
 
 
+django-tagging.stamp:
+	svn checkout -r $(DJANGO_TAGGING_RELEASE) http://django-tagging.googlecode.com/svn/trunk/ django-tagging
+	date > $@
+
+
 .gitignore: Makefile
 	echo .gitignore > .gitignore
 	echo \*.stamp >> .gitignore
@@ -68,3 +74,4 @@ django-profiles.stamp:
 	echo html5lib >> .gitignore
 	echo django-page-cms >> .gitignore
 	echo django-profiles >> .gitignore
+	echo django-tagging >> .gitignore

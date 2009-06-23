@@ -8,11 +8,15 @@
   To start the project, after cloning Git repository, run:
 
   1. make -C upstream/ init
-  2. cd project
+  2. cd projects/main
   3. python manage.py syncdb
-  4. python manage.py loaddata exampledata.json (optional, to populate
+  4. python manage.py loaddata ../../exampledata.json (optional, to populate
      django-subscription&django-muaccounts databases)
-  5. python manage.py runserver
+  5. python manage.py runserver 8001
+  
+  (in other shell)
+  6. cd projects/subdomains
+  7. python manage.py runserver
 
   Project includes as Git sumodules or downloads from
   upstream/Makefile all needed Django applications; only requirements

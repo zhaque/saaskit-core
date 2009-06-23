@@ -27,7 +27,8 @@
 <br>
 {% endif %}
 <h2>Make a choice:</h2>
-<p> <a href="{% url registration_register %}">Register</a> | <a href="{% url user_signin %}">Log-In</a></p>
+<p> <a href="{% url registration_register %}">Register</a>
+  | <a href="{% url auth_password_reset %}">Reset password</a></p>
 <div class="login">
 
     <form id="auth_form" name="auth_form" action="{% url user_signin %}" method="post">

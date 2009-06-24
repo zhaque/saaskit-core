@@ -11,23 +11,16 @@ DJANGO_PISTON_RELEASE=0.2.2
 PYTHON_OPENID_ARCHIVE=python-openid-$(PYTHON_OPENID_VERSION).tar.bz2
 PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON_OPENID_ARCHIVE)
 
-init: .gitignore _submodules.stamp \
-	django-registration.stamp django-authopenid.stamp python-openid.stamp \
-	django-mptt.stamp html5lib.stamp django-page-cms.stamp \
-	django-profiles.stamp django-tagging.stamp django-piston.stamp
+init: _submodules.stamp \
+	django-authopenid.stamp \
+	django-page-cms.stamp \
+	django-piston.stamp \
+	django-profiles.stamp \
+	django-registration.stamp \
+	django-tagging.stamp
 
 _submodules.stamp:
 	cd .. && git submodule update --init
-	date > $@
-
-
-django-registration.stamp:
-	hg clone -r $(DJANGO_REGISTRATION_RELEASE) http://bitbucket.org/ubernostrum/django-registration/
-	date > $@
-
-
-django-authopenid.stamp:
-	hg clone -r $(DJANGO_AUTHOPENID_RELEASE) http://bitbucket.org/benoitc/django-authopenid/
 	date > $@
 
 
@@ -39,29 +32,21 @@ python-openid.stamp: $(PYTHON_OPENID_ARCHIVE)
 	ln -s `basename $(PYTHON_OPENID_ARCHIVE) .tar.bz2` python-openid
 	date > $@
 
+django-authopenid.stamp: python-openid.stamp
+	hg clone -r $(DJANGO_AUTHOPENID_RELEASE) http://bitbucket.org/benoitc/django-authopenid/
+	date > $@
+
 
 django-mptt.stamp:
 	svn checkout -r $(DJANGO_MPTT_RELEASE) http://django-mptt.googlecode.com/svn/trunk/ django-mptt
 	date > $@
 
-
 html5lib.stamp:
 	hg clone -r $(HTML5LIB_RELEASE) https://html5lib.googlecode.com/hg/ html5lib
 	date > $@
 
-
-django-page-cms.stamp:
+django-page-cms.stamp: html5lib.stamp django-mptt.stamp
 	svn checkout -r $(DJANGO_PAGE_CMS_RELEASE) http://django-page-cms.googlecode.com/svn/trunk/ django-page-cms
-	date > $@
-
-
-django-profiles.stamp:
-	hg clone -r $(DJANGO_PROFILES_RELEASE) http://bitbucket.org/ubernostrum/django-profiles/
-	date > $@
-
-
-django-tagging.stamp:
-	svn checkout -r $(DJANGO_TAGGING_RELEASE) http://django-tagging.googlecode.com/svn/trunk/ django-tagging
 	date > $@
 
 
@@ -70,15 +55,16 @@ django-piston.stamp:
 	date > $@
 
 
-.gitignore: Makefile
-	echo .gitignore > .gitignore
-	echo \*.stamp >> .gitignore
-	echo django-registration >> .gitignore
-	echo django-authopenid >> .gitignore
-	echo python-openid\* >> .gitignore
-	echo django-mptt >> .gitignore
-	echo html5lib >> .gitignore
-	echo django-page-cms >> .gitignore
-	echo django-profiles >> .gitignore
-	echo django-tagging >> .gitignore
-	echo django-piston >> .gitignore
+django-profiles.stamp:
+	hg clone -r $(DJANGO_PROFILES_RELEASE) http://bitbucket.org/ubernostrum/django-profiles/
+	date > $@
+
+
+django-registration.stamp:
+	hg clone -r $(DJANGO_REGISTRATION_RELEASE) http://bitbucket.org/ubernostrum/django-registration/
+	date > $@
+
+
+django-tagging.stamp:
+	svn checkout -r $(DJANGO_TAGGING_RELEASE) http://django-tagging.googlecode.com/svn/trunk/ django-tagging
+	date > $@

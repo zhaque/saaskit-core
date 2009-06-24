@@ -1,0 +1,10 @@
+*.stamp
+python-openid*
+django-authopenid
+html5lib
+django-mptt
+django-page-cms
+django-piston
+django-profiles
+django-registration
+django-tagging

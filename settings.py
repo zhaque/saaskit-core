@@ -53,6 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django_authopenid.middleware.OpenIDMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -73,6 +74,7 @@ INSTALLED_APPS = (
     'faq',
     'django_pipes',
     'tagging',
+    'debug_toolbar',
     'quotas',
     'muaccounts',
     'subscription',
@@ -87,6 +89,8 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     )
 
 TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
+
+INTERNAL_IPS = ( '127.0.0.1', )
 
 AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
 

@@ -28,3 +28,6 @@
 [submodule "upstream/django-quotas"]
 	path = upstream/django-quotas
 	url = git://github.com/mpasternacki/django-quotas.git
+[submodule "upstream/django-debug-toolbar"]
+	path = upstream/django-debug-toolbar
+	url = git://github.com/robhudson/django-debug-toolbar.git

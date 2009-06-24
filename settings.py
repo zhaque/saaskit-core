@@ -75,6 +75,7 @@ INSTALLED_APPS = (
     'django_pipes',
     'tagging',
     'debug_toolbar',
+    'compress',
     'quotas',
     'muaccounts',
     'subscription',
@@ -93,6 +94,22 @@ TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
 INTERNAL_IPS = ( '127.0.0.1', )
 
 AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
+
+COMPRESS = True
+COMPRESS_VERSION = True
+COMPRESS_CSS = {
+    'all' : {
+        'source_filenames' : ('authopenid/css/base.css',
+                              'authopenid/css/openid.css',
+                              ),
+        'output_filename' : 'style.css'},
+    }
+COMPRESS_JS = {
+    'all' : {
+        'source_filenames' : ('authopenid/js/jquery-1.3.2.min.js',
+                              ),
+        'output_filename' : 'scripts.js'},
+    }
 
 PAGE_TAGGING = True
 PAGE_TINYMCE = False

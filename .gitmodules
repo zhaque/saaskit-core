@@ -31,3 +31,6 @@
 [submodule "upstream/django-debug-toolbar"]
 	path = upstream/django-debug-toolbar
 	url = git://github.com/robhudson/django-debug-toolbar.git
+[submodule "upstream/django-compress"]
+	path = upstream/django-compress
+	url = git://github.com/pelme/django-compress.git

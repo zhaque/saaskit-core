@@ -78,6 +78,7 @@ INSTALLED_APPS = (
     'compress',
     'django_extensions',
     'filter',
+    'ajax_validation',
     'quotas',
     'muaccounts',
     'subscription',

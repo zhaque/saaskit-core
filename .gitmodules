@@ -49,3 +49,6 @@
 [submodule "upstream/django-ab"]
 	path = upstream/django-ab
 	url = git://github.com/johnboxall/django-ab.git
+[submodule "upstream/django-perfect404"]
+	path = upstream/django-perfect404
+	url = git://github.com/svetlyak40wt/django-perfect404.git

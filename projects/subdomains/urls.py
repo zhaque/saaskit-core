@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
 
+handler404 = 'perfect404.views.page_not_found'
+
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', dict(template='account_index.html')),
     (r'^sorry/$', 'django.views.generic.simple.direct_to_template', dict(template='account_nam.html'), 'muaccounts_not_a_member'),

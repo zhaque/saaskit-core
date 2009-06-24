@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
 
+handler404 = 'perfect404.views.page_not_found'
+
 from django.contrib import admin
 admin.autodiscover()
 

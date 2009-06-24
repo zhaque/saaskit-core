@@ -83,6 +83,7 @@ INSTALLED_APPS = (
     'ajax_validation',
     'uni_form',
     'ab',
+    'perfect404',
     'quotas',
     'muaccounts',
     'subscription',

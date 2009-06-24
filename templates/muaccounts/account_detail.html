@@ -1,10 +1,11 @@
 {% extends "main.html" %}
+{% load uni_form %}
 
 {% block title %}Account detail{% endblock %} 
 {% block body %}
-<form action="" method="POST">
-  {{ form.as_p }}
-  <input type="submit" value="OK">
+<form action="" method="POST" class="uniForm">
+   {{ form|as_uni_form }}
+    <input type="submit" value="OK">
 </form>
 <p>Go to <a href="{{object.get_absolute_url}}">{{object}}</a></p>
 {% endblock %}

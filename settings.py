@@ -79,6 +79,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'filter',
     'ajax_validation',
+    'uni_form',
     'quotas',
     'muaccounts',
     'subscription',
@@ -104,12 +105,15 @@ COMPRESS_CSS = {
     'all' : {
         'source_filenames' : ('authopenid/css/base.css',
                               'authopenid/css/openid.css',
+                              'uni_form/uni-form-generic.css',
+                              'uni_form/uni-form.css',
                               ),
         'output_filename' : 'style.css'},
     }
 COMPRESS_JS = {
     'all' : {
         'source_filenames' : ('authopenid/js/jquery-1.3.2.min.js',
+                              'uni_form/uni-form.jquery.js',
                               ),
         'output_filename' : 'scripts.js'},
     }

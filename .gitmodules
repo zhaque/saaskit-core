@@ -37,3 +37,6 @@
 [submodule "upstream/django-extensions"]
 	path = upstream/django-extensions
 	url = git://github.com/django-extensions/django-extensions.git
+[submodule "upstream/django-filter"]
+	path = upstream/django-filter
+	url = git://github.com/alex/django-filter.git

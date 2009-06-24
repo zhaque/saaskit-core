@@ -76,6 +76,7 @@ INSTALLED_APPS = (
     'tagging',
     'debug_toolbar',
     'compress',
+    'django_extensions',
     'quotas',
     'muaccounts',
     'subscription',

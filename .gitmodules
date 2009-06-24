@@ -34,3 +34,6 @@
 [submodule "upstream/django-compress"]
 	path = upstream/django-compress
 	url = git://github.com/pelme/django-compress.git
+[submodule "upstream/django-extensions"]
+	path = upstream/django-extensions
+	url = git://github.com/django-extensions/django-extensions.git

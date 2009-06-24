@@ -84,6 +84,7 @@ INSTALLED_APPS = (
     'uni_form',
     'ab',
     'perfect404',
+    'piston',
     'quotas',
     'muaccounts',
     'subscription',

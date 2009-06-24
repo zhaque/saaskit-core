@@ -6,6 +6,7 @@ HTML5LIB_RELEASE=18c3325ee5
 DJANGO_PAGE_CMS_RELEASE=571
 DJANGO_PROFILES_RELEASE=v0.2
 DJANGO_TAGGING_RELEASE=155
+DJANGO_PISTON_RELEASE=0.2.2
 
 PYTHON_OPENID_ARCHIVE=python-openid-$(PYTHON_OPENID_VERSION).tar.bz2
 PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON_OPENID_ARCHIVE)
@@ -13,7 +14,7 @@ PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON
 init: .gitignore _submodules.stamp \
 	django-registration.stamp django-authopenid.stamp python-openid.stamp \
 	django-mptt.stamp html5lib.stamp django-page-cms.stamp \
-	django-profiles.stamp django-tagging.stamp
+	django-profiles.stamp django-tagging.stamp django-piston.stamp
 
 _submodules.stamp:
 	cd .. && git submodule update --init
@@ -64,6 +65,11 @@ django-tagging.stamp:
 	date > $@
 
 
+django-piston.stamp:
+	hg clone -r $(DJANGO_PISTON_RELEASE) http://bitbucket.org/jespern/django-piston/
+	date > $@
+
+
 .gitignore: Makefile
 	echo .gitignore > .gitignore
 	echo \*.stamp >> .gitignore
@@ -75,3 +81,4 @@ django-tagging.stamp:
 	echo django-page-cms >> .gitignore
 	echo django-profiles >> .gitignore
 	echo django-tagging >> .gitignore
+	echo django-piston >> .gitignore

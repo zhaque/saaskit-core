@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     'piston',
     'profiles',
     'registration',
+    'rosetta',
     'tagging',
     'uni_form',
     # own

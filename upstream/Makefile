@@ -7,6 +7,7 @@ DJANGO_PAGE_CMS_RELEASE=571
 DJANGO_PROFILES_RELEASE=v0.2
 DJANGO_TAGGING_RELEASE=155
 DJANGO_PISTON_RELEASE=0.2.2
+DJANGO_ROSETTA_RELEASE=67
 
 PYTHON_OPENID_ARCHIVE=python-openid-$(PYTHON_OPENID_VERSION).tar.bz2
 PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON_OPENID_ARCHIVE)
@@ -17,6 +18,7 @@ init: _submodules.stamp \
 	django-piston.stamp \
 	django-profiles.stamp \
 	django-registration.stamp \
+	django-rosetta.stamp \
 	django-tagging.stamp
 
 _submodules.stamp:
@@ -62,6 +64,11 @@ django-profiles.stamp:
 
 django-registration.stamp:
 	hg clone -r $(DJANGO_REGISTRATION_RELEASE) http://bitbucket.org/ubernostrum/django-registration/
+	date > $@
+
+
+django-rosetta.stamp:
+	svn checkout -r $(DJANGO_ROSETTA_RELEASE) http://django-rosetta.googlecode.com/svn/trunk/ django-rosetta
 	date > $@
 
 

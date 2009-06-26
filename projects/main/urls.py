@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     (r'^sub/', include('subscription.urls')),
     (r'^pages/', include('pages.urls')),
     (r'^faq/', include('faq.urls')),
+    (r'^admin/rosetta/', include('rosetta.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
 )

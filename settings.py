@@ -113,7 +113,7 @@ COMPRESS = True
 COMPRESS_VERSION = True
 COMPRESS_CSS = {
     'all' : {
-        'source_filenames' : ('authopenid/css/base.css',
+        'source_filenames' : ('yuiapp.css',
                               'authopenid/css/openid.css',
                               'uni_form/uni-form-generic.css',
                               'uni_form/uni-form.css',

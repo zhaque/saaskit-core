@@ -2,29 +2,6 @@
 
 {% block title %} Hello. {% endblock %} 
 {% block body %}
-<h1>Main page.</h1>
-{% if user.is_authenticated %}
-<p>Hello, <em>{{user}}</em></p>
-{% endif %}
-<ul>
-{% if user.is_authenticated %}
-  <li><a href="{% url auth_password_change %}">Change password /
-  manage OpenIDs</a></li>
-  <li>{% if user.muaccount %}
-  <a href="{% url muaccounts_account_detail %}">Your site <em>{{user.muaccount}}</em></a>
-  {% else %}
-  <a href="{% url muaccounts_create_account %}">Create your own site</a>
-  {% endif %}</li>
-  <li>{% if user.get_profile %}
-    <a href="{% url profiles_edit_profile %}">Edit your profile</a>
-    {% else %}
-    <a href="{% url profiles_create_profile %}">Create your profile</a>
-    {% endif %}</li>
-{% endif %}
-  <li><a href="{% url faq %}">FAQ</a></li>
-  <li><a href="{% url subscription_list %}">Available subscriptions</a></li>
-  <li><a href="{% url profiles_profile_list %}">Public profiles</a></li>
-</ul>
 {% if user.is_authenticated %}
 <h2>Sites</h2>
 <ul>
@@ -35,5 +12,8 @@
   <li><a href="{{mua.get_absolute_url}}">{{mua}}</a></li>
   {% endfor %}
 </ul>
+{% else %}
+<h2>Hello</h2>
+<p>Please <a href="{% url user_signin %}">log in or sign up</a>.</p>
 {% endif %}
 {% endblock %}

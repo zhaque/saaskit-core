@@ -52,3 +52,6 @@
 [submodule "upstream/django-perfect404"]
 	path = upstream/django-perfect404
 	url = git://github.com/svetlyak40wt/django-perfect404.git
+[submodule "upstream/yui-app-theme"]
+	path = upstream/yui-app-theme
+	url = git://github.com/tylerhall/yui-app-theme.git

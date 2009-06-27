@@ -2,7 +2,7 @@
 
 {% block title %}Profiles{% endblock %} 
 {% block body %}
-<h1>Profiles</h1>
+<h2>Profiles</h2>
 <ul>{% for profile in object_list %}
 <li><a href="{{profile.get_absolute_url}}">{{profile.user}}</a></li>
 {% endfor %}</ul>

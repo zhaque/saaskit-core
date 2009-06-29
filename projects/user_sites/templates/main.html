@@ -17,27 +17,14 @@
         <div id="navigation">
           <ul id="primary-navigation">
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
-           <li{% class_if_reverse faq active %}><a href="{% url faq %}">FAQ</a></li>
-            <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Available subscriptions</a></li>
-            <li{% class_if_reverse profiles_profile_list active %}><a href="{% url profiles_profile_list %}">Public profiles</a></li>
-         </ul>
+          </ul>
 
           <ul id="user-navigation">
             {% if user.is_authenticated %}
-           {% if user.get_profile %}
-            <li><a href="{% url profiles_edit_profile %}">{{user}}</a></li>
-            {% else %}
-            <li><a href="{% url profiles_create_profile %}">{{user}}</a></li>
-            {% endif %}
-           <li><a href="{% url auth_password_change %}">password</a></li>
-           {% if user.muaccount %}
-            <li><a href="{% url muaccounts_account_detail %}">Your site <em>{{user.muaccount}}</em></a></li>
-            {% else %}
-            <li><a href="{% url muaccounts_create_account %}">Create site</a></li>
-            {% endif %}
+            <li><a href="{% url auth_password_change %}">password</a></li>
             <li><a href="{% url user_signout %}">logout</a></li>
             {% else %}
-            <li><a href="{% url user_signin %}">log in or sign up</a></li>
+            <li<a href="{% url user_signin %}">log in or sign up</a></li>
             {% endif %}
           </ul>
         </div>

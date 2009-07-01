@@ -21,6 +21,7 @@ init: _submodules.stamp \
 	django-rosetta.stamp \
 	django-tagging.stamp
 
+.PHONY: _submodules.stamp
 _submodules.stamp:
 	cd .. && git submodule update --init
 	date > $@

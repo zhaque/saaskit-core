@@ -9,8 +9,6 @@ DJANGO_TAGGING_RELEASE=155
 DJANGO_PISTON_RELEASE=0.2.2
 DJANGO_ROSETTA_RELEASE=67
 
-PYTHON_OPENID_ARCHIVE=python-openid-$(PYTHON_OPENID_VERSION).tar.bz2
-PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON_OPENID_ARCHIVE)
 
 init: _submodules.stamp \
 	django-authopenid.stamp \
@@ -27,12 +25,14 @@ _submodules.stamp:
 	date > $@
 
 
+PYTHON_OPENID_ARCHIVE=python-openid-$(PYTHON_OPENID_VERSION).tar.bz2
+PYTHON_OPENID_URL=http://openidenabled.com/files/python-openid/packages/$(PYTHON_OPENID_ARCHIVE)
 $(PYTHON_OPENID_ARCHIVE):
 	wget $(PYTHON_OPENID_URL)
 
 python-openid.stamp: $(PYTHON_OPENID_ARCHIVE)
 	tar -xjvf $(PYTHON_OPENID_ARCHIVE)
-	ln -s `basename $(PYTHON_OPENID_ARCHIVE) .tar.bz2` python-openid
+	ln -sf `basename $(PYTHON_OPENID_ARCHIVE) .tar.bz2` python-openid
 	date > $@
 
 django-authopenid.stamp: python-openid.stamp

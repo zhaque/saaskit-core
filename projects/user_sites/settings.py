@@ -3,7 +3,7 @@ from common_settings import *
 import os.path
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-SITE_ID = 1
+SITE_ID = 2
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"

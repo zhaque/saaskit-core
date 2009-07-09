@@ -71,6 +71,7 @@ INSTALLED_APPS = (
     'ajax_validation',
     'compress',
     'debug_toolbar',
+    'contact_form',
     'django_authopenid',
     'django_extensions',
     'django_pipes',

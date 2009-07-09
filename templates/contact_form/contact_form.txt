@@ -1,0 +1,3 @@
+Message from: {{name}} <{{email}}>
+
+{{body}}

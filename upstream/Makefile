@@ -1,6 +1,7 @@
 DJANGO_REGISTRATION_RELEASE=b360801eae96 # 2009-06-16 tip http://bitbucket.org/ubernostrum/django-registration/
-DJANGO_AUTHOPENID_RELEASE=1.0.1		 # release tag
 PYTHON_OPENID_VERSION=2.2.4
+DJANGO_AUTHOPENID_RELEASE=1.0.1		 # release tag
+DJANGO_CONTACT_FORM_RELEASE=1d3791fa4dfb
 DJANGO_MPTT_RELEASE=119
 HTML5LIB_RELEASE=18c3325ee5
 DJANGO_PAGE_CMS_RELEASE=571
@@ -12,6 +13,7 @@ DJANGO_ROSETTA_RELEASE=67
 
 init: _submodules.stamp \
 	django-authopenid.stamp \
+	django-contact-form.stamp \
 	django-page-cms.stamp \
 	django-piston.stamp \
 	django-profiles.stamp \
@@ -37,6 +39,11 @@ python-openid.stamp: $(PYTHON_OPENID_ARCHIVE)
 
 django-authopenid.stamp: python-openid.stamp
 	hg clone -r $(DJANGO_AUTHOPENID_RELEASE) http://bitbucket.org/benoitc/django-authopenid/
+	date > $@
+
+
+django-contact-form.stamp:
+	hg clone -r $(DJANGO_CONTACT_FORM_RELEASE) http://bitbucket.org/ubernostrum/django-contact-form/
 	date > $@
 
 

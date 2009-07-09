@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% load uni_form %}
+{% load pages_tags %}
+
+{% block title %}Contact us{% endblock %}
+{% block body %}
+<h2>Contact us</h2>
+
+{% show_content "contact" "body" %}
+
+<form action="" method="POST" class="uniForm">
+  {{form|as_uni_form}}
+  <input type="submit" value="Send message">
+</form>
+
+{% endblock %}

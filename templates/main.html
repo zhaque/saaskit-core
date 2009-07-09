@@ -17,7 +17,6 @@
         <div id="navigation">
           <ul id="primary-navigation">
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
-           <li{% class_if_reverse faq active %}><a href="{% url faq %}">FAQ</a></li>
             <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Available subscriptions</a></li>
             <li{% class_if_reverse profiles_profile_list active %}><a href="{% url profiles_profile_list %}">Public profiles</a></li>
          </ul>

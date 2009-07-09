@@ -74,7 +74,6 @@ INSTALLED_APPS = (
     'django_authopenid',
     'django_extensions',
     'django_pipes',
-    'faq',
     'filter',
     'mailer',
     'mptt',

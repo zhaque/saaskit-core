@@ -27,7 +27,7 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Vienna'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -40,7 +40,7 @@ USE_I18N = True
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'ab.loaders.load_template_source',
+    #ab 'ab.loaders.load_template_source',
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
 #     'django.template.loaders.eggs.load_template_source',
@@ -54,8 +54,8 @@ MIDDLEWARE_CLASSES = (
     'django_authopenid.middleware.OpenIDMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'ab.middleware.ABMiddleware',
+#    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #ab 'ab.middleware.ABMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -67,7 +67,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     # third-party
-    'ab',
+    #ab 'ab',
     'ajax_validation',
     'compress',
     'debug_toolbar',
@@ -158,3 +158,14 @@ MUACCOUNTS_ROOT_DOMAIN = 'example.com'
 MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
 MUACCOUNTS_IP = '127.0.0.1'
+
+# local
+EMAIL_PORT=8025
+ADMINS = (
+    ('Your Name', 'your_email@domain.com'),
+)
+MANAGERS = ADMINS
+PAYPAL_RECEIVER_EMAIL='paypal_1243260889_biz@pasternacki.net'
+SUBSCRIPTION_PAYPAL_SETTINGS = {
+    'business' : PAYPAL_RECEIVER_EMAIL,
+    }

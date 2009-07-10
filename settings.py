@@ -113,13 +113,17 @@ AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
 
 COMPRESS = True
 COMPRESS_VERSION = True
-COMPRESS_CSS = {
+
+_default_css_files = ('yui-app-theme/yuiapp.css',
+                      'authopenid/css/openid.css',
+                      'uni_form/uni-form-generic.css',
+                      'uni_form/uni-form.css',
+                      )
+
+COMPRESS_CSS = {                        # different themes for MUAs
     'all' : {
-        'source_filenames' : ('yuiapp.css',
-                              'authopenid/css/openid.css',
-                              'uni_form/uni-form-generic.css',
-                              'uni_form/uni-form.css',
-                              ),
+        'name' : 'Default theme',
+        'source_filenames' : _default_css_files,
         'output_filename' : 'style.css'},
     }
 COMPRESS_JS = {
@@ -158,6 +162,19 @@ MUACCOUNTS_ROOT_DOMAIN = 'example.com'
 MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
 MUACCOUNTS_IP = '127.0.0.1'
+MUACCOUNTS_THEMES = [('all','Default')]
+
+# Calculate themes together with compress CSS sets.
+for theme in ('Aqua', 'Green', 'Purple', 'Red', 'Tan Blue',):
+    codename = theme.lower().replace(' ','_')
+
+    MUACCOUNTS_THEMES.append( (codename,theme) )
+    COMPRESS_CSS[codename] = {
+        'source_filenames' : ( _default_css_files[:1]
+                               + ('yui-app-theme/%s.css'%codename,)
+                               + _default_css_files[1:] ),
+        'output_filename' : 'style.%s.css' % codename,
+        }
 
 # local
 EMAIL_PORT=8025

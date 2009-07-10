@@ -27,7 +27,7 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Europe/Vienna'
+TIME_ZONE = 'Europe/London'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -175,14 +175,3 @@ for theme in ('Aqua', 'Green', 'Purple', 'Red', 'Tan Blue',):
                                + _default_css_files[1:] ),
         'output_filename' : 'style.%s.css' % codename,
         }
-
-# local
-EMAIL_PORT=8025
-ADMINS = (
-    ('Your Name', 'your_email@domain.com'),
-)
-MANAGERS = ADMINS
-PAYPAL_RECEIVER_EMAIL='paypal_1243260889_biz@pasternacki.net'
-SUBSCRIPTION_PAYPAL_SETTINGS = {
-    'business' : PAYPAL_RECEIVER_EMAIL,
-    }

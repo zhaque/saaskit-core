@@ -1,5 +1,6 @@
 {% load compressed %}
 {% load class_if_reverse %}
+{% load settings %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
@@ -54,10 +55,9 @@
           </div>
       </div>
 
-{% comment %}
         <div id="ft"><div id="yui-main">
+            <p><a href="{% setting MUACCOUNTS_DEFAULT_URL %}">main page</a></p>
         </div></div>
-{% endcomment %}
 
     {% compressed_js 'all' %}
     {% block extra_scripts %}{% endblock %}

@@ -4,10 +4,11 @@ from django.conf.urls.defaults import *
 handler404 = 'perfect404.views.page_not_found'
 
 urlpatterns = patterns('',
-    (r'^$', 'django.views.generic.simple.direct_to_template', dict(template='account_index.html')),
+    (r'^$', 'django.views.generic.simple.direct_to_template', dict(template='index.html')),
     (r'^sorry/$', 'django.views.generic.simple.direct_to_template', dict(template='account_nam.html'), 'muaccounts_not_a_member'),
     (r'^accounts/', include('django_authopenid.urls')),
     (r'^admin/', include('muaccounts.urls')),
+    (r'^pipes/', include('mashup.pipeadmin.urls')),
 )
 
 # serve static files in debug mode

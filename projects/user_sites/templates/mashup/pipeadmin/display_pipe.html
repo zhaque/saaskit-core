@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block title %}Pipe results for {{managed_pipe}}{% endblock %}
+
+{% block body %}
+
+<h2>{{managed_pipe}}</h2>
+
+{{pipe.render}}
+
+{% endblock %}

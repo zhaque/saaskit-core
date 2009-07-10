@@ -13,7 +13,7 @@
   <body class="rounded">
     <div id="doc3" class="yui-t6">
       <div id="hd">
-        <h1>CrowdSense Project Kit</h1>
+        <h1>{{request.muaccount}}</h1>
         <div id="navigation">
           <ul id="primary-navigation">
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
@@ -21,6 +21,10 @@
 
           <ul id="user-navigation">
             {% if user.is_authenticated %}
+            {% ifequal user request.muaccount.owner %}
+            <li><a href="{% url pipeadmin_manage_pipes %}">manage pipes</a></li>
+            <li><a href="{% url muaccounts_account_detail %}">manage site</a></li>
+            {% endifequal %}
             <li><a href="{% url auth_password_change %}">password</a></li>
             <li><a href="{% url user_signout %}">logout</a></li>
             {% else %}
@@ -31,12 +35,29 @@
       </div>
 
       <div id="bd">
-        {% block body %} Body {% endblock %}
+        <div id="yui-main"><div class="yui-b"><div class="yui-g">
+              {% block body %} Body {% endblock %}
+        </div></div></div>
+
+        <div id="sidebar" class="yui-b">
+          <div class="block">
+            <div class="hd"><h2>Available pipes</h2></div><div class="bd">
+              <ul class="list">
+                {% for pipe in request.muaccount.owner.managedpipe_set.all %}<li>
+                  {% if pipe.is_dynamic %}
+                  {{pipe}} {{pipe.render_form}}
+                  {% else %}
+                  <a href="{{pipe.get_absolute_url}}">{{pipe}}</a>
+                  {% endif %}
+                </li>{% endfor %}</ul>
+            </div>
+          </div>
       </div>
 
-      <div id="ft"><div id="yui-main">
-        <p><a href="/admin/">admin</a></p>
-      </div></div>
+{% comment %}
+        <div id="ft"><div id="yui-main">
+        </div></div>
+{% endcomment %}
 
     {% compressed_js 'all' %}
     {% block extra_scripts %}{% endblock %}

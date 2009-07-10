@@ -1,8 +1,8 @@
-                                Django SAAS kit
-                                ===============
+                             Crowdsense Project Kit
+                             ======================
 
 Author: Maciej Pasternacki <maciej@pasternacki.net>
-Date: 2009/07/01 21:59:31
+Date: 2009/07/10 14:16:05
 
 
 Table of Contents
@@ -19,15 +19,16 @@ Table of Contents
         3.4.1 Settings
         3.4.2 Templates
         3.4.3 Sites
-4 Default data set
-5 List of third party code
-    5.1 Django applications
-        5.1.1 Used
-        5.1.2 Currently unused
-    5.2 Other code
-        5.2.1 yui-app-theme
-6 Runtime environment
-    6.1 Warnings at startup
+4 Django-pages-cms integration
+5 Default data set
+6 List of third party code
+    6.1 Django applications
+        6.1.1 Used
+        6.1.2 Currently unused
+    6.2 Other code
+        6.2.1 yui-app-theme
+7 Runtime environment
+    7.1 Warnings at startup
 
 
 1 Getting started
@@ -188,7 +189,42 @@ Table of Contents
     usersites.example.com).  This allows to have separate static
     Pages for both projects.
 
-4 Default data set
+4 Django-pages-cms integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Django-pages-cms is integrated into project to provide dynamic
+  content for otherwise static templates (e.g. registration screen).
+
+  Two templates for this kind of content are provided:
+  - `Single body' for templates using single body of data, with
+    page title and single block named `body',
+  - `Content before and after dynamic content' for templates using a
+    block of text before and block of text after the dynamic content,
+    with page title and blocks `before' and `after'.
+
+  For actual page-cms content the default template should be used.
+
+  Different templates contain hard-coded references to a page with a
+  specific slug.  That page can be located anywhere in django-page-cms
+  hierarchy and should be created as a hidden page (so that it is not
+  displayed in navigation).  Table of used slug names and desired
+  page templates follows.
+
+   Template                              Slug                Page template     
+  -------------------------------------+-------------------+------------------
+   index.html                            main-page           Single body       
+   registration/registration_form.html   registration-form   Before and after  
+   subscription/subscription_list.html   subscription-list   Before and after  
+
+  Based on these, template editor (webmaster) can insert content from
+  page-cms pages into any other template where needed.  Other page
+  templates (for e.g. three-part content) can be added by:
+  - Adding page template in `templates/page-templates/' directory,
+    basing on existing ones,
+  - Adding newly created template to `PAGE_TEMPLATES' in Django
+    settings,
+  - Documenting it in README.org and README.
+
+5 Default data set
 ~~~~~~~~~~~~~~~~~~
   By loading exampledata.json, data is populated with:
   - Silver Membership monthly recurring plan, linked to Silver Member group,
@@ -209,13 +245,13 @@ Table of Contents
   - test3 user, password "test", with no plan selected, member of
     "gold" account
 
-5 List of third party code
+6 List of third party code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-5.1 Django applications
+6.1 Django applications
 =======================
 
-5.1.1 Used
+6.1.1 Used
 ----------
     Apps actually used by sample code.
 * django-authopenid
@@ -284,7 +320,7 @@ Table of Contents
   - [http://github.com/pydanny/django-uni-form/]
   - [http://github.com/pydanny/django-uni-form/blob/master/docs/usage.txt]
 
-5.1.2 Currently unused
+6.1.2 Currently unused
 ----------------------
     Apps that are not currently used by any of sample code, but are
     included and ready to use.
@@ -333,16 +369,16 @@ Table of Contents
   system.
   - [http://github.com/mpasternacki/django-quotas/]
 
-5.2 Other code
+6.2 Other code
 ==============
 
-5.2.1 yui-app-theme
+6.2.1 yui-app-theme
 -------------------
     A generic, skinnable, Yahoo YUI-based layot for web applications.
     - [http://clickontyler.com/yui-app-theme/]
     - [http://github.com/tylerhall/yui-app-theme/]
 
-6 Runtime environment
+7 Runtime environment
 ~~~~~~~~~~~~~~~~~~~~~
   Project is expected to run on localhost, port 8000 (or any other
   port set in MUACCOUNTS_PORT).  For all sites to work correctly,
@@ -364,7 +400,7 @@ Table of Contents
   in templates/subscription/subscription_detail.html and set PAYPAL_TEST to False in
   project/settings.py.
 
-6.1 Warnings at startup
+7.1 Warnings at startup
 =======================
    When some of dependencies are installed system-wide (especially if
    installed with easy_install), Django may issue warnings similar to

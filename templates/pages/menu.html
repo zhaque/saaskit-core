@@ -1,0 +1,18 @@
+{% load pages_tags cache %}
+{% if page.status %}
+<li>
+  {% ifequal page current_page %}
+  <strong>{% show_content page "title" %}</strong>
+  {% else %}
+  <a href="{% show_absolute_url page %}">{% show_content page "title" %}</a>
+  {% endifequal %}
+
+  {% if children %}
+  <ul>
+    {% for child in children %}
+    {% pages_menu child url %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>
+{% endif %}

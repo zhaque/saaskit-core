@@ -1,19 +1,33 @@
 {% extends "main.html" %}
+{% load pages_tags %}
 
-{% block title %} Hello. {% endblock %} 
+{% block title %}{% show_content "main-page" "title" %}{% endblock %} 
 {% block body %}
-{% if user.is_authenticated %}
-<h2>Sites</h2>
-<ul>
-  {% if user.muaccount %}
-  <li><a href="{{user.muaccount.get_absolute_url}}"><strong>{{user.muaccount}}</strong></a></li>
-  {% endif %}
-  {% for mua in user.muaccount_member.all %}
-  <li><a href="{{mua.get_absolute_url}}">{{mua}}</a></li>
-  {% endfor %}
-</ul>
-{% else %}
-<h2>Hello</h2>
-<p>Please <a href="{% url user_signin %}">log in or sign up</a>.</p>
-{% endif %}
+<div id="yui-main"><div class="yui-b"><div class="yui-g">
+  <h2>{% show_content "main-page" "title" %}</h2>
+  {% show_content "main-page" "body" %}
+</div></div></div>
+
+<div id="sidebar" class="yui-b">
+  <div class="block">
+    {% if user.is_authenticated %}
+    <div class="hd"><h2>Logged in as <em>{{user}}</em></h2></div><div class="bd">
+      <h3>Your sites</h3>
+      <ul>
+        {% if user.muaccount %}
+        <li><a href="{{user.muaccount.get_absolute_url}}"><strong>{{user.muaccount}}</strong></a> (owner)</li>
+        {% endif %}
+        {% for mua in user.muaccount_member.all %}
+        <li><a href="{{mua.get_absolute_url}}">{{mua}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+    <div class="hd"><h2>Not logged in</h2></div><div class="bd">
+      <p>Please <a href="{% url user_signin %}">log in or sign
+          up</a>.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

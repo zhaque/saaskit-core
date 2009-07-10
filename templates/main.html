@@ -24,14 +24,12 @@
           <ul id="user-navigation">
             {% if user.is_authenticated %}
            {% if user.get_profile %}
-            <li><a href="{% url profiles_edit_profile %}">{{user}}</a></li>
+            <li><a href="{% url profiles_edit_profile %}">profile</a></li>
             {% else %}
-            <li><a href="{% url profiles_create_profile %}">{{user}}</a></li>
+            <li><a href="{% url profiles_create_profile %}">profile</a></li>
             {% endif %}
-           <li><a href="{% url auth_password_change %}">password</a></li>
-           {% if user.muaccount %}
-            <li><a href="{% url muaccounts_account_detail %}">your site <em>{{user.muaccount}}</em></a></li>
-            {% else %}
+            <li><a href="{% url auth_password_change %}">password</a></li>
+            {% if not user.muaccount %}
             <li><a href="{% url muaccounts_create_account %}">create site</a></li>
             {% endif %}
             <li><a href="{% url user_signout %}">logout</a></li>

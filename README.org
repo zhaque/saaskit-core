@@ -1,4 +1,4 @@
-#+TITLE:     Django SAAS kit
+#+TITLE:     Crowdsense Project Kit
 #+AUTHOR:    Maciej Pasternacki
 #+EMAIL:     maciej@pasternacki.net
 #+LANGUAGE:  en
@@ -139,6 +139,40 @@
     usersites.example.com).  This allows to have separate static
     Pages for both projects.
 
+* Django-pages-cms integration
+  Django-pages-cms is integrated into project to provide dynamic
+  content for otherwise static templates (e.g. registration screen).
+
+  Two templates for this kind of content are provided:
+  - `Single body' for templates using single body of data, with
+    page title and single block named =body=,
+  - `Content before and after dynamic content' for templates using a
+    block of text before and block of text after the dynamic content,
+    with page title and blocks =before= and =after=.
+
+  For actual page-cms content the default template should be used.
+
+  Different templates contain hard-coded references to a page with a
+  specific slug.  That page can be located anywhere in django-page-cms
+  hierarchy and should be created as a hidden page (so that it is not
+  displayed in navigation).  Table of used slug names and desired
+  page templates follows.
+
+ | Template                            | Slug              | Page template    |
+ |-------------------------------------+-------------------+------------------|
+ | index.html                          | main-page         | Single body      |
+ | registration/registration_form.html | registration-form | Before and after |
+ | subscription/subscription_list.html | subscription-list | Before and after |
+ |-------------------------------------+-------------------+------------------|
+
+  Based on these, template editor (webmaster) can insert content from
+  page-cms pages into any other template where needed.  Other page
+  templates (for e.g. three-part content) can be added by:
+  - Adding page template in =templates/page-templates/= directory,
+    basing on existing ones,
+  - Adding newly created template to =PAGE_TEMPLATES= in Django
+    settings,
+  - Documenting it in README.org and README.
 * Default data set
   By loading exampledata.json, data is populated with:
   - Silver Membership monthly recurring plan, linked to Silver Member group,

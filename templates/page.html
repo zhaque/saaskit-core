@@ -2,62 +2,23 @@
 {% load i18n %}
 {% load cache pages_tags %}
 
-{% block title %}{% if current_page %}
-{% show_content current_page "title" %}
-{% endif %} {% endblock %} 
+{% block title %}{% if current_page %}{% show_content current_page "title" %}{% endif %}{% endblock %} 
 
 {% block body %}
-<h2>Django CMS based on page objects</h2>
+<div id="yui-main"><div class="yui-b"><div class="yui-g">
+      <h2>{% placeholder title on current_page with TextInput %}</h2>
+      {% placeholder body on current_page with WYMEditor %}
+</div></div></div>
 
-<h3>site: {{ site.name }}</h3>
-
-<h2>Complete navigation (as a nested list)</h2>
-
-<ul>
-    {% for page in pages %}
-        {% pages_menu page %}
-    {% endfor %}
-</ul>
-
-<h2>Display the sub menu of the root page (as a nested list)</h2>
-
-{% if current_page %}
-<ul>
-    {% pages_sub_menu current_page %}
-</ul>
-{% endif %}
-
-<h2>Content</h2>
-
-{% if current_page %}
-<p>Test for page absolute url : {% show_absolute_url current_page %}</p>
-<p>Test for page absolute url using the page slug : {% show_absolute_url current_page.slug %}</p>
-<p>Test show_content and get_content template tag : {% show_content current_page.slug "slug" %} {% get_content current_page.slug "slug" as content %}</p>
-{% endif %}
-
-{% block content %}
-    {% placeholder right-column with RichTextarea parsed as right_column %}
-    <div style="float:right;width:25%">
-    <h3>Right column placeholder</h3>
-    <div class="right_column">{{ right_column }}</div>
+<div id="sidebar" class="yui-b">
+  <div class="block">
+    <div class="hd"><h2>Navigation</h2></div><div class="bd">
+      <ul>
+        {% if current_page %}{% pages_sub_menu current_page %}{% endif %}
+      </ul>
     </div>
-    
-    {% if current_page %}
-    <div style="width:70%">
-        <h3>title placeholder 
-            <div id="title" class="placeholder">{% placeholder title on current_page with TextInput %}</div>
-       </h3>
-        <div>body placeholder
-            <div id="body" class="placeholder">{% placeholder body on current_page with WYMEditor parsed  %}</div>
-       </div>
-        <div>
-        </div>
-    </div>
-    {% endif %}
-{% endblock %}
-
+  </div>
 </div>
 </script>
 
-{% include "pages/debug.html" %}
 {% endblock %}

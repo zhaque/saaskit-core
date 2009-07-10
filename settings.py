@@ -31,7 +31,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-gb'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -132,11 +132,16 @@ COMPRESS_JS = {
 PAGE_TAGGING = True
 PAGE_TINYMCE = False
 PAGE_USE_SITE_ID = True
-PAGE_LANGUAGES = (                      # need to be filled,
-    ('en-us', 'US English'),
-    ('en-gb', 'British English'),
+PAGE_LANGUAGES = (
+    ('en-gb', 'English'),
 )
+PAGE_UNIQUE_SLUG_REQUIRED = True
 DEFAULT_PAGE_TEMPLATE = 'page.html'
+PAGE_TEMPLATES = (
+    ('page-templates/single-body.html', 'Single body'),
+    ('page-templates/before-and-after.html', 'Content before and after dynamic content'),
+)
+
 
 PAYPAL_TEST = True
 PAYPAL_RECEIVER_EMAIL='example@example.com'

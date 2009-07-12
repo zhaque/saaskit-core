@@ -10,6 +10,7 @@ DJANGO_PROFILES_RELEASE=v0.2
 DJANGO_TAGGING_RELEASE=155
 DJANGO_PISTON_RELEASE=0.2.2
 DJANGO_ROSETTA_RELEASE=67
+SORL_THUMBNAIL_RELEASE=449
 
 
 init: _submodules.stamp \
@@ -21,7 +22,8 @@ init: _submodules.stamp \
 	django-profiles.stamp \
 	django-registration.stamp \
 	django-rosetta.stamp \
-	django-tagging.stamp
+	django-tagging.stamp \
+	sorl-thumbnail.stamp
 
 .PHONY: _submodules.stamp
 _submodules.stamp:
@@ -89,4 +91,9 @@ django-rosetta.stamp:
 
 django-tagging.stamp:
 	svn checkout -r $(DJANGO_TAGGING_RELEASE) http://django-tagging.googlecode.com/svn/trunk/ django-tagging
+	date > $@
+
+
+sorl-thumbnail.stamp:
+	svn checkout -q -r $(SORL_THUMBNAIL_RELEASE) http://sorl-thumbnail.googlecode.com/svn/trunk/ sorl-thumbnail
 	date > $@

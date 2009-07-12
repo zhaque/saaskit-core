@@ -87,6 +87,7 @@ INSTALLED_APPS = (
     'profiles',
     'registration',
     'rosetta',
+    'sorl.thumbnail',
     'tagging',
     'uni_form',
     # own

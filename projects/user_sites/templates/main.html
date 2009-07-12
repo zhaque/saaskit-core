@@ -1,6 +1,7 @@
 {% load compressed %}
 {% load class_if_reverse %}
 {% load settings %}
+{% load thumbnail %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
@@ -14,8 +15,11 @@
   <body class="rounded">
     <div id="doc3" class="yui-t6">
       <div id="hd">
+        {% if request.muaccount.logo %}
+        <img src="{% thumbnail request.muaccount.logo 128x64 %}" style="float:left;">
+        {% endif %}
         <h1>{{request.muaccount}}</h1>
-        <div id="navigation">
+        <div id="navigation" style="clear:both;">
           <ul id="primary-navigation">
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
           </ul>

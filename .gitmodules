@@ -6,7 +6,7 @@
 	url = git://github.com/CrowdSense/django-muaccounts.git
 [submodule "upstream/django-paypal"]
 	path = upstream/django-paypal
-	url = git://github.com/johnboxall/django-paypal.git
+	url = git://github.com/mpasternacki/django-paypal.git
 [submodule "upstream/django-registration"]
 	path = upstream/django-registration
 	url = git://github.com/bretthoerner/django-registration.git

@@ -31,7 +31,7 @@
             <li><a href="{% url muaccounts_account_detail %}">manage site</a></li>
             {% endifequal %}
             <li><a href="{% url auth_password_change %}">password</a></li>
-            <li><a href="{% url user_signout %}">logout</a></li>
+            <li><a href="{% url user_signout %}">logout [{{user}}]</a></li>
             {% else %}
             <li<a href="{% url user_signin %}">log in or sign up</a></li>
             {% endif %}

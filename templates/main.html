@@ -19,6 +19,7 @@
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
             <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Available subscriptions</a></li>
             <li{% class_if_reverse profiles_profile_list active %}><a href="{% url profiles_profile_list %}">Public profiles</a></li>
+            <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
          </ul>
 
           <ul id="user-navigation">
@@ -31,13 +32,14 @@
             <li><a href="{% url auth_password_change %}">password</a></li>
             {% if not user.muaccount %}
             <li><a href="{% url muaccounts_create_account %}">create site</a></li>
+            {% else %}
+            <li><a href="{{user.muaccount.get_absolute_url}}">your site</a></li>
             {% endif %}
-            <li><a href="{% url user_signout %}">logout</a></li>
+            <li><a href="{% url user_signout %}">logout [{{user}}]</a></li>
             {% else %}
             <li><a href="{% url user_signin %}">log in or sign up</a></li>
             {% endif %}
-            <li><a href="{% url contact_form %}">contact us</a></li>
-          </ul>
+         </ul>
         </div>
       </div>
 

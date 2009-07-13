@@ -163,16 +163,43 @@ MUACCOUNTS_ROOT_DOMAIN = 'example.com'
 MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
 MUACCOUNTS_IP = '127.0.0.1'
-MUACCOUNTS_THEMES = [('all','Default')]
+MUACCOUNTS_THEMES = (
+    # color css
+    ('color_scheme', 'Color scheme', (
+        ('aqua', 'Aqua', 'yui-app-theme/aqua.css'),
+        ('green', 'Green', 'yui-app-theme/green.css'),
+        ('purple', 'Purple', 'yui-app-theme/purple.css'),
+        ('red', 'Red', 'yui-app-theme/red.css'),
+        ('tan-blue', 'Tan Blue', 'yui-app-theme/tan_blue.css'),
+        )),
+    # <body> id
+    ('page_width', 'Page widgh', (
+        ('doc3', '100% fluid'),
+        ('doc', '750px centered'),
+        ('doc2', '950px centered'),
+        ('doc4', '974px fluid'),
+        )),
+    # Outermost <div> class
+    ('layout', 'Layout', (
+        ('yui-t6', 'Right sidebar, 300px'),
+        ('yui-t1', 'Left sidebar, 160px'),
+        ('yui-t2', 'Left sidebar, 180px'),
+        ('yui-t3', 'Left sidebar, 300px'),
+        ('yui-t4', 'Right sidebar, 180px'),
+        ('yui-t5', 'Right sidebar, 240px'),
+        # ('yui-t0', 'Single Column'),
+        )),
+    # <body> class
+    ('rounded_corners', 'Rounded corners', (
+        ('on', 'On', 'rounded'),
+        ('off', 'Off', ''),
+        )),
+    )
 
-# Calculate themes together with compress CSS sets.
-for theme in ('Aqua', 'Green', 'Purple', 'Red', 'Tan Blue',):
-    codename = theme.lower().replace(' ','_')
-
-    MUACCOUNTS_THEMES.append( (codename,theme) )
-    COMPRESS_CSS[codename] = {
-        'source_filenames' : ( _default_css_files[:1]
-                               + ('yui-app-theme/%s.css'%codename,)
-                               + _default_css_files[1:] ),
-        'output_filename' : 'style.%s.css' % codename,
-        }
+# Prepare CSS files for configured color schemes
+for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
+     COMPRESS_CSS[codename] = {
+         'source_filenames' : ( (_default_css_files[0], css_file,)
+                                + _default_css_files[1:] ),
+         'output_filename' : 'style.%s.css' % codename,
+         }

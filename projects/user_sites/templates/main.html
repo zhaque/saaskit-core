@@ -2,18 +2,19 @@
 {% load class_if_reverse %}
 {% load settings %}
 {% load thumbnail %}
+{% load muathemes %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
     <title>{% block title %}Title{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-    {% compressed_css request.muaccount.theme %}
+    {% compressed_css request.muaccount.theme.color_scheme %}
     {% block head %}
     {% endblock %}
  </head>
-  <body class="rounded">
-    <div id="doc3" class="yui-t6">
+  <body class="{% theme rounded_corners %}">
+    <div id="{% theme page_width %}" class="{% theme layout %}">
       <div id="hd">
         {% if request.muaccount.logo %}
         <img src="{% thumbnail request.muaccount.logo 128x64 %}" style="float:left;">

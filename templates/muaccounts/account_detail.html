@@ -1,8 +1,18 @@
 {% extends "main.html" %}
 {% load uni_form %}
+{% load settings %}
 
 {% block title %}Account detail{% endblock %} 
 {% block body %}
+<div class="block">
+  <div class="hd"><h2>Your plan</h2></div><div class="bd">
+    Your current plan is
+    <em>{{user.get_subscription|default:"Free plan"}}</em>.
+    {% comment %}FIXME: hardcoded URL{% endcomment %}
+    <a href="{% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a>
+    to get access to more features!.
+  </div>
+</div>
 <div class="yui-u first">
   <div class="block">
     <div class="hd"><h2>Settings</h2></div><div class="bd">

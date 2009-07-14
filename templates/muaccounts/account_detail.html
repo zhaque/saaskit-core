@@ -1,6 +1,8 @@
 {% extends "main.html" %}
 {% load uni_form %}
 {% load settings %}
+{% load smartif %}
+{% load mathfilters %}
 
 {% block title %}Account detail{% endblock %} 
 {% block body %}
@@ -9,7 +11,7 @@
     Your current plan is
     <em>{{user.get_subscription|default:"Free plan"}}</em>.
     {% comment %}FIXME: hardcoded URL{% endcomment %}
-    <a href="{% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a>
+    <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a>
     to get access to more features!.
   </div>
 </div>
@@ -24,14 +26,23 @@
 <div class="yui-u">
   <div class="block">
     <div class="hd"><h2>Members</h2></div><div class="bd">
-      <ul class="list">{% for member in object.members.all %}
-        <li>{{ member }}</li>
-      {% endfor %}</ul>
-      <h3>Add user</h3>
-      <form action="" method="POST" class="uniForm">
-        {{add_user_form|as_uni_form}}
-        <input type="submit" value="Add user">
-      </form>
+     <ol class="list">{% for member in object.members.all %}
+       <li>{{ member }}</li>
+       {% endfor %}</ol>
+     {% with object.members.all|length as member_count %}
+     {% if member_count < user.quotas.muaccount_members %}
+     <h3>Add user</h3>
+     <p>You may add <strong>{{user.quotas.muaccount_members|sub:member_count}}</strong> more users to your site.
+       <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a>
+       to add more users!</p>
+     <form action="" method="POST" class="uniForm">
+       {{add_user_form|as_uni_form}}
+       <input type="submit" value="Add user">
+     </form>
+     {% else %}
+     <p><a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a> to add
+       more users!</p>
+     {% endif %}{% endwith %}
   </div></div>
 </div>
 {% endblock %}

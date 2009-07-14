@@ -1,10 +1,19 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.db import models
 from django.utils.safestring import SafeUnicode
 
 import django_pipes as pipes
 import mashup.pipeadmin
 
+# handle user registration
+from registration.signals import user_registered
+
+def handle_user_registered(sender, user, **kwargs):
+    group, created = Group.objects.get_or_create(name="Registered users")
+    user.groups.add(group)
+user_registered.connect(handle_user_registered)
+
+# user profile
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True)
     real_name = models.CharField(max_length=100)

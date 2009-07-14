@@ -15,10 +15,10 @@
       <h3>Your sites</h3>
       <ul>
         {% if user.muaccount %}
-        <li><a href="{{user.muaccount.get_absolute_url}}"><strong>{{user.muaccount}}</strong></a> (owner)</li>
+        <li><a href="{% url sso %}?next={{user.muaccount.get_absolute_url}}"><strong>{{user.muaccount}}</strong></a> (owner)</li>
         {% endif %}
         {% for mua in user.muaccount_member.all %}
-        <li><a href="{{mua.get_absolute_url}}">{{mua}}</a></li>
+        <li><a href="{% url sso %}?next={{mua.get_absolute_url}}">{{mua}}</a></li>
         {% endfor %}
       </ul>
     </div>

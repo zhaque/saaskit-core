@@ -37,7 +37,7 @@
             {% if not user.muaccount %}
             <li><a href="{% url muaccounts_create_account %}">create site</a></li>
             {% else %}
-            <li><a href="{{user.muaccount.get_absolute_url}}">your site</a></li>
+            <li><a href="{% url sso %}?next={{user.muaccount.get_absolute_url}}">your site</a></li>
             {% endif %}
             <li><a href="{% url user_signout %}">logout</a></li>
             {% else %}

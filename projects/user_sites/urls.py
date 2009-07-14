@@ -5,6 +5,7 @@ handler404 = 'perfect404.views.page_not_found'
 
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', dict(template='index.html')),
+    url(r'^sso/$', 'sso.views.sso', name="sso"),
     (r'^sorry/$', 'django.views.generic.simple.direct_to_template', dict(template='account_nam.html'), 'muaccounts_not_a_member'),
     (r'^accounts/', include('django_authopenid.urls')),
     (r'^admin/', include('muaccounts.urls')),

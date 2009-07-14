@@ -21,7 +21,7 @@
         {% endif %}
         {% if user.is_authenticated %}
         <div id="logged-in-user">
-          Logged in: <a href="{% setting MUACCOUNTS_DEFAULT_URL %}">{{user}}</a>
+          Logged in: <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">{{user}}</a>
         </div>
         {% endif %}
         <h1><a href="/">{{request.muaccount}}</a></h1>

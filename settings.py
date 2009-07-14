@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django_authopenid.middleware.OpenIDMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'sso.middleware.SingleSignOnMiddleware',
 #    'debug_toolbar.middleware.DebugToolbarMiddleware',
     #ab 'ab.middleware.ABMiddleware',
 )
@@ -88,6 +89,7 @@ INSTALLED_APPS = (
     'registration',
     'rosetta',
     'sorl.thumbnail',
+    'sso',
     'tagging',
     'uni_form',
     # own
@@ -111,6 +113,8 @@ TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
 INTERNAL_IPS = ( '127.0.0.1', )
 
 AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
+
+SSO_SECRET = "6O4nVw|~w't1mxV%oeSUDew{9zhN.\"lY1T.nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 
 COMPRESS = True
 COMPRESS_VERSION = True

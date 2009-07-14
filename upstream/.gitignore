@@ -8,6 +8,7 @@ django-piston
 django-profiles
 django-registration
 django-rosetta
+django-sso
 django-tagging
 django-contact-form
 django-evolution

@@ -1,0 +1,6 @@
+#hd { color: #ddd; }
+#hd a { color: #fff; text-decoration: none; }
+#hd a:hover { text-decoration: underline; }
+#logged-in-user { float: right; }
+#site-logo { float: left; }
+#navigation { clear: both; }

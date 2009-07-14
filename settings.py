@@ -116,6 +116,7 @@ COMPRESS = True
 COMPRESS_VERSION = True
 
 _default_css_files = ('yui-app-theme/yuiapp.css',
+                      'crowdsense/style.css',
                       'authopenid/css/openid.css',
                       'uni_form/uni-form-generic.css',
                       'uni_form/uni-form.css',

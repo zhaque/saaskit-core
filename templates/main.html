@@ -13,6 +13,11 @@
   <body class="rounded">
     <div id="doc3" class="yui-t6">
       <div id="hd">
+        {% if user.is_authenticated %}
+        <div id="logged-in-user">
+          Logged in: <a href="#">{{user}}</a>
+        </div>
+        {% endif %}
         <h1>CrowdSense Project Kit</h1>
         <div id="navigation">
           <ul id="primary-navigation">
@@ -35,7 +40,7 @@
             {% else %}
             <li><a href="{{user.muaccount.get_absolute_url}}">your site</a></li>
             {% endif %}
-            <li><a href="{% url user_signout %}">logout [{{user}}]</a></li>
+            <li><a href="{% url user_signout %}">logout</a></li>
             {% else %}
             <li><a href="{% url user_signin %}">log in or sign up</a></li>
             {% endif %}

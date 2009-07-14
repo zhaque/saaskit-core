@@ -18,10 +18,9 @@
           Logged in: <a href="#">{{user}}</a>
         </div>
         {% endif %}
-        <h1>CrowdSense Project Kit</h1>
+        <h1><a href="/">CrowdSense Project Kit</a></h1>
         <div id="navigation">
           <ul id="primary-navigation">
-            <li{% class_if_reverse / active %}><a href="/">Main</a></li>
             <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Available subscriptions</a></li>
             <li{% class_if_reverse profiles_profile_list active %}><a href="{% url profiles_profile_list %}">Public profiles</a></li>
             <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>

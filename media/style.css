@@ -4,3 +4,4 @@
 #logged-in-user { float: right; }
 #site-logo { float: left; }
 #navigation { clear: both; }
+.inline-form, .inline-form p { display: inline; }

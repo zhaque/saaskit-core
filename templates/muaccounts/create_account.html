@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+{% load uni_form %}
+
+{% block title %}Create your site{% endblock %} 
+{% block body %}
+<h2>Create site</h2>
+<form action="" method="POST" class="uniForm">
+  {{form|as_uni_form}}
+  <input type="submit" value="create">
+</form>
+{% endblock %}

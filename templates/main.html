@@ -35,7 +35,7 @@
             {% endif %}
             <li><a href="{% url auth_password_change %}">password</a></li>
             {% if not user.muaccount %}
-            <li><a href="{% url muaccounts_create_account %}">create site</a></li>
+            <li><a href="{% url muaccounts.views.create_account %}">create site</a></li>
             {% else %}
             <li><a href="{% url sso %}?next={{user.muaccount.get_absolute_url}}">your site</a></li>
             {% endif %}

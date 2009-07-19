@@ -168,7 +168,6 @@ QUOTAS = {
     }
 
 MUACCOUNTS_ROOT_DOMAIN = 'example.com'
-MUACCOUNTS_DEFAULT_DOMAIN = 'www.example.com'
 MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
 MUACCOUNTS_IP = '127.0.0.1'

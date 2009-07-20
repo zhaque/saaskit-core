@@ -1,9 +1,18 @@
 {% extends "main.html" %}
+{% load thumbnail %}
 
 {% block title %}Profile{% endblock %} 
 {% block body %}
 <h2>Profile</h2>
 
 <h3>{{profile.real_name}}</h3>
+
+<p>{{profile.about}}</p>
+
+<p>Owner
+  of <a href="{{profile.user.muaccount.absolute_url}}">{{profile.user.muaccount}}</a>{% if user.muaccount_member.all %},
+  member of {% for mua in user.muaccount_member.all %}
+  <a href="{{mua.get_absolute_url}}">{{mua}}{% if not forloop.last %},
+    {% endif %}{% endfor %}{% endif %}.</p>
 
 {% endblock %}

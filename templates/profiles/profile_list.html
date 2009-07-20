@@ -4,6 +4,6 @@
 {% block body %}
 <h2>Profiles</h2>
 <ul>{% for profile in object_list %}
-<li><a href="{{profile.get_absolute_url}}">{{profile.user}}</a></li>
-{% endfor %}</ul>
+  <li><a href="{{profile.get_absolute_url}}">{{profile.user}}</a></li>
+</ul>{% endfor %}
 {% endblock %}

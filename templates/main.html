@@ -24,6 +24,7 @@
             <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Available subscriptions</a></li>
             <li{% class_if_reverse profiles_profile_list active %}><a href="{% url profiles_profile_list %}">Public profiles</a></li>
             <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
+            <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">Dashboard</a></li>
          </ul>
 
           <ul id="user-navigation">

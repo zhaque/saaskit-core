@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+
+{% block title %}Dashboard{% endblock %} 
+{% block body %}
+<h2>{{notice.notice_type.display}}</h2>
+
+<p>{{notice.message}}</p>
+
+<a href="{% url notification_notices %}">back</a>
+{% endblock %}

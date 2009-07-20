@@ -119,6 +119,12 @@ SSO_SECRET = "6O4nVw|~w't1mxV%oeSUDew{9zhN.\"lY1T.nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 COMPRESS = True
 COMPRESS_VERSION = True
 
+NOTICE_TYPES = (
+     ("welcome", "Welcome to CrowdSense Starter Kit!", "you have successfully registered"),
+     ("member_add", "Added to site", "you were added as a member to a site"),
+     ("member_remove", "Removed from site", "you were removed from membership in a site"),
+     )
+
 _default_css_files = ('yui-app-theme/yuiapp.css',
                       'crowdsense/style.css',
                       'authopenid/css/openid.css',
@@ -168,6 +174,7 @@ QUOTAS = {
     }
 
 MUACCOUNTS_ROOT_DOMAIN = 'example.com'
+MUACCOUNTS_DEFAULT_DOMAIN = 'www.example.com'
 MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
 MUACCOUNTS_IP = '127.0.0.1'

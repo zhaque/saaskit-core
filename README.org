@@ -14,7 +14,7 @@
   5. python manage.py runserver 8001
   
   (in other shell)
-  6. cd projects/subdomains
+  6. cd projects/user_sites
   7. python manage.py runserver
 
   Project includes as Git sumodules or downloads from

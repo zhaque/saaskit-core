@@ -2,7 +2,7 @@
                              ======================
 
 Author: Maciej Pasternacki <maciej@pasternacki.net>
-Date: 2009/07/10 14:16:05
+Date: 2009/07/20 01:35:56
 
 
 Table of Contents
@@ -42,7 +42,7 @@ Table of Contents
   5. python manage.py runserver 8001
   
   (in other shell)
-  6. cd projects/subdomains
+  6. cd projects/user_sites
   7. python manage.py runserver
 
   Project includes as Git sumodules or downloads from

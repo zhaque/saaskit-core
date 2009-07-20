@@ -6,7 +6,7 @@ from registration.signals import user_registered
 import muaccounts.signals
 
 def handle_user_registered(sender, user, **kwargs):
-    group, created = Group.objects.get_or_create(name="Registered users")
+    group, created = Group.objects.get_or_create(name="Registered Member")
     user.groups.add(group)
     notification.models.send([user], 'welcome')
 user_registered.connect(handle_user_registered)

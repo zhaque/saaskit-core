@@ -6,9 +6,6 @@ handler404 = 'perfect404.views.page_not_found'
 from django.contrib import admin
 admin.autodiscover()
 
-import signal_handlers
-signal_handlers.install()
-
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', dict(template='index.html')),
     url(r'^sso/$', 'sso.views.sso', name="sso"),

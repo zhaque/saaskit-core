@@ -4,7 +4,6 @@ DJANGO_AUTHOPENID_RELEASE=1.0.1		 # release tag
 XLRD_VERSION=0.6.1
 DJANGO_BATCHIMPORT_RELEASE=17
 DJANGO_CONTACT_FORM_RELEASE=1d3791fa4dfb
-DJANGO_EVOLUTION_RELEASE=165
 DJANGO_MPTT_RELEASE=119
 HTML5LIB_RELEASE=18c3325ee5
 DJANGO_PAGE_CMS_RELEASE=571
@@ -20,7 +19,6 @@ init: _submodules.stamp \
 	django-authopenid.stamp \
 	django-batchimport.stamp \
 	django-contact-form.stamp \
-	django-evolution.stamp \
 	django-page-cms.stamp \
 	django-piston.stamp \
 	django-profiles.stamp \
@@ -66,11 +64,6 @@ django-batchimport.stamp: xlrd.stamp
 
 django-contact-form.stamp:
 	hg clone -r $(DJANGO_CONTACT_FORM_RELEASE) http://bitbucket.org/ubernostrum/django-contact-form/
-	date > $@
-
-
-django-evolution.stamp:
-	svn checkout -q -r $(DJANGO_EVOLUTION_RELEASE) http://django-evolution.googlecode.com/svn/trunk/ django-evolution
 	date > $@
 
 

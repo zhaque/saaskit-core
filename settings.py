@@ -75,7 +75,6 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'contact_form',
     'django_authopenid',
-    'django_evolution',
     'django_extensions',
     'django_pipes',
     'filter',

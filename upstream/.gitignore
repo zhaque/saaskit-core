@@ -13,3 +13,5 @@ django-tagging
 django-contact-form
 django-evolution
 sorl-thumbnail
+xlrd*
+django-batchimport

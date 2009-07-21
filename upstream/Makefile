@@ -1,6 +1,8 @@
 DJANGO_REGISTRATION_RELEASE=b360801eae96 # 2009-06-16 tip http://bitbucket.org/ubernostrum/django-registration/
 PYTHON_OPENID_VERSION=2.2.4
 DJANGO_AUTHOPENID_RELEASE=1.0.1		 # release tag
+XLRD_VERSION=0.6.1
+DJANGO_BATCHIMPORT_RELEASE=17
 DJANGO_CONTACT_FORM_RELEASE=1d3791fa4dfb
 DJANGO_EVOLUTION_RELEASE=165
 DJANGO_MPTT_RELEASE=119
@@ -16,6 +18,7 @@ SORL_THUMBNAIL_RELEASE=449
 
 init: _submodules.stamp \
 	django-authopenid.stamp \
+	django-batchimport.stamp \
 	django-contact-form.stamp \
 	django-evolution.stamp \
 	django-page-cms.stamp \
@@ -47,6 +50,19 @@ django-authopenid.stamp: python-openid.stamp
 	hg clone -r $(DJANGO_AUTHOPENID_RELEASE) http://bitbucket.org/benoitc/django-authopenid/
 	date > $@
 
+XLRD_FILE=xlrd-$(XLRD_VERSION).zip
+XLRD_URL=http://www.lexicon.net/sjmachin/$(XLRD_FILE)
+$(XLRD_FILE):
+	wget -O $@ $(XLRD_URL)
+
+xlrd.stamp: $(XLRD_FILE)
+	unzip $<
+	ln -sfv xlrd-$(XLRD_VERSION) xlrd
+	date > $@
+
+django-batchimport.stamp: xlrd.stamp
+	svn co http://django-batchimport.googlecode.com/svn/trunk/ django-batchimport
+	date > $@
 
 django-contact-form.stamp:
 	hg clone -r $(DJANGO_CONTACT_FORM_RELEASE) http://bitbucket.org/ubernostrum/django-contact-form/

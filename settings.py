@@ -216,3 +216,9 @@ for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
                                 + _default_css_files[1:] ),
          'output_filename' : 'style.%s.css' % codename,
          }
+
+# Local settings for development / production
+try:
+     from local_settings import *
+except ImportError:
+     pass

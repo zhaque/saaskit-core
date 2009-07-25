@@ -33,10 +33,9 @@
           <ul id="user-navigation">
             {% if user.is_authenticated %}
             {% ifequal user request.muaccount.owner %}
-            <li><a href="{% url pipeadmin_manage_pipes %}">manage pipes</a></li>
             <li><a href="{% url muaccounts_account_detail %}">manage site</a></li>
             {% endifequal %}
-           <li><a href="{% url user_signout %}">logout</a></li>
+            <li><a href="{% url user_signout %}">logout</a></li>
             {% else %}
             <li><a href="{% url user_signin %}">log in or sign up</a></li>
             {% endif %}
@@ -48,21 +47,6 @@
         <div id="yui-main"><div class="yui-b"><div class="yui-g">
               {% block body %} Body {% endblock %}
         </div></div></div>
-
-        <div id="sidebar" class="yui-b">
-          <div class="block">
-            <div class="hd"><h2>Available pipes</h2></div><div class="bd">
-              <ul class="list">
-                {% for pipe in request.muaccount.owner.managedpipe_set.all %}<li>
-                  {% if pipe.is_dynamic %}
-                  {{pipe}} {{pipe.render_form}}
-                  {% else %}
-                  <a href="{{pipe.get_absolute_url}}">{{pipe}}</a>
-                  {% endif %}
-                </li>{% endfor %}</ul>
-            </div>
-          </div>
-      </div>
 
         <div id="ft"><div id="yui-main">
             <p><a href="{% setting MUACCOUNTS_DEFAULT_URL %}">main page</a></p>

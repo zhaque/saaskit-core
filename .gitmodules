@@ -52,6 +52,3 @@
 [submodule "upstream/yui-app-theme"]
 	path = upstream/yui-app-theme
 	url = git://github.com/tylerhall/yui-app-theme.git
-[submodule "upstream/django-mashup"]
-	path = upstream/django-mashup
-	url = git@github.com:CrowdSense/django-mashup.git

@@ -1,5 +1,5 @@
 {% extends "main.html" %}
-{% load uni_form %}
+
 {% load settings %}
 {% load smartif %}
 {% load mathfilters %}
@@ -19,7 +19,7 @@
   <div class="block">
     <div class="hd"><h2>Settings</h2></div><div class="bd">
       <form action="" method="POST" enctype="multipart/form-data" class="uniForm">
-        {{ form|as_uni_form }}
+        {{ form.as_p }}
         <input type="submit" value="OK">
       </form>
 </div></div></div>
@@ -36,7 +36,7 @@
      {% if member_count < user.quotas.muaccount_members %}
      <h3>Add user</h3>
      <form action="" method="POST" class="uniForm">
-       {{add_user_form|as_uni_form}}
+       {{add_user_form.as_p}}
        <input type="submit" value="Add user">
      </form>
      {% else %}

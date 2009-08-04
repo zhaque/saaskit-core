@@ -1,5 +1,5 @@
 {% extends "main.html" %}
-{% load uni_form %}
+
 {% load pages_tags %}
 
 {% block title %}Contact us{% endblock %}
@@ -9,7 +9,7 @@
 {% show_content "contact" "body" %}
 
 <form action="" method="POST" class="uniForm">
-  {{form|as_uni_form}}
+  {{form.as_p}}
   <input type="submit" value="Send message">
 </form>
 

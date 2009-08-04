@@ -40,9 +40,6 @@
 [submodule "upstream/django-ajax-validation"]
 	path = upstream/django-ajax-validation
 	url = git://github.com/alex/django-ajax-validation.git
-[submodule "upstream/django-uni-form"]
-	path = upstream/django-uni-form
-	url = git://github.com/pydanny/django-uni-form.git
 [submodule "upstream/django-ab"]
 	path = upstream/django-ab
 	url = git://github.com/johnboxall/django-ab.git

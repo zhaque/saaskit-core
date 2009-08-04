@@ -1,5 +1,5 @@
 {% extends "main.html" %}
-{% load uni_form %}
+
 {% load pages_tags %}
 
 {% block title %}{% show_content "registration-form" "title" %}{% endblock %}
@@ -8,7 +8,7 @@
 {% show_content "registration-form" "before" %}
 <form method="post" action="" class="uniForm">
   <fieldset><legend>Registration form</legend>
-  {{ form|as_uni_form }}
+  {{ form.as_p }}
   <input type="submit" value="Submit" />
   </fieldset>
 </form>

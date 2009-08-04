@@ -1,11 +1,11 @@
 {% extends "main.html" %}
-{% load uni_form %}
+
 
 {% block title %}Edit profile{% endblock %} 
 {% block body %}
 <h2>Edit your profile</h2>
 <form action="" method="POST" class="uniForm">
-  {{form|as_uni_form}}
+  {{form.as_p}}
   <input type="submit">
 </form>
 <a href="{{user.get_profile.get_absolute_url}}">See your profile</a>

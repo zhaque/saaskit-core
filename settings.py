@@ -91,7 +91,6 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'sso',
     'tagging',
-    'uni_form',
     # own
     'muaccounts',
     'prepaid',

@@ -18,7 +18,7 @@
 <div class="yui-u first">
   <div class="block">
     <div class="hd"><h2>Settings</h2></div><div class="bd">
-      <form action="" method="POST" enctype="multipart/form-data" class="uniForm">
+      <form action="" method="POST" enctype="multipart/form-data">
         {{ form.as_p }}
         <input type="submit" value="OK">
       </form>
@@ -35,7 +35,7 @@
      {% with object.members.all|length as member_count %}
      {% if member_count < user.quotas.muaccount_members %}
      <h3>Add user</h3>
-     <form action="" method="POST" class="uniForm">
+     <form action="" method="POST">
        {{add_user_form.as_p}}
        <input type="submit" value="Add user">
      </form>

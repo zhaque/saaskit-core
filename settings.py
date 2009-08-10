@@ -110,7 +110,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 
 # Settings for templates editing via django admin
  
-TEMPLATESADMIN_GROUP = 'Templates Editor'
+TEMPLATESADMIN_GROUP = 'Editor'
 TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
         'html', 
         'htm', 

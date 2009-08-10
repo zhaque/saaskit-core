@@ -40,13 +40,14 @@ Table of Contents
   5. python manage.py loaddata ../../exampledata.json
   6. python manage.py synccompress 
   7. hookup admin media as per settings i.e. cd media; ln -s /usr/local/lib/python2.6/dist-packages/django/contrib/admin/media admin
-  7. python manage.py runserver 8001
+  8. python manage.py runserver 8001
 
   (in other shell)
-  8. cd projects/user_sites
-  9. python manage.py synccompress 
-  10. python manage.py runserver
-
+  9. cd projects/user_sites
+  10. python manage.py synccompress 
+  11. python manage.py runserver
+  12. Create a new group 'Editor' for templates admin and assign 'admin' user to the 'Editor' group.
+ 
   Project includes as Git sumodules or downloads from
   upstream/Makefile all needed Django applications; only requirements
   are Python (2.5 or higher, but may work on earlier versions of

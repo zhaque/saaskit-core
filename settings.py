@@ -40,10 +40,10 @@ USE_I18N = True
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    #ab 'ab.loaders.load_template_source',
+#   'ab.loaders.load_template_source',
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+#   'django.template.loaders.eggs.load_template_source',
 )
 
 
@@ -55,8 +55,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'sso.middleware.SingleSignOnMiddleware',
-#    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    #ab 'ab.middleware.ABMiddleware',
+#   'debug_toolbar.middleware.DebugToolbarMiddleware',
+#   'ab.middleware.ABMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -68,18 +68,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     # third-party
-    #ab 'ab',
     'compress',
     'debug_toolbar',
     'contact_form',
     'django_authopenid',
     'django_extensions',
     'django_pipes',
-    'filter',
-    'mailer',
-    'mptt',
     'notification',
-    'pages',
     'paypal.standard.ipn',
     'perfect404',
     'piston',
@@ -89,6 +84,15 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'sso',
     'tagging',
+    'oembed',
+    'templatesadmin'
+    # 3rd party apps currently not used
+    # 'ab',
+    # 'filter',
+    # 'mailer',
+    # 'mptt',
+    # 'piston',
+    # 'pages', 
     # own
     'muaccounts',
     'prepaid',
@@ -101,16 +105,30 @@ INSTALLED_APPS = (
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'django_authopenid.context_processors.authopenid',
-    'pages.context_processors.media',
+#   'pages.context_processors.media',
     )
 
+# Settings for templates editing via django admin
+ 
+TEMPLATESADMIN_GROUP = 'Templates Editor'
+TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
+        'html', 
+        'htm', 
+        'txt', 
+        'css', 
+        'backup'
+   )
+TEMPLATESADMIN_EDITHOOKS = (    
+        'templatesadmin.edithooks.dotbackupfiles.DotBackupFilesHook',
+   )
+ 
 TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
 
 INTERNAL_IPS = ( '127.0.0.1', )
 
 AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
 
-SSO_SECRET = "6O4nVw|~w't1mxV%oeSUDew{9zhN.\"lY1T.nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
+SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 
 COMPRESS = True
 COMPRESS_VERSION = True
@@ -138,20 +156,6 @@ COMPRESS_JS = {
         'output_filename' : 'scripts.js'},
     }
 
-PAGE_TAGGING = True
-PAGE_TINYMCE = False
-PAGE_USE_SITE_ID = True
-PAGE_LANGUAGES = (
-    ('en-gb', 'English'),
-)
-PAGE_UNIQUE_SLUG_REQUIRED = True
-DEFAULT_PAGE_TEMPLATE = 'page.html'
-PAGE_TEMPLATES = (
-    ('page-templates/single-body.html', 'Single body'),
-    ('page-templates/before-and-after.html', 'Content before and after dynamic content'),
-)
-
-
 PAYPAL_TEST = True
 PAYPAL_RECEIVER_EMAIL='example@example.com'
 ACCOUNT_ACTIVATION_DAYS=7
@@ -177,6 +181,15 @@ MUACCOUNTS_THEMES = (
         ('purple', 'Purple', 'yui-app-theme/purple.css'),
         ('red', 'Red', 'yui-app-theme/red.css'),
         ('tan-blue', 'Tan Blue', 'yui-app-theme/tan_blue.css'),
+	('default', 'Default', 'crowdsense/css/default.css'),
+	('fireflynight', 'Firefly Night', 'crowdsense/css/fireflynight.css'),
+        ('freshair', 'Fresh Air', 'crowdsense/css/freshair.css'),
+	('girly', 'Girly', 'crowdsense/css/girly.css'),
+	('grayscale', 'Grayscale', 'crowdsense/css/grayscale.css'),
+	('grayscalem', 'Grayscale Modified', 'crowdsense/css/grayscalemodified.css'),
+	('overcast', 'Overcast', 'crowdsense/css/overcast.css'),
+	('pepper', 'Pepper', 'crowdsense/css/pepper.css'),
+	('sunshine', 'Sunshine', 'crowdsense/css/sunshine.css'),
         )),
     # <body> id
     ('page_width', 'Page widgh', (
@@ -193,7 +206,7 @@ MUACCOUNTS_THEMES = (
         ('yui-t3', 'Left sidebar, 300px'),
         ('yui-t4', 'Right sidebar, 180px'),
         ('yui-t5', 'Right sidebar, 240px'),
-        # ('yui-t0', 'Single Column'),
+        ('yui-t0', 'Single Column'),
         )),
     # <body> class
     ('rounded_corners', 'Rounded corners', (
@@ -209,6 +222,21 @@ for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
                                 + _default_css_files[1:] ),
          'output_filename' : 'style.%s.css' % codename,
          }
+
+# django-page-cms settings currently disabled, to enable un-comment middleware as well as installed apps and settings below
+ 
+# PAGE_TAGGING = True
+# PAGE_TINYMCE = False
+# PAGE_USE_SITE_ID = True
+# PAGE_LANGUAGES = (
+#    ('en-gb', 'English'),
+# )
+# PAGE_UNIQUE_SLUG_REQUIRED = True
+# DEFAULT_PAGE_TEMPLATE = 'page.html'
+# PAGE_TEMPLATES = (
+#    ('page-templates/single-body.html', 'Single body'),
+#    ('page-templates/before-and-after.html', 'Content before and after dynamic content'),
+# )
 
 # Local settings for development / production
 try:

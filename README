@@ -34,16 +34,17 @@ Table of Contents
   To start the project, after cloning Git repository, run:
 
   1. make -C upstream/ init
-  2. cd projects/main
-  3. python manage.py syncdb
-  4. python manage.py loaddata ../../exampledata.json
-  5. python manage.py synccompress 
-  6. python manage.py runserver 8001
+  2. Edit/Add site-python/local_settings.py according to your enviornment. 
+  3. cd projects/main
+  4. python manage.py syncdb
+  5. python manage.py loaddata ../../exampledata.json
+  6. python manage.py synccompress 
+  7. python manage.py runserver 8001
 
   (in other shell)
-  7. cd projects/user_sites
-  8. python manage.py synccompress 
-  9. python manage.py runserver
+  8. cd projects/user_sites
+  9. python manage.py synccompress 
+  10. python manage.py runserver
 
   Project includes as Git sumodules or downloads from
   upstream/Makefile all needed Django applications; only requirements

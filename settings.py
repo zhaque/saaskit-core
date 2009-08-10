@@ -85,7 +85,7 @@ INSTALLED_APPS = (
     'sso',
     'tagging',
     'oembed',
-    'templatesadmin'
+    'templatesadmin', 
     # 3rd party apps currently not used
     # 'ab',
     # 'filter',

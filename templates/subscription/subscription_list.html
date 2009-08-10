@@ -1,10 +1,10 @@
 {% extends "main.html" %}
 
-{% block title %}{% show_content "subscription-list" "title" %}{% endblock %} 
+{% block title %} show_content "subscription-list" "title" {% endblock %} 
 {% block body %}
-<h2>{% show_content "subscription-list" "title" %}</h2>
+<h2> show_content "subscription-list" "title" </h2>
 
-{% show_content "subscription-list" "before" %}
+ show_content "subscription-list" "before" 
 
 <table rules=all>
   <thead><tr><th>name</th><th>description</th><th>price</th><th>&nbsp;</th></tr></thead>
@@ -20,6 +20,6 @@
   </tbody>
 </table>
 
-{% show_content "subscription-list" "after" %}
+ show_content "subscription-list" "after" 
 
 {% endblock %}

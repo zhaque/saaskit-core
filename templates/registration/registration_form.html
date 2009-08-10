@@ -1,15 +1,15 @@
 {% extends "main.html" %}
 
 
-{% block title %}{% show_content "registration-form" "title" %}{% endblock %}
+{% block title %} show_content "registration-form" "title" {% endblock %}
 {% block body %}
-<h2>{% show_content "registration-form" "title" %}</h2>
-{% show_content "registration-form" "before" %}
+<h2> show_content "registration-form" "title" </h2>
+ show_content "registration-form" "before" 
 <form method="post" action="">
   <fieldset><legend>Registration form</legend>
   {{ form.as_p }}
   <input type="submit" value="Submit" />
   </fieldset>
 </form>
-{% show_content "registration-form" "after" %}
+ show_content "registration-form" "after" 
 {% endblock %}

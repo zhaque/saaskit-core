@@ -17,7 +17,6 @@ urlpatterns = patterns('',
     (r'^dashboard/', include('notification.urls')),
     (r'^contact/', include('contact_form.urls')),
     (r'^admin/rosetta/', include('rosetta.urls')),
-    #batchimport (r'^admin/batchimport/', include('batchimport.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
 )

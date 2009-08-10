@@ -17,7 +17,6 @@ SORL_THUMBNAIL_RELEASE=449
 
 init: _submodules.stamp \
 	django-authopenid.stamp \
-	django-batchimport.stamp \
 	django-contact-form.stamp \
 	django-page-cms.stamp \
 	django-piston.stamp \
@@ -46,20 +45,6 @@ python-openid.stamp: $(PYTHON_OPENID_ARCHIVE)
 
 django-authopenid.stamp: python-openid.stamp
 	hg clone -r $(DJANGO_AUTHOPENID_RELEASE) http://bitbucket.org/benoitc/django-authopenid/
-	date > $@
-
-XLRD_FILE=xlrd-$(XLRD_VERSION).zip
-XLRD_URL=http://www.lexicon.net/sjmachin/$(XLRD_FILE)
-$(XLRD_FILE):
-	wget -O $@ $(XLRD_URL)
-
-xlrd.stamp: $(XLRD_FILE)
-	unzip $<
-	ln -sfv xlrd-$(XLRD_VERSION) xlrd
-	date > $@
-
-django-batchimport.stamp: xlrd.stamp
-	svn co http://django-batchimport.googlecode.com/svn/trunk/ django-batchimport
 	date > $@
 
 django-contact-form.stamp:

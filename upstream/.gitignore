@@ -11,7 +11,4 @@ django-rosetta
 django-sso
 django-tagging
 django-contact-form
-django-evolution
 sorl-thumbnail
-xlrd*
-django-batchimport

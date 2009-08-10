@@ -46,3 +46,9 @@
 [submodule "upstream/yui-app-theme"]
 	path = upstream/yui-app-theme
 	url = git://github.com/tylerhall/yui-app-theme.git
+[submodule "upstream/django-oembed"]
+	path = upstream/django-oembed
+	url = git://github.com/ericflo/django-oembed.git
+[submodule "upstream/django-templatesadmin"]
+	path = upstream/django-templatesadmin
+	url = git://github.com/bartTC/django-templatesadmin.git

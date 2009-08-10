@@ -108,21 +108,26 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 #   'pages.context_processors.media',
     )
 
+TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
+
 # Settings for templates editing via django admin
  
+TEMPLATESADMIN_HIDE_READONLY = True 
 TEMPLATESADMIN_GROUP = 'Editor'
 TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
         'html', 
-        'htm', 
-        'txt', 
         'css', 
         'backup'
    )
+
 TEMPLATESADMIN_EDITHOOKS = (    
         'templatesadmin.edithooks.dotbackupfiles.DotBackupFilesHook',
+        'templatesadmin.edithooks.gitcommit.GitCommitHook',
    )
- 
-TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
+
+TEMPLATESADMIN_TEMPLATE_DIRS = (
+       (KIT_ROOT, 'templates') 
+   )
 
 INTERNAL_IPS = ( '127.0.0.1', )
 

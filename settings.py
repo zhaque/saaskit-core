@@ -122,7 +122,7 @@ TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
 
 TEMPLATESADMIN_EDITHOOKS = (    
         'templatesadmin.edithooks.dotbackupfiles.DotBackupFilesHook',
-        'templatesadmin.edithooks.gitcommit.GitCommitHook',
+#        'templatesadmin.edithooks.gitcommit.GitCommitHook',
    )
 
 TEMPLATESADMIN_TEMPLATE_DIRS = (

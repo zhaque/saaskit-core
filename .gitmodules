@@ -37,9 +37,6 @@
 [submodule "upstream/django-filter"]
 	path = upstream/django-filter
 	url = git://github.com/alex/django-filter.git
-[submodule "upstream/django-ajax-validation"]
-	path = upstream/django-ajax-validation
-	url = git://github.com/alex/django-ajax-validation.git
 [submodule "upstream/django-ab"]
 	path = upstream/django-ab
 	url = git://github.com/johnboxall/django-ab.git

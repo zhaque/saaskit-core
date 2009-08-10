@@ -267,11 +267,6 @@
 **** django-ab
      A/B testing.
      - http://github.com/johnboxall/django-ab/
-**** django-ajax-validation
-     Add AJAX-based validation to custom forms.
-     - http://github.com/alex/django-ajax-validation
-     - http://github.com/alex/django-ajax-validation/blob/master/docs/usage.txt
-     - http://github.com/alex/django-ajax-validation/blob/master/docs/serving-ajax-validation-media-server.txt
 **** django-extensions
      Custom management extensions for Django.
      - http://code.google.com/p/django-command-extensions/

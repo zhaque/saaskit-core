@@ -1,10 +1,6 @@
                              Crowdsense Project Kit
                              ======================
 
-Author: Maciej Pasternacki <maciej@pasternacki.net>
-Date: 2009/07/20 01:35:56
-
-
 Table of Contents
 =================
 1 Getting started
@@ -327,11 +323,6 @@ Table of Contents
 * django-ab
   A/B testing.
   - [http://github.com/johnboxall/django-ab/]
-* django-ajax-validation
-  Add AJAX-based validation to custom forms.
-  - [http://github.com/alex/django-ajax-validation]
-  - [http://github.com/alex/django-ajax-validation/blob/master/docs/usage.txt]
-  - [http://github.com/alex/django-ajax-validation/blob/master/docs/serving-ajax-validation-media-server.txt]
 * django-extensions
   Custom management extensions for Django.
   - [http://code.google.com/p/django-command-extensions/]

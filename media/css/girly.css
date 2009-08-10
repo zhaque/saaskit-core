@@ -1,0 +1,57 @@
+/* This is the bare minimum needed to create your own theme.
+   In this example, all we're doing is overriding the default
+   color scheme with our own. In the real world, you'd probably
+   want to do more complex operations. */
+
+html, body { 
+	background-color:#ffffff;
+	/*padding-top: .3em;*/
+}
+h1, h2, h3 {
+	color: #989898;
+}
+a { 
+	color:#e9a7dc;
+	text-decoration: none; 
+}
+table thead { background-color:#757474;}
+
+#hd {
+	background-color: #272727;
+}
+#hd h1{
+	color: #e9a7dc;	
+}
+#bd {
+	background-color: #ececec;
+	color: #565656;
+}
+
+#primary-navigation li.active a { background-color: #ececec; color:#e9a7dc;}
+#user-navigation li a {
+	background-color: #272727;
+}
+
+.block .hd { background-color: #272727; color: #333; border-bottom: 5px solid #e9a7dc}
+.tabs .hd {
+	background-color: #e9a7dc;
+	border-bottom: 5px solid #272727;
+}
+
+.block .bd h2 { color:#272727; }
+.block .bd h3 { color:#272727; }
+.spaces .hd { background-color:transparent; }
+.spaces .hd ul li { background-color:#187a7a; }
+
+.tabs ul {
+	background-color: #e9a7dc;
+}
+
+.tabs .hd ul li a:hover { background-color:#CDEFFF; 	color: #989898;
+}
+
+.tabs .hd ul li.active a { background-color:#272727!important; color:#989898; text-decoration:none; }
+.spaces .hd ul li { background-color:#e9a7dc; margin-right:0.1em; }
+
+ul.pager li a { padding:0.1em 0.3em; margin-right:0.3em; border:1px solid #ccc; text-decoration:none; color:#333; }
+ul.pager li.active a, ul.pager li a:hover { background-color:#757474; color:#fff; }

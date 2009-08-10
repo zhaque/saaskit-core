@@ -46,7 +46,7 @@ Table of Contents
   9. cd projects/user_sites
   10. python manage.py synccompress 
   11. python manage.py runserver
-  12. Create a new group 'Editor' for templates admin and assign 'admin' user to the 'Editor' group.
+  12. Create a new group 'Editor' for templates admin (http://domain.com/admin/templates) and assign 'admin' user to the 'Editor' group.
  
   Project includes as Git sumodules or downloads from
   upstream/Makefile all needed Django applications; only requirements

@@ -15,10 +15,10 @@ urlpatterns = patterns('',
     (r'^sub/', include('subscription.urls')),
     (r'^dashboard/', include('notification.urls')),
     (r'^contact/', include('contact_form.urls')),
+    (r'^admin/templates/', include('templatesadmin.urls')),
     (r'^admin/rosetta/', include('rosetta.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
-    (r'^templatesadmin/', include('templatesadmin.urls')),
     # Currently disabled
     # (r'^pages/', include('pages.urls')),
 )

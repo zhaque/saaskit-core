@@ -122,7 +122,6 @@ NOTICE_TYPES = (
      )
 
 _default_css_files = ('yui-app-theme/yuiapp.css',
-                      'crowdsense/style.css',
                       'authopenid/css/openid.css',
                       )
 

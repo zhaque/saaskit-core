@@ -1,8 +1,7 @@
 DJANGO_REGISTRATION_RELEASE=b360801eae96 # 2009-06-16 tip http://bitbucket.org/ubernostrum/django-registration/
 PYTHON_OPENID_VERSION=2.2.4
 DJANGO_AUTHOPENID_RELEASE=1.0.1		 # release tag
-XLRD_VERSION=0.6.1
-DJANGO_BATCHIMPORT_RELEASE=17
+DJANGO_AUTOSLUG_RELEASE=94c27c427c80   # 2009-07-22 tip
 DJANGO_CONTACT_FORM_RELEASE=1d3791fa4dfb
 DJANGO_MPTT_RELEASE=119
 HTML5LIB_RELEASE=18c3325ee5
@@ -13,10 +12,11 @@ DJANGO_PISTON_RELEASE=0.2.2
 DJANGO_ROSETTA_RELEASE=67
 DJANGO_SSO_RELEASE=3
 SORL_THUMBNAIL_RELEASE=449
-
+DATEUTIL_VERSION=1.4.1
 
 init: _submodules.stamp \
 	django-authopenid.stamp \
+        django-autoslug.stamp \
 	django-contact-form.stamp \
 	django-page-cms.stamp \
 	django-piston.stamp \
@@ -25,7 +25,8 @@ init: _submodules.stamp \
 	django-rosetta.stamp \
 	django-sso.stamp \
 	django-tagging.stamp \
-	sorl-thumbnail.stamp
+	sorl-thumbnail.stamp \
+        dateutils.stamp
 
 .PHONY: _submodules.stamp
 _submodules.stamp:
@@ -47,6 +48,10 @@ django-authopenid.stamp: python-openid.stamp
 	hg clone -r $(DJANGO_AUTHOPENID_RELEASE) http://bitbucket.org/benoitc/django-authopenid/
 	date > $@
 
+django-autoslug.stamp:
+	hg clone -r $(DJANGO_AUTOSLUG_RELEASE) http://bitbucket.org/neithere/django-autoslug/
+	date > $@
+
 django-contact-form.stamp:
 	hg clone -r $(DJANGO_CONTACT_FORM_RELEASE) http://bitbucket.org/ubernostrum/django-contact-form/
 	date > $@
@@ -57,7 +62,7 @@ django-mptt.stamp:
 	date > $@
 
 html5lib.stamp:
-	hg clone -r $(HTML5LIB_RELEASE) https://html5lib.googlecode.com/hg/ html5lib
+	hg clone -r $(HTML5LIB_RELEASE) http://html5lib.googlecode.com/hg/ html5lib
 	date > $@
 
 django-page-cms.stamp: html5lib.stamp django-mptt.stamp
@@ -96,4 +101,14 @@ django-tagging.stamp:
 
 sorl-thumbnail.stamp:
 	svn checkout -q -r $(SORL_THUMBNAIL_RELEASE) http://sorl-thumbnail.googlecode.com/svn/trunk/ sorl-thumbnail
+	date > $@
+
+DATEUTIL_FILE=python-dateutil-$(DATEUTIL_VERSION).tar.gz
+DATEUTIL_URL=http://labix.org/download/python-dateutil/$(DATEUTIL_FILE)
+$(DATEUTIL_FILE):
+	wget -O $@ $(DATEUTIL_URL)
+ 
+dateutils.stamp: $(DATEUTIL_FILE)
+	tar -xzvf $<
+	ln -sfv python-dateutil-$(DATEUTIL_VERSION) python-dateutil
 	date > $@

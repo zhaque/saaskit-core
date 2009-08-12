@@ -89,6 +89,7 @@ INSTALLED_APPS = (
     # 3rd party apps currently not used
     # 'ab',
     # 'filter',
+    # 'autoslug',
     # 'mailer',
     # 'mptt',
     # 'piston',

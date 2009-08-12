@@ -12,3 +12,5 @@ django-sso
 django-tagging
 django-contact-form
 sorl-thumbnail
+python-dateutil*
+django-autoslug 

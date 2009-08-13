@@ -1,0 +1,1 @@
+Anonymous account {{muaccount}} (#{{muaccount.id}}) has been claimed by {{user}} (#{{user.id}}).  Please check that claim.

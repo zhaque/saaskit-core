@@ -1,5 +1,5 @@
 {% load compressed %}
-{% load class_if_reverse %}
+{% load smartif %}
 {% load settings %}
 {% load thumbnail %}
 {% load muathemes %}
@@ -24,11 +24,15 @@
           Logged in: <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">{{user}}</a>
         </div>
         {% endif %}
-        <h1><a href="/">{{request.muaccount}}</a></h1>
+        <h1><a href="/">{{request.muaccount}}</a>{% if tracker %}: {{tracker}}{% endif %}</h1>
         <div id="navigation" style="clear:both;">
-          <ul id="primary-navigation">
-            <li{% class_if_reverse / active %}><a href="/">Main</a></li>
-          </ul>
+          {% if tracker %}
+          <ul id="primary-navigation">{% for channel in tracker.channels %}
+            {% url tracker_channel slug=tracker.slug channel_slug=channel.slug as channel_url%}
+            <li{% if request.path = channel_url%} class="active"{% endif %}>
+              <a href="{{channel_url}}">{{channel.name}}</a></li>
+            {% endfor %}</ul>{% endif %}
+
 
           <ul id="user-navigation">
             {% if user.is_authenticated %}
@@ -48,7 +52,49 @@
               {% block body %} Body {% endblock %}
         </div></div></div>
 
-        <div id="ft"><div id="yui-main">
+       <div id="sidebar" class="yui-b">
+         {% if not request.muaccount.owner %}
+         <div class="block"><div class="hd">
+             <h2>This account has no owner</h2>
+           </div><div class="bd">
+             {% if user.is_authenticated %}
+             <form action="{% url muaccounts_claim_account %}"
+                   method="POST" class="inline-form">
+               <p><input type="submit" value="claim this account"></p></form>
+             {% else %}
+             If you feel you should manage this account, please
+             register at <a href="{% setting MUACCOUNTS_DEFAULT_URL %}">
+               main page</a> and <a href="{% url user_signin %}">log
+             in here</a> to claim this account.
+             {% endif %}
+         </div></div>
+         {% endif %}
+
+          <div class="block">
+            <div class="hd"><h2>Trackers</h2></div><div class="bd">
+             <ul class="list">
+                {% for t in request.muaccount.tracker_set.all %}
+                <li{% if t = tracker %} style="font-weight: bold;"{% endif %}>
+                  <a href="{{t.get_absolute_url}}">{{t}}</a>
+                  {% ifequal user request.muaccount.owner %}
+                  <form action="{% url tracker_edit slug=t.slug %}" method="GET" class="inline-form">
+                    <p><input type="submit" value="edit"></p></form>
+                  <form action="{% url tracker_delete slug=t.slug %}" method="POST" class="inline-form">
+                    <p><input type="submit" value="delete"></p></form>
+                 {% endifequal %}
+                </li>{% endfor %}</ul>
+             {% ifequal user request.muaccount.owner %}
+             {% if request.muaccount.tracker_set.count < user.quotas.crowdsense_trackers %}
+             <a href="{% url tracker_create %}">Add more…</a>
+             {% else %}
+             You have reached your limit of trackers.
+             {% endif %}
+             {% endifequal %}
+            </div>
+          </div>
+      </div>
+
+       <div id="ft"><div id="yui-main">
             <p><a href="{% setting MUACCOUNTS_DEFAULT_URL %}">main page</a></p>
         </div></div>
 

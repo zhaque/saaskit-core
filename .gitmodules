@@ -49,3 +49,6 @@
 [submodule "upstream/django-templatesadmin"]
 	path = upstream/django-templatesadmin
 	url = git://github.com/bartTC/django-templatesadmin.git
+[submodule "upstream/django-paypal"]
+	path = upstream/django-paypal
+	url = git://github.com/johnboxall/django-paypal.git

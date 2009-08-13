@@ -1,15 +1,6 @@
-[submodule "upstream/django-subscription"]
-	path = upstream/django-subscription
-	url = git://github.com/CrowdSense/django-subscription.git
-[submodule "upstream/django-muaccounts"]
-	path = upstream/django-muaccounts
-	url = git://github.com/CrowdSense/django-muaccounts.git
 [submodule "upstream/django-registration"]
 	path = upstream/django-registration
 	url = git://github.com/bretthoerner/django-registration.git
-[submodule "upstream/django-prepaid"]
-	path = upstream/django-prepaid
-	url = git://github.com/CrowdSense/django-prepaid.git
 [submodule "upstream/django-notification"]
 	path = upstream/django-notification
 	url = git://github.com/jtauber/django-notification.git
@@ -19,9 +10,6 @@
 [submodule "upstream/django-pipes"]
 	path = upstream/django-pipes
 	url = git://github.com/mallipeddi/django-pipes.git
-[submodule "upstream/django-quotas"]
-	path = upstream/django-quotas
-	url = git://github.com/mpasternacki/django-quotas.git
 [submodule "upstream/django-debug-toolbar"]
 	path = upstream/django-debug-toolbar
 	url = git://github.com/robhudson/django-debug-toolbar.git

@@ -3,58 +3,87 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-    <title>{% block title %}Title{% endblock %}</title>
+    <title>{% block title %}Welcome to SaaS Kit{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico">
     {% compressed_css 'all' %}
     {% block head %}
     {% endblock %}
- </head>
-  <body class="rounded">
-    <div id="doc3" class="yui-t6">
-      <div id="hd">
-        {% if user.is_authenticated %}
-        <div id="logged-in-user">
-          Logged in: <a href="#">{{user}}</a>
-        </div>
-        {% endif %}
-        <h1><a href="/">CrowdSense Project Kit</a></h1>
+</head>
+<body class="rounded">
+  <div id="doc3" class="yui-t5">
+
+   <!--Start of header -->
+        <div id="hd">
+          <!--Start of user navigation -->
+           <div id="user-nav">
+                <ul id="user-nav">
+                  {% if user.is_authenticated %}
+                  <li{% class_if_reverse profiles_profile_list active %}>Welcome, <a href="{% url profiles_profile_list %}">{{user}}</a></li> |
+                  <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">dashboard</a></li> |
+                  {% endif %}
+                  {% if user.is_authenticated %}
+                  {% if user.get_profile %}
+                  <li><a href="{% url profiles_edit_profile %}">profile</a></li> | 
+                  {% else %}
+                  <li><a href="{% url profiles_create_profile %}">profile</a></li> |
+                  {% endif %}
+                  <li><a href="{% url auth_password_change %}">password</a></li> |
+                  <li><a href="{% url user_signout %}">logout</a></li>
+                  {% else %}
+                  <li><a href="{% url user_signin %}">Sign-up</a></li>
+                  {% endif %}
+                </ul> 
+              </div> 
+          <!--End of user navigation -->  
+          <!--Start of title -->
+  
+          <h1><a href="/">CrowdSense Project Kit</a></h1>
+  
+          <!--End of title -->
+          <!--Start of navigation bar -->                                                 
+         
         <div id="navigation">
           <ul id="primary-navigation">
-            <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Available subscriptions</a></li>
-            <li{% class_if_reverse profiles_profile_list active %}><a href="{% url profiles_profile_list %}">Public profiles</a></li>
-            <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
-            <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">Dashboard</a></li>
-         </ul>
-
-          <ul id="user-navigation">
-            {% if user.is_authenticated %}
-           {% if user.get_profile %}
-            <li><a href="{% url profiles_edit_profile %}">profile</a></li>
-            {% else %}
-            <li><a href="{% url profiles_create_profile %}">profile</a></li>
-            {% endif %}
-            <li><a href="{% url auth_password_change %}">password</a></li>
-            {% if not user.muaccount %}
-            <li><a href="{% url muaccounts.views.create_account %}">create site</a></li>
-            {% else %}
-            <li><a href="{% url sso %}?next={{user.muaccount.get_absolute_url}}">your site</a></li>
-            {% endif %}
-            <li><a href="{% url user_signout %}">logout</a></li>
-            {% else %}
-            <li><a href="{% url user_signin %}">log in or sign up</a></li>
-            {% endif %}
-         </ul>
+            <li><a href="/">Home</a></li>
+                {% if user.is_authenticated %}
+                  <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Upgrade</a></li>
+                {% else %}
+                  <li{% class_if_reverse contact_form active %}><a href="/testdrive">Test Drive</a></li>
+                  <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Plans and Pricing</a></li>
+                {% endif %}                        
+                  <li{% class_if_reverse contact_form active %}><a href="/support">Support</a></li>
+                  <li{% class_if_reverse contact_form active %}><a href="/about">About Us</a></li>
+          </ul>                  
+        <div class="clear"></div>
         </div>
-      </div>
+            <!--End of navigation bar -->
+            <!-- Start of header text -->
+            <!-- End of header text -->
+        </div>
+        <!--End of header -->
 
+      {% block fake-header %} {% endblock %}
       <div id="bd">
         {% block body %} Body {% endblock %}
       </div>
+        {% block fake-footer %} {% endblock %}
 
-      <div id="ft"><div id="yui-main">
-        <p><a href="/admin/">admin</a></p>
-      </div></div>
+        <!--Start of footer -->
+        <div id="ft">
+            <div class="footer-navigation">
+                <ul>
+                    <li><a href="http://crowdsense.com/">About CrowdSense</a></li> | 
+                    <li><a href="http://crowdsense.com/">Support</a></li> | 
+                    <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="pseudo-footer">
+                    <li><a href="">Privacy & Copyright</a></li>
+            </div>      
+        </div>
+        <!--End of footer -->
 
     {% compressed_js 'all' %}
     {% block extra_scripts %}{% endblock %}

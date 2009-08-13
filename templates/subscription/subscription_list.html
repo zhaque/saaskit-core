@@ -1,26 +1,112 @@
 {% extends "main.html" %}
 
-{% block title %} show_content "subscription-list" "title" {% endblock %} 
+{% block title %} Pricing and Plans {% endblock %}
+{% block fake-header %} 
+<div class="block">
+                    <br>
+                    <h1 class="text-center">21 day free trial on all plans!</h1>
+                    <p class="text-center">Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like.</p>
+                <table rules="all" "class="plans" style="width:50%;" align="center">
+                      
+                        <tr>
+                        {% for o in object_list %}
+                      <td><h2 class="text-center">{{o.name}}</h2>
+                                <p class="text-center">{{o.get_pricing_display}}</p>
+                            <p class="text-center">21 day free trial</p>
+                            <ul class="plans">
+                            <li>Unlimited Campaigns</li>
+                            <li>Conversion Tracking</li>
+                            <li id="higlighted">No Audience Builder</li>
+                            <li>10 Listening Campaigns</li>
+                            <li id="higlighted">No Custom Domain</li>
+                            <li id="higlighted">Standard Security</li>                      
+                            </ul>
+                            <p align="center"><a href="{{o.get_absolute_url}}">details/signup &raquo;</a></td></p></td>
+                        {% endfor %}
+                   </tr>
+                 
+                </table>
+  </div>
+
+
+{% endblock %} 
 {% block body %}
-<h2> show_content "subscription-list" "title" </h2>
+<div id="yui-main"><div class="yui-b"><div class="yui-g">
 
- show_content "subscription-list" "before" 
+ <!--Start of info block -->
+                    <div class="block">
+                        <div class="bd">
+                        
+                        <h1>Questions & Answers</h1>
+                        <br>
+                                                <p class="questions">How does the free trial work?</p>
 
-<table rules=all>
- <thead><tr><th>name</th><th>description</th><th>price</th><th>trial</th><th>&nbsp;</th></tr></thead>
-  <tbody>
-    {% for o in object_list %}
-   <tr>
-      <th>{{o.name}}</th>
-      <td>{{o.description}}</td>
-      <td>{{o.get_pricing_display}}</td>
-      <td>{{o.get_trial_display}}</td>
-     <td><a href="{{o.get_absolute_url}}">details/signup &raquo;</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+                                                <p>After signing up and completing your payment details, you won't be charged anything for 21 days. After 21 days your paid
+ plan will start and your first payment will be made. If you cancel your Peashoot account before the 21 day free trial ends, you will not be charged any amount.</p>
+                                                <p class="questions">Is this a long-term commitment?</p>
 
- show_content "subscription-list" "after" 
+                                                <p>Nope! You pay a monthly fee and are able to cancel at any time or upgrade / downgrade to a plan that suits you better.</
+p>
+                                                <p class="questions">What forms of payment do you accept?</p>
+
+                                                <p>Payments are via credit card and are processed by PayPal. PayPal accepts most major credit cards such as Visa, Mastercar
+d, American Express & Discover. We do not offer other forms of payment at this time.</p>
+                                                <p class="questions">Is Peashoot SEO Friendly?</p>
+
+                                                <p>Peashoot links use a 301 Redirect which passes all "link juice" on to the target URL and is SEO friendly.</p>
+                                                <p class="questions">What happens to my campaign links if I cancel my account?</p>
+
+                                                <p>Your campaign links will continue to redirect people to the target url. You just won't be able to log in and view conver
+sions and click reports :(</p>
+                                                <p class="questions">Can I Use Peashoot For Non-Social Media Purposes?</p>
+
+                        <p>Yes. Our customers use Peashoot in their email newsletters, on press releases — even on their banner ads. Anywhere you can put a link, you can u
+se Peashoot.</p>
+                                                <p class="questions">I have more questions!</p>
+
+                                                <p>Get in touch with us at support@peashootapp.com and we'll be happy to answer additional questions about the service!</p>
+                                                </div>
+                    </div>
+                    <!--End of info block -->
+</div></div></div> 
+<div id="sidebar" class="yui-b">
+  <!--Start of more info-->
+                <div class="block">
+                        <div class="bd">
+                    <h1>More Info</h1>
+                    <br>
+                    <p>Payments are processed <strong>safely and securely</strong> by <img src="../media/crowdsense/imglogo_paypal.gif"> 
+PayPal major credit cards accepted. PayPal account not required for payment.</p>
+                                        <p><img src="../media/crowdsense/img/credit_cards.gif"></p>
+                    <p>Peashoot is proud to be hosted with <img src="../media/crowdsense/img/logo_rackspace.gif">
+Rackspace experts in enterprise-level web hosting</p>
+                                        <p>Peashoot data is backed-up daily and you can export data at any time.</p>                       
+<p>Encrypted with <strong>128-bit SSL</strong></p>
+                    <p><img src="../media/crowdsense/img/secure.gif"></p>
+                    <span class="info">Peashoot is optimised for IE7, Firefox and Safari web browsers.</span>
+                    </div>
+                </div>
+                 <!--end of more info-->
+</div>
+                    
+
+{% endblock %}
+{% block fake-footer %}
+<div class="block">
+                <div class="bd">
+                <table>
+                <tr>
+                        <td><img src="../media/crowdsense/img/testimonial_logo_tab.gif"></td>
+                    <td><h2>“In just a few campaigns, Peashoot helped us understand what content our nearly 3000 twitter followers craved!”</h2><span>Paul Baron — <a href=
+"#">Tokyo Art Beat</a></span></td>
+                </tr>
+                <tr>
+                        <td><img src="../media/crowdsense/img/testimonial_logo_24seven.gif"></td>
+                    <td><h2>“The UI is clean and simple, and the live update of activities blew me away!” </h2><span>Claudia Lim — <a href="#">24seven</a></span></td>
+                </tr>
+
+            </table>
+            </div>
+        </div>
 
 {% endblock %}

@@ -13,4 +13,4 @@ django-tagging
 django-contact-form
 sorl-thumbnail
 python-dateutil*
-django-autoslug 
+django-autoslug*

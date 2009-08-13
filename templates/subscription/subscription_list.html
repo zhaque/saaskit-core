@@ -7,13 +7,14 @@
  show_content "subscription-list" "before" 
 
 <table rules=all>
-  <thead><tr><th>name</th><th>description</th><th>price</th><th>&nbsp;</th></tr></thead>
+ <thead><tr><th>name</th><th>description</th><th>price</th><th>trial</th><th>&nbsp;</th></tr></thead>
   <tbody>
     {% for o in object_list %}
    <tr>
       <th>{{o.name}}</th>
       <td>{{o.description}}</td>
       <td>{{o.get_pricing_display}}</td>
+      <td>{{o.get_trial_display}}</td>
      <td><a href="{{o.get_absolute_url}}">details/signup &raquo;</a></td>
     </tr>
     {% endfor %}

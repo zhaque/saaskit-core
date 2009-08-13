@@ -6,7 +6,7 @@
 <h2>{{object.name}}</h2>
 <p>{{object.description}}</p>
 
-<p>{{object.get_pricing_display}}</p>
+<p>{{object.get_pricing_display}}, trial: {{object.get_trial_display}}</p>
 
 {% if usersubscription %}
 {% if usersubscription.active %}

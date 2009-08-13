@@ -40,3 +40,15 @@
 [submodule "upstream/django-paypal"]
 	path = upstream/django-paypal
 	url = git://github.com/johnboxall/django-paypal.git
+[submodule "upstream/django-muaccounts"]
+	path = upstream/django-muaccounts
+	url = git@github.com:CrowdSense/django-muaccounts.git
+[submodule "upstream/django-prepaid"]
+	path = upstream/django-prepaid
+	url = git@github.com:CrowdSense/django-prepaid.git
+[submodule "upstream/django-subscription"]
+	path = upstream/django-subscription
+	url = git@github.com:CrowdSense/django-subscription.git
+[submodule "upstream/django-quotas"]
+	path = upstream/django-quotas
+	url = git://github.com/mpasternacki/django-quotas.git

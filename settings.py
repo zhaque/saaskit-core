@@ -127,8 +127,8 @@ TEMPLATESADMIN_EDITHOOKS = (
    )
 
 TEMPLATESADMIN_TEMPLATE_DIRS = (
-       (KIT_ROOT, 'templates') 
-   )
+      ( os.path.join(KIT_ROOT, 'templates'), )
+  )
 
 INTERNAL_IPS = ( '127.0.0.1', )
 

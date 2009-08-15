@@ -8,6 +8,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', dict(template='index.html')),
+    (r'^about/$', 'django.views.generic.simple.direct_to_template', dict(template='about.html')),
+    (r'^support/$', 'django.views.generic.simple.direct_to_template', dict(template='support.html')),
+    (r'^privacy/$', 'django.views.generic.simple.direct_to_template', dict(template='tc.html')),
     url(r'^sso/$', 'sso.views.sso', name="sso"),
     (r'^accounts/', include('django_authopenid.urls')),
     (r'^accounts/create-site/$', 'muaccounts.views.create_account'),

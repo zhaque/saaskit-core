@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-    <title>{% block title %}Welcome to SaaS Kit{% endblock %}</title>
+    <title>{% block title %}Home : SaaS Kit{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
@@ -12,7 +12,7 @@
     {% endblock %}
 </head>
 <body class="rounded">
-  <div id="doc3" class="yui-t5">
+  <div id="doc4" class="yui-t5">
 
    <!--Start of header -->
         <div id="hd">
@@ -39,7 +39,7 @@
           <!--End of user navigation -->  
           <!--Start of title -->
   
-          <h1><a href="/">CrowdSense Project Kit</a></h1>
+          <h1><a href="/"><img src="media/crowdsense/img/saaskit_logo.png"></img>CrowdSense Project Kit</a></h1>
   
           <!--End of title -->
           <!--Start of navigation bar -->                                                 
@@ -53,8 +53,8 @@
                   <li{% class_if_reverse contact_form active %}><a href="/testdrive">Test Drive</a></li>
                   <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Plans and Pricing</a></li>
                 {% endif %}                        
-                  <li{% class_if_reverse contact_form active %}><a href="/support">Support</a></li>
-                  <li{% class_if_reverse contact_form active %}><a href="/about">About Us</a></li>
+                  <li{% class_if_reverse contact_form active %}><a href="http://crowdsense.net/templates/support.html">Support</a></li>
+                  <li{% class_if_reverse contact_form active %}><a href="http://crowdsense.net/templates/about.html">About Us</a></li>
           </ul>                  
         <div class="clear"></div>
         </div>
@@ -74,13 +74,13 @@
         <div id="ft">
             <div class="footer-navigation">
                 <ul>
-                    <li><a href="http://crowdsense.com/">About CrowdSense</a></li> | 
-                    <li><a href="http://crowdsense.com/">Support</a></li> | 
+                    <li><a href="http://crowdsense.net/templates/about.html">About CrowdSense</a></li> | 
+                    <li><a href="http://crowdsense.net/templates/support.html">Support</a></li> | 
                     <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
                 </ul>
             </div>
             <div class="pseudo-footer">
-                    <li><a href="">Privacy & Copyright</a></li>
+                    <li><a href="tc.html" style="font-weight: 600;">Privacy & Copyright</a></li>
             </div>      
         </div>
         <!--End of footer -->
@@ -89,3 +89,14 @@
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

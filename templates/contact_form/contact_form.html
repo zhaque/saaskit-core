@@ -5,11 +5,15 @@
 {% block body %}
 <h2>Contact us</h2>
 
-"contact" "body"
+
 
 <form action="" method="POST">
-  {{form.as_p}}
-  <input type="submit" value="Send message">
+ <table>
+  {{form.as_table}}
+  <tr><td><input type="submit" value="Send message"></tr></td>
+ <table>
 </form>
 
 {% endblock %}
+
+

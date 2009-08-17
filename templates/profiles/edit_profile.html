@@ -5,8 +5,11 @@
 {% block body %}
 <h2>Edit your profile</h2>
 <form action="" method="POST">
-  {{form.as_p}}
-  <input type="submit">
+ <table>
+  {{form.as_table}}
+  <tr><td><input type="submit"></td></tr>
+ </table>
 </form>
 <a href="{{user.get_profile.get_absolute_url}}">See your profile</a>
 {% endblock %}
+

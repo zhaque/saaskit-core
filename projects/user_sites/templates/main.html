@@ -9,6 +9,7 @@
     <title>{% block title %}Title{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+    <link rel="stylesheet" href="/media/crowdsense/css/user_sites.css" type="text/css">
     {% compressed_css request.muaccount.theme.color_scheme %}
     {% block head %}
     {% endblock %}
@@ -20,26 +21,34 @@
         <img src="{% thumbnail request.muaccount.logo 128x64 %}" id="site-logo">
         {% endif %}
         {% if user.is_authenticated %}
-        <div id="logged-in-user">
-          Logged in: <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">{{user}}</a>
+        <div id="user-nav">
+          <ul id="user-nav">
+          <li>Logged in: <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">{{user}}</a></li> | 
+          {% ifequal user request.muaccount.owner %}
+            <li><a href="{% url muaccounts_account_detail %}">Manage site</a></li> | 
+            {% endifequal %}
+            <li><a href="{% url user_signout %}">Logout</a></li> 
+        </div>  
+          {% else %}
+         <div id="user-nav">
+          <ul id="user-nav">
+            <li><a href="{% url user_signin %}">Log in or Sign up</a></li>
+          </ul>
         </div>
+         
+        
         {% endif %}
         <h2><a href="/">{{request.muaccount}}</a></h2>
         <div id="navigation" style="clear:both;">
           <ul id="primary-navigation">
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
-          </ul>
-
-          <ul id="user-navigation">
             {% if user.is_authenticated %}
-            {% ifequal user request.muaccount.owner %}
-            <li><a href="{% url muaccounts_account_detail %}">Manage site</a></li>
-            {% endifequal %}
-            <li><a href="{% url user_signout %}">logout</a></li>
-            {% else %}
-            <li><a href="{% url user_signin %}">log in or sign up</a></li>
+            <li><a href="">Mash</a></li>
+            <li><a href="">Tab 3</a></li>
+            <li><a href="">Tab 4</a></li>
             {% endif %}
           </ul>
+         
        </div>
      </div>
 
@@ -56,5 +65,10 @@
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
+
+
+
+
+
 
 

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
+#navigation li { float:right;}
 #user-nav {margin:0; float:right; color:#fff; }
 #user-nav li {display: inline; padding: 0; margin: 0; }
 #user-nav li a {color:#fff; font-weight:600;}
@@ -45,5 +46,10 @@ ul#facts li {margin-bottom:3px; color:#009933;}
 
 .table-font {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:110%;}
 .big { font-size:140%; font-family:"Garamond Premr Pro", Arial, sans-serif; font-style:italic; color:#333333;}
+
+
+
+
+
 
 

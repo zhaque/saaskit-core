@@ -1,7 +1,25 @@
 {% extends "main.html" %}
 
 {% block title %}Index{% endblock %}
+{% block fake-header %}
+  <div class="block">
+                    <br>
+            	<table>
+                	<tr>
+                    	<td><p><font size="+5">Start Marketing on Twitter in Minutes.</font></p>
+                        <p>The quick & easy way to manage social media campaigns that sell.</p>                       
+                 	<a href="sub/"><div id="button">
+                        <p>See pricing & plans</p>
+                        <h6>21 day free trial, sign up in seconds</h6>                        
+                        </div></a>
+                        
+                        </td>
+                        <td><img src="images/browser_windows.png"></td>
+                    </tr>
+                </table>
+            </div>
 
+{% endblock %}
 {% block body %}
 <div id="yui-main"><div class="yui-b"><div class="yui-g">
    <!--Start of info block -->
@@ -76,7 +94,9 @@ ng in from all over the world as they happen — see the <strong>Quick Tour</str
 <div id="sidebar" class="yui-b">
   <div class="block">
     {% if user.is_authenticated %}
-    <div class="hd"><h2>Logged in as <em>{{user}}</em></h2></div><div class="bd">
+    
+     <div class="bd">
+      <h2>Logged in as <em>{{user}}</em></h2>
       <h3>Your sites</h3>
       <ul>
         {% if user.muaccount %}
@@ -94,27 +114,10 @@ ng in from all over the world as they happen — see the <strong>Quick Tour</str
     </div>
     {% endif %}
   </div>
-   <!--Start of promo-->
-     <div class="block">
-      <div class="hd">
-      <h2>Plans</h2>
-     </div>
-       <div class="bd">
-        <h2>Start Marketing on Twitter in Minutes.</h2>
-        <p>The quick & easy way to manage social media campaigns that sell.</p> 
-        <a href="sub/">
-                        <div id="button" style="width:180px;">
-                        <p style="font-size: 16px;">See pricing & plans</p>
-                        <h6>21 day free trial, sign up in seconds</h6>                        
-                        </div></a>
-       </div>
-     </div>
-   <!--End of promo--> 
+  
     <!--Start of quickfacts-->
                 <div class="block">
-                    <div class="hd">
-                        <h2>Quickfacts</h2>
-                    </div>
+                    
                     <div class="bd">
                         <ul id="facts">
                                 <li>100% Browser-Based</li>
@@ -165,6 +168,10 @@ ng in from all over the world as they happen — see the <strong>Quick Tour</str
         </div>
 
 {% endblock %}
+
+
+
+
 
 
 

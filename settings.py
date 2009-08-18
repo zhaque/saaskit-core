@@ -118,6 +118,7 @@ TEMPLATESADMIN_GROUP = 'Editor'
 TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
         'html', 
         'css', 
+        'txt',
         'backup'
    )
 
@@ -127,8 +128,8 @@ TEMPLATESADMIN_EDITHOOKS = (
    )
 
 TEMPLATESADMIN_TEMPLATE_DIRS = (
-      ( os.path.join(KIT_ROOT, 'templates'), )
-  )
+      ( os.path.join(KIT_ROOT, 'templates'), ) 
+   )
 
 INTERNAL_IPS = ( '127.0.0.1', )
 
@@ -136,8 +137,8 @@ AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
 
 SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 
-COMPRESS = True
-COMPRESS_VERSION = True
+COMPRESS = False 
+COMPRESS_VERSION = False 
 
 NOTICE_TYPES = (
      ("welcome", "Welcome to CrowdSense Starter Kit!", "you have successfully registered"),
@@ -146,7 +147,7 @@ NOTICE_TYPES = (
      )
 
 _default_css_files = ('yui-app-theme/yuiapp.css',
-                      'crowdsense/css/crowdsense.css',
+                      'crowdsense/css/default.css',
                       'authopenid/css/openid.css',
                       )
 
@@ -189,7 +190,7 @@ MUACCOUNTS_THEMES = (
         ('purple', 'Purple', 'yui-app-theme/purple.css'),
         ('red', 'Red', 'yui-app-theme/red.css'),
         ('tan-blue', 'Tan Blue', 'yui-app-theme/tan_blue.css'),
-	('default', 'Default', 'crowdsense/css/default.css'),
+	('default', 'CrowdSense', 'crowdsense/css/default.css'),
 	('fireflynight', 'Firefly Night', 'crowdsense/css/fireflynight.css'),
         ('freshair', 'Fresh Air', 'crowdsense/css/freshair.css'),
 	('girly', 'Girly', 'crowdsense/css/girly.css'),

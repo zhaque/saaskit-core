@@ -19,12 +19,14 @@
 
 ul#facts li {margin-bottom:3px; color:#009933;}
 
+table#thumb {width:200px; border-spacing:3px; border:1px; border-color:#CCCCCC;}
 
 #related-search {margin:0; float:left; margin-bottom:1em; }
 #related-search li {display:inline;}
 #related-search li a { font-weight:600; color:#0854C7;}
-.block .hed { color: #333; padding-left:0.5em; padding-bottom:0.5em; padding-top:0.3em;}
+.block .hed { background-color: #333; padding-left:0.5em; padding-bottom:0.5em; padding-top:0.3em;}
 .block .hed h5 { font-size:120%; color: #FFFFFF; font-weight:700;}
+.block ol {list-style:decimal;}
 
 #padding {padding:20px;}
 
@@ -46,6 +48,12 @@ ul#facts li {margin-bottom:3px; color:#009933;}
 
 .table-font {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:110%;}
 .big { font-size:140%; font-family:"Garamond Premr Pro", Arial, sans-serif; font-style:italic; color:#333333;}
+
+
+
+
+
+
 
 
 

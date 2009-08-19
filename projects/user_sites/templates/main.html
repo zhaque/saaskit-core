@@ -44,8 +44,9 @@
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
             {% if user.is_authenticated %}
             <li><a href="">Mash</a></li>
-            <li><a href="">Tab 3</a></li>
-            <li><a href="">Tab 4</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">Video</a></li>
+            <li><a href="">More</a></li>
             {% endif %}
           </ul>
          
@@ -56,6 +57,9 @@
         <div id="yui-main"><div class="yui-b"><div class="yui-g">
               {% block body %} Body {% endblock %}
         </div></div></div>
+         <div id="sidebar" class="yui-b">
+            {% block sidebar %} Sidebar {% endblock %}
+         </div>
 
         <div id="ft"><div id="yui-main">
             <p><a href="{% setting MUACCOUNTS_DEFAULT_URL %}">main page</a></p>
@@ -65,6 +69,11 @@
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
+
+
+
+
+
 
 
 

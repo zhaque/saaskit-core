@@ -46,3 +46,12 @@
 [submodule "upstream/django-uni-forn"]
 	path = upstream/django-uni-forn
 	url = git://github.com/pydanny/django-uni-form.git
+[submodule "upstream/django-muaccounts"]
+	path = upstream/django-muaccounts
+	url = git://github.com/CrowdSense/django-muaccounts.git
+[submodule "upstream/django-prepaid"]
+	path = upstream/django-prepaid
+	url = git://github.com/CrowdSense/django-prepaid.git
+[submodule "upstream/django-subscription"]
+	path = upstream/django-subscription
+	url = git://github.com/CrowdSense/django-subscription.git

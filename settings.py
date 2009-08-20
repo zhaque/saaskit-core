@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'tagging',
     'oembed',
     'templatesadmin', 
+    'uni_form', 
     # 3rd party apps currently not used
     # 'ab',
     # 'filter',

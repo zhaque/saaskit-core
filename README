@@ -25,6 +25,7 @@ Table of Contents
         6.2.1 yui-app-theme
 7 Runtime environment
     7.1 Warnings at startup
+8 Plans 
 
 
 1 Getting started
@@ -395,3 +396,12 @@ Table of Contents
   To run with live PayPal, you'll need to change {{form.sandbox}} to {{form.render}}
   in templates/subscription/subscription_detail.html and set PAYPAL_TEST to False in
   project/settings.py.
+
+8 Plans
+~~~~~~~
+  - A Sample App and Content
+  - Integrate Twitter Oauth authentication
+  - Integrate Facebook Connect
+  - Support for multiple user_site templates
+  - Paypal Website Payment Pro
+  - Upgrade to django-cms 2.0

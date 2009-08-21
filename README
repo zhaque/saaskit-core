@@ -1,5 +1,5 @@
-Crowdsense Project Kit
-======================
+SaaS Kit
+=========
 
 Table of Contents
 =================
@@ -61,7 +61,7 @@ Table of Contents
 
 2 Overview
 ~~~~~~~~~~
-  Crowdsense Project Kit is a complete SAAS-type website template,
+  SaaS Kit is a complete SAAS-type website template,
   ready for deployment.  It includes a set of integrated Django
   applications, ready to change sample templates, together with a
   Yahoo YUI-based CSS theme.  It is intended to be a SAAS equivalent

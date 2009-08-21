@@ -122,13 +122,13 @@ Table of Contents
    links to actual Python modules, mostly those located in
    `upstream/', but also to `settings.py' file (as
    `common_settings.py') and to local custom code located in
-   `crowdsense/' module.
+   `saaskit/' module.
 
 3.3 Local code
 ==============
    Local code, packaged as single Django app (can grow to multiple
-   apps/libraries if needed) is in `crowdsense/' directory, linked in
-   `site-python/' as `crowdsense' Python module / Django app.
+   apps/libraries if needed) is in `saaskit/' directory, linked in
+   `site-python/' as `saaskit' Python module / Django app.
 
 3.4 Projects
 ============

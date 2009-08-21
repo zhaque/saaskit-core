@@ -16,7 +16,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = os.path.join(KIT_ROOT, 'crowdsense.db')  # Or path to database file if using sqlite3.
+DATABASE_NAME = os.path.join(KIT_ROOT, 'saaskit.db')  # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -101,7 +101,7 @@ INSTALLED_APPS = (
     'quotas',
     'subscription',
     # local
-    'crowdsense',
+    'saaskit',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
@@ -134,7 +134,7 @@ TEMPLATESADMIN_TEMPLATE_DIRS = (
 
 INTERNAL_IPS = ( '127.0.0.1', )
 
-AUTH_PROFILE_MODULE = 'crowdsense.UserProfile'
+AUTH_PROFILE_MODULE = 'saaskit.UserProfile'
 
 SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 
@@ -148,7 +148,7 @@ NOTICE_TYPES = (
      )
 
 _default_css_files = ('yui-app-theme/yuiapp.css',
-                      'crowdsense/css/default.css',
+                      'saaskit/css/default.css',
                       'authopenid/css/openid.css',
                       )
 
@@ -191,15 +191,15 @@ MUACCOUNTS_THEMES = (
         ('purple', 'Purple', 'yui-app-theme/purple.css'),
         ('red', 'Red', 'yui-app-theme/red.css'),
         ('tan-blue', 'Tan Blue', 'yui-app-theme/tan_blue.css'),
-	('default', 'CrowdSense', 'crowdsense/css/default.css'),
-	('fireflynight', 'Firefly Night', 'crowdsense/css/fireflynight.css'),
-        ('freshair', 'Fresh Air', 'crowdsense/css/freshair.css'),
-	('girly', 'Girly', 'crowdsense/css/girly.css'),
-	('grayscale', 'Grayscale', 'crowdsense/css/grayscale.css'),
-	('grayscalem', 'Grayscale Modified', 'crowdsense/css/grayscalemodified.css'),
-	('overcast', 'Overcast', 'crowdsense/css/overcast.css'),
-	('pepper', 'Pepper', 'crowdsense/css/pepper.css'),
-	('sunshine', 'Sunshine', 'crowdsense/css/sunshine.css'),
+	('default', 'CrowdSense', 'saaskit/css/default.css'),
+	('fireflynight', 'Firefly Night', 'saaskit/css/fireflynight.css'),
+        ('freshair', 'Fresh Air', 'saaskit/css/freshair.css'),
+	('girly', 'Girly', 'saaskit/css/girly.css'),
+	('grayscale', 'Grayscale', 'saaskit/css/grayscale.css'),
+	('grayscalem', 'Grayscale Modified', 'saaskit/css/grayscalemodified.css'),
+	('overcast', 'Overcast', 'saaskit/css/overcast.css'),
+	('pepper', 'Pepper', 'saaskit/css/pepper.css'),
+	('sunshine', 'Sunshine', 'saaskit/css/sunshine.css'),
         )),
     # <body> id
     ('page_width', 'Page widgh', (

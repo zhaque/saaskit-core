@@ -150,6 +150,8 @@ NOTICE_TYPES = (
 _default_css_files = ('yui-app-theme/yuiapp.css',
                       'saaskit/css/default.css',
                       'authopenid/css/openid.css',
+                      'uni_form/uni-form-generic.css',
+                      'uni_form/uni-form.css',
                       )
 
 COMPRESS_CSS = {                        # different themes for MUAs
@@ -161,6 +163,7 @@ COMPRESS_CSS = {                        # different themes for MUAs
 COMPRESS_JS = {
     'all' : {
         'source_filenames' : ('authopenid/js/jquery-1.3.2.min.js',
+                              'uni_form/uni-form.jquery.js',
                               ),
         'output_filename' : 'scripts.js'},
     }

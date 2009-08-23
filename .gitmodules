@@ -52,3 +52,6 @@
 [submodule "upstream/django-subscription"]
 	path = upstream/django-subscription
 	url = git://github.com/CrowdSense/django-subscription.git
+[submodule "upstream/django-uni-form"]
+	path = upstream/django-uni-form
+	url = git://github.com/pydanny/django-uni-form.git

@@ -43,9 +43,6 @@
 [submodule "upstream/django-quotas"]
 	path = upstream/django-quotas
 	url = git://github.com/mpasternacki/django-quotas.git
-[submodule "upstream/django-uni-forn"]
-	path = upstream/django-uni-forn
-	url = git://github.com/pydanny/django-uni-form.git
 [submodule "upstream/django-muaccounts"]
 	path = upstream/django-muaccounts
 	url = git://github.com/CrowdSense/django-muaccounts.git

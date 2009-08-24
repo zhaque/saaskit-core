@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
     <link rel="shortcut icon" href="/media/saaskit/img/favicon.ico">    
     {% compressed_css 'all' %}
-    <link rel="stylesheet" href="/media/saaskit/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/saaskit/css/main.css" type="text/css">    
     {% block head %}
     {% endblock %}
 </head>
@@ -47,8 +47,8 @@
          
         <div id="navigation">
           <ul id="primary-navigation">
-            <li{% class_if_reverse contact_form active %}><a href="/about">About Us</a></li>
-            <li{% class_if_reverse contact_form active %}><a href="/support">Support</a></li>
+            <li{% class_if_reverse /about/ active %}><a href="/about">About Us</a></li>
+            <li{% class_if_reverse /support/ active %}><a href="/support">Support</a></li>
              {% if user.is_authenticated %}
                   <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Upgrade</a></li>
                 {% else %}

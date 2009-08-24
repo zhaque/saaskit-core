@@ -3,29 +3,28 @@
 {% load settings %}
 {% load smartif %}
 {% load mathfilters %}
+{% load uni_form %}
 
 {% block title %}Account detail{% endblock %} 
 {% block body %}
-<div class="block">
-  <div class="hd"><h2>Your plan</h2></div><div class="bd">
-    Your current plan is
-    <em>{{user.get_subscription|default:"Free plan"}}</em>.
-    {% comment %}FIXME: hardcoded URL{% endcomment %}
-    <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a>
-    to get access to more features!.
-  </div>
-</div>
 <div class="yui-u first">
   <div class="block">
-    <div class="hd"><h2>Settings</h2></div><div class="bd">
-      <form action="" method="POST" enctype="multipart/form-data">
+    <div class="hd"><h2>Site Settings</h2></div><div class="bd">
+      <form action="" method="POST" enctype="multipart/form-data" class="uniForm">
       <table>
-        {{ form.as_table }}
-       <tr><td> <input type="submit" value="OK"></td></tr>
-     </table
+        {{ form|as_uni_form }}
+       <tr><td> <input type="submit" value="Save"></td></tr>
+     </table>
       </form>
 </div></div></div>
 <div class="yui-u">
+  <div class="block">
+    <div class="hd"><h2>Authenticate with Twitter</h2></div><div class="bd">
+    <a href="{% url twitter_oauth_auth %}"><img src="/media/saaskit/img/twitter_button_1_hi.gif"></a>
+    <p>Currently you can follow up to 50 twitter users</p>
+    <p>Upgrade your account to add/follow more users</p>
+    </div></div>
+
   <div class="block">
     <div class="hd"><h2>Members</h2></div><div class="bd">
      <ol class="list">{% for member in object.members.all %}
@@ -37,14 +36,23 @@
      {% with object.members.all|length as member_count %}
      {% if member_count < user.quotas.muaccount_members %}
      <h3>Add user</h3>
-     <form action="" method="POST">
-       {{add_user_form.as_p}}
+     <form action="" method="POST" class="uniForm">
+       {{add_user_form|as_uni_form}}
        <input type="submit" value="Add user">
      </form>
      {% else %}
      <p><a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a> to add
        more users!</p>
      {% endif %}{% endwith %}
+  </div></div>
+ 
+  <div class="block">
+  <div class="hd"><h2>Your plan</h2></div><div class="bd">
+    Your current plan is
+    <em>{{user.get_subscription|default:"Free plan"}}</em>.
+    {% comment %}FIXME: hardcoded URL{% endcomment %}
+    <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a>
+    to get access to more features!.
   </div></div>
 </div>
 {% endblock %}

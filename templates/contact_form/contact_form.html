@@ -1,19 +1,33 @@
 {% extends "main.html" %}
-
+{% load uni_form %}
 
 {% block title %}Contact us{% endblock %}
 {% block body %}
+<div id="yui-main"><div class="yui-b"><div class="yui-g">
+
+<!--Start of contact form block -->
+<div class="block">
+<div class="bd">
 <h2>Contact us</h2>
 
-
-
-<form action="" method="POST">
+<form action="" method="POST" class="uniForm">
  <table>
-  {{form.as_table}}
+  {{ form|as_uni_form }}
   <tr><td><input type="submit" value="Send message"></tr></td>
  <table>
 </form>
+</div></div>
+<!--End of contact form block -->
+</div></div></div> 
 
+<div id="sidebar" class="yui-b">
+<!--Start of sidebar-->
+<div class="block">
+<div class="hd">
+<h1>About Us</h1></div>
+<div class="bd"><p>Lorem ipsum</p></div></div>
+<!--End of sidebar-->
+</div>
 {% endblock %}
 
 

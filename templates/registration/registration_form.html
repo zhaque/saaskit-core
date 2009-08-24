@@ -1,18 +1,17 @@
 {% extends "main.html" %}
+{% load uni_form %}
 
-
-{% block title %} show_content "registration-form" "title" {% endblock %}
+{% block title %}Registration Form{% endblock %}
 {% block body %}
-<h2> show_content "registration-form" "title" </h2>
- show_content "registration-form" "before" 
-<form method="post" action="">
-  <fieldset><legend>Registration form</legend>
+<h2>Registration Form</h2>
+
+<form method="post" action="" class="uniForm">
+  <fieldset>
   <table>
-   {{ form.as_table }}
+   {{ form|as_uni_form }}
   <tr><td><input type="submit" value="Submit" /></td></tr>
   </fieldset>
   </table>
 </form>
- show_content "registration-form" "after" 
 {% endblock %}
 

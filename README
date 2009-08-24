@@ -1,5 +1,5 @@
-SaaS Kit
-=========
+Crowdsense Project Kit
+======================
 
 Table of Contents
 =================
@@ -25,7 +25,6 @@ Table of Contents
         6.2.1 yui-app-theme
 7 Runtime environment
     7.1 Warnings at startup
-8 Plans 
 
 
 1 Getting started
@@ -38,8 +37,7 @@ Table of Contents
   4. python manage.py syncdb
   5. python manage.py loaddata ../../exampledata.json
   6. python manage.py synccompress 
-  7. hookup admin media as per settings i.e. cd media; 
-     (example : ln -s /usr/local/lib/python2.6/dist-packages/django/contrib/admin/media admin)
+  7. hookup admin media as per settings i.e. cd media; ln -s /usr/local/lib/python2.6/dist-packages/django/contrib/admin/media admin
   8. python manage.py runserver 8001
 
   (in other shell)
@@ -63,7 +61,7 @@ Table of Contents
 
 2 Overview
 ~~~~~~~~~~
-  SaaS Kit is a complete SAAS-type website template,
+  Crowdsense Project Kit is a complete SAAS-type website template,
   ready for deployment.  It includes a set of integrated Django
   applications, ready to change sample templates, together with a
   Yahoo YUI-based CSS theme.  It is intended to be a SAAS equivalent
@@ -124,13 +122,13 @@ Table of Contents
    links to actual Python modules, mostly those located in
    `upstream/', but also to `settings.py' file (as
    `common_settings.py') and to local custom code located in
-   `saaskit/' module.
+   `crowdsense/' module.
 
 3.3 Local code
 ==============
    Local code, packaged as single Django app (can grow to multiple
-   apps/libraries if needed) is in `saaskit/' directory, linked in
-   `site-python/' as `saaskit' Python module / Django app.
+   apps/libraries if needed) is in `crowdsense/' directory, linked in
+   `site-python/' as `crowdsense' Python module / Django app.
 
 3.4 Projects
 ============
@@ -191,6 +189,18 @@ Table of Contents
     `user_sites' use site with ID 2 (default:
     usersites.example.com).  This allows to have separate static
     Pages for both projects.
+
+3.4.4 Shadowbox JS library
+--------------------------
+    Shadowbox v3.0b has been used in the project. The stylesheet used by 
+    shadowbox is located under /media/css while the images are stored 
+    under /media/img/sb-resources. The entire JS library has been dumped
+    under /media/js/sb/. For such an implementation, the paths to the 
+    images has been modified in the stylesheet and also the colors of the
+    text shown in the pop-ups. To use Shadowbox, simply include the 
+    stylesheet and the js library(shadowbox.js). Then, change the link 
+    markups to include the attribute <rel="shadowbox"> for single popup
+    and <rel="shadowbox[Group]"> to group them as a collection/gallery.
 
 4 Django-pages-cms integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,11 +408,18 @@ Table of Contents
   in templates/subscription/subscription_detail.html and set PAYPAL_TEST to False in
   project/settings.py.
 
-8 Plans
-~~~~~~~
-  - A Sample App and Content
-  - Integrate Twitter Oauth authentication
-  - Integrate Facebook Connect
-  - Support for multiple user_site templates
-  - Paypal Website Payment Pro
-  - Upgrade to django-cms 2.0
+7.1 Warnings at startup
+=======================
+   When some of dependencies are installed system-wide (especially if
+   installed with easy_install), Django may issue warnings similar to
+   one pasted below:
+
+       Installing index for admin.LogEntry model
+       Installing index for subscription.Transaction model
+       /opt/local/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/site-packages/simplejson-2.0.9-py2.5-macosx-10.5-i386.egg/simplejson/_speedups.py:3:
+       UserWarning: Module registration was already imported from /Users/admin/Projects/django-saas-kit/site-python/registration/__init__.py, but /opt/local/lib/python2.5/site-packages/django_registration-0.7-py2.5.egg is being added to sys.path
+        import sys, pkg_resources, imp
+   
+   Such warnings are not important, since they only indicate that
+   system-wide installation of django-registration is not used, and
+   project-local checkout is used instead.

@@ -26,8 +26,10 @@
           <li>Logged in: <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">{{user}}</a></li> | 
           {% ifequal user request.muaccount.owner %}
             <li><a href="{% url muaccounts_account_detail %}">Manage site</a></li> | 
+            
             {% endifequal %}
             <li><a href="{% url user_signout %}">Logout</a></li> 
+            </ul>
         </div>  
           {% else %}
          <div id="user-nav">
@@ -40,14 +42,8 @@
         {% endif %}
         <h2><a href="/">{{request.muaccount}}</a></h2>
         <div id="navigation" style="clear:both;">
-          <ul id="primary-navigation">
+          <ul id="primary-navigation">            
             <li{% class_if_reverse / active %}><a href="/">Main</a></li>
-            {% if user.is_authenticated %}
-            <li><a href="">Mash</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">Video</a></li>
-            <li><a href="">More</a></li>
-            {% endif %}
           </ul>
          
        </div>
@@ -58,12 +54,22 @@
               {% block body %} Body {% endblock %}
         </div></div></div>
          <div id="sidebar" class="yui-b">
-            {% block sidebar %} Sidebar {% endblock %}
+            {% block sidebar %} {% endblock %}
          </div>
-
-        <div id="ft"><div id="yui-main">
-            <p><a href="{% setting MUACCOUNTS_DEFAULT_URL %}">main page</a></p>
-        </div></div>
+      </div>
+      <div id="ft"><div id="yui-main">
+	    <div class="footer-navigation">
+                <ul>
+                    <li><a href="/about">About CrowdSense</a></li> | 
+                    <li><a href="/support">Support</a></li> | 
+                    <li><a href="/contact">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="pseudo-footer">
+                    <li><a href="/privacy" style="font-weight: 600;">Privacy & Copyright</a></li>
+            </div>
+      </div>
+  </div>
 
     {% compressed_js 'all' %}
     {% block extra_scripts %}{% endblock %}

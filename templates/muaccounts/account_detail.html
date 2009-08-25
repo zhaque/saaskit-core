@@ -7,7 +7,6 @@
 
 {% block title %}Account detail{% endblock %} 
 {% block body %}
-<div class="yui-u first">
   <div class="block">
     <div class="hd"><h2>Site Settings</h2></div><div class="bd">
       <form action="" method="POST" enctype="multipart/form-data" class="uniForm">
@@ -16,15 +15,9 @@
        <tr><td> <input type="submit" value="Save"></td></tr>
      </table>
       </form>
-</div></div></div>
-<div class="yui-u">
-  <div class="block">
-    <div class="hd"><h2>Authenticate with Twitter</h2></div><div class="bd">
-    <a href="{% url twitter_oauth_auth %}"><img src="/media/saaskit/img/twitter_button_1_hi.gif"></a>
-    <p>Currently you can follow up to 50 twitter users</p>
-    <p>Upgrade your account to add/follow more users</p>
-    </div></div>
-
+</div></div>
+{% endblock %}
+{% block sidebar %}
   <div class="block">
     <div class="hd"><h2>Members</h2></div><div class="bd">
      <ol class="list">{% for member in object.members.all %}
@@ -54,7 +47,6 @@
     <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}sub/">Upgrade your plan</a>
     to get access to more features!.
   </div></div>
-</div>
 {% endblock %}
 
 

@@ -28,7 +28,7 @@
             <li><a href="{% url muaccounts_account_detail %}">Manage site</a></li> | 
             
             {% endifequal %}
-            <li><a href="{% url user_signout %}">Logout</a></li> 
+            <li><a href="{% url user_signout %}">Logout [{{user}}]</a></li> 
             </ul>
         </div>  
           {% else %}
@@ -75,15 +75,3 @@
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

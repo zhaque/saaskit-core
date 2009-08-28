@@ -91,17 +91,16 @@ django-rosetta.stamp:
 	svn checkout -r $(DJANGO_ROSETTA_RELEASE) http://django-rosetta.googlecode.com/svn/trunk/ django-rosetta
 	date > $@
 
-
 django-sso.stamp:
 	svn checkout -r $(DJANGO_SSO_RELEASE) http://django-sso.googlecode.com/svn/trunk/ django-sso
 	date > $@
 
-south.stamp:
-        hg clone -r $(SOUTH_RELEASE) http://bitbucket.org/andrewgodwin/south/
-        date > $@
-
 django-tagging.stamp:
 	svn checkout -r $(DJANGO_TAGGING_RELEASE) http://django-tagging.googlecode.com/svn/trunk/ django-tagging
+	date > $@
+
+south.stamp:
+	hg clone -r $(SOUTH_RELEASE) http://bitbucket.org/andrewgodwin/south/
 	date > $@
 
 sorl-thumbnail.stamp:

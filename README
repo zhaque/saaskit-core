@@ -57,16 +57,17 @@ Table of Contents
   2. Edit/Add site-python/local_settings.py according to your enviornment. 
   3. cd projects/main
   4. python manage.py syncdb
-  5. python manage.py loaddata ../../exampledata.json
-  6. python manage.py synccompress 
-  7. hookup admin media as per settings i.e. cd media; ln -s /usr/local/lib/python2.6/dist-packages/django/contrib/admin/media admin
-  8. python manage.py runserver 8001
+  5. python manage.py migrate (after syncdb we migrate the necessary tables using south)
+  6. python manage.py loaddata ../../exampledata.json
+  7. python manage.py synccompress 
+  8. hookup admin media as per settings i.e. cd media; ln -s /usr/local/lib/python2.6/dist-packages/django/contrib/admin/media admin
+  9. python manage.py runserver 8001
 
   (in other shell)
-  9. cd projects/user_sites
-  10. python manage.py synccompress 
-  11. python manage.py runserver
-  12. Create a new group 'Editors' for templates admin (http://domain.com/admin/templates) and assign 'admin' user to the 'Editors' group.
+  10. cd projects/user_sites
+  11. python manage.py synccompress 
+  12. python manage.py runserver
+  13. Create a new group 'Editors' for templates admin (http://domain.com/admin/templates) and assign 'admin' user to the 'Editors' group.
  
   Project includes as Git sumodules or downloads from
   upstream/Makefile all needed Django applications; only requirements

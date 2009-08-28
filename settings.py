@@ -82,6 +82,7 @@ INSTALLED_APPS = (
     'registration',
     'rosetta',
     'sorl.thumbnail',
+    'south',
     'sso',
     'tagging',
     'oembed',
@@ -115,7 +116,7 @@ TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
 # Settings for templates editing via django admin
  
 TEMPLATESADMIN_HIDE_READONLY = True 
-TEMPLATESADMIN_GROUP = 'Editor'
+TEMPLATESADMIN_GROUP = 'Editors'
 TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
         'html', 
         'css', 
@@ -186,6 +187,7 @@ MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
 MUACCOUNTS_IP = '127.0.0.1'
 MUACCOUNTS_USERSITE_URLCONF = 'main.urls_usersite'
+MUACCOUNTS_SUBDOMAIN_STOPWORDS = '(r"^www$", r"^support$", r"^lab$", r"^labs$", r"^dev$", r"^development$", r"^ops$", r"^operations$", r"^corp$", r"^media$", r"^assets$", r"^mail$", r"^docs$", r"^calendar$", r"^contacts$", r"^feedback$", r"^chat$")'
 MUACCOUNTS_THEMES = (
     # color css
     ('color_scheme', 'Color scheme', (

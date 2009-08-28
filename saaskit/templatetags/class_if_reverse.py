@@ -8,7 +8,7 @@ class ClassIfReverseNode(template.Node):
         self.class_name = class_name
         self.url_path = url_path
     def render(self, context):
-        if context['request'].path == self.url_path:
+        if context['request'].path.startswith(self.url_path):
             return ' class="%s"' % self.class_name
         else: return ''
 

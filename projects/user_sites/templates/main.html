@@ -54,7 +54,23 @@
               {% block body %} Body {% endblock %}
         </div></div></div>
          <div id="sidebar" class="yui-b">
-            {% block sidebar %} {% endblock %}
+                     {% if not request.muaccount.owner %}
+           <div class="block"><div class="hd">
+              <h2>This account has no owner</h2>
+            </div><div class="bd">
+              {% if user.is_authenticated %}
+              <form action="{% url muaccounts_claim_account %}"
+                    method="POST" class="inline-form">
+                <p><input type="submit" value="claim this account"></p></form>
+              {% else %}
+              If you feel you should manage this account, please
+              register at <a href="{% setting MUACCOUNTS_DEFAULT_URL %}">
+                main page</a> and <a href="{% url user_signin %}">log
+              in here</a> to claim this account.
+              {% endif %}
+          </div></div>
+          {% endif %} 
+              {% block sidebar %} {% endblock %}
          </div>
       </div>
       <div id="ft"><div id="yui-main">

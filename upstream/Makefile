@@ -12,6 +12,7 @@ DJANGO_PISTON_RELEASE=0.2.2
 DJANGO_ROSETTA_RELEASE=67
 DJANGO_SSO_RELEASE=3
 SORL_THUMBNAIL_RELEASE=449
+SOUTH_RELEASE=64cde35ab459
 DATEUTIL_VERSION=1.4.1
 
 init: _submodules.stamp \
@@ -26,6 +27,7 @@ init: _submodules.stamp \
 	django-sso.stamp \
 	django-tagging.stamp \
 	sorl-thumbnail.stamp \
+        south.stamp \
         dateutils.stamp
 
 .PHONY: _submodules.stamp
@@ -94,6 +96,9 @@ django-sso.stamp:
 	svn checkout -r $(DJANGO_SSO_RELEASE) http://django-sso.googlecode.com/svn/trunk/ django-sso
 	date > $@
 
+south.stamp:
+        hg clone -r $(SOUTH_RELEASE) http://bitbucket.org/andrewgodwin/south/
+        date > $@
 
 django-tagging.stamp:
 	svn checkout -r $(DJANGO_TAGGING_RELEASE) http://django-tagging.googlecode.com/svn/trunk/ django-tagging

@@ -69,7 +69,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     # third-party
     'compress',
-    'debug_toolbar',
     'contact_form',
     'django_authopenid',
     'django_extensions',
@@ -77,10 +76,8 @@ INSTALLED_APPS = (
     'notification',
     'paypal.standard.ipn',
     'perfect404',
-    'piston',
     'profiles',
     'registration',
-    'rosetta',
     'sorl.thumbnail',
     'south',
     'sso',
@@ -91,6 +88,7 @@ INSTALLED_APPS = (
     # 3rd party apps currently not used
     # 'ab',
     # 'filter',
+    # 'rosetta',
     # 'autoslug',
     # 'mailer',
     # 'mptt',
@@ -103,6 +101,9 @@ INSTALLED_APPS = (
     'subscription',
     # local
     'saaskit',
+    # only in development 
+    #'debug_toolbar',
+
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (

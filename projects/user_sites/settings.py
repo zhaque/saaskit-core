@@ -25,8 +25,5 @@ SECRET_KEY = '+*q3$z(d1@hi^p%645&636$n7r@=w!m)(z9@k9&9s9_7uh%a+s'
 MIDDLEWARE_CLASSES += ('muaccounts.middleware.MUAccountsMiddleware',)
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_ROOT, 'templates'),
+    os.path.join(KIT_ROOT, 'templates/user_sites'),
 ) + TEMPLATE_DIRS

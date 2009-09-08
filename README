@@ -65,6 +65,7 @@ Table of Contents
 
   (in other shell)
   10. cd projects/user_sites
+      (note: once you add application that are specific to user sites, you need to run 'python manage.py syncdb' for those apps)
   11. python manage.py synccompress 
   12. python manage.py runserver
   13. Create a new group 'Editors' for templates admin (http://domain.com/admin/templates) and assign 'admin' user to the 'Editors' group.
@@ -76,7 +77,7 @@ Table of Contents
 
 2 Overview
 ~~~~~~~~~~
-  SaaSkit is a complete SAAS-type website template,
+  SaaSkit is a complete SaaS-type website template,
   ready for deployment.  It includes a set of integrated Django
   applications, ready to change sample templates, together with a
   Yahoo YUI-based CSS theme.  It is glued together in different 
@@ -150,7 +151,7 @@ Table of Contents
    The `main' project serves project's main site
    (marketing/info/signup/dashboard site, common for all accounts;
    think [http://basecamphq.com/] marketing site for Basecamp).
-   The `user_sites' project serves individual users' SAAS sites
+   The `user_sites' project serves individual users' SaaS sites
    (think [http://samplecompany.basecamphq.com/] individual Basecamp
    account).
 
@@ -582,3 +583,10 @@ Table of Contents
 
 9. Roadmap
 ~~~~~~~~~~
+- Support for PDF invoice and more self service account management
+- Support for Sales/Order data export
+- Paypal Pro and other payment gateways
+- Support for multiple user_sites templates, including more intuative theme selection
+- Integrate Analytics etc.
+- More what ever the community wants and contributes :)
+

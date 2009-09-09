@@ -1,6 +1,3 @@
-[submodule "upstream/django-registration"]
-	path = upstream/django-registration
-	url = git://github.com/bretthoerner/django-registration.git
 [submodule "upstream/django-notification"]
 	path = upstream/django-notification
 	url = git://github.com/jtauber/django-notification.git

@@ -2,17 +2,23 @@
 
 {% block title %}{{request.muaccount}}{% endblock %} 
 {% block body %}
+You can see the old implementation under current "manage" link however the "account" link is not correct, links related to account
+are scattered around in the main site (<a href="http://yotweets.com/">http://yotweets.com</a>) 
 Pages we need to fix/develop as per layout is the following:
 
-<h3>Dashboard</h3>
-
-<h3>Manage Site</h3>
-<li><a href ="/extend/general">Manage Site - General/Index Page</a>
-<li><a href ="/extend/themes">Manage Site - Styles & Themes</a>
-<li><a href ="/extend/users">Manage Site - Users</a>
-<li><a href ="/extend/advanced">Manage Site - Advanced Settings</a>
-<li><a href ="/extend/apps">Manage Site - Applications Settings</a>
+<h3>Manage</h3>
+<li><a href ="/extend/general">Manage - General/Index Page</a>
+<li><a href ="/extend/themes">Manage - Styles & Themes</a>
+<li><a href ="/extend/users">Manage - Users</a>
+<li><a href ="/extend/advanced">Manage - Advanced Settings</a>
+<li><a href ="/extend/apps">Manage - Applications Settings</a>
+<br/>"Index Page" means this is the page user will be taken to once he clicks on the "Manage" link at the top.
 
 <h3>Account</h3>
-
+<li><a href ="/extend/dashboard">Account - Dashboard</a>
+<li><a href ="/extend/profile">Account - Profile/Index Page</a>
+<li><a href ="/extend/password">Account - Password Settings</a>
+<li><a href ="/extend/plans">Account - Plans and Payments</a>
+<li><a href ="/extend/invoice">Account - Invoice History</a>
+<br/>"Index Page" means this is the page user will be taken to once he clicks on the "Account" link at the top.
 {% endblock %}

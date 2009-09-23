@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+{% block title %}Your Account{% endblock %} 
+{% block body %}
+  <div class="block">
+    <div class="bd">
+     <h2>Dashboard</h2>
+1. We need to bring templates/notifications pages here.
+<br/>
+2. We need to list all the sites that user is owner of, please see the code below. If the user is not a owner of any site then we need a link from here to site creation. 
+<br/>
+3. We need to list all the sites user is member of, see below. 
+<br/>
+4. We need to delete the necessary top links from the main site new link should be same as the "user_sites" top links
+
+<br/>
+Code snippet :
+
+  <div class="block">
+    {% if user.is_authenticated %}
+
+     <div class="bd">
+      <h2>Logged in as <em>{{user}}</em></h2>
+      <h3>Your sites</h3>
+      <ul>
+        {% if user.muaccount %}
+        <li><a href="{% url sso %}?next={{user.muaccount.get_absolute_url}}"><strong>{{user.muaccount}}</strong></a> (owner)</li>
+        {% endif %}
+        {% for mua in user.muaccount_member.all %}
+        <li><a href="{% url sso %}?next={{mua.get_absolute_url}}">{{mua}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+    <div class="hd"><h2>Not logged in</h2></div><div class="bd">
+      <p>Please <a href="{% url user_signin %}">log in or sign
+          up</a>.</p>
+    </div>
+    {% endif %}
+  </div>
+</div></div>
+{% endblock %}
+{% block sidebar %}
+
+  <div class="block">
+      <div class="bd">
+         <h2><a href="/extend/dashboard">Dashboard</a></h2>
+         <h2><a href="/extend/profile">My Profile</a></h2>
+         <h2><a href="/extend/password">Password Settings</a></h2>
+         <h2><a href="/extend/plans">Plans and Payments</a></h2>
+         <h2><a href="/extend/invoice">Invoice History</a></h2> 
+      </div>
+    </div>
+ 
+  
+{% endblock %}
+
+
+
+
+
+

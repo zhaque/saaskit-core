@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+{% block title %}Your Account{% endblock %} 
+{% block body %}
+  <div class="block">
+    <div class="bd">
+     <h2>Your Profile</h2>
+1. We need to put this page here <a href="http://yotweets.com/profiles/create">http://yotweets.com/profiles/create</a>
+also we need add the following items with necessary validation to the profile form.
+<li>Website/Blog
+<li>Email
+<li>Company URL
+<li>Location
+<li>Member Since
+<li>- Public or Private Profile
+<br/>
+3. We need to delete the necessary top links from the main site new link should be same as the "user_sites" top links
+<br/>
+4. Also we need to fix the tabs of the main site i.e. class_if_reverse bug in http://yotweets.com
+</div></div>
+{% endblock %}
+{% block sidebar %}
+
+  <div class="block">
+      <div class="bd">
+         <h2><a href="/extend/dashboard">Dashboard</a></h2>
+         <h2><a href="/extend/profile">My Profile</a></h2>
+         <h2><a href="/extend/password">Password Settings</a></h2>
+         <h2><a href="/extend/plans">Plans and Payments</a></h2>
+         <h2><a href="/extend/invoice">Invoice History</a></h2> 
+      </div>
+    </div>
+ 
+  
+{% endblock %}
+
+
+
+
+
+

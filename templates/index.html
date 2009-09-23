@@ -99,28 +99,6 @@ ng in from all over the world as they happen — see the <strong>Quick Tour</str
 </div></div></div>
 
 <div id="sidebar" class="yui-b">
-  <div class="block">
-    {% if user.is_authenticated %}
-    
-     <div class="bd">
-      <h2>Logged in as <em>{{user}}</em></h2>
-      <h3>Your sites</h3>
-      <ul>
-        {% if user.muaccount %}
-        <li><a href="{% url sso %}?next={{user.muaccount.get_absolute_url}}"><strong>{{user.muaccount}}</strong></a> (owner)</li>
-        {% endif %}
-        {% for mua in user.muaccount_member.all %}
-        <li><a href="{% url sso %}?next={{mua.get_absolute_url}}">{{mua}}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% else %}
-    <div class="hd"><h2>Not logged in</h2></div><div class="bd">
-      <p>Please <a href="{% url user_signin %}">log in or sign
-          up</a>.</p>
-    </div>
-    {% endif %}
-  </div>
   
     <!--Start of quickfacts-->
                 <div class="block">

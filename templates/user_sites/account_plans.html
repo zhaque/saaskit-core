@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+{% block title %}Your Account{% endblock %} 
+{% block body %}
+  <div class="block">
+    <div class="bd">
+<h2> Pricing and Plans</h2> 
+1. We need show the user all current plans. <a href="http://yotweets.com/sub/">http://yotweets.com/sub/"</a>
+also please change the urls.py so it's "/subscription" and not "/sub"
+<br/>
+2. This link is only available if the user has a Plan 
+<br/>
+3. User plan should be selected by default i.e "your current plan is" blah blah..
+<br/>
+4. User should be able to upgrade/downgrade plans from here..
+
+</div></div>
+{% endblock %}
+{% block sidebar %}
+
+  <div class="block">
+      <div class="bd">
+         <h2><a href="/extend/dashboard">Dashboard</a></h2>
+         <h2><a href="/extend/profile">My Profile</a></h2>
+         <h2><a href="/extend/password">Password Settings</a></h2>
+         <h2><a href="/extend/plans">Plans and Payments</a></h2>
+         <h2><a href="/extend/invoice">Invoice History</a></h2> 
+      </div>
+    </div>
+ 
+  
+{% endblock %}
+
+
+
+
+
+

@@ -23,10 +23,10 @@
         {% if user.is_authenticated %}
         <div id="user-nav">
           <ul id="user-nav">
-          <li>{{user}}'s <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">Dashboard</a></li> | 
+          <li>Hi, <b>{{user}}<b></li> | 
             
             {% ifequal user request.muaccount.owner %}
-            <li><a href="{% url muaccounts_account_detail %}">Manage site</a></li> | 
+            <li><a href="{% url muaccounts_account_detail %}">Manage</a></li> | 
             
             {% endifequal %}
             <li><a href="">Account</a></li> | 

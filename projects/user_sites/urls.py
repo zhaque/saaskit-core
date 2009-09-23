@@ -14,6 +14,11 @@ urlpatterns = patterns('',
     url(r'^extend/users/$', 'django.views.generic.simple.direct_to_template', dict(template='manage_users.html')),
     url(r'^extend/advanced/$', 'django.views.generic.simple.direct_to_template', dict(template='manage_advanced.html')),
     url(r'^extend/apps/$', 'django.views.generic.simple.direct_to_template', dict(template='manage_apps.html')),
+   url(r'^extend/dashboard/$', 'django.views.generic.simple.direct_to_template', dict(template='account_dashboard.html')),
+    url(r'^extend/profile/$', 'django.views.generic.simple.direct_to_template', dict(template='account_profile.html')),
+    url(r'^extend/password/$', 'django.views.generic.simple.direct_to_template', dict(template='account_password.html')),
+    url(r'^extend/plans/$', 'django.views.generic.simple.direct_to_template', dict(template='account_plans.html')),
+    url(r'^extend/invoice/$', 'django.views.generic.simple.direct_to_template', dict(template='account_invoice.html')),
 )
 
 # serve static files in debug mode

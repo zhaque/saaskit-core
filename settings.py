@@ -150,7 +150,6 @@ NOTICE_TYPES = (
      )
 
 _default_css_files = ('yui-app-theme/yuiapp.css',
-                      'saaskit/css/default.css',
                       'authopenid/css/openid.css',
                       'uni_form/uni-form-generic.css',
                       'uni_form/uni-form.css',

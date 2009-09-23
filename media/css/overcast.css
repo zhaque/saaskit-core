@@ -10,5 +10,6 @@
 .block .bd h3 { color:#262626; }
 .spaces .hd { background-color:transparent; }
 .spaces .hd ul li { background-color:#176288; }
-a { color:#0d93d7; }
+a { color:#0d93d7; text-decoration:none; }
 .tabs .hd ul li a:hover { background-color:#262626; }
+.asHeader { color:#262626; }

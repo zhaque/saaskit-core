@@ -22,6 +22,7 @@ table thead { background-color:#757474;}
 #hd h1{
 	color: #989898;	
 }
+.asHeader { color:#989898;}
 #bd {
 	background-color: #ececec;
 	color: #565656;

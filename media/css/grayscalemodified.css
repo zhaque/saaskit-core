@@ -11,7 +11,7 @@ h1, h2, h3 {
 	color: #989898;
 }
 a { 
-	color:#4db91a;
+	color:#009900;
 	text-decoration: none; 
 }
 table thead { background-color:#757474;}
@@ -22,12 +22,13 @@ table thead { background-color:#757474;}
 #hd h1{
 	color: #989898;	
 }
+.asHeader { color:#989898;}
 #bd {
 	background-color: #ececec;
 	color: #565656;
 }
 
-#primary-navigation li.active a { background-color: #ececec; color:#63fe1b;}
+#primary-navigation li.active a { background-color: #ececec; color:#009900;}
 #user-navigation li a {
 	background-color: #272727;
 }

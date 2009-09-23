@@ -19,9 +19,10 @@ table thead { background-color:#757474;}
 #hd {
 	background-color: #272727;
 }
-#hd h1{
+#hd h1, h2{
 	color: #14cfc0;	
 }
+.asHeader { color:#14cfc0;}
 #bd {
 	background-color: #ececec;
 	color: #565656;

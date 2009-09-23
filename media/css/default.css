@@ -19,9 +19,10 @@ table thead { background-color:#757474;}
 #hd {
 	background-color: #272727;
 }
-#hd h1{
+#hd h1, h2{
 	color: #989898;	
 }
+.asHeader { color:#989898;}
 #bd {
 	background-color: #f0eeee;
 	color: #565656;
@@ -55,3 +56,4 @@ table thead { background-color:#757474;}
 
 ul.pager li a { padding:0.1em 0.3em; margin-right:0.3em; border:1px solid #ccc; text-decoration:none; color:#333; }
 ul.pager li.active a, ul.pager li a:hover { background-color:#757474; color:#fff; }
+

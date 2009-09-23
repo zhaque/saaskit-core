@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% block title %}Manage your site{% endblock %} 
+{% block body %}
+  <div class="block">
+    <div class="bd">
+     <h2>Advanced Settings</h2>
+      <form action="" method="post">
+         <table>
+           <tr><td><label for="analytics_code">Analytics code</label></td>
+               <td><textarea id="analytics_code" rows="5" cols="40">Paste your tracking code in here...</textarea></td>
+           </tr>
+           <tr><td><label for="wmt_code">WebMaster Tools Code</label></td>
+               <td><input type="text" id="wmt_code" /></td>
+           </tr>
+           <tr><td><label for="adsense_code">Adsense code</label></td>
+               <td><textarea id="adsense_code" rows="5" cols="40">Paste your Adsense code in here...</textarea></td>
+           </tr>
+           <tr><td><label for="domain">Domain name</label></td>
+               <td><input type="text" id="domain" /></td>
+           </tr>
+           <tr><td><input type="submit" value="Save"></td></tr>
+           </table>
+      </form>      
+</div></div>
+{% endblock %}
+{% block sidebar %}
+
+  <div class="block">
+      <div class="bd">
+         <h2><a href="/extend/general">General Settings</a></h2>
+         <h2><a href="/extend/themes">Colors & Styles</a></h2>
+         <h2><a href="/extend/users">Users</a></h2>
+         <h2><a href="/extend/advanced">Advanced Settings</a></h2>
+         <h2><a href="/extend/apps">Applications Settings</a></h2> 
+      </div>
+    </div>
+ 
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+

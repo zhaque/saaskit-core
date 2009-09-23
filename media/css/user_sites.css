@@ -28,6 +28,33 @@ table#thumb {width:200px; border-spacing:3px; border:1px; border-color:#CCCCCC;}
 .block .hed h5 { font-size:120%; color: #FFFFFF; font-weight:700;}
 .block ol {list-style:decimal;}
 
+/* Scrapbook table rules */
+table.nocolor, table.nocolor tr, table.nocolor td {
+}
+table#tasktable td, table#tasktable th {
+padding:5px;
+}
+table#tasktable th {
+background-color:#000000;
+color:#FFFFFF;
+text-align:left;
+}
+table#tasktable tr.row1 {
+background-color:#FFFFFF;
+}
+table#tasktable tr.row2 {
+background-color:#C0C0C0;
+}
+.minor {
+font-size:0.8em;
+font-style:italic;
+}
+table#tasktable a {
+text-decoration:none;
+}
+
+/* End of scrapbook table rules */
+
 #padding {padding:20px;}
 
 .pseudo-footer {float:right; padding:0.5em 1em; color:#262626;}
@@ -50,6 +77,7 @@ table#thumb {width:200px; border-spacing:3px; border:1px; border-color:#CCCCCC;}
 .big { font-size:140%; font-family:"Garamond Premr Pro", Arial, sans-serif; font-style:italic; color:#333333;}
 
 #owner-nav { float:right; margin: 5px 0 0 0; color:#ffffff; clear:both;}
+
 
 
 

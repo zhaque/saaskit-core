@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block title %}Manage your site{% endblock %} 
+{% block body %}
+  <div class="block">
+    <div class="bd">
+     <h2>General</h2>
+      <form action="" method="POST">
+      <table>
+        <tr><td><label for="sitename">Sitename</label></td>
+            <td><input id="sitename" type="text" maxlenght="256" /></td>
+        </tr>
+        <tr><td><label for="tagline">Tagline</label></td>
+            <td><textarea id="tagline" rows="5" cols="40">Give your site a punchy one-liner</textarea></td>
+        </tr>
+        <tr><td><label for="about_site">About the site</label></td>
+            <td><textarea id="about_site" rows="5" cols="40">What is your site for? What's your target audiece></textarea></td>
+        </tr>
+        <tr><td><label for="visibility">Visibility</label></td>
+            <td><select id="visibility">
+                 <option value="private">Private</option>
+                 <option value="reg_only">Registration only</option>
+                 <option value="public">Public</option>
+                </select></td>
+        </tr>
+        <tr><td><label for="id_logo"> Logo </label></td>
+            <td><input id="id_logo" class="removablefileformwidget" type="file" name="logo_0"/></td>
+        </tr>
+       <tr><td> <input type="submit" value="Save"></td></tr>
+     </table>
+      </form>
+</div></div>
+{% endblock %}
+{% block sidebar %}
+
+  <div class="block">
+      <div class="bd">
+         <h2><a href="/extend/general">General Settings</a></h2>
+         <h2><a href="/extend/themes">Colors & Styles</a></h2>
+         <h2><a href="/extend/users">Users</a></h2>
+         <h2><a href="/extend/advanced">Advanced Settings</a></h2>
+         <h2><a href="/extend/apps">Applications Settings</a></h2> 
+      </div>
+    </div>
+ 
+  
+{% endblock %}
+
+
+
+
+
+

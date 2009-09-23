@@ -1,0 +1,76 @@
+{% extends "main.html" %}
+{% block title %}Manage your site{% endblock %} 
+{% block body %}
+  <div class="block">
+    <div class="bd">
+     <h2>Colors&amp;Styles</h2>
+      <form action="" method="POST">
+      <table>
+         
+           <tr><td><label for="id_theme">Theme</label></td></tr>
+	            			
+	   <tr><td><label>Color scheme</label></td>
+               <td><select id="id_theme_0" name="theme_0" class="themewidget">
+                      <option value="aqua" selected="selected">Aqua</option>
+                      <option value="green">Green</option>
+                      <option value="purple">Purple</option>
+                      <option value="red">Red</option>
+                      <option value="tan-blue">Tan Blue</option>
+                      <option value="default">CrowdSense</option>
+                      <option value="fireflynight">Firefly Night</option>
+                      <option value="freshair">Fresh Air</option>
+                      <option value="girly">Girly</option>
+                      <option value="grayscale">Grayscale</option>
+                      <option value="grayscalem">Grayscale Modified</option>
+                      <option value="overcast">Overcast</option>
+                      <option value="pepper">Pepper</option>
+                      <option value="sunshine">Sunshine</option>
+              </select></td></tr>
+           <tr><td><label>Page widgh</label></td>
+               <td><select id="id_theme_1" name="theme_1" class="themewidget">
+                     <option value="doc3" selected="selected">100% fluid</option>
+                     <option value="doc">750px centered</option>
+                     <option value="doc2">950px centered</option>
+                     <option value="doc4">974px fluid</option>
+               </select></td></tr>
+           <tr><td><label>Layout</label> 
+               <td><select id="id_theme_2" name="theme_2" class="themewidget">
+                     <option value="yui-t6" selected="selected">Right sidebar, 300px</option>
+                     <option value="yui-t1">Left sidebar, 160px</option>
+                     <option value="yui-t2">Left sidebar, 180px</option>
+                     <option value="yui-t3">Left sidebar, 300px</option>
+                     <option value="yui-t4">Right sidebar, 180px</option>
+                     <option value="yui-t5">Right sidebar, 240px</option>
+                     <option value="yui-t0">Single Column</option>
+               </select></td></tr>
+           <tr><td><label>Rounded corners</label></td>
+               <td><select id="id_theme_3" name="theme_3" class="themewidget">
+                     <option value="on" selected="selected">On</option>
+                     <option value="off">Off</option>
+             </select></td></tr>
+       <tr><td> <input type="submit" value="Save"></td></tr>
+     </table>
+      </form>
+</div></div>
+{% endblock %}
+{% block sidebar %}
+
+  <div class="block">
+      <div class="bd">
+         <h2><a href="/extend/general">General Settings</a></h2>
+         <h2><a href="/extend/themes">Colors & Styles</a></h2>
+         <h2><a href="/extend/users">Users</a></h2>
+         <h2><a href="/extend/advanced">Advanced Settings</a></h2>
+         <h2><a href="/extend/apps">Applications Settings</a></h2> 
+      </div>
+    </div>
+ 
+  
+{% endblock %}
+
+
+
+
+
+
+

@@ -23,12 +23,14 @@
         {% if user.is_authenticated %}
         <div id="user-nav">
           <ul id="user-nav">
-          <li>Logged in: <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">{{user}}</a></li> | 
-          {% ifequal user request.muaccount.owner %}
+          <li>{{user}}'s <a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}">Dashboard</a></li> | 
+            
+            {% ifequal user request.muaccount.owner %}
             <li><a href="{% url muaccounts_account_detail %}">Manage site</a></li> | 
             
             {% endifequal %}
-            <li><a href="{% url user_signout %}">Logout [{{user}}]</a></li> 
+            <li><a href="">Account</a></li> | 
+            <li><a href="{% url user_signout %}">Sign-out</a></li> 
             </ul>
         </div>  
           {% else %}
@@ -51,7 +53,7 @@
 
       <div id="bd">
         <div id="yui-main"><div class="yui-b"><div class="yui-g">
-              {% block body %} Body {% endblock %}
+              {% block body %}{% endblock %}
         </div></div></div>
          <div id="sidebar" class="yui-b">
                      {% if not request.muaccount.owner %}
@@ -91,3 +93,5 @@
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
+
+

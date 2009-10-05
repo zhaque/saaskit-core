@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     'oembed',
     'templatesadmin', 
     'uni_form', 
+    'app_media',
     # 3rd party apps currently not used
     # 'ab',
     # 'filter',
@@ -149,10 +150,10 @@ NOTICE_TYPES = (
      ("member_remove", "Removed from site", "you were removed from membership in a site"),
      )
 
-_default_css_files = ('yui-app-theme/yuiapp.css',
-                      'authopenid/css/openid.css',
-                      'uni_form/uni-form-generic.css',
-                      'uni_form/uni-form.css',
+_default_css_files = ('saaskit/yui-app-theme/yuiapp.css',
+                      # 'authopenid/css/openid.css',
+                      'uni_form/uni_form/uni-form-generic.css',
+                      'uni_form/uni_form/uni-form.css',
                       )
 
 COMPRESS_CSS = {                        # different themes for MUAs
@@ -163,8 +164,8 @@ COMPRESS_CSS = {                        # different themes for MUAs
     }
 COMPRESS_JS = {
     'all' : {
-        'source_filenames' : ('authopenid/js/jquery-1.3.2.min.js',
-                              'uni_form/uni-form.jquery.js',
+        'source_filenames' : (# 'authopenid/js/jquery-1.3.2.min.js',
+                              'uni_form/uni_form/uni-form.jquery.js',
                               ),
         'output_filename' : 'scripts.js'},
     }
@@ -191,11 +192,11 @@ MUACCOUNTS_SUBDOMAIN_STOPWORDS = '(r"^www$", r"^support$", r"^lab$", r"^labs$", 
 MUACCOUNTS_THEMES = (
     # color css
     ('color_scheme', 'Color scheme', (
-        ('aqua', 'Aqua', 'yui-app-theme/aqua.css'),
-        ('green', 'Green', 'yui-app-theme/green.css'),
-        ('purple', 'Purple', 'yui-app-theme/purple.css'),
-        ('red', 'Red', 'yui-app-theme/red.css'),
-        ('tan-blue', 'Tan Blue', 'yui-app-theme/tan_blue.css'),
+        ('aqua', 'Aqua', 'saaskit/yui-app-theme/aqua.css'),
+        ('green', 'Green', 'saaskit/yui-app-theme/green.css'),
+        ('purple', 'Purple', 'saaskit/yui-app-theme/purple.css'),
+        ('red', 'Red', 'saaskit/yui-app-theme/red.css'),
+        ('tan-blue', 'Tan Blue', 'saaskit/yui-app-theme/tan_blue.css'),
 	('default', 'CrowdSense', 'saaskit/css/default.css'),
 	('fireflynight', 'Firefly Night', 'saaskit/css/fireflynight.css'),
         ('freshair', 'Fresh Air', 'saaskit/css/freshair.css'),

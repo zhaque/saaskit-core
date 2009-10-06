@@ -68,6 +68,7 @@ django-uni-form
 html5lib
 python-dateutil
 sorl-thumbnail
+django
 
 
 

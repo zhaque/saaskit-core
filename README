@@ -1,25 +1,25 @@
 Table of Contents
 =================
 1 Getting started
-	1.1 Dependencies
-	1.2 Starting the Project
+    1.1 Dependencies
+    1.2 Starting the Project
 2 Overview
 3 Code layout
         3.1 Settings
         3.2 Templates
-		3.3 Static Files
+        3.3 Static Files
         3.4 Sites
-		3.5 Shadowbox JS library
+        3.5 Shadowbox JS library
 4 Django-pages-cms integration
-	4.1 Adding CMS Content Example
-	4.2 CMS Only Pages
+    4.1 Adding CMS Content Example
+    4.2 CMS Only Pages
 5 Plans & Pricing and Quota
 6 Default Plans and Pricing
 7 List of third party code
     7.1 Django applications
         7.1.1 Used
         7.1.2 Disabled
-	7.2.1 Python libs
+    7.2.1 Python libs
     7.2 Other code
         7.2.1 yui-app-theme
 8 Runtime environment

@@ -70,6 +70,7 @@ INSTALLED_APPS = (
     # third-party
     'compress',
     'contact_form',
+    'registration',
     'django_authopenid',
     'django_extensions',
     'django_pipes',
@@ -77,14 +78,13 @@ INSTALLED_APPS = (
     'paypal.standard.ipn',
     'perfect404',
     'profiles',
-    'registration',
     'sorl.thumbnail',
     'south',
     'sso',
     'tagging',
     'oembed',
-    'templatesadmin', 
-    'uni_form', 
+    'templatesadmin',
+    'uni_form',
     'app_media',
     # 3rd party apps currently not used
     # 'ab',
@@ -94,7 +94,7 @@ INSTALLED_APPS = (
     # 'mailer',
     # 'mptt',
     # 'piston',
-    # 'pages', 
+    # 'pages',
     # own
     'muaccounts',
     'prepaid',
@@ -102,7 +102,7 @@ INSTALLED_APPS = (
     'subscription',
     # local
     'saaskit',
-    # only in development 
+    # only in development
     #'debug_toolbar',
 
 )
@@ -116,23 +116,23 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
 
 # Settings for templates editing via django admin
- 
-TEMPLATESADMIN_HIDE_READONLY = True 
+
+TEMPLATESADMIN_HIDE_READONLY = True
 TEMPLATESADMIN_GROUP = 'Editors'
 TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
-        'html', 
-        'css', 
+        'html',
+        'css',
         'txt',
-        'backup'
+        'backup',
    )
 
-TEMPLATESADMIN_EDITHOOKS = (    
+TEMPLATESADMIN_EDITHOOKS = (
         'templatesadmin.edithooks.dotbackupfiles.DotBackupFilesHook',
 #        'templatesadmin.edithooks.gitcommit.GitCommitHook',
    )
 
 TEMPLATESADMIN_TEMPLATE_DIRS = (
-      ( os.path.join(KIT_ROOT, 'templates'), ) 
+      ( os.path.join(KIT_ROOT, 'templates'), )
    )
 
 INTERNAL_IPS = ( '127.0.0.1', )
@@ -141,8 +141,8 @@ AUTH_PROFILE_MODULE = 'saaskit.UserProfile'
 
 SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 
-COMPRESS = False 
-COMPRESS_VERSION = False 
+COMPRESS = False
+COMPRESS_VERSION = False
 
 NOTICE_TYPES = (
      ("welcome", "Welcome to CrowdSense Starter Kit!", "you have successfully registered"),
@@ -151,7 +151,7 @@ NOTICE_TYPES = (
      )
 
 _default_css_files = ('saaskit/yui-app-theme/yuiapp.css',
-                      # 'authopenid/css/openid.css',
+                      'saaskit/auth/css/openid.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
                       )
@@ -186,6 +186,7 @@ QUOTAS = {
 MUACCOUNTS_ROOT_DOMAIN = 'example.com'
 MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
+
 MUACCOUNTS_IP = '127.0.0.1'
 MUACCOUNTS_USERSITE_URLCONF = 'main.urls_usersite'
 MUACCOUNTS_SUBDOMAIN_STOPWORDS = '(r"^www$", r"^support$", r"^lab$", r"^labs$", r"^dev$", r"^development$", r"^ops$", r"^operations$", r"^corp$", r"^media$", r"^assets$", r"^mail$", r"^docs$", r"^calendar$", r"^contacts$", r"^feedback$", r"^chat$")'
@@ -240,7 +241,7 @@ for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
          }
 
 # django-page-cms settings currently disabled, to enable un-comment middleware as well as installed apps and settings below
- 
+
 # PAGE_TAGGING = True
 # PAGE_TINYMCE = False
 # PAGE_USE_SITE_ID = True

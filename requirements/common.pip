@@ -1,0 +1,67 @@
+# django-muaccounts
+http://github.com/gearheart/django-muaccounts/tarball/master
+
+# django-contact-form
+http://bitbucket.org/ubernostrum/django-contact-form/get/tip.tar.gz
+
+# django-ab
+http://github.com/tomasd/django-ab/tarball/master
+
+# django-paypal, fork with some improvements:
+http://github.com/dcramer/django-paypal/tarball/master
+
+#django-prepaid
+http://github.com/gearheart/django-prepaid/tarball/master
+
+# django-quotas
+http://github.com/gearheart/django-quotas/tarball/master
+
+# django-subscription
+http://github.com/gearheart/django-subscription/tarball/master
+
+# django-pipes
+http://github.com/mallipeddi/django-pipes/tarball/master
+
+# django-sso
+http://github.com/gearheart/django-sso/tarball/master
+
+#south
+http://bitbucket.org/andrewgodwin/south/get/tip.tar.gz
+
+#django-socialauth
+#http://github.com/gearheart/Django-Socialauth/tarball/master
+
+# python-yadis
+#django-openauth
+#django-openid
+# oauth
+
+#django-authopenid
+http://bitbucket.org/benoitc/django-authopenid/get/eb47832f9f7e.gz
+python-openid
+
+django-autoslug
+django-compress
+django-debug-toolbar
+django-extensions
+django-filter
+django-mailer
+django-mptt
+django-notification
+django-oembed
+django-page-cms
+django-perfect404
+django-piston
+django-profiles
+django-registration
+django-rosetta
+django-tagging
+django-templatesadmin
+django-uni-form
+html5lib
+python-dateutil
+sorl-thumbnail
+
+
+
+

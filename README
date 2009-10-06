@@ -5,17 +5,11 @@ Table of Contents
 	1.2 Starting the Project
 2 Overview
 3 Code layout
-    3.1 Third party code
-        3.1.1 Downloading third-party code
-        3.1.2 Updating third-party code
-    3.2 Python path
-    3.3 Local code
-    3.4 Projects
-        3.4.1 Settings
-        3.4.2 Templates
-		3.4.3 Static Files
-        3.4.4 Sites
-		3.4.5 Shadowbox JS library
+        3.1 Settings
+        3.2 Templates
+		3.3 Static Files
+        3.4 Sites
+		3.5 Shadowbox JS library
 4 Django-pages-cms integration
 	4.1 Adding CMS Content Example
 	4.2 CMS Only Pages
@@ -129,7 +123,7 @@ Table of Contents
             $ python manage.py synccompress
 
 		
-3.4.4 Sites
+3.4 Sites
 ~~~~~~~~~~~~
     Both projects use different sites from Django's "sites" framework
     (see [http://docs.djangoproject.com/en/dev/ref/contrib/sites/]);
@@ -138,7 +132,7 @@ Table of Contents
     usersites.example.com).  This allows to have separate static
     Pages for both projects.
 
-3.4.5 Shadowbox JS library
+3.5 Shadowbox JS library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Shadowbox v3.0b has been used in the project. The stylesheet used by 
     shadowbox is located under /media/css while the images are stored 

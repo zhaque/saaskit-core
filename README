@@ -41,161 +41,63 @@ Table of Contents
    You will need the following programs:
     - Python (2.5 or higher, 
 	  but may work on earlier versions of Python)
-	- Stable release of Django 1.0.2 or higher
-	- make,
 	- git,
-	- mercurial,
-	- subversion,
 	- wget,
-	- tar accepting "-j" option (any recent GNU tar).
+	- tar accepting "-j" option (any recent GNU tar),
+    - pip,
+    - virtualenv.
 
 1.2 Starting the Project
 ~~~~~~~~~~~~~~~~~
-  To start the project, after cloning Git repository, run:
+  To start the project:
+  1. Download requirements file:
+        https://github.com/CrowdSense/saaskit-core/raw/master/requirements/full.pip
+  2. Create virtual env with it:
+        $ pip install -r full.pip -E env --enable-site-packages
+        $ source bin/activate
+  3. Prepare database:
+        $ cd env/src/saaskit-main/main_site/
+        $ python manage.py syncdb
+        $ python manage.py migrate
+        $ python manage.py loaddata ../../saaskit-core/saaskit/exampledata.json
+  4. Prepare media:
+        $ python manage.py link_app_media
+        $ python manage.py syccompress
+    4.5 And for user site:
+        $ cd ../../saaskit-user/user_site/
+        $ python manage.py link_app_media
+        $ python manage.py syccompress
+  5. Run sites:
+        user-site$ python manage.py runserver
+        main-site$ python manage.py runserver 8001
 
-  1. make -C upstream/ init
-  2. Edit/Add site-python/local_settings.py according to your enviornment. 
-  3. cd projects/main
-  4. python manage.py syncdb
-  5. python manage.py migrate (after syncdb we migrate the necessary tables using south)
-  6. python manage.py loaddata ../../exampledata.json
-  7. python manage.py synccompress 
-  8. hookup admin media as per settings i.e. cd media; ln -s /usr/local/lib/python2.6/dist-packages/django/contrib/admin/media admin
-  9. python manage.py runserver 8001
+  6. Create a new group 'Editors' for templates admin (http://domain.com/admin/templates) and assign 'admin' user to the 'Editors' group.
 
-  (in other shell)
-  10. cd projects/user_sites
-      (note: once you add application that are specific to user sites, you need to run 'python manage.py syncdb' for those apps)
-  11. python manage.py synccompress 
-  12. python manage.py runserver
-  13. Create a new group 'Editors' for templates admin (http://domain.com/admin/templates) and assign 'admin' user to the 'Editors' group.
- 
-  Project includes as Git sumodules or downloads from
-  upstream/Makefile all needed Django applications; only requirements
-  are Python (2.5 or higher, but may work on earlier versions of
-  Python) and stable release of Django 1.0.2 or higher.
 
 2 Overview
 ~~~~~~~~~~
-  SaaSkit is a complete SaaS-type website template,
-  ready for deployment.  It includes a set of integrated Django
-  applications, ready to change sample templates, together with a
-  Yahoo YUI-based CSS theme.  It is glued together in different 
-  way: no virtualenv with locally used pip/easy_install, no
-  project templates, single Git repository intended to be pulled from
-  and forked to create a new project.
+  SaaSkit is a collection of reusable Django applications for creating SaaS sites.
+  It also contains two base site projects ready for deployment:
+        1. Main, marketing site
+        2. User site with subdomain per user structure.
 
   Because of usage of symbolic links and some path mangling, kit is
   expected to run on POSIX systems (Linux, Mac OS X, others from UNIX
   family), and is expected NOT to run on Microsoft Windows (at least
   not without Cygwin).
 
-3 Code layout
+3. Code layout
 ~~~~~~~~~~~~~
 
-3.1 Third party code
-~~~~~~~~~~~~~~~~~
-   Directory `[upstream/]' holds third-party and independently
-   developed code.  Most of it are Django applications.  Code is
-   downloaded primarily directly from version control systems, using
-   specified tags/releases; if this is not available, stable archives
-   are used.
-
-   Third party code hosted in Git version control system is managed
-   using git `submodule' feature (see `git help submodule').  For
-   other VC systems and stable archives, `[upstream/Makefile]' defines
-   desired release/tag numbers, repositories and commands for
-   downloading.  This Makefile handles also initializing and updating
-   git submodules.
-
-3.1.1 Downloading third-party code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    To download third-party code (all code after first checkout, or
-    added code after updating from git), run `make' command in
-    `upstream/' directory (or `make -C upstream' from main dir, as in
-    "Getting started" section).  Stamp files ensure that each package
-    is downloaded only once.
-
-3.1.2 Updating third-party code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    To update third-party code after desired version is changed:
-    - for git submodules, simply run `git submodule update', or
-      `make' in `upstream/' directory that will run this command;
-    - for archive-based downloading, `make' command in `upstream/'
-      directory will handle the update process cleanly (possibly only
-      leaving old archive/directory not deleted);
-    - for other version control systems, no updating support is
-      currently in place.  Either re-download by deleting the
-      downloaded repository and related stamp file and issuing `make'
-      command in `upstream/' directory, or issue update command in
-      the repository by hand.
-
-3.2 Python path
-~~~~~~~~~~~~~~~
-   Directory `[site-python/]' is configured by the project code to be
-   on beginning of Python module search path.  It holds only symbolic
-   links to actual Python modules, mostly those located in
-   `upstream/', but also to `settings.py' file (as
-   `common_settings.py') and to local custom code located in
-   `saaskit/' module.
-
-3.3 Local code
+3.1 Settings
 ~~~~~~~~~~~~~~
-   Local code, packaged as single Django app (can grow to multiple
-   apps/libraries if needed) is in `saaskit/' directory, linked in
-   `site-python/' as `saaskit' Python module / Django app.
+    Shared settings are in saaskit-core/settings/ module.
+    Local settings should be created in corresponding site's directory.
 
-3.4 Projects
-~~~~~~~~~~~~~
-   In `[projects/]' subdirectory, two Django projects are provided.
-   The `main' project serves project's main site
-   (marketing/info/signup/dashboard site, common for all accounts;
-   think [http://basecamphq.com/] marketing site for Basecamp).
-   The `user_sites' project serves individual users' SaaS sites
-   (think [http://samplecompany.basecamphq.com/] individual Basecamp
-   account).
-
-   In these projects, `manage.py' file has been altered to have the
-   `site-python/' directory (see /Python path/ earlier) as first
-   entry in `sys.path'.  This way, not only it sees all the included
-   apps, but they take precedence over whatever is installed in the
-   system.  This may be cause of some warning messages (seen with
-   django-registration), but these are nothing to worry about.
-
-   For both projects, `project_dir/media/' subdirectory holds static
-   files to be served.  Most of content is symlinks to upstream
-   project media files.  When run in debug mode, these media are
-   served under `/media/' URL, in production they should be served
-   directly by a fast HTTP daemon (nginx, lighttpd, or apache) and
-   `MEDIA_URL' setting should be change accordingly (see /Deployment/
-   later).
-
-   To speed up serving CSS and JavaScript files, django-compress app
-   is used.  It consolidates and minifies all needed CSS and
-   JavaScript to single files and uses a single file instead of many
-   small, separate files.  Usually in production server is not able
-   to write the consolidated files, which causes "permission denied"
-   errors.  Before deploying, and after each upgrade,
-   `python manage.py synccompress' command should be run to create
-   consolidated CSS and JavaScript files.
-
-3.4.1 Settings
-~~~~~~~~~~~~~~
-    Shared settings are in top-level `settings.py' file; it is
-    symlinked in `site-python/', as `common_settings.py' and its
-    contents are imported on top of both projects' `settings.py'
-    files.  Projects' `settings.py' files hold only setting specific
-    for each project.  To keep the database consistent, both packages
-    should have the same list of apps; the only exception is Django
-    admin, used only in `main' app (and this is why
-    `manage.py syncdb' should be run from `main' app directory).
-
-3.4.2 Templates
+3.2 Templates
 ~~~~~~~~~~~~~~~
-	Most templates are shared between two projects (apps actually 
-	used by both are distinct, and main theme is common). Shared 
-	templates live in  templates/ dir, project-specific ones to 
-	override things live in project's template/ subdir.
+    Templates are stored in saaskit-core/templates/
+	Project-specific templates to override things live in project's template/ subdir.
 
 	In some instances, full override of template makes no sense as
 	change between sites is small. In such case, I used shared template 
@@ -214,20 +116,18 @@ Table of Contents
 	An app to edit the templates. To enable users to edit the templates
 	add them to a group named 'TemplateAdmins'. Create it if not present.
 
-3.4.3 Static files
+3.3 Static files
 ~~~~~~~~~~~~~~~~~~~
 	Static files for each project is in project's media/ subdir. 
 	Most of these are symlinks, and (in case of user_sites project) 
 	uploaded site logos. Site logos are available only for user_sites.
+    
+    Application-specific static files live in 'media' dir of application.
+    All of them are symlinked to projects' media dir with:
+            $ python manage.py link_app_media
+    django-compress is used for combining and compressing of css and js:
+            $ python manage.py synccompress
 
-	Possibly static file storage can be factored out anyway to 
-	a common dir, and to separate domain. This could simplify 
-	things a bit, and enable us to export static file hosting to
-	the cloud, or at least out of the application server.
-
-	The root media/ directory contains shared static files (currently,
-	only a bit of local CSS). It is linked as 'saaskit' subdirectory
-	of both projects' media dirs.
 		
 3.4.4 Sites
 ~~~~~~~~~~~~

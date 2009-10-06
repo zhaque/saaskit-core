@@ -1,7 +1,11 @@
+-e git+ssh://git@github.com/CrowdSense/saaskit-core.git#egg=saaskit-core
+-e git+ssh://git@github.com/CrowdSense/saaskit-user.git#egg=saaskit-user
+-e git+ssh://git@github.com/CrowdSense/saaskit-main.git#egg=saaskit-main
+
 #django-app-media
 http://github.com/gearheart/django-app-media/tarball/master
 
-# django-muaccounts
+# django-muaccounts 
 http://github.com/gearheart/django-muaccounts/tarball/master
 
 # django-contact-form

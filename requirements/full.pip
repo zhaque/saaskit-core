@@ -6,6 +6,9 @@
 # fork which allows callable success urls
 http://bitbucket.org/gearheart/django-registration/get/tip.tar.gz
 
+# django-notification
+http://github.com/gearheart/django-notification/tarball/master
+
 #django-profiles
 http://bitbucket.org/gearheart/django-profiles/get/tip.tar.gz
 

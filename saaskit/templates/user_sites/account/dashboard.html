@@ -1,9 +1,21 @@
-{% extends "main.html" %}
+{% extends "account/base.html" %}
 {% load uni_form muaccounts_tags %}
 
 {% block title %}Dashboard{% endblock %} 
 {% block body %}
     <h2>Dashboard</h2>
+    <h3>Messages</h3>
+        <p>{# <a href="{% url notification_mark_all_seen %}">mark all seen</a> | #}
+        <a href="{% url notification_feed_for_user %}">RSS</a></p>
+
+        <ul>{% for notice in notices %}
+            <li{% if notice.is_unseen %} style="font-weight:bold;"{% endif %}>
+                <em title="{{notice.notice_type.description}}">{{notice.notice_type.display}}</em>
+                &mdash; {{notice.message|safe}}
+                <a href="{{notice.get_absolute_url}}">#</a></li>
+            {% endfor %}
+        </ul>
+
     {% sites_owned request.user as sites_owned %}
     {% if sites_owned|length %}
         <h3>Sites you own</h3>

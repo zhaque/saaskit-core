@@ -5,6 +5,9 @@ http://bitbucket.org/gearheart/django-registration/get/tip.tar.gz
 #django-profiles
 http://bitbucket.org/gearheart/django-profiles/get/tip.tar.gz
 
+# django-notification
+http://github.com/gearheart/django-notification/tarball/master
+
 #django-app-media
 http://github.com/gearheart/django-app-media/tarball/master
 
@@ -49,7 +52,6 @@ django-extensions
 django-filter
 django-mailer
 django-mptt
-django-notification
 django-oembed
 django-page-cms
 django-perfect404

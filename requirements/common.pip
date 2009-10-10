@@ -63,3 +63,11 @@ django-uni-form
 html5lib
 python-dateutil
 sorl-thumbnail
+<<<<<<< HEAD:requirements/common.pip
+=======
+django
+
+
+
+
+>>>>>>> b372144c784315e61e4464ec6969d19afccbf52b:requirements/common.pip

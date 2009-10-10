@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% load uni_form muaccounts_tags %}
+
+{% block title %}Dashboard{% endblock %} 
+{% block body %}
+    <h2>Dashboard</h2>
+    {% sites_owned request.user as sites_owned %}
+    {% if sites_owned|length %}
+        <h3>Sites you own</h3>
+        <ul>
+            {% for site in sites_owned %}
+                <li><a href="{{ site.get_absolute_url }}">{{ site }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% if buy_site_url %}
+            <p>You don't have any sites, maybe, you should <a href="{{ buy_site_url }}">create one</a>.</p>
+        {% endif %}
+    {% endif %}
+
+    {% member_of request.user as member_of %}
+    {% if member_of|length %}
+        <h3>Sites you are member of</h3>
+        <ul>
+            {% for site in member_of  %}
+                <li><a href="{{ site.get_absolute_url }}">{{ site }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}
+

@@ -1,3 +1,7 @@
+-e git+ssh://git@github.com/CrowdSense/saaskit-core.git#egg=saaskit-core
+-e git+ssh://git@github.com/CrowdSense/saaskit-user.git#egg=saaskit-user
+-e git+ssh://git@github.com/CrowdSense/saaskit-main.git#egg=saaskit-main
+
 #django-registration
 # fork which allows callable success urls
 http://bitbucket.org/gearheart/django-registration/get/tip.tar.gz
@@ -61,3 +65,7 @@ django-uni-form
 html5lib
 python-dateutil
 sorl-thumbnail
+
+
+
+

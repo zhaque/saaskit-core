@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block title %}Manage your account{% endblock %} 
+
+{% block body %}
+  <div class="block">
+    <div class="bd">
+     <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
+     {% block content %}{% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block sidebar %}
+  <div class="block">
+      <div class="bd">
+         <h2><a href="{% url profiles_edit_profile %}">Dashboard</a></h2>
+         <h2><a href="{% url profiles_edit_profile %}">Profile</a></h2>
+         <h2><a href ="{% url auth_password_change %}">Password Settings</a></h2>
+         <h2><a href="/extend/users">Users</a></h2>
+         <h2><a href="{% url muaccounts_manage_advanced %}">Advanced Settings</a></h2>
+         <h2><a href="/extend/apps">Applications Settings</a></h2> 
+      </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+

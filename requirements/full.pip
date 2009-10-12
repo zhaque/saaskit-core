@@ -28,13 +28,13 @@ http://github.com/tomasd/django-ab/tarball/master
 http://github.com/dcramer/django-paypal/tarball/master
 
 #django-prepaid
-http://github.com/gearheart/django-prepaid/tarball/master
+http://github.com/CrowdSense/django-prepaid/tarball/master
 
 # django-quotas
-http://github.com/gearheart/django-quotas/tarball/master
+http://github.com/mpasternacki/django-quotas/tarball/master
 
 # django-subscription
-http://github.com/gearheart/django-subscription/tarball/master
+http://github.com/CrowdSense/django-subscription/tarball/master
 
 # django-pipes
 http://github.com/mallipeddi/django-pipes/tarball/master

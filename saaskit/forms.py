@@ -11,7 +11,7 @@ class UserProfileForm(forms.ModelForm):
         if instance:
             initial['email'] = instance.user.email
         super(UserProfileForm, self).__init__(
-            *args, initial=initial, instance=instance, **kwargs
+            initial=initial, instance=instance, *args, **kwargs
         )
 
 

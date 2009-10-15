@@ -34,27 +34,30 @@ Table of Contents
    Download all dependencies before proceeding to step 1, 
    You will need the following programs:
     - Python (2.5 or higher, 
-	  but may work on earlier versions of Python)
-	- git,
-	- tar accepting "-j" option (any recent GNU tar),
-
-1.1 Dependencies
-~~~~~~~~~~~~~~~~~
-   Download all dependencies before proceeding to step 1, 
-   You will need the following programs:
-    - Python (2.5 or higher, 
     but may work on earlier versions of Python)
   - git,
   - tar accepting "-j" option (any recent GNU tar),
  
 1.2 Starting the Project
 ~~~~~~~~~~~~~~~~~
-  1. python ./bootstrap.py
-  2. ./bin/buildout
-  3. ./bin/django-admin runserver 8001 --settings="main_site.settings" # starts marketing site
-  4. ./bin/django-admin runserver 8000 --settings="user_site.settings" # user's site
+  1. Create local_setting. For example:
+echo "
+DATABASE_ENGINE = 'postgresql_psycopg2'
+DATABASE_NAME = 'saaskit'
+DATABASE_USER = 'user'
+DATABASE_PASSWORD = 'password'
+DATABASE_HOST = ''
+DATABASE_PORT = '5432'
+
+CACHE_BACKEND = 'dummy:///'
+" > ./src/saaskit/local_settings.py
+
+  2. python ./bootstrap.py -c ./buildout.cfg
+  3. ./bin/buildout -c ./buildout.cfg
+  4. ./bin/django-admin runserver 8001 --settings="main_site.settings" # starts marketing site
+  5. ./bin/django-admin runserver 8000 --settings="user_site.settings" # user's site
   
-  5. Create a new group 'Editors' for templates admin (http://example.com/admin/templates) and assign 'admin' user to the 'Editors' group.
+  6. Create a new group 'Editors' for templates admin (http://example.com/admin/templates) and assign 'admin' user to the 'Editors' group.
 
 
 2 Overview

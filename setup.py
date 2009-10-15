@@ -45,7 +45,7 @@ install_requires = [
         'sorl-thumbnail',
         'Fabric',
         'PIL',
-],
+]
 
 extras_require = dict(
     test = ['coverage',
@@ -74,7 +74,7 @@ dependency_links = [
         'http://pypi.saaskit.org/django-sso/',
         'http://pypi.saaskit.org/django-subscription/',
         'http://pypi.pinaxproject.com/',
-],
+]
 
 setup(name="saaskit-core",
             version="0.1",

@@ -36,36 +36,25 @@ Table of Contents
     - Python (2.5 or higher, 
 	  but may work on earlier versions of Python)
 	- git,
-	- wget,
 	- tar accepting "-j" option (any recent GNU tar),
-    - pip,
-    - virtualenv.
 
+1.1 Dependencies
+~~~~~~~~~~~~~~~~~
+   Download all dependencies before proceeding to step 1, 
+   You will need the following programs:
+    - Python (2.5 or higher, 
+    but may work on earlier versions of Python)
+  - git,
+  - tar accepting "-j" option (any recent GNU tar),
+ 
 1.2 Starting the Project
 ~~~~~~~~~~~~~~~~~
-  To start the project:
-  1. Download requirements file:
-        https://github.com/CrowdSense/saaskit-core/raw/master/requirements/full.pip
-  2. Create virtual env with it:
-        $ pip install -r full.pip -E env --enable-site-packages
-        $ source bin/activate
-  3. Prepare database:
-        $ cd env/src/saaskit-main/main_site/
-        $ python manage.py syncdb
-        $ python manage.py migrate
-        $ python manage.py loaddata ../../saaskit-core/saaskit/exampledata.json
-  4. Prepare media:
-        $ python manage.py link_app_media
-        $ python manage.py syccompress
-    4.5 And for user site:
-        $ cd ../../saaskit-user/user_site/
-        $ python manage.py link_app_media
-        $ python manage.py syccompress
-  5. Run sites:
-        user-site$ python manage.py runserver
-        main-site$ python manage.py runserver 8001
-
-  6. Create a new group 'Editors' for templates admin (http://domain.com/admin/templates) and assign 'admin' user to the 'Editors' group.
+  1. python ./bootstrap.py
+  2. ./bin/buildout
+  3. ./bin/django-admin runserver 8001 --settings="main_site.settings" # starts marketing site
+  4. ./bin/django-admin runserver 8000 --settings="user_site.settings" # user's site
+  
+  5. Create a new group 'Editors' for templates admin (http://example.com/admin/templates) and assign 'admin' user to the 'Editors' group.
 
 
 2 Overview

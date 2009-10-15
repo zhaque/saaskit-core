@@ -2,5 +2,4 @@ graft *
 prune .hg
 prune .hgignore
 prune .git
-prune .gitignore
 prune .ropeproject

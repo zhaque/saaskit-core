@@ -20,11 +20,7 @@ def install_packages():
     sudo('apt-get -y install wget nmap unzip wget csstidy build-essential ant git-core gcc curl python-dev python-egenix-mxdatetime libc6-dev postgresql-8.3 postgresql-client-8.3 nginx apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf memcached postfix libmemcache-dev tar mc python-psycopg2', pty=True)
     
     #locale
-    sudo('dpkg-reconfigure locales; apt-get install language-pack-en; locale-gen en_US.UTF-8;')
-    
-    #Install cmemcache from tarball
-    sudo('cd /usr/local/src/; wget http://gijsbert.org/downloads/cmemcache/cmemcache-0.95.tar.bz2; tar xjvf cmemcache-0.95.tar.bz2;', pty=True)
-    sudo('cd /usr/local/src/cmemcache-0.95/; python setup.py install; python test.py; rm /usr/local/src/cmemcache-0.95.tar.bz2;', pty=True)
+    sudo('dpkg-reconfigure locales; apt-get install language-pack-en; locale-gen en_US.UTF-8;', pty=True)
 
 def log_setup():
     """setup log"""

@@ -2,7 +2,11 @@
     ServerAdmin admin@yotweets.com 
     ServerName yotweets.com 
 
-    <Directory /webapp/yotweets.com/projects>
+    <Directory /webapp/yotweets.com/parts>
+        Order deny,allow
+        Allow from all
+    </Directory>
+    <Directory /webapp/yotweets.com/src>
         Order deny,allow
         Allow from all
     </Directory>
@@ -13,6 +17,6 @@
     
     WSGIDaemonProcess main user=webapp group=www-data threads=25
     WSGIProcessGroup main 
-    WSGIScriptAlias / /webapp/yotweets.com/bin
+    WSGIScriptAlias / /webapp/yotweets.com/bin/main_site.wsgi
 </VirtualHost>
 

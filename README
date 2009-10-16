@@ -52,10 +52,10 @@ DATABASE_PORT = '5432'
 CACHE_BACKEND = 'dummy:///'
 " > ./src/saaskit/local_settings.py
 
-  2. python ./bootstrap.py -c ./buildout.cfg
-  3. ./bin/buildout -c ./buildout.cfg
-  4. ./bin/django-admin runserver 8001 --settings="main_site.settings" # starts marketing site
-  5. ./bin/django-admin runserver 8000 --settings="user_site.settings" # user's site
+  2. python ./bootstrap.py -c ./buildout.cfg # or production.cfg
+  3. ./bin/buildout -c ./buildout.cfg #or production.cfg
+  4. ./bin/main_site runserver 8001 # marketing site
+  5. ./bin/user_site runserver 8000 # user's site
   
   6. Create a new group 'Editors' for templates admin (http://example.com/admin/templates) and assign 'admin' user to the 'Editors' group.
 

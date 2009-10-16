@@ -1,0 +1,15 @@
+server {
+            listen 97.107.138.174:80;
+            server_name assets.yotweets.com;
+
+            access_log /var/log/webapp/assets/nginx_access.log;
+            error_log /var/log/webapp/assets/nginx_error.log;
+
+            location / {
+                 root /webapp/assets;
+                 index index.html;
+                 expires 5d;
+        }
+
+}
+

@@ -1,0 +1,15 @@
+server {
+            listen ec2-174-129-235-249.compute-1.amazonaws.com:80;
+            server_name assets.crowdsense.net;
+
+            access_log /var/log/crowdsense/assets/nginx_access.log;
+            error_log /var/log/crowdsense/assets/nginx_error.log;
+
+            location / {
+                 root /ebs/web/crowdsense/assets;
+                 index index.html;
+                 expires 5d;
+        }
+
+}
+

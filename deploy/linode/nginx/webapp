@@ -1,0 +1,12 @@
+server {
+    listen 97.107.138.174:80;
+    server_name	yotweets.com;
+
+    access_log /var/log/webapp/nginx_access.log;
+    error_log /var/log/webapp/nginx_error.log;
+
+    location / {
+        proxy_pass    http://127.0.0.1:80/;
+        include       /etc/nginx/proxy.conf;
+    }
+}

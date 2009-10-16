@@ -1,0 +1,19 @@
+<VirtualHost 127.0.0.1:80>
+    ServerAdmin admin@yotweets.com 
+    ServerName yotweets.com 
+    ServerAlias *.yotweets.com
+
+    <Directory /webapp/yotweets.com/projects>
+        Order deny,allow
+        Allow from all
+    </Directory>
+
+    LogLevel debug 
+    ErrorLog  /var/log/webapp/user_sites/apache_error.log
+    CustomLog /var/log/webapp/user_sites/apache_access.log combined
+    
+    WSGIDaemonProcess user_sites user=webapp group=www-data threads=25
+    WSGIProcessGroup user_sites 
+    WSGIScriptAlias / /webapp/yotweets.com/bin/wsgi --settings="user_site.production_settings"
+</VirtualHost>
+

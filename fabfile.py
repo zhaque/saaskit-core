@@ -41,7 +41,7 @@ def github_config():
     run('mkdir -p ~/.ssh', pty=True)
     put('./deploy/linode/.ssh/id_rsa', '~/.ssh/id_rsa')
     put('./deploy/linode/.ssh/id_rsa.pub', '~/.ssh/id_rsa.pub')
-    #run('ssh git@github.com', pty=True)
+    put('./deploy/linode/.ssh/known_hosts', '~/.ssh/known_hosts')
 
 def webapp_setup():
     """webapp folder and user """

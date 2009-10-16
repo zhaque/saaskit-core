@@ -14,6 +14,6 @@
     WSGIDaemonProcess main user=webapp group=www-data threads=25
     WSGIProcessGroup main 
     SetEnv DJANGO_SETTINGS_MODULE main_site.production_settings
-    WSGIScriptAlias / /webapp/yotweets.com/bin/wsgi
+    WSGIScriptAlias / /webapp/yotweets.com/bin
 </VirtualHost>
 

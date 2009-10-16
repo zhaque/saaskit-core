@@ -1,7 +1,4 @@
 ### -*- coding: utf-8 -*- ##
-""" based on 
-inspired by http://morethanseven.net/2009/07/27/fabric-django-git-apache-mod_wsgi-virtualenv-and-p/
-"""
 
 from fabric.api import env, run, sudo, require, put, local
 

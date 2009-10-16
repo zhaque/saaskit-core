@@ -59,6 +59,11 @@ CACHE_BACKEND = 'dummy:///'
   
   6. Create a new group 'Editors' for templates admin (http://example.com/admin/templates) and assign 'admin' user to the 'Editors' group.
 
+1.3 Deployment
+----------
+  1. It should be working copy, i.e. buildout have done.
+  2. ./bin/fab production install_packages log_setup github_config webapp_setup postgresql_setup install_project nginx_config apache2_config
+  3. After that you may exec any of this steps. But some of them have no reason, i.e. user setup.
 
 2 Overview
 ~~~~~~~~~~

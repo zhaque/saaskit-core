@@ -1,18 +1,43 @@
 ### -*- coding: utf-8 -*- ##
 
-from fabric.api import env, run, sudo, require, put, local
+#python 2.5 backward compatibility
+from __future__ import with_statement
+
+from fabric.api import env, run, sudo, require, local, prompt, put as put_origin
+
+TEMP_FILE = 'tempfile'
+
+def parametrize_file(filename, params, tempfile):
+    with open(filename) as f:
+        data = f.read() % params
+        open(tempfile, 'w').write(data)
+    
+    return tempfile
+
+def put(source, dest, mode=None):
+    new_source = parametrize_file(source, env, TEMP_FILE)
+    put_origin(new_source, dest, mode)
 
 def production():
-    env.hosts = ['yotweets.com']
-    env.user = 'root'
-    env.postgres_user = 'saaskit'
-    env.postgres_password = 'saaskitS3n89mkk'
-    env.postgres_db = 'saaskit'
+    #env.hosts = ['yotweets.com']
+    
+    #env.user = 'root'
+    prompt("SSH User", 'user', 'root')
+    
+    #env.postgres_user = 'saaskit'
+    prompt("Postgresql username", 'postgres_user', 'saaskit')
+    
+    #env.postgres_password = 'saaskitS3n89mkk'
+    prompt("Postgresql user's password", 'postgres_password', 'saaskitS3n89mkk')
+    
+    #env.postgres_db = 'saaskit'
+    prompt("Postgresql DATABASE", 'postgres_db', 'saaskit')
 
 def install_packages():
     """Install system wide packages"""
-    require('hosts', provided_by=[production])
-    put('./deploy/linode/apt/sources.list', '/etc/apt/sources.list.d/sources.list')
+    require('hosts', 'postgres_user', provided_by=[production])
+    
+    put_origin('./deploy/linode/apt/sources.list', '/etc/apt/sources.list.d/sources.list')
     sudo('apt-get -y update', pty=True)
     sudo('apt-get -y install wget nmap unzip wget csstidy build-essential ant git-core gcc curl python-dev python-egenix-mxdatetime libc6-dev postgresql-8.3 postgresql-client-8.3 nginx apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf memcached postfix libmemcache-dev tar mc libmemcache-dev libpq-dev', pty=True)
     
@@ -36,9 +61,9 @@ def github_config():
     
     #ssh public keys
     run('mkdir -p ~/.ssh', pty=True)
-    put('./deploy/linode/.ssh/id_rsa', '~/.ssh/id_rsa')
-    put('./deploy/linode/.ssh/id_rsa.pub', '~/.ssh/id_rsa.pub')
-    put('./deploy/linode/.ssh/known_hosts', '~/.ssh/known_hosts')
+    put_origin('./deploy/linode/.ssh/id_rsa', '~/.ssh/id_rsa')
+    put_origin('./deploy/linode/.ssh/id_rsa.pub', '~/.ssh/id_rsa.pub')
+    put_origin('./deploy/linode/.ssh/known_hosts', '~/.ssh/known_hosts')
 
 def webapp_setup():
     """webapp folder and user """
@@ -52,19 +77,15 @@ def webapp_setup():
 
 def install_project():
     """get source from repository and build it"""
-    require('hosts', provided_by=[github_config, install_packages, production])
+    require('hosts', 'postgres_user', 'postgres_password', 'postgres_db', provided_by=[github_config, install_packages, production])
     #TODO: parametrize domain
     sudo('cd /webapp; rm -r %(name)s; git clone git@github.com:CrowdSense/saaskit-core.git %(name)s;' \
          % {'name': env.host_string}, pty=True)
     
     #create local settings
-    sudo('echo "DATABASE_ENGINE = \'postgresql_psycopg2\'" > /webapp/%s/src/saaskit/local_settings.py' % env.host_string, pty=True)
-    sudo('echo "DATABASE_NAME = \'%s\'" >> /webapp/%s/src/saaskit/local_settings.py' % (env.postgres_db, env.host_string), pty=True)
-    sudo('echo "DATABASE_USER = \'%s\'" >> /webapp/%s/src/saaskit/local_settings.py' % (env.postgres_user, env.host_string), pty=True)
-    sudo('echo "DATABASE_PASSWORD = \'%s\'" >> /webapp/%s/src/saaskit/local_settings.py' % (env.postgres_password, env.host_string), pty=True)
-    sudo('echo "DATABASE_HOST = \'\'" >> /webapp/%s/src/saaskit/local_settings.py' % env.host_string, pty=True)
-    sudo('echo "DATABASE_PORT = \'5432\'" >> /webapp/%s/src/saaskit/local_settings.py' % env.host_string, pty=True)
+    put('./deploy/_local_settings.py', '/webapp/%s/src/saaskit/local_settings.py' % env.host_string)
 
+    #buildout the project
     sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -c ./production.cfg' % env.host_string, pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
 
@@ -114,7 +135,7 @@ def postgresql_config():
     
     sudo('/etc/init.d/postgresql-8.3 stop', pty=True)
     
-    put('./deploy/linode/db/initial_db.tar', '/database')
+    put_origin('./deploy/linode/db/initial_db.tar', '/database')
     sudo('cd /database; tar xvf initial_db.tar; ', pty=True)
     sudo('chown -R postgres:postgres /database/postgresql', pty=True)
     sudo('rm -rf /database/initial_db.tar', pty=True)
@@ -125,7 +146,7 @@ def postgresql_config():
     sudo('/etc/init.d/postgresql-8.3 start', pty=True)
 
 def pg_user_db_setup():
-    require('hosts', provided_by=[install_packages, production])
+    require('hosts', 'postgres_user', 'postgres_password', 'postgres_db', provided_by=[install_packages, production])
     run('sudo -u postgres createuser -S -D -R %s' % env.postgres_user, pty=True)
     run('sudo -u postgres psql -c "alter user %s with password \'%s\';"' \
         % (env.postgres_user, env.postgres_password), pty=True)
@@ -151,4 +172,3 @@ def restart_webserver():
     "Restart the web server"
     sudo('/etc/init.d/apache2 restart', pty=True)
     sudo('/etc/init.d/nginx restart', pty=True)
-    

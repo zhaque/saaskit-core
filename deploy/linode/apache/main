@@ -1,12 +1,12 @@
 <VirtualHost 127.0.0.1:80>
-    ServerAdmin admin@yotweets.com 
-    ServerName yotweets.com 
+    ServerAdmin admin@%(host_string)s 
+    ServerName %(host_string)s 
 
-    <Directory /webapp/yotweets.com/parts>
+    <Directory /webapp/%(host_string)s/parts>
         Order deny,allow
         Allow from all
     </Directory>
-    <Directory /webapp/yotweets.com/src>
+    <Directory /webapp/%(host_string)s/src>
         Order deny,allow
         Allow from all
     </Directory>
@@ -17,6 +17,6 @@
     
     WSGIDaemonProcess main user=webapp group=www-data threads=25
     WSGIProcessGroup main 
-    WSGIScriptAlias / /webapp/yotweets.com/bin/main_site.wsgi
+    WSGIScriptAlias / /webapp/%(host_string)s/bin/main_site.wsgi
 </VirtualHost>
 

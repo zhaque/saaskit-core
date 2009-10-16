@@ -17,7 +17,7 @@ def install_packages():
     require('hosts', provided_by=[production])
     put('./deploy/linode/apt/sources.list', '/etc/apt/sources.list.d/sources.list')
     sudo('apt-get -y update', pty=True)
-    sudo('apt-get -y install wget nmap unzip wget csstidy build-essential ant git-core gcc curl python-dev python-egenix-mxdatetime libc6-dev postgresql-8.3 postgresql-client-8.3 nginx apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf memcached postfix libmemcache-dev tar mc python-psycopg2', pty=True)
+    sudo('apt-get -y install wget nmap unzip wget csstidy build-essential ant git-core gcc curl python-dev python-egenix-mxdatetime libc6-dev postgresql-8.3 postgresql-client-8.3 nginx apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf memcached postfix libmemcache-dev tar mc libmemcache-dev libpq-dev', pty=True)
     
     #locale
     sudo('dpkg-reconfigure locales; apt-get install language-pack-en; locale-gen en_US.UTF-8;', pty=True)
@@ -70,6 +70,13 @@ def install_project():
 
     sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -c ./production.cfg' % env.host_string, pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
+
+def update():
+    require('hosts', provided_by=[production, github_config, install_packages])
+    sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
+    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -c ./production.cfg' % env.host_string, pty=True)
+    sudo('chown -R webapp:www-data /webapp', pty=True)
+    
 
 def nginx_config():
     """setup nginx"""
@@ -146,4 +153,5 @@ def install_development_tarball():
 def restart_webserver():
     "Restart the web server"
     sudo('/etc/init.d/apache2 restart', pty=True)
+    sudo('/etc/init.d/nginx restart', pty=True)
     

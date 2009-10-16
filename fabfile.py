@@ -17,7 +17,7 @@ def install_packages():
     require('hosts', provided_by=[production])
     put('./deploy/linode/apt/sources.list', '/etc/apt/sources.list.d/sources.list')
     sudo('apt-get -y update', pty=True)
-    sudo('apt-get -y install wget nmap unzip wget csstidy build-essential ant git-core gcc curl python-dev python-egenix-mxdatetime libc6-dev postgresql-8.3 postgresql-client-8.3 nginx apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf memcached postfix libmemcache-dev tar mc', pty=True)
+    sudo('apt-get -y install wget nmap unzip wget csstidy build-essential ant git-core gcc curl python-dev python-egenix-mxdatetime libc6-dev postgresql-8.3 postgresql-client-8.3 nginx apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf memcached postfix libmemcache-dev tar mc python-psycopg2', pty=True)
     
     #locale
     sudo('dpkg-reconfigure locales; apt-get install language-pack-en; locale-gen en_US.UTF-8;')

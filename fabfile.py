@@ -85,11 +85,13 @@ def postgresql_setup():
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=[production])
     sudo('apt-get -y install postgresql-8.3 postgresql-client-8.3 libpq-dev', pty=True)
     
-    run('sudo -u postgres createuser -S -D -R %s' % env.POSTGRES_USER, pty=True)
-    run('sudo -u postgres psql -c "alter user %s with password \'%s\';"' \
+    put_origin('./deploy/linode/postgresql/pg_hba.conf', '/etc/postgresql/8.3/main/pg_hba.conf')
+    sudo('/etc/init.d/postgresql-8.3 restart', pty=True)
+    
+    run('sudo -u postgres psql -c "create user %s with password \'%s\'"' \
         % (env.POSTGRES_USER, env.POSTGRES_PASSWORD), pty=True)
     run('sudo -u postgres createdb --owner=%s %s' % (env.POSTGRES_USER, env.POSTGRES_DB), pty=True)
-
+    
 def webapp_setup():
     """webapp folder and user """
     require('hosts', provided_by=[production])
@@ -115,18 +117,17 @@ def install_project():
     sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg' % env.host_string, pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
 
-def update():
+def update_project():
     require('hosts',provided_by=[production])
     sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
     sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg' % env.host_string, pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
     
-
 def nginx_config():
     """setup nginx"""
     require('hosts', provided_by=[production])
     sudo('apt-get -y install nginx', pty=True)
-    sudo('/etc/init.d/nginx stop', pty=True)
+    sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/site-enabled/default;', pty=True)
 
     #cp -u ./nginx/assets /etc/nginx/sites-available/assets
     #ln -s /etc/nginx/sites-available/assets /etc/nginx/sites-enabled/assets
@@ -141,7 +142,7 @@ def nginx_config():
 def apache2_config():
     require('hosts', provided_by=[production])
     sudo('apt-get -y install apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf', pty=True)
-    sudo('apache2ctl stop', pty=True)
+    sudo('apache2ctl stop; a2dissite 000-default;', pty=True)
     
     put('./deploy/linode/apache/main', '/etc/apache2/sites-available/main')
     put('./deploy/linode/apache/sites', '/etc/apache2/sites-available/sites')
@@ -150,8 +151,7 @@ def apache2_config():
     put('./deploy/linode/apache/ports.conf', '/etc/apache2/ports.conf')
     put('./deploy/linode/apache/security', '/etc/apache2/conf.d/security')
     
-    #sudo('a2enmod rewrite')
-    sudo('/etc/init.d/apache2 start', pty=True)
+    sudo('a2enmod rewrite; apache2ctl start;', pty=True)
 
 def install_development_tarball():
     "Compress development packages, put them to server, extract."

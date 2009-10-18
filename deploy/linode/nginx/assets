@@ -1,6 +1,6 @@
 server {
             listen 97.107.138.174:80;
-            server_name assets.%(host_string)s;
+            server_name assets.$host_string;
 
             access_log /var/log/webapp/assets/nginx_access.log;
             error_log /var/log/webapp/assets/nginx_error.log;

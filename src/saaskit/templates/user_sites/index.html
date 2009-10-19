@@ -2,23 +2,4 @@
 
 {% block title %}{{request.muaccount}}{% endblock %} 
 {% block body %}
-You can see the old implementation under current "manage" link however the "account" link is not correct, links related to account
-are scattered around in the main site (<a href="http://yotweets.com/">http://yotweets.com</a>) 
-Pages we need to fix/develop as per layout is the following:
-
-<h3>Manage</h3>
-<li><a href ="{% url muaccounts_manage_general %}">Manage - General/Index Page</a>
-<li><a href ="{% url muaccounts_manage_styles %}">Manage - Styles & Themes</a>
-<li><a href ="/extend/users">Manage - Users</a>
-<li><a href ="{% url muaccounts_manage_advanced %}">Manage - Advanced Settings</a>
-<li><a href ="/extend/apps">Manage - Applications Settings</a>
-<br/>"Index Page" means this is the page user will be taken to once he clicks on the "Manage" link at the top.
-
-<h3>Account</h3>
-<li><a href ="{% url account_dashboard %}">Dashboard</a>
-<li><a href ="{% url profiles_edit_profile %}">Profile/Index Page</a>
-<li><a href ="{% url auth_password_change %}">Password Settings</a>
-<li><a href ="/extend/plans">Account - Plans and Payments</a>
-<li><a href ="/extend/invoice">Account - Invoice History</a>
-<br/>"Index Page" means this is the page user will be taken to once he clicks on the "Account" link at the top.
 {% endblock %}

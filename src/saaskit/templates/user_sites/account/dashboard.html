@@ -1,5 +1,5 @@
 {% extends "account/base.html" %}
-{% load uni_form muaccounts_tags %}
+{% load uni_form muaccounts_tags settings %}
 
 {% block title %}Dashboard{% endblock %} 
 {% block body %}
@@ -26,7 +26,7 @@
         </ul>
     {% else %}
         {% if buy_site_url %}
-            <p>You don't have any sites, maybe, you should <a href="{{ buy_site_url }}">create one</a>.</p>
+            <p>You don't have any sites, maybe, you should <a href="{% setting BUY_SITE_URL %}">create one</a>.</p>
         {% endif %}
     {% endif %}
 

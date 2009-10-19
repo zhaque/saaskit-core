@@ -20,7 +20,7 @@
      {% if member_count < user.quotas.muaccount_members %}
          <a href="{% url muaccounts_add_member %}">Add member</a>
      {% else %}
-     <p><a href="{% url sso %}?next={% setting MUACCOUNTS_DEFAULT_URL %}subscribe/">Upgrade your plan</a> to add
+     <p><a href="{% url sso %}?next={% setting BUY_SITE_URL %}">Upgrade your plan</a> to add
        more users!</p>
      {% endif %}
     {% endwith %}

@@ -15,3 +15,4 @@ MUACCOUNTS_PORT=80
 BUY_SITE_URL = 'http://$host_string/subscription/'
 
 MEDIA_URL = 'http://assets.$host_string/'
+ADMIN_MEDIA_PREFIX = 'http://assets.$host_string/admin/'

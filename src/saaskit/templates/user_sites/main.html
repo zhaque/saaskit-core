@@ -28,10 +28,9 @@
           <li>Hi, <b>{{user}}<b></li> | 
             
             {% ifequal user request.muaccount.owner %}
-            <li><a href="{% url muaccounts_account_detail %}">Manage</a></li> | 
-            
+            <li><a href="{% url muaccounts_manage_general %}">Manage</a></li> | 
             {% endifequal %}
-            <li><a href="">Account</a></li> | 
+            <li><a href="{% url account_dashboard %}">Account</a></li> | 
             <li><a href="{% url user_signout %}">Sign-out</a></li> 
             </ul>
         </div>  

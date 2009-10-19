@@ -40,6 +40,9 @@ def production():
     
     #env.postgres_db = 'saaskit'
     prompt("Postgresql DATABASE", 'POSTGRES_DB', 'saaskit')
+    
+    prompt("Django admin username", 'DJANGO_ADMIN', 'admin')
+    prompt("Django admin password", 'DJANGO_ADMIN_PASSWORD', 'password')
 
 def install_packages():
     """Install system wide packages"""
@@ -83,6 +86,7 @@ def github_config():
 def postgresql_setup():
     require('hosts',provided_by=[production])
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=[production])
+    
     sudo('apt-get -y install postgresql-8.3 postgresql-client-8.3 libpq-dev', pty=True)
     
     put_origin('./deploy/linode/postgresql/pg_hba.conf', '/etc/postgresql/8.3/main/pg_hba.conf')
@@ -92,6 +96,18 @@ def postgresql_setup():
         % (env.POSTGRES_USER, env.POSTGRES_PASSWORD), pty=True)
     run('sudo -u postgres createdb --owner=%s %s' % (env.POSTGRES_USER, env.POSTGRES_DB), pty=True)
     
+def postgresql_user_db_flush():
+    require('hosts',provided_by=[production])
+    require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=[production])
+    
+    run('sudo -u postgres psql -c "drop database %s"' % env.POSTGRES_DB, pty=True)
+    run('sudo -u postgres psql -c "drop user %s"' % env.POSTGRES_USER, pty=True)
+    
+    run('sudo -u postgres psql -c "create user %s with password \'%s\'"' \
+        % (env.POSTGRES_USER, env.POSTGRES_PASSWORD), pty=True)
+    run('sudo -u postgres createdb --owner=%s %s' % (env.POSTGRES_USER, env.POSTGRES_DB), pty=True)
+
+
 def webapp_setup():
     """webapp folder and user """
     require('hosts', provided_by=[production])

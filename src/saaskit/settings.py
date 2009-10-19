@@ -4,7 +4,7 @@
 import os.path
 from django.conf import global_settings
 
-KIT_ROOT=os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
+KIT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -43,7 +43,7 @@ TEMPLATE_LOADERS = (
 #   'ab.loaders.load_template_source',
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-#   'django.template.loaders.eggs.load_template_source',
+   'django.template.loaders.eggs.load_template_source',
 )
 
 
@@ -112,8 +112,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django_authopenid.context_processors.authopenid',
 #   'pages.context_processors.media',
     )
-
-TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates'), )
+TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates').replace('\\','/'), )
 
 # Settings for templates editing via django admin
 

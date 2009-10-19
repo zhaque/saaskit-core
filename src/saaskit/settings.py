@@ -105,7 +105,6 @@ INSTALLED_APPS = (
     # 'mailer',
     # 'mptt',
     # 'piston',
-    # 'pages',
     # own
     'muaccounts',
     'prepaid',
@@ -121,7 +120,6 @@ INSTALLED_APPS = (
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'django_authopenid.context_processors.authopenid',
-#   'pages.context_processors.media',
     )
 TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates').replace('\\','/'), )
 
@@ -251,21 +249,6 @@ for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
                                 + _default_css_files[1:] ),
          'output_filename' : 'style.%s.css' % codename,
          }
-
-# django-page-cms settings currently disabled, to enable un-comment middleware as well as installed apps and settings below
-
-# PAGE_TAGGING = True
-# PAGE_TINYMCE = False
-# PAGE_USE_SITE_ID = True
-# PAGE_LANGUAGES = (
-#    ('en-gb', 'English'),
-# )
-# PAGE_UNIQUE_SLUG_REQUIRED = True
-# DEFAULT_PAGE_TEMPLATE = 'page.html'
-# PAGE_TEMPLATES = (
-#    ('page-templates/single-body.html', 'Single body'),
-#    ('page-templates/before-and-after.html', 'Content before and after dynamic content'),
-# )
 
 # Local settings for development / production
 try:

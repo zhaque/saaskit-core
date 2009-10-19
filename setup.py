@@ -19,7 +19,6 @@ install_requires = [
         'django-mptt',
         'django-notification',
         'django-oembed',
-        'django-page-cms',
         'django-perfect404',
         'django-piston',
         'django-rosetta',

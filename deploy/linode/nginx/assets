@@ -1,15 +1,12 @@
 server {
-            listen 97.107.138.174:80;
+            listen VPS_IP:80;
             server_name assets.$host_string;
 
             access_log /var/log/webapp/assets/nginx_access.log;
             error_log /var/log/webapp/assets/nginx_error.log;
 
             location / {
-                 root /webapp/assets;
-                 index index.html;
+                 root /webapp/$host_string/parts/saaskit-main/main_site/media;
                  expires 5d;
         }
-
 }
-

@@ -1,6 +1,6 @@
 server {
-    listen 97.107.138.174:80;
-    server_name	$host_string;
+    listen $VPS_IP:80;
+    server_name	$host_string *.$host_string;
 
     access_log /var/log/webapp/nginx_access.log;
     error_log /var/log/webapp/nginx_error.log;

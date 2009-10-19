@@ -6,3 +6,12 @@ DATABASE_USER = '$POSTGRES_USER'
 DATABASE_PASSWORD = '$POSTGRES_PASSWORD'
 DATABASE_HOST = ''
 DATABASE_PORT = '5432'
+
+PAYPAL_RECEIVER_EMAIL='example@$host_string'
+MUACCOUNTS_ROOT_DOMAIN = '$host_string'
+MUACCOUNTS_DEFAULT_URL = 'http://$host_string/'
+MUACCOUNTS_PORT=80
+
+BUY_SITE_URL = 'http://$host_string/subscription/'
+
+MEDIA_URL = 'http://assets.$host_string/'

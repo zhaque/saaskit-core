@@ -32,6 +32,8 @@ def production():
     #env.user = 'root'
     prompt("SSH User", 'user', 'root')
     
+    prompt("VPS IP", 'VPS_IP', '97.107.138.174')
+    
     #env.postgres_user = 'saaskit'
     prompt("Postgresql username", 'POSTGRES_USER', 'saaskit')
     
@@ -41,8 +43,8 @@ def production():
     #env.postgres_db = 'saaskit'
     prompt("Postgresql DATABASE", 'POSTGRES_DB', 'saaskit')
     
-    prompt("Django admin username", 'DJANGO_ADMIN', 'admin')
-    prompt("Django admin password", 'DJANGO_ADMIN_PASSWORD', 'password')
+    #prompt("Django admin username", 'DJANGO_ADMIN', 'admin')
+    #prompt("Django admin password", 'DJANGO_ADMIN_PASSWORD', 'password')
 
 def install_packages():
     """Install system wide packages"""
@@ -143,7 +145,7 @@ def nginx_config():
     """setup nginx"""
     require('hosts', provided_by=[production])
     sudo('apt-get -y install nginx', pty=True)
-    sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/site-enabled/default;', pty=True)
+    sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/sites-enabled/default;', pty=True)
 
     #cp -u ./nginx/assets /etc/nginx/sites-available/assets
     #ln -s /etc/nginx/sites-available/assets /etc/nginx/sites-enabled/assets

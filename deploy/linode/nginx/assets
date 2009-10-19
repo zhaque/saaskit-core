@@ -1,5 +1,5 @@
 server {
-            listen VPS_IP:80;
+            listen $VPS_IP:80;
             server_name assets.$host_string;
 
             access_log /var/log/webapp/assets/nginx_access.log;

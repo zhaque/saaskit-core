@@ -124,7 +124,6 @@ def install_project():
     """get source from repository and build it"""
     require('hosts',provided_by=[production])
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=[production])
-    #TODO: parametrize domain
     sudo('cd /webapp; rm -r %(name)s; git clone git@github.com:CrowdSense/saaskit-core.git %(name)s;' \
          % {'name': env.host_string}, pty=True)
     
@@ -147,9 +146,8 @@ def nginx_config():
     sudo('apt-get -y install nginx', pty=True)
     sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/sites-enabled/default;', pty=True)
 
-    #cp -u ./nginx/assets /etc/nginx/sites-available/assets
-    #ln -s /etc/nginx/sites-available/assets /etc/nginx/sites-enabled/assets
-    #TODO: parametrize server_name
+    put('./deploy/linode/nginx/assets', '/etc/nginx/sites-available/assets')
+    sudo('ln -f -s /etc/nginx/sites-available/assets /etc/nginx/sites-enabled/assets', pty=True)
     put('./deploy/linode/nginx/webapp', '/etc/nginx/sites-available/webapp')
     sudo('ln -f -s /etc/nginx/sites-available/webapp /etc/nginx/sites-enabled/webapp', pty=True)
     put('./deploy/linode/nginx/nginx.conf', '/etc/nginx/nginx.conf')

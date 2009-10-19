@@ -9,7 +9,7 @@
     <title>{% block title %}Title{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-    <link rel="stylesheet" href="/media/saaskit/css/user_sites.css" type="text/css">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}saaskit/css/user_sites.css" type="text/css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     {% compressed_css request.muaccount.theme.color_scheme %}
     {{ request.muaccount.webmaster_tools_code|safe }}

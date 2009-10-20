@@ -6,7 +6,7 @@ server {
             error_log /var/log/webapp/assets/nginx_error.log;
 
             location / {
-                 root /webapp/$host_string/parts/saaskit-main/main_site/media;
+                 root /webapp/$host_string/src/saaskit/wide_media;
                  expires 5d;
         }
 }

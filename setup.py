@@ -8,6 +8,7 @@ def read(fname):
 
 install_requires = [
         'setuptools',
+        'django-muaccaunts',
         'Django',
         'python-openid',
         'django-autoslug',
@@ -44,6 +45,9 @@ install_requires = [
         'sorl-thumbnail',
         'Fabric',
         'PIL',
+        
+        'saaskit-main-site',
+        'saaskit-user-site',
 ]
 
 extras_require = dict(

@@ -70,7 +70,7 @@ def github_config():
     
     #ssh public keys
     run('mkdir -p ~/.ssh', pty=True)
-    render_put('deploy/.ssh/id_rsa', '~/.ssh/id_rsa', env)
+    render_put('deploy/.ssh/id_rsa', '~/.ssh/id_rsa', env, mode=0600)
     render_put('deploy/.ssh/id_rsa.pub', '~/.ssh/id_rsa.pub', env)
     render_put('deploy/.ssh/known_hosts', '~/.ssh/known_hosts', env)
 
@@ -113,7 +113,7 @@ def install_project():
     """get source from repository and build it"""
     require('hosts',provided_by=["production"])
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=["production"])
-    sudo('cd /webapp; rm -r %(name)s; git clone git@github.com:CrowdSense/saaskit-core.git %(name)s;' \
+    sudo('cd /webapp; rm -f -r %(name)s; git clone git@github.com:CrowdSense/saaskit-core.git %(name)s;' \
          % {'name': env.host_string}, pty=True)
     
     #create local settings
@@ -134,7 +134,9 @@ def nginx_config():
     require('hosts', provided_by=["production"])
     sudo('apt-get -y install nginx', pty=True)
     sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/sites-enabled/default;', pty=True)
-
+    
+    env.MEDIA_ROOT = '/webapp/%s/src/saaskit/wide_media' % env.host_string
+    
     render_put('deploy/nginx/assets', '/etc/nginx/sites-available/assets', env)
     sudo('ln -f -s /etc/nginx/sites-available/assets /etc/nginx/sites-enabled/assets', pty=True)
     render_put('deploy/nginx/webapp', '/etc/nginx/sites-available/webapp', env)

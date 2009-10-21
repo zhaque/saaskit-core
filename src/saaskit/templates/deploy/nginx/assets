@@ -1,12 +1,12 @@
 server {
-            listen $VPS_IP:80;
-            server_name assets.$host_string;
+            listen {{ VPS_IP }}:80;
+            server_name assets.{{ host_string }};
 
             access_log /var/log/webapp/assets/nginx_access.log;
             error_log /var/log/webapp/assets/nginx_error.log;
 
             location / {
-                 root /webapp/$host_string/src/saaskit/wide_media;
+                 root {{ MEDIA_ROOT }};
                  expires 5d;
         }
 }

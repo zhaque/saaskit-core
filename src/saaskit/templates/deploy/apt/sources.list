@@ -1,0 +1,15 @@
+## main & restricted repositories
+deb http://us.archive.ubuntu.com/ubuntu/ {{ UBUNTU_VERSION }} main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ {{ UBUNTU_VERSION }} main restricted
+
+deb http://security.ubuntu.com/ubuntu {{ UBUNTU_VERSION }}-security main restricted
+deb-src http://security.ubuntu.com/ubuntu {{ UBUNTU_VERSION }}-security main restricted
+
+## universe repositories
+deb http://us.archive.ubuntu.com/ubuntu/ {{ UBUNTU_VERSION }} universe multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ {{ UBUNTU_VERSION }} universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ {{ UBUNTU_VERSION }}-updates universe multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ {{ UBUNTU_VERSION }}-updates universe multiverse
+
+#deb http://security.ubuntu.com/ubuntu {{ UBUNTU_VERSION }}-security universe
+deb-src http://security.ubuntu.com/ubuntu {{ UBUNTU_VERSION }}-security universe

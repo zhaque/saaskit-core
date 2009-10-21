@@ -1,12 +1,12 @@
 <VirtualHost 127.0.0.1:80>
-    ServerAdmin admin@$host_string 
-    ServerName $host_string 
+    ServerAdmin admin@{{ host_string }} 
+    ServerName {{ host_string }} 
 
-    <Directory /webapp/$host_string/parts>
+    <Directory /webapp/{{ host_string }}/parts>
         Order deny,allow
         Allow from all
     </Directory>
-    <Directory /webapp/$host_string/src>
+    <Directory /webapp/{{ host_string }}/src>
         Order deny,allow
         Allow from all
     </Directory>
@@ -17,6 +17,6 @@
     
     WSGIDaemonProcess main user=webapp group=www-data threads=25
     WSGIProcessGroup main 
-    WSGIScriptAlias / /webapp/$host_string/bin/main_site.wsgi
+    WSGIScriptAlias / /webapp/{{ host_string }}/bin/main_site.wsgi
 </VirtualHost>
 

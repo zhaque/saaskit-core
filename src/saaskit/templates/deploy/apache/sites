@@ -1,9 +1,9 @@
 <VirtualHost 127.0.0.1:80>
-    ServerAdmin admin@$host_string 
-    ServerName $host_string 
-    ServerAlias *.$host_string
+    ServerAdmin admin@{{ host_string }} 
+    ServerName {{ host_string }} 
+    ServerAlias *.{{ host_string }}
 
-    <Directory /webapp/$host_string/projects>
+    <Directory /webapp/{{ host_string }}/projects>
         Order deny,allow
         Allow from all
     </Directory>
@@ -14,6 +14,6 @@
     
     WSGIDaemonProcess user_sites user=webapp group=www-data threads=25
     WSGIProcessGroup user_sites 
-    WSGIScriptAlias / /webapp/$host_string/bin/user_site.wsgi
+    WSGIScriptAlias / /webapp/{{ host_string }}/bin/user_site.wsgi
 </VirtualHost>
 

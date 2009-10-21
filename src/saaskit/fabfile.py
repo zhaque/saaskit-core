@@ -12,33 +12,31 @@ def render_put(template_name, dest, params, mode=None, tempfile='tempfile'):
     put(tempfile, dest, mode)
     os.remove(tempfile)
 
-def production():
-    #env.hosts = []
-    
-    if not env.hosts:
-        prompt("No hosts found. Please specify (single) host string for connection", 'host_string', 'yotweets.com')
-    
-    if not env.user:
-        prompt("SSH User", 'user', 'root')
-    
-    if not ('VPS_IP' in env and env.VPS_IP):
-        prompt("VPS IP", 'VPS_IP', '97.107.138.174')
-    
-    if not ('POSTGRES_USER' in env and env.POSTGRES_USER):
-        prompt("Postgresql username", 'POSTGRES_USER', 'saaskit')
-    
-    if not ('POSTGRES_PASSWORD' in env and env.POSTGRES_PASSWORD):
-        prompt("Postgresql user's password", 'POSTGRES_PASSWORD', 'saaskitS3n89mkk')
-    
-    if not ('POSTGRES_DB' in env and env.POSTGRES_DB):
-        prompt("Postgresql DATABASE", 'POSTGRES_DB', 'saaskit')
-        
-    env.UBUNTU_VERSION = 'jaunty'
+
+def ifnotsetted(key, default, is_prompt=False, text=None, validate=None):
+    if not (key in env and env[key]):
+        if is_prompt:
+            prompt(text, key, default, validate)
+        else:
+            env['key'] = default
+
+#env.hosts = []
+
+ifnotsetted('hosts', 'yotweets.com', True, 
+    "No hosts found. Please specify (single) host string for connection")
+ifnotsetted('user', 'root', True, "Server user name")
+ifnotsetted('VPS_IP', '97.107.138.174', True, "VPS IP")
+ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
+ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
+ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
+ifnotsetted('UBUNTU_VERSION', 'jaunty')
+
+env.SOURCE_PATH = 'src/saaskit'
+env.git_path = 'git@github.com:CrowdSense/saaskit-core.git'
+
 
 def install_packages():
     """Install system wide packages"""
-    require('hosts',provided_by=["production"])
-    
     render_put('deploy/apt/sources.list', '/etc/apt/sources.list.d/sources.list', env)
     sudo('apt-get -y update; apt-get -y upgrade;', pty=True)
     #locale
@@ -49,18 +47,15 @@ def install_packages():
     sudo('apt-get -y install wget nmap unzip wget csstidy ant curl python-dev python-egenix-mxdatetime memcached tar mc libmemcache-dev', pty=True)
     
 def install_mail_transfer_agent():
-    require('hosts',provided_by=["production"])
     sudo('apt-get -y install sendmail;', pty=True)
     
 def log_setup():
     """setup log"""
-    require('hosts', provided_by=["production"])
     sudo('mkdir -p /var/log/webapp; mkdir -p /var/log/webapp/main;', pty=True)
     sudo('mkdir -p /var/log/webapp/assets; mkdir -p /var/log/webapp/user_sites;', pty=True)
 
 def github_config():
     """setup user config for github. global and ssh public keys """
-    require('hosts', provided_by=["production"])
     sudo('apt-get -y install git-core', pty=True)
     
     #Github user's settings
@@ -75,8 +70,7 @@ def github_config():
     render_put('deploy/.ssh/known_hosts', '~/.ssh/known_hosts', env)
 
 def postgresql_setup():
-    require('hosts',provided_by=["production"])
-    require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=["production"])
+    require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB')
     
     sudo('apt-get -y install postgresql-8.3 postgresql-client-8.3 libpq-dev', pty=True)
     
@@ -88,8 +82,7 @@ def postgresql_setup():
     run('sudo -u postgres createdb --owner=%s %s' % (env.POSTGRES_USER, env.POSTGRES_DB), pty=True)
     
 def postgresql_user_db_flush():
-    require('hosts',provided_by=["production"])
-    require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=["production"])
+    require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB')
     
     run('sudo -u postgres psql -c "drop database %s"' % env.POSTGRES_DB, pty=True)
     run('sudo -u postgres psql -c "drop user %s"' % env.POSTGRES_USER, pty=True)
@@ -101,7 +94,6 @@ def postgresql_user_db_flush():
 
 def webapp_setup():
     """webapp folder and user """
-    require('hosts', provided_by=["production"])
     sudo('echo "/dev/xvdc /webapp ext3   noatime  0 0" >> /etc/fstab', pty=True)
     sudo('mkdir -p /webapp', pty=True)
     sudo('mount /webapp', pty=True)
@@ -111,43 +103,44 @@ def webapp_setup():
 
 def install_project():
     """get source from repository and build it"""
-    require('hosts',provided_by=["production"])
-    require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', provided_by=["production"])
-    sudo('cd /webapp; rm -f -r %(name)s; git clone git@github.com:CrowdSense/saaskit-core.git %(name)s;' \
-         % {'name': env.host_string}, pty=True)
+    require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', 'SOURCE_PATH')
+    
+    sudo('cd /webapp; rm -f -r %(name)s; git clone %(git_path)s %(host_string)s;' \
+         % env, pty=True)
     
     #create local settings
-    render_put('deploy/_local_settings.py', '/webapp/%s/src/saaskit/local_settings.py' % env.host_string, env)
+    render_put('deploy/_local_settings.py', 
+               '/webapp/%s/%s/local_settings.py' % (env.host_string, env.SOURCE_PATH), 
+               env)
 
     #buildout the project
     sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg' % env.host_string, pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
 
 def update_project():
-    require('hosts',provided_by=["production"])
     sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
     sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg' % env.host_string, pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
     
 def nginx_config():
     """setup nginx"""
-    require('hosts', provided_by=["production"])
+    require('SOURCE_PATH')
     sudo('apt-get -y install nginx', pty=True)
     sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/sites-enabled/default;', pty=True)
     
-    env.MEDIA_ROOT = '/webapp/%s/src/saaskit/wide_media' % env.host_string
+    env.MEDIA_ROOT = '/webapp/%s/%s/wide_media' % (env.host_string, env.SOURCE_PATH)
     
     render_put('deploy/nginx/assets', '/etc/nginx/sites-available/assets', env)
     sudo('ln -f -s /etc/nginx/sites-available/assets /etc/nginx/sites-enabled/assets', pty=True)
     render_put('deploy/nginx/webapp', '/etc/nginx/sites-available/webapp', env)
     sudo('ln -f -s /etc/nginx/sites-available/webapp /etc/nginx/sites-enabled/webapp', pty=True)
-    render_put('deploy/nginx/nginx.conf', '/etc/nginx/nginx.conf',env)
+    render_put('deploy/nginx/nginx.conf', '/etc/nginx/nginx.conf', env)
     render_put('deploy/nginx/proxy.conf', '/etc/nginx/proxy.conf', env)
     
     sudo('/etc/init.d/nginx start', pty=True)
 
 def apache2_config():
-    require('hosts', provided_by=["production"])
+    """ setup apache2 """
     sudo('apt-get -y install apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf', pty=True)
     sudo('apache2ctl stop; a2dissite 000-default;', pty=True)
     
@@ -160,17 +153,17 @@ def apache2_config():
     
     sudo('a2enmod rewrite; apache2ctl start;', pty=True)
 
-def install_development_tarball():
-    "Compress development packages, put them to server, extract."
-    require('hosts', provided_by=["production"])
-    
-    #local('cd ../../; tar cf - "src" | gzip -f9 > "src.tar.gz"')
-    #put("../../src.tar.gz", '%s/' % env.path)
-    #run('cd %s; tar zxf src.tar.gz;' % env.path)
-    #local('rm -f ../../src.tar.gz')
+#===============================================================================
+# def install_development_tarball():
+#    "Compress development packages, put them to server, extract."
+#    
+#    local('cd ../../; tar cf - "src" | gzip -f9 > "src.tar.gz"')
+#    put("../../src.tar.gz", '%s/' % env.path)
+#    run('cd %s; tar zxf src.tar.gz;' % env.path)
+#    local('rm -f ../../src.tar.gz')
+#===============================================================================
 
 def restart_webserver():
     "Restart the web server"
-    require('hosts', provided_by=["production"])
     sudo('/etc/init.d/apache2 restart', pty=True)
     sudo('/etc/init.d/nginx restart', pty=True)

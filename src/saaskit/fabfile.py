@@ -105,7 +105,7 @@ def install_project():
     """get source from repository and build it"""
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', 'SOURCE_PATH')
     
-    sudo('cd /webapp; rm -f -r %(name)s; git clone %(git_path)s %(host_string)s;' \
+    sudo('cd /webapp; rm -f -r %(host_string)s; git clone %(git_path)s %(host_string)s;' \
          % env, pty=True)
     
     #create local settings

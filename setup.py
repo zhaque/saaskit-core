@@ -27,7 +27,7 @@ install_requires = [
         'django-templatesadmin',
         'django-uni-form',
         'django-authopenid',
-        'django-notification',
+        'django-notification==0.1.4',
         'app_media',
         'django-ab',
         'django-paypal',

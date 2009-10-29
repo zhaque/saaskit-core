@@ -1,27 +1,33 @@
+
 from south.db import db
 from django.db import models
-from saaskit.models import *
+from saaskit_profile.models import *
 
 class Migration:
     
     def forwards(self, orm):
         
-        # Adding model 'UserProfile'
-        db.create_table('saaskit_userprofile', (
-            ('id', orm['saaskit.UserProfile:id']),
-            ('user', orm['saaskit.UserProfile:user']),
-            ('real_name', orm['saaskit.UserProfile:real_name']),
-            ('about', orm['saaskit.UserProfile:about']),
-            ('is_public', orm['saaskit.UserProfile:is_public']),
-        ))
-        db.send_create_signal('saaskit', ['UserProfile'])
+        # Adding field 'UserProfile.website'
+        db.add_column('saaskit_userprofile', 'website', orm['saaskit_profile.userprofile:website'])
+        
+        # Adding field 'UserProfile.company_url'
+        db.add_column('saaskit_userprofile', 'company_url', orm['saaskit_profile.userprofile:company_url'])
+        
+        # Adding field 'UserProfile.location'
+        db.add_column('saaskit_userprofile', 'location', orm['saaskit_profile.userprofile:location'])
         
     
     
     def backwards(self, orm):
         
-        # Deleting model 'UserProfile'
-        db.delete_table('saaskit_userprofile')
+        # Deleting field 'UserProfile.website'
+        db.delete_column('saaskit_userprofile', 'website')
+        
+        # Deleting field 'UserProfile.company_url'
+        db.delete_column('saaskit_userprofile', 'company_url')
+        
+        # Deleting field 'UserProfile.location'
+        db.delete_column('saaskit_userprofile', 'location')
         
     
     
@@ -60,13 +66,16 @@ class Migration:
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'saaskit.userprofile': {
+        'saaskit_profile.userprofile': {
             'about': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            'company_url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'is_public': ('django.db.models.fields.BooleanField', [], {'default': 'False', 'blank': 'True'}),
+            'location': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
             'real_name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']", 'unique': 'True'})
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']", 'unique': 'True'}),
+            'website': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'})
         }
     }
     
-    complete_apps = ['saaskit']
+    complete_apps = ['saaskit_profile']

@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from profiles import views
-from saaskit.forms import UserProfileForm
-from saaskit.views import create_profile
+from saaskit_profile.forms import UserProfileForm
+from saaskit_profile.views import create_profile
 
 urlpatterns = patterns('',
     url(r'^create/$', create_profile, {

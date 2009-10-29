@@ -45,6 +45,8 @@ install_requires = [
         'sorl-thumbnail',
         'Fabric',
         'PIL',
+        'django-friends',
+        'django-frontendadmin==0.3.1',
         
         'saaskit-main-site',
         'saaskit-user-site',
@@ -77,6 +79,7 @@ dependency_links = [
         'http://pypi.saaskit.org/django-registration/',
         'http://pypi.saaskit.org/django-sso/',
         'http://pypi.saaskit.org/django-subscription/',
+        'http://pypi.saaskit.org/django-frontendadmin/',
         'http://pypi.pinaxproject.com/',
 ]
 

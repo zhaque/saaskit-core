@@ -75,8 +75,6 @@ MIDDLEWARE_CLASSES = (
 #   'ab.middleware.ABMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
-
 INSTALLED_APPS = (
     # builtin
     'django.contrib.auth',
@@ -102,6 +100,7 @@ INSTALLED_APPS = (
     'templatesadmin',
     'uni_form',
     'app_media',
+    'friends',
     # 3rd party apps currently not used
     # 'ab',
     # 'filter',
@@ -150,18 +149,12 @@ TEMPLATESADMIN_TEMPLATE_DIRS = (
 
 INTERNAL_IPS = ( '127.0.0.1', )
 
-AUTH_PROFILE_MODULE = 'saaskit.UserProfile'
+AUTH_PROFILE_MODULE = 'saaskit_profile.UserProfile'
 
 SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 
 COMPRESS = False
 COMPRESS_VERSION = False
-
-NOTICE_TYPES = (
-     ("welcome", "Welcome to CrowdSense Starter Kit!", "you have successfully registered"),
-     ("member_add", "Added to site", "you were added as a member to a site"),
-     ("member_remove", "Removed from site", "you were removed from membership in a site"),
-     )
 
 _default_css_files = ('saaskit/yui-app-theme/yuiapp.css',
                       'saaskit/auth/css/openid.css',

@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-import signal_handlers
 
 
 class UserProfile(models.Model):
@@ -18,3 +17,7 @@ class UserProfile(models.Model):
     def get_absolute_url(self):
         return ('profiles_profile_detail',
                 (), { 'username': self.user.username })
+    
+    class Meta:
+        db_table = 'saaskit_userprofile'
+        

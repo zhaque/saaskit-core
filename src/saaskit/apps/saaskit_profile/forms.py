@@ -1,5 +1,5 @@
 from django import forms
-from saaskit.models import UserProfile
+from saaskit_profile.models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):

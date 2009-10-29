@@ -5,10 +5,10 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from profiles.views import default_success_url
-from forms import UserProfileForm
+from saaskit_profile.forms import UserProfileForm
 
 
-def create_profile(request, form_class=None, success_url=default_success_url,
+def create_profile(request, form_class=UserProfileForm, success_url=default_success_url,
                    template_name='profiles/create_profile.html',
                    extra_context=None):
     try:
@@ -17,8 +17,6 @@ def create_profile(request, form_class=None, success_url=default_success_url,
     except ObjectDoesNotExist:
         pass
 
-    if form_class is None:
-        form_class = UserProfileForm
     if request.method == 'POST':
         form = form_class(data=request.POST, files=request.FILES)
         if form.is_valid():

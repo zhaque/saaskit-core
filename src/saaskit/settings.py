@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     'quotas',
     'subscription',
     # local
+    'saaskit_profile',
     'saaskit',
     # only in development
     #'debug_toolbar',

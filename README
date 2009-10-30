@@ -62,8 +62,9 @@ CACHE_BACKEND = 'dummy:///'
 1.3 Deployment
 ----------
   1. It should be working copy, i.e. buildout have done.
-  2. ./bin/fab production install_packages install_mail_transfer_agent log_setup github_config postgresql_setup webapp_setup install_project nginx_config apache2_config --fabfile=./src/saaskit/fabfile.py --user=root
-  3. After that you may exec any of this steps. But some of them have no reason, i.e. user setup.
+  2. export DJANGO_SETTINGS_MODULE=saaskit.settings # replace saaskit by your project name
+  3. ./bin/fab production install_packages install_mail_transfer_agent log_setup github_config postgresql_setup webapp_setup install_project nginx_config apache2_config --fabfile=./src/saaskit/fabfile.py --user=root
+  4. After that you may exec any of this steps. But some of them have no reason, i.e. user setup.
 
 2 Overview
 ~~~~~~~~~~

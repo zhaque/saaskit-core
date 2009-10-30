@@ -1,0 +1,57 @@
+{% extends "muaccounts/manage/base.html" %}
+{% load smartif settings %}
+{% block title %}Manage your site{% endblock %} 
+{% load i18n %}
+{% block content %}
+<h2>Members</h2>
+  <table>
+   {% for member in member_list %}
+     <tr class="{% cycle 'row1' 'row2' %}">
+         <td>{{ member }}</td>
+         <td>{{ member.date_joined|date }}</td>
+         <td>
+             <form class="inline-form" method="POST" action="{% url muaccounts_remove_member user_id=member.id %}">
+                 <p><input type="submit" value="remove user"></p></form>
+         </td>
+     </tr>
+   {% endfor %}
+  </table>
+  
+  <h2>{% trans "Join Requests Sent" %}</h2>
+  {% if joins_sent %}
+      <table class="invitation_list">
+          {% for invitation in joins_sent %}
+              <tr>
+                  <td>{{ invitation.contact.email }}</td>
+                  <td>{{ invitation.sent }}</td>
+                  <td class="invitation_{{ invitation.status }}">{{ invitation.get_status_display }}</td>
+                  <td>
+                      {% for other_user in invitation.contact.users.all %}
+                          {{ other_user }}
+                      {% endfor %}
+                  </td>
+              </tr>
+          {% endfor %}
+      </table>
+  {% else %}
+      <p>{% trans "No join requests sent." %}</p>
+  {% endif %}
+    
+  {% with member_list|length as member_count %}
+     {% if member_count < user.quotas.muaccount_members %}
+         <p><a href="{% url muaccounts_add_member %}" rel="facebox">{% trans "Invite someone new to join" %}</a></p>
+     {% else %}
+     <p><a href="{% url sso %}?next={% setting BUY_SITE_URL %}">Upgrade your plan</a> to add
+       more users!</p>
+     {% endif %}
+  {% endwith %}
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -39,6 +39,7 @@ install_requires = [
         'django-registration',
         'django-profiles',
         'django-contact-form',
+        'django-pagination',
         'South',
         'html5lib',
         'python-dateutil',
@@ -46,7 +47,13 @@ install_requires = [
         'Fabric',
         'PIL',
         'django-friends',
+        'gdata',
+        'vobject',
+        'ybrowserauth',
+        'simplejson',
+        
         'django-frontendadmin==0.3.1',
+        'django-email-confirmation',
         
         'saaskit-main-site',
         'saaskit-user-site',

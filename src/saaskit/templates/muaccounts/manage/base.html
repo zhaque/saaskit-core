@@ -1,11 +1,11 @@
 {% extends "main.html" %}
 {% block title %}Manage your site{% endblock %} 
-
+{% load i18n %}
 {% block body %}
   <div class="block">
     <div class="bd">
-     <h2>{{ title }}</h2>
-     {% block content %}{% endblock %}
+      <h2>{{ title }}</h2>
+      {% block content %}{% endblock %}
     </div>
   </div>
 {% endblock %}

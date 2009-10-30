@@ -8,6 +8,7 @@ KIT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+DEBUG_PROPAGATE_EXCEPTIONS = False
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -70,6 +71,7 @@ MIDDLEWARE_CLASSES = (
     'django_authopenid.middleware.OpenIDMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'pagination.middleware.PaginationMiddleware',
     'sso.middleware.SingleSignOnMiddleware',
 #   'debug_toolbar.middleware.DebugToolbarMiddleware',
 #   'ab.middleware.ABMiddleware',
@@ -84,6 +86,7 @@ INSTALLED_APPS = (
     # third-party
     'compress',
     'contact_form',
+    'emailconfirmation',
     'registration',
     'django_authopenid',
     'django_extensions',
@@ -99,6 +102,7 @@ INSTALLED_APPS = (
     'oembed',
     'templatesadmin',
     'uni_form',
+    'pagination',
     'app_media',
     'friends',
     # 3rd party apps currently not used
@@ -161,6 +165,7 @@ _default_css_files = ('saaskit/yui-app-theme/yuiapp.css',
                       'saaskit/auth/css/openid.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
+                      'saaskit/css/friends.css',
                       )
 
 COMPRESS_CSS = {                        # different themes for MUAs
@@ -248,6 +253,13 @@ for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
                                 + _default_css_files[1:] ),
          'output_filename' : 'style.%s.css' % codename,
          }
+
+SITE_NAME = 'Saaskit'
+DEFAULT_FROM_EMAIL = 'support@example.com'
+CONTACT_EMAIL = DEFAULT_FROM_EMAIL
+EMAIL_SUBJECT_PREFIX = "[SaaSKit] "
+
+EMAIL_CONFIRMATION_DAYS = 2
 
 # Local settings for development / production
 try:

@@ -105,6 +105,8 @@ INSTALLED_APPS = (
     'pagination',
     'app_media',
     'friends',
+    'tinymce',
+    'frontendadmin',
     
     # own
     'muaccounts',

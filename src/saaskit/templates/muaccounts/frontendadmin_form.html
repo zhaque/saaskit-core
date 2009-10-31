@@ -1,0 +1,32 @@
+{% extends "muaccounts/manage/base.html" %}
+
+{% block head %}
+{{ block.super }}
+{{ form.media }}
+{% endblock %}
+
+{% block content %}
+  <div class="block">
+    <div class="bd">
+     {% block frontendadmin_content %}{% include "frontendadmin/form_ajax.html" %}{% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+{{ block.super }}
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  $('#id_show_link').bind('click', function(){
+    if ($(this).attr('checked')) $('#div_id_order').show()
+    else $('#div_id_order').hide();
+  });
+  /*$('#id_active').bind('click', function(){
+    if ($(this).attr('checked')) $('.ctrlHolder').show();
+    else $('.ctrlHolder').hide();
+    $(this).parent().parent().parent().show();
+  });*/
+});
+</script>
+{% endblock %}
+div_id_order

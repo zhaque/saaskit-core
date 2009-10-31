@@ -1,0 +1,12 @@
+﻿{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ flatpage.title }}{% endblock %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumbs">
+  <li><strong>{% trans "Home" %}</strong></li>
+  <li class="you-are-here"><strong>{{flatpage.title}}</strong></li>
+</ol> 
+{% endblock %}
+
+{% block content %}{{ flatpage.content }}{% endblock %}

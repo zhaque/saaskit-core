@@ -1,0 +1,15 @@
+﻿{% extends "main.html" %}
+{% load i18n frontendadmin_tags %}
+{% block title %}{{ flatpage.title }}{% endblock %}
+
+{% block body %}
+  <div class="block">
+    <div class="hd">
+      <h2>{{ flatpage.title }}</h2
+    ></div>
+    <div class="bd">
+      {{ flatpage.content }}
+    </div>
+    <p>{% frontendadmin_change flatpage 'edit' %}</p>
+  </div>
+{% endblock %}

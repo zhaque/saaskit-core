@@ -16,4 +16,56 @@
  {"pk": 1, "model": "subscription.subscription", "fields": {"group": 1, "name": "Silver Membership", "price": "17", "description": "", "recurrence_unit": "M", "recurrence_period": 1}},
  {"pk": 2, "model": "subscription.subscription", "fields": {"group": 2, "name": "Gold Membership", "price": "23", "description": "", "recurrence_unit": "M", "recurrence_period": 1}},
  {"pk": 1, "model": "subscription.usersubscription", "fields": {"active": true, "cancelled": true, "expires": "2012-12-21", "user": 3, "subscription": 1}},
- {"pk": 2, "model": "subscription.usersubscription", "fields": {"active": true, "cancelled": true, "expires": "2012-12-21", "user": 4, "subscription": 2}}]
+ {"pk": 2, "model": "subscription.usersubscription", "fields": {"active": true, "cancelled": true, "expires": "2012-12-21", "user": 4, "subscription": 2}},
+
+ {"pk": 1, "model": "flatpages.flatpage", 
+  "fields": {
+	 "title": "About US", 
+	 "url": "/about/", 
+	 "sites": [2], 
+	 "content": "<p>what is your site for?</p><p>how does it work? what are roles of members?</p><p>is there a place to find out more about this website?</p>"
+  }},
+  {"pk": 1, "model": "muaccount_content.muflatpage", 
+	  "fields": {}},
+  
+  {"pk": 2, "model": "flatpages.flatpage", 
+   "fields": {
+	 "title": "Support", 
+	 "url": "/support/", 
+	 "sites": [2], 
+	 "content": "Support default page"
+  }},
+  {"pk": 2, "model": "muaccount_content.muflatpage", 
+	  "fields": {}},
+    
+  {"pk": 3, "model": "flatpages.flatpage", 
+   "fields": {
+	 "title": "Terms and privacy", 
+	 "url": "/termsandprivacy/", 
+	 "sites": [2], 
+	 "content": "Terms and privacy default page"
+  }},
+  {"pk": 3, "model": "muaccount_content.muflatpage", 
+	  "fields": {}},
+    
+  {"pk": 4, "model": "flatpages.flatpage", 
+   "fields": {
+	 "title": "Contact", 
+	 "url": "http://yotweets.com/contact/", 
+	 "sites": [2], 
+	 "content": "external link"
+  }},
+  {"pk": 4, "model": "muaccount_content.muflatpage", 
+	  "fields": {}},
+  
+  {"pk": 5, "model": "flatpages.flatpage", 
+   "fields": {
+	 "title": "FAQ", 
+	 "url": "/faq/", 
+	 "sites": [2], 
+	 "content": "<div id=\"main-body\" class=\"about\" style=\"width: 100%;\">\r\n<div class=\"first\">\r\n<h3 class=\"subtitle\">What kinds of questions can I ask here?</h3>\r\n<p>Most importanly - questions should be <strong>relevant</strong> to this community. Before asking the question - please make sure to use search to see whether your question has alredy been answered.</p>\r\n<h3 class=\"subtitle\">What questions should I avoid asking?</h3>\r\n<p>\"Please avoid asking questions that are not relevant to this community, too subjective and argumentative.\"</p>\r\n<p>&nbsp;</p>\r\n</div>\r\n<div>\r\n<h3 class=\"subtitle\">What should I avoid in my answers?</h3>\r\n<p>site title is a Q&amp;A site, not a discussion group. Therefore - please avoid having discussions in your answers, comment facility allows some space for brief discussions.\"</p>\r\n</div>\r\n<div>\r\n<h3 class=\"subtitle\">Who moderates this community?</h3>\r\n<p>The short answer is: <strong>you</strong>. This website is moderated by the users. The reputation system allows users earn the authorization to perform a variety of moderation tasks.</p>\r\n</div>\r\n<div>\r\n<h3 class=\"subtitle\">How does reputation system work?</h3>\r\n<p>Rep system summary</p>\r\n<p>For example, if you ask an interesting question or give a helpful answer, your input will be upvoted.                 On the other hand if the answer is misleading - it will be downvoted.                 Each vote in favor will generate <strong>10</strong> points, each vote against will subtract <strong>2</strong> points.                 There is a limit of <strong>200</strong> points that can be accumulated per question or answer.                  The table below explains reputation point requirements for each type of moderation task.</p>\r\n<table style=\"font-family:arial;\" border=\"0\" cellspacing=\"3\" cellpadding=\"3\">\r\n<tbody>\r\n<tr>\r\n<th style=\"text-align:right\" width=\"40\">&nbsp;</th> <th width=\"300\">&nbsp;</th>\r\n</tr>\r\n<!--                  \r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\" mce_style=\"text-align:right;padding-right:5px\"><b>15</b></td>\r\n<td>{% trans \"upvote\" %}</td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\" mce_style=\"text-align:right;padding-right:5px\"><b>15</b></td>\r\n<td>{% trans \"use tags\" %}</td>\r\n</tr>\r\n-->                  \r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>50</strong></td>\r\n<td>add comments<br /></td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>100</strong></td>\r\n<td>downvote<br /></td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>250</strong></td>\r\n<td>open and close own questions<br /></td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>500</strong></td>\r\n<td>retag questions</td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>750</strong></td>\r\n<td>edit community wiki questions<br /></td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>2000</strong></td>\r\n<td>edit any answer</td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>3000</strong></td>\r\n<td>open any closed question<br /></td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>5000</strong></td>\r\n<td>delete any comment</td>\r\n</tr>\r\n<tr>\r\n<td style=\"text-align:right;padding-right:5px\"><strong>10000</strong></td>\r\n<td>delete any questions and answers and perform other moderation tasks<br /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div>\r\n<h3 class=\"subtitle\">To register, do I need to create new password?</h3>\r\n<p>No, you don't have to. You can login through any service that supports OpenID, e.g. Google, Yahoo, AOL, etc. <strong><a href=\"../../../../../accounts/signin\" target=\"_self\">\"Login now!\"</a></strong></p>\r\n</div>\r\n<div>\r\n<h3 class=\"subtitle\">Why other people can edit my questions/answers?</h3>\r\n<p>Goal of this site is... So questions and answers can be edited like wiki pages by experienced users of this site and this improves the overall quality of the knowledge base content. If this approach is not for you, werespect your choice.</p>\r\n</div>\r\n<div>\r\n<h3 class=\"subtitle\">Still have questions?</h3>\r\n<p>Please ask your question, help make our community better!<!--  <a href=\"/tags/faq\" mce_href=\"../../../../../tags/faq\" class=\"big\">{% trans \"site title\" %} {% trans \"questions\" %}</a>{% trans \".\" %}             --></p>\r\n</div>\r\n</div>\r\n<p>\r\n<script type=\"text/javascript\">// <![CDATA[\r\n    //highlihts section if url has matching #anchor_name\r\n    $(document).ready(function (){\r\n    var hash = window.location.hash;\r\n        if (hash.length > 1){\r\n            $(hash).parent().addClass('highlight');\r\n            window.location.hash = hash;\r\n     }\r\n    })\r\n// ]]></script>\r\n</p>"
+  }},
+  {"pk": 5, "model": "muaccount_content.muflatpage", 
+	  "fields": {}}
+  
+ ]

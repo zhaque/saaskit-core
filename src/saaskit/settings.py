@@ -73,8 +73,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'pagination.middleware.PaginationMiddleware',
     'sso.middleware.SingleSignOnMiddleware',
-#   'debug_toolbar.middleware.DebugToolbarMiddleware',
-#   'ab.middleware.ABMiddleware',
+    'muaccount_content.middleware.FlatpageFallbackMiddleware',
 )
 
 INSTALLED_APPS = (
@@ -83,6 +82,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    
     # third-party
     'compress',
     'contact_form',
@@ -105,25 +105,20 @@ INSTALLED_APPS = (
     'pagination',
     'app_media',
     'friends',
-    # 3rd party apps currently not used
-    # 'ab',
-    # 'filter',
-    # 'rosetta',
-    # 'autoslug',
-    # 'mailer',
-    # 'mptt',
-    # 'piston',
+    
     # own
     'muaccounts',
     'prepaid',
     'quotas',
     'subscription',
+    
     # local
     'saaskit_profile',
     'saaskit',
-    # only in development
-    #'debug_toolbar',
-
+    
+    'django.contrib.flatpages',
+    'muaccount_content',
+    
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
@@ -261,8 +256,17 @@ EMAIL_SUBJECT_PREFIX = "[SaaSKit] "
 
 EMAIL_CONFIRMATION_DAYS = 2
 
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': "advanced", 'relative_urls': True, 
+    'height': '700px', 'width': '79%', 
+    'theme_advanced_toolbar_location' : "top",
+}
+TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'saaskit/js/tiny_mce')
+
 # Local settings for development / production
 try:
      from local_settings import *
 except ImportError:
      pass
+
+TINYMCE_JS_URL = '%s/saaskit/js/tiny_mce/tiny_mce.js' % MEDIA_URL

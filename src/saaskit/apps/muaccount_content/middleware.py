@@ -3,7 +3,7 @@
 from django.http import Http404
 from django.conf import settings
 
-from muaccount_flatpages.views import mu_flatpage
+from muaccount_content.views import mu_flatpage
 
 class FlatpageFallbackMiddleware(object):
     def process_response(self, request, response):

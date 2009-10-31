@@ -8,8 +8,8 @@ from django.conf import settings
 from django.db.models.loading import get_model
 
 from tinymce import widgets as tinymce_widgets
-from answers.external.readonly import ReadOnlyWidget
 
+from muaccount_content.external.readonly import ReadOnlyWidget
 from muaccount_content.models import MUFlatPage
 from muaccount_content.widgets import ReadOnlyWidgetWithHidden
 

@@ -3,7 +3,7 @@ from django.forms.util import flatatt
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
-from answers.external.readonly import ReadOnlyWidget
+from muaccount_content.external.readonly import ReadOnlyWidget
 
 class ReadOnlyWidgetWithHidden(ReadOnlyWidget):
     

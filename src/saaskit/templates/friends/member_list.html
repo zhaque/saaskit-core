@@ -39,7 +39,10 @@
     
   {% with member_list|length as member_count %}
      {% if member_count < user.quotas.muaccount_members %}
-         <p><a href="{% url muaccounts_add_member %}" rel="facebox">{% trans "Invite someone new to join" %}</a></p>
+         <p>
+          <a href="{% url muaccounts_add_member %}" rel="facebox">{% trans "Invite someone new to join" %}</a>
+          | <a href="{% url invitations_contacts %}">{% trans "Your contacts" %}</a>
+         </p>
      {% else %}
      <p><a href="{% url sso %}?next={% setting BUY_SITE_URL %}">Upgrade your plan</a> to add
        more users!</p>

@@ -200,7 +200,7 @@ MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'
 MUACCOUNTS_PORT=8000
 
 MUACCOUNTS_IP = '127.0.0.1'
-MUACCOUNTS_USERSITE_URLCONF = 'main.urls_usersite'
+MUACCOUNTS_USERSITE_URLCONF = 'user_site.urls'
 MUACCOUNTS_SUBDOMAIN_STOPWORDS = '(r"^www$", r"^support$", r"^lab$", r"^labs$", r"^dev$", r"^development$", r"^ops$", r"^operations$", r"^corp$", r"^media$", r"^assets$", r"^mail$", r"^docs$", r"^calendar$", r"^contacts$", r"^feedback$", r"^chat$")'
 MUACCOUNTS_THEMES = (
     # color css

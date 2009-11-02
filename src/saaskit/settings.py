@@ -77,6 +77,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 INSTALLED_APPS = (
+    'saaskit',
+    
     # builtin
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,7 +118,6 @@ INSTALLED_APPS = (
     
     # local
     'saaskit_profile',
-    'saaskit',
     
     'django.contrib.flatpages',
     'muaccount_content',

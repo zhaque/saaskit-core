@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/* Subscription */
+
+table.plans td.current {
+  background-color: yellow !important;
+}
+ 

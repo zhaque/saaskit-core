@@ -164,6 +164,7 @@ _default_css_files = ('saaskit/yui-app-theme/yuiapp.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
                       'saaskit/css/friends.css',
+                      'saaskit/css/subscription.css',
                       )
 
 COMPRESS_CSS = {                        # different themes for MUAs

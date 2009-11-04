@@ -1,0 +1,3 @@
+[{"pk": 1, "model": "sites.site", "fields": {"domain": "www.{{ host_string }}", "name": "{{host_string }} main site"}},
+ {"pk": 2, "model": "sites.site", "fields": {"domain": "{{host_string }}", "name": "{{host_string }} user sites"}}
+]

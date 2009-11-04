@@ -109,20 +109,27 @@ def install_project():
     sudo('cd /webapp; rm -f -r %(host_string)s; git clone %(git_path)s %(host_string)s;' \
          % env, pty=True)
     
+    build_source()
+
+def update_project():
+    sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
+    build_source()
+    
+def build_source():
     #create local settings
     render_put('deploy/_local_settings.py', 
                '/webapp/%s/%s/local_settings.py' % (env.host_string, env.SOURCE_PATH), 
                env)
-
-    #buildout the project
-    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg' % env.host_string, pty=True)
-    sudo('chown -R webapp:www-data /webapp', pty=True)
-
-def update_project():
-    sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
-    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg' % env.host_string, pty=True)
-    sudo('chown -R webapp:www-data /webapp', pty=True)
+    #copy sites fixture
+    render_put('deploy/sites.json', 
+               '/webapp/%s/%s/sites.json' % (env.host_string, env.SOURCE_PATH), 
+               env)
     
+    #buildout the project
+    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg; ./bin/main_site loaddata ./%s/sites.json;' \
+            % (env.host_string, env.SOURCE_PATH), pty=True)
+    sudo('chown -R webapp:www-data /webapp', pty=True)
+
 def nginx_config():
     """setup nginx"""
     require('SOURCE_PATH')

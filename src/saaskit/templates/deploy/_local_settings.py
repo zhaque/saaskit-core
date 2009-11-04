@@ -16,7 +16,7 @@ SUBSCRIPTION_PAYPAL_SETTINGS = {
 
 
 MUACCOUNTS_ROOT_DOMAIN = '{{ host_string }}'
-MUACCOUNTS_DEFAULT_URL = 'http:// {{host_string }}/'
+MUACCOUNTS_DEFAULT_URL = 'http://{{host_string }}/'
 MUACCOUNTS_PORT=80
 
 BUY_SITE_URL = 'http://{{ host_string }}/subscription/'

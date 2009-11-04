@@ -1,6 +1,12 @@
 server {
     listen {{ VPS_IP }}:80;
-    server_name	{{ host_string }} *.{{ host_string }};
+    server_name {{ host_string }};
+    rewrite ^/(.*) http://www.{{ host_string }}/$1 permanent;
+}
+
+server {
+    listen {{ VPS_IP }}:80;
+    server_name	*.{{ host_string }};
 
     access_log /var/log/webapp/nginx_access.log;
     error_log /var/log/webapp/nginx_error.log;

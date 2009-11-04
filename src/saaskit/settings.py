@@ -260,8 +260,6 @@ CONTACT_EMAIL = DEFAULT_FROM_EMAIL
 EMAIL_SUBJECT_PREFIX = "[SaaSKit] "
 EMAIL_CONFIRMATION_DAYS = 2
 
-SESSION_COOKIE_DOMAIN = '.example.com'
-
 TINYMCE_DEFAULT_CONFIG = {
     'theme': "advanced", 'relative_urls': True, 
     'height': '700px', 'width': '79%', 

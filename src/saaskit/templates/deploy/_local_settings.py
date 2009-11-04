@@ -25,4 +25,4 @@ ADMIN_MEDIA_PREFIX = 'http://assets.{{ host_string }}/admin/'
 DEFAULT_FROM_EMAIL = 'support@{{ host_string }}'
 CONTACT_EMAIL = DEFAULT_FROM_EMAIL
 
-SESSION_COOKIE_DOMAIN = '.{{ host_string }}'
+#SESSION_COOKIE_DOMAIN = '.{{ host_string }}'

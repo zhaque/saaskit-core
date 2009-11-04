@@ -1,6 +1,7 @@
 <VirtualHost 127.0.0.1:80>
     ServerAdmin admin@{{ host_string }} 
-    ServerName {{ host_string }} 
+    ServerName {{ host_string }}
+    ServerAlias www.{{ host_string }} 
 
     <Directory /webapp/{{ host_string }}/parts>
         Order deny,allow

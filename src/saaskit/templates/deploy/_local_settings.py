@@ -13,8 +13,6 @@ SUBSCRIPTION_PAYPAL_SETTINGS = {
     'business' : PAYPAL_RECEIVER_EMAIL,
     }
 
-
-
 MUACCOUNTS_ROOT_DOMAIN = '{{ host_string }}'
 MUACCOUNTS_DEFAULT_URL = 'http://{{host_string }}/'
 MUACCOUNTS_PORT=80

@@ -15,6 +15,7 @@
  {"pk": 3, "model": "muaccounts.muaccount", "fields": {"owner": 4, "is_public": false, "domain": "www.gold-account.com", "subdomain": "gold", "members": [6, 7]}},
  {"pk": 1, "model": "subscription.subscription", "fields": {"group": 1, "name": "Silver Membership", "price": "17", "description": "", "recurrence_unit": "M", "recurrence_period": 1}},
  {"pk": 2, "model": "subscription.subscription", "fields": {"group": 2, "name": "Gold Membership", "price": "23", "description": "", "recurrence_unit": "M", "recurrence_period": 1}},
+ {"pk": 3, "model": "subscription.subscription", "fields": {"group": 3, "name": "Test Membership", "price": "4", "description": "", "recurrence_unit": "M", "recurrence_period": 1}},
  {"pk": 1, "model": "subscription.usersubscription", "fields": {"active": true, "cancelled": true, "expires": "2012-12-21", "user": 3, "subscription": 1}},
  {"pk": 2, "model": "subscription.usersubscription", "fields": {"active": true, "cancelled": true, "expires": "2012-12-21", "user": 4, "subscription": 2}}
  ]

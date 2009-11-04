@@ -1,6 +1,6 @@
 <div class="block">
   <p class="text-center">Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like.</p>
-  <table frame="box" class="plans" style="width:50%;" align="center">
+  <table frame="box" class="plans" align="center">
     {% with request.user.get_subscription as user_subscription %}
       <tr>
         {% for o in object_list %}

@@ -7,7 +7,7 @@ from muaccount_content.views import mu_flatpage
 
 class FlatpageFallbackMiddleware(object):
     def process_response(self, request, response):
-        if response.status_code != 404:
+        if response.status_code != 404 or not hasattr(request, 'muaccount'):
             return response # No need to check for a flatpage for non-404 responses.
         try:
             return mu_flatpage(request, request.path_info)

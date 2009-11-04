@@ -30,7 +30,7 @@ ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
 ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
 ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
 ifnotsetted('UBUNTU_VERSION', 'jaunty')
-ifnotsetted('PAYPAL_EMAIL', 'arvi3d_1256295045_biz@gmail.com', True, "PAYPAL EMAIL")
+ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
 
 env.SOURCE_PATH = 'src/saaskit'
 env.git_path = 'git@github.com:CrowdSense/saaskit-core.git'

@@ -85,7 +85,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     
-    # third-party
     'compress',
     'contact_form',
     'emailconfirmation',
@@ -185,12 +184,6 @@ ACCOUNT_ACTIVATION_DAYS=7
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/signin/'
 
-PAYPAL_TEST = True
-PAYPAL_RECEIVER_EMAIL='example@example.com'
-SUBSCRIPTION_PAYPAL_SETTINGS = {
-    'business' : PAYPAL_RECEIVER_EMAIL,
-    }
-
 QUOTAS = {
     'muaccount_members' : (3, 10, 50),
     }
@@ -267,10 +260,28 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'saaskit/js/tiny_mce')
 
+PAYPAL_PRO = False
+
+#Dummy paypal settings
+PAYPAL_TEST = True
+PAYPAL_RECEIVER_EMAIL='example@example.com'
+SUBSCRIPTION_PAYPAL_SETTINGS = {
+    'business' : PAYPAL_RECEIVER_EMAIL,
+    }
+
+# Website payments Pro settings
+PAYPAL_WPP_USER = ""
+PAYPAL_WPP_PASSWORD = ""
+PAYPAL_WPP_SIGNATURE = ""
+
+
 # Local settings for development / production
 try:
      from local_settings import *
 except ImportError:
      pass
+
+if PAYPAL_PRO:
+    INSTALLED_APPS += ('paypal.standard', 'paypal.pro')
 
 TINYMCE_JS_URL = '%s/saaskit/js/tiny_mce/tiny_mce.js' % MEDIA_URL

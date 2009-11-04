@@ -19,11 +19,13 @@
           
           {% ifnotequal user_subscription o %}
           <p align="center">
-            {% if user.is_authenticated %}
-            <a href="{{o.get_absolute_url}}">upgrade/degrade &raquo;</a></td>
-            {% else %}
-            <a href="{% url user_signin %}?next={{o.get_absolute_url}}">choose &raquo;</a></td>
-            {% endif %}
+            <a href="{{o.get_absolute_url}}">
+              {% if user.is_authenticated %}
+              upgrade/degrade &raquo;
+              {% else %}
+              choose &raquo;
+              {% endif %}
+              </a>
           </p>
           {% endifnotequal %}
         </td>

@@ -181,11 +181,12 @@ COMPRESS_JS = {
         'output_filename' : 'scripts.js'},
     }
 
-PAYPAL_TEST = True
-PAYPAL_RECEIVER_EMAIL='example@example.com'
 ACCOUNT_ACTIVATION_DAYS=7
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/signin/'
+
+PAYPAL_TEST = True
+PAYPAL_RECEIVER_EMAIL='example@example.com'
 SUBSCRIPTION_PAYPAL_SETTINGS = {
     'business' : PAYPAL_RECEIVER_EMAIL,
     }

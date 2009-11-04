@@ -32,7 +32,7 @@
                   <li><a href="{% url profiles_create_profile %}">profile</a></li> |
                   {% endif %}
                   <li><a href="{% url auth_password_change %}">password</a></li> |
-                  <li><a href="{% url user_signout %}">logout [{{user}}]</a></li>
+                  <li><a href="{% url user_signout %}?next=/">logout [{{user}}]</a></li>
                   {% else %}
                   <li><a href="{% url user_signin %}">Sign-up</a></li>
                   {% endif %}
@@ -50,12 +50,9 @@
           <ul id="primary-navigation">
             <li{% class_if_reverse /about/ active %}><a href="/about">About Us</a></li>
             <li{% class_if_reverse /support/ active %}><a href="/support">Support</a></li>
-             {% if user.is_authenticated %}
-                  <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Upgrade</a></li>
-                {% else %}
-                  <li{% class_if_reverse contact_form active %}><a href="/testdrive">Test Drive</a></li>
-                  <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Plans and Pricing</a></li>
-                {% endif %}     
+             {% if not user.is_authenticated %}
+              <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Plans and Pricing</a></li>
+             {% endif %}     
             <li {% class_if_reverse / active %}><a href="/">Home</a></li>
                                   
                   

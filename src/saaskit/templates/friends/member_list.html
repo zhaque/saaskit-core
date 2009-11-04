@@ -44,7 +44,7 @@
           | <a href="{% url invitations_contacts %}">{% trans "Your contacts" %}</a>
          </p>
      {% else %}
-     <p><a href="{% url sso %}?next={% setting BUY_SITE_URL %}">Upgrade your plan</a> to add
+     <p><a href="{% url subscription_list %}">Upgrade your plan</a> to add
        more users!</p>
      {% endif %}
   {% endwith %}

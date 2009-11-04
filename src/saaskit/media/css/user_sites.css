@@ -109,3 +109,8 @@ ul.errorlist {
 .uniForm .inlineLabels .formHint {
   margin-left: 37%;
 }
+
+/* Subscription */
+table.plans td.current {
+  background-color: yellow;
+} 

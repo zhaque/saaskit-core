@@ -32,6 +32,7 @@
                   {% else %}
                   <li><a href="{% url profiles_create_profile %}">profile</a></li> |
                   {% endif %}
+                  <li><a href="{% url subscription_list %}">subscription</a></li> |
                   <li><a href="{% url auth_password_change %}">password</a></li> |
                   <li><a href="{% url user_signout %}?next=/">logout [{{user}}]</a></li>
                   {% else %}

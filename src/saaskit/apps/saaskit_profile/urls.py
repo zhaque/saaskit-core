@@ -15,7 +15,8 @@ urlpatterns = patterns('',
     }, name='profiles_edit_profile'),
 
     url(r'^(?P<username>\w+)/$', views.profile_detail, {
-        'public_profile_field': 'is_public'
+        'public_profile_field': 'is_public',
+        'template_name': 'profiles/profile_detail_page.html'
     }, name='profiles_profile_detail'),
 
     url(r'^$', views.profile_list, {

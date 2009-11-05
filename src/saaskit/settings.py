@@ -131,6 +131,10 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     )
 TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates').replace('\\','/'), )
 
+TEST_RUNNER = "saaskit.tests.coverage_runner.run_tests"
+COVERAGE_REPORT_PATH = os.path.join(KIT_ROOT, 'coverage_report')
+
+
 # Settings for templates editing via django admin
 
 TEMPLATESADMIN_HIDE_READONLY = True

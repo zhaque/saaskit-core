@@ -62,8 +62,8 @@ install_requires = [
 
 extras_require = dict(
     test = [
-        #'coverage',
-        #'windmill',
+        'coverage',
+        'windmill',
     ]
 )
 

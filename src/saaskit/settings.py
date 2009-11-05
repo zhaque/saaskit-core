@@ -76,6 +76,8 @@ MIDDLEWARE_CLASSES = (
     'muaccount_content.middleware.FlatpageFallbackMiddleware',
 )
 
+ROOT_URLCONF = 'saaskit.urls'
+
 INSTALLED_APPS = (
     'saaskit',
     

@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% load i18n uni_form %}
+
+{% block title %}{% trans 'Payment' %}{% endblock %} 
+
+{% block body %}
+<div id="yui-main"><div class="yui-b"><div class="yui-g">
+<form class="uniForm" enctype="multipart/form-data" action="" method="post">
+    <fieldset class="inlineLabels">
+      <div align="center"><a href="?express">Pay by PayPal</a></div>
+      {{ form|as_uni_form }}
+      <div class="submit form_block">
+        <input type="submit" value="{% trans 'pay' %}" />
+      </div>
+    </fieldset>
+</form>
+</div></div></div>
+{% endblock %}

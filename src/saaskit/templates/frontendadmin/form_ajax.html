@@ -1,15 +1,14 @@
-{#{{ form.media }}#}
 {% load i18n uni_form %}
-<fieldset class="frontendadmin">
-	<legend>{{ action }} {{ model_title }}</legend>
-	<form method="post" action="{{ action_url }}" enctype="multipart/form-data" class="uniForm">
+{% if form.helper %}
+  {% uni_form form form.helper %}
+{% else %}
+  {% load uni_form i18n %}
+  <form class="uniForm" action="" method="post">
     <fieldset class="inlineLabels">
-  		{{ form|as_uni_form }}
-      <div class="submit form_block">
-  			<input type="submit" class="submit" value="{% trans "Submit" %}"/>
-  		  <input type="submit" class="cancel" name="_cancel" value="{% trans "Cancel" %}"
-  		    	onclick="return confirm('{% trans "Are you sure to cancel this action?" %}');"/>
-  		</div>
+      {{ form|as_uni_form }}
+      <div class="buttonHolder">
+        <input type="submit" value="{% trans 'submit' %}" />
+      </div>
     </fieldset>
-	</form>
-</fieldset>
+</form>
+{% endif %}

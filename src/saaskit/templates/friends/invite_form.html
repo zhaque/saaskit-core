@@ -4,7 +4,7 @@
 <form class="uniForm" method="POST" action="{% url muaccounts_add_member %}">
     <fieldset class="inlineLabels">
         {{ join_request_form|as_uni_form }}
-        <div class="submit form_block">
+        <div class="submit form_block buttonHolder">
             <input type="submit" value="invite" />
             or <a href="{% url muaccounts_member_list %}">cancel</a>
         </div>

@@ -17,7 +17,7 @@
         <input type="hidden" name="action" value="{{ import_form.action }}" />
         <fieldset class="inlineLabels">
             {{ import_form.form|as_uni_form }}
-            <div class="submit form_block">
+            <div class="submit form_block buttonHolder">
                 <input type="submit" value="{% trans 'upload' %}" />
             </div>
         </fieldset>
@@ -30,7 +30,7 @@
         <form class="uniForm" method="POST" action="">
           <input type="hidden" name="action" value="{{ import_service.action }}" />
           <fieldset>
-            <div class="submit form_block">
+            <div class="submit form_block buttonHolder">
                 <input type="submit" value="{% trans 'import' %}" />
             </div>
           </fieldset>

@@ -2,14 +2,7 @@
 {% block title %}Manage your site{% endblock %} 
 {% load i18n uni_form %}
 {% block content %}
-  <form class="uniForm" enctype="multipart/form-data" action="" method="post">
-    <fieldset class="inlineLabels">
-      {{ form|as_uni_form }}
-      <div class="submit form_block">
-        <input type="submit" value="{% trans 'save' %}" />
-      </div>
-     </fieldset>
-  </form>      
+  {% uni_form form form.helper %}
 {% endblock %}
 
 

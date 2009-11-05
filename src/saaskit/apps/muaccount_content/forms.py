@@ -3,17 +3,20 @@
 from django import forms
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.flatpages.admin import FlatpageForm
-from django.conf import settings
-from django.db.models.loading import get_model
 
 from tinymce import widgets as tinymce_widgets
+from uni_form.helpers import FormHelper, Submit
 
-from muaccount_content.external.readonly import ReadOnlyWidget
 from muaccount_content.models import MUFlatPage
 from muaccount_content.widgets import ReadOnlyWidgetWithHidden
 
 class MuFlatpageAddForm(forms.ModelForm):
+    
+    # this displays how to attach a formHelper to your forms class.
+    helper = FormHelper()
+    helper.add_input(Submit('submit',_('Create')))
+    helper.add_input(Submit('_cancel',_('Cancel')))
+    is_multipart = True
     
     class Meta:
         model = MUFlatPage

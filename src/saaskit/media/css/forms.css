@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* Form elements */
+
+.ctrlHolder ul.errorlist {
+  float: right;
+  width: 250px;
+}
+
+ul.errorlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: red;
+}
+
+.checkbox input.checkboxinput {
+  float: left;
+  margin-right: 15px;
+  margin-left: 27%;
+}
+
+.uniForm .ctrlHolder label {
+  width: 20%;
+}
+
+.uniForm .checkbox label {
+  width: 40%;
+  margin-top: 0;
+}
+
+.uniForm .ctrlHolder .formHint {
+  margin-left: 27%;
+}
+
+.uniForm .ctrlHolder .ctrlHolder label {
+  clear: left;
+  float: left;
+} 

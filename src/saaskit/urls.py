@@ -14,6 +14,7 @@ urlpatterns = patterns('',
      {'payment_method':'pro' if settings.PAYPAL_PRO else 'standard'}, name='subscription_detail'),
     (r'^subscription/', include('subscription.urls')),
     (r'^notices/', include('notification.urls')),
+    (r'^content/', include('frontendadmin.urls')),
 )
 
 # serve static files in dev mode

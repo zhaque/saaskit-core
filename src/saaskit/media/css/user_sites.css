@@ -77,35 +77,3 @@ text-decoration:none;
 .big { font-size:140%; font-family:"Garamond Premr Pro", Arial, sans-serif; font-style:italic; color:#333333;}
 
 #owner-nav { float:right; margin: 5px 0 0 0; color:#ffffff; clear:both;}
-
-/* Form elements */
-
-.ctrlHolder ul.errorlist {
-  float: right;
-  width: 250px;
-}
-
-ul.errorlist {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: red;
-}
-
-.checkbox input.checkboxinput {
-  float: left;
-  margin-right: 15px;
-  margin-left: 37%;
-}
-
-.uniForm .inlineLabels label, .uniForm .inlineLabels .label {
-  width: 20%;
-}
-
-.uniForm .checkbox label {
-  width: 40%;
-}
-
-.uniForm .inlineLabels .formHint {
-  margin-left: 37%;
-}

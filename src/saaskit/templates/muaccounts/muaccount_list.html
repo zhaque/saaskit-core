@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% load i18n frontendadmin_tags %}
+{% block title %}Your mu accounts{% endblock %} 
+
+{% block body %}
+<div id="yui-main"><div class="yui-b"><div class="yui-g">
+  <h2>{% trans "Manage mu accounts" %}</h2>
+  {% frontendadmin_add mua_list %}
+  <ul>
+    {% for mua in mua_list %}
+    <li>
+      <a href="{{ mua.get_absolute_url }}">{{ mua.name }}</a> | {% frontendadmin_delete mua %}
+    </li>
+    {% endfor %}
+  </ul>
+</div></div></div>
+{% endblock %}

@@ -170,6 +170,7 @@ _default_css_files = ('saaskit/yui-app-theme/yuiapp.css',
                       'uni_form/uni_form/uni-form.css',
                       'saaskit/css/friends.css',
                       'saaskit/css/subscription.css',
+                      'saaskit/css/forms.css',
                       )
 
 COMPRESS_CSS = {                        # different themes for MUAs
@@ -202,7 +203,7 @@ MUACCOUNTS_PORT=8000
 
 MUACCOUNTS_IP = '127.0.0.1'
 MUACCOUNTS_USERSITE_URLCONF = 'user_site.urls'
-MUACCOUNTS_SUBDOMAIN_STOPWORDS = '(r"^www$", r"^support$", r"^lab$", r"^labs$", r"^dev$", r"^development$", r"^ops$", r"^operations$", r"^corp$", r"^media$", r"^assets$", r"^mail$", r"^docs$", r"^calendar$", r"^contacts$", r"^feedback$", r"^chat$")'
+MUACCOUNTS_SUBDOMAIN_STOPWORDS = (r"^www$", r"^support$", r"^lab$", r"^labs$", r"^dev$", r"^development$", r"^ops$", r"^operations$", r"^corp$", r"^media$", r"^assets$", r"^mail$", r"^docs$", r"^calendar$", r"^contacts$", r"^feedback$", r"^chat$")
 MUACCOUNTS_THEMES = (
     # color css
     ('color_scheme', 'Color scheme', (

@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     'friends',
     'tinymce',
     'frontendadmin',
+    'django.contrib.flatpages',
     
     # own
     'muaccounts',
@@ -119,9 +120,8 @@ INSTALLED_APPS = (
     
     # local
     'saaskit_profile',
-    
-    'django.contrib.flatpages',
     'muaccount_content',
+    'simple_adsense',
     
 )
 

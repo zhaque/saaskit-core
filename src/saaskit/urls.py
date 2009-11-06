@@ -6,6 +6,13 @@ handler404 = 'perfect404.views.page_not_found'
 from django.contrib import admin
 admin.autodiscover()
 
+def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):
+    def wrapped(request, queryset, *args, **kwargs):
+        return func(request, queryset=queryset_edit(request, queryset), *args, **kwargs)
+    
+    return wrapped
+
+
 urlpatterns = patterns('',
     url(r'^sso/$', 'sso.views.sso', name="sso"),
     (r'^accounts/', include('django_authopenid.urls')),

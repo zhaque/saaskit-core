@@ -193,6 +193,7 @@ LOGIN_URL = '/accounts/signin/'
 
 QUOTAS = {
     'muaccount_members' : (3, 10, 50),
+    'muaccounts': (1, 2),
     }
 
 BUY_SITE_URL = 'http://example.com:8001/subscription/'

@@ -25,8 +25,6 @@
                   {% if user.is_authenticated %}
                   <li{% class_if_reverse profiles_profile_list active %}>Welcome, <a href="{% url profiles_profile_list %}">{{user}}</a></li> |
                   <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">dashboard</a></li> |
-                  {% endif %}
-                  {% if user.is_authenticated %}
                   {% if user.get_profile %}
                   <li><a href="{% url profiles_edit_profile %}">profile</a></li> | 
                   {% else %}
@@ -54,6 +52,8 @@
             <li{% class_if_reverse /support/ active %}><a href="/support">Support</a></li>
              {% if not user.is_authenticated %}
               <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Plans and Pricing</a></li>
+             {% else %}
+              <li{% class_if_reverse muaccounts_listing active %}><a href="{% url muaccounts_listing %}">Mu Accounts</a></li>
              {% endif %}     
             <li {% class_if_reverse / active %}><a href="/">Home</a></li>
                                   

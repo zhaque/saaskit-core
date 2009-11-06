@@ -1,17 +1,30 @@
 {% extends "main.html" %}
-{% load i18n frontendadmin_tags %}
+{% load smartif i18n frontendadmin_tags %}
 {% block title %}Your mu accounts{% endblock %} 
 
 {% block body %}
 <div id="yui-main"><div class="yui-b"><div class="yui-g">
   <h2>{% trans "Manage mu accounts" %}</h2>
-  {% frontendadmin_add mua_list %}
+  {% with mua_list|length as mua_count %}
+    {% if mua_count < user.quotas.muaccounts %}
+      {% frontendadmin_add mua_list %}
+    {% else %}
+    <p>You can not add more domains. <a href="{% url subscription_list %}">Upgrade</a> your plan.</p>
+    {% endif %}
+  {% endwith %}
+  
+  <h3>{% trans "Your mu accounts" %}</h3>
+  {% if mua_list %}
   <ul>
     {% for mua in mua_list %}
     <li>
-      <a href="{{ mua.get_absolute_url }}">{{ mua.name }}</a> | {% frontendadmin_delete mua %}
+      {% frontendadmin_delete mua %} | {% frontendadmin_change mua %} | 
+      <a href="{{ mua.get_absolute_url }}">{{ mua.name }}</a>
     </li>
     {% endfor %}
   </ul>
+  {% else %}
+  <p>You have no mu accounts.</p>
+  {% endif %}
 </div></div></div>
 {% endblock %}

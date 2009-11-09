@@ -53,6 +53,9 @@ install_requires = [
         'ybrowserauth',
         'simplejson',
         
+        'Reportlab',
+        'pisa',
+        
         'django-frontendadmin==0.3.1',
         'django-email-confirmation',
         
@@ -89,6 +92,7 @@ dependency_links = [
         'http://pypi.saaskit.org/django-subscription/',
         'http://pypi.saaskit.org/django-frontendadmin/',
         'http://pypi.pinaxproject.com/',
+        'http://distfiles.minitage.org/public/externals/minitage/',
 ]
 
 setup(name="saaskit-core",

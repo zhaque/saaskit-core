@@ -8,6 +8,8 @@ handler404 = 'perfect404.views.page_not_found'
 from django.contrib import admin
 admin.autodiscover()
 
+from subscription.models import Transaction
+
 from pdf_app.decorators import pdf_response
 
 def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):

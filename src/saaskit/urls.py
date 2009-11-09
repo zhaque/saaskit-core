@@ -14,8 +14,8 @@ from pdf_app.decorators import pdf_response
 
 def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):
     def wrapped(request, queryset, *args, **kwargs):
-        return func(request, queryset=queryset_edit(request, queryset), *args, **kwargs)
-    
+        return func(request, queryset_edit(request, queryset), *args, **kwargs)
+    wrapped.__name__ = func.__name__
     return wrapped
 
 invoice_info = {
@@ -27,7 +27,7 @@ invoice_listing_info = {'template_name': 'subscription/invoice_history.html'}
 invoice_listing_info.update(invoice_info)
 
 invoice_detail_info = {'template_name': 'subscription/invoice.html'}
-invoice_listing_info.update(invoice_info)
+invoice_detail_info.update(invoice_info)
 
 invoice_queryset_wrapper = lambda request, queryset: queryset.filter(user=request.user)
 

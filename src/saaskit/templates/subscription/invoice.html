@@ -1,0 +1,34 @@
+{% load i18n %}
+{% block body %}
+  <h2>Invoice</h2>
+  <div>
+    <label>{% trans "Invoice Date" %}:</label>
+    <span>{{ transaction.timestamp|date:_("DATETIME_FORMAT")}}</span>
+  </div>
+  <div>
+    <label>{% trans "Receipt" %}:</label>
+    <span>{{ transaction.ipn }}</span>
+  </div>
+  
+  <div>
+    <label>{% trans "Amount" %}:</label>
+    <span>{{ transaction.ipn.auth_amount }}</span>
+  </div>
+  
+  <div>
+    <label>{% trans "Mc fee" %}:</label>
+    <span>{{ transaction.ipn.mc_fee }}</span>
+  </div>
+  
+  <div>
+    <label>{% trans "Tax" %}:</label>
+    <span>{{ transaction.ipn.tax }}</span>
+  </div>
+  
+{% endblock %}
+
+
+
+
+
+

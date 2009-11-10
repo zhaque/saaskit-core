@@ -3,10 +3,10 @@
   <table frame="box" class="plans" align="center">
     {% with request.user.get_subscription as user_subscription %}
       <tr>
-        {% for o in object_list %}
-        <td {% ifequal user_subscription o %}class="current"{% endifequal %}>
-          <h2 class="text-center">{{o.name}}</h2>
-          <p class="text-center">{{o.get_pricing_display}}</p>
+        {% for subscription in object_list %}
+        <td {% ifequal user_subscription subscription %}class="current"{% endifequal %}>
+          <h2 class="text-center">{{subscription.name}}</h2>
+          <p class="text-center">{{subscription.get_pricing_display}}</p>
           <p class="text-center">21 day free trial</p>
           <ul class="plans">
             <li>Unlimited Campaigns</li>
@@ -17,9 +17,9 @@
             <li id="higlighted">Standard Security</li>                     
           </ul>
           
-          {% ifnotequal user_subscription o %}
+          {% ifnotequal user_subscription subscription %}
           <p align="center">
-            <a href="{{o.get_absolute_url}}">
+            <a href="{{subscription.get_absolute_url}}">
               {% if user.is_authenticated %}
               upgrade/degrade &raquo;
               {% else %}
@@ -27,6 +27,8 @@
               {% endif %}
               </a>
           </p>
+          {% else %}
+          <p align="center"><a href="{% unsubscribe %}"></a></p>
           {% endifnotequal %}
         </td>
         {% endfor %}

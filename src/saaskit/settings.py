@@ -134,6 +134,7 @@ TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates').replace('\\','/'), )
 TEST_RUNNER = "saaskit.tests.coverage_runner.run_tests"
 COVERAGE_REPORT_PATH = os.path.join(KIT_ROOT, 'coverage_report')
 
+AUTHENTICATION_BACKENDS = ('subscription.backends.UserSubscriptionBackend',)
 
 # Settings for templates editing via django admin
 

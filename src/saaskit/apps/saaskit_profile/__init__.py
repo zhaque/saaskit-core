@@ -3,15 +3,21 @@ from django.db.models.signals import post_save
 
 import notification.models
 import registration.signals
+import django_authopenid.signals
 
 import muaccounts.signals
 
-def user_registered(instance, created, **kwargs):
-    if created:
-        group, created = Group.objects.get_or_create(name="Registered Member")
-        instance.groups.add(group)
-        notification.models.send([instance], 'welcome')
-post_save.connect(user_registered, sender=User)
+def set_default_group(user):
+    """add default group Registered Member"""
+    group, created = Group.objects.get_or_create(name="Registered Member")
+    user.groups.add(group)
+    notification.models.send([user], 'welcome')
+
+reg_func = lambda user, **kwargs: set_default_group(user)
+registration.signals.user_registered.connect(reg_func)
+
+openid_reg_func = lambda openid, sender, **kwargs: set_default_group(sender)
+django_authopenid.signals.oid_register.connect(openid_reg_func)
 
 def handle_add_member(sender, user, **kwargs):
     notification.models.send([user], 'member_add', {'muaccount':sender})

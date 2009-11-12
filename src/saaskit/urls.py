@@ -20,7 +20,7 @@ def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):
 
 invoice_info = {
     'template_object_name': 'transaction', 
-    'queryset': Transaction.objects.filter(event__exact='subscription payment').select_related()
+    'queryset': Transaction.objects.filter(event__exact=Transaction.EVENT_PAYMENT).select_related()
 }
 
 invoice_listing_info = {'template_name': 'subscription/invoice_history.html'}

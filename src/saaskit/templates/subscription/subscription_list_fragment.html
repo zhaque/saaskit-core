@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n paypal_buttons %}
 <div class="block">
   <p class="text-center">Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like.</p>
   <table frame="box" class="plans" align="center">
@@ -14,28 +14,13 @@
           <ul class="plans">
             {{ subscription.description }}
           </ul>
-          
-          {% ifnotequal us.subscription subscription %}
-            <p class="text-center">
-              <a href="{{subscription.get_absolute_url}}">
-                {% if user.is_authenticated %}
-                upgrade/degrade &raquo;
-                {% else %}
-                choose &raquo;
-                {% endif %}
-                </a>
-            </p>
+          <p class="text-center">
+          {% if user.is_authenticated %}
+            {% paypal_shortcut user subscription %}
           {% else %}
-            {% comment %}
-            <p class="text-center"><a href="{% url unsubscribe_or_reanimate %}">
-              {% if us.active %}
-                {% trans 'Unsubscribe' %}
-              {% else %}
-                {% trans 'reanimate' %}
-              {% endif %}
-            </a></p>
-            {% endcomment %}
-          {% endifnotequal %}
+            <a href="{% url subscription_detail subscription.pk %}">{% trans "Choose" %}</a>
+          {% endif %}
+          </p>
         </td>
         {% endfor %}
       </tr>

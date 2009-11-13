@@ -2,30 +2,11 @@
 
 {% block title %} Details for {{object.name}}. {% endblock %} 
 {% block body %}
+{% load paypal_buttons %}
 
 <h2>{{object.name}}</h2>
 <p>{{object.description}}</p>
 
 <p>{{object.get_pricing_display}}, trial: {{object.get_trial_display}}</p>
-
-{% if usersubscription %}
-  {% if not request.user.subscription.active %}
-    <p><strong>You have cancelled subscription to this plan.</strong>
-    You may still resubscribe if you wish!</p>
-    {{form.sandbox}}
-  {% else %}
-    <p><strong>You are subscribed to this plan.</strong>
-    You may <a href="{{ cancel_url }}">cancel at paypal</a> if you
-    wish.</p>
-  {% endif %}
-{% else %}
-  {% if change_denied_reasons %}
-    <p><strong>You cannot switch to this plan.</strong> Reasons:
-    <ul>{% for reason in change_denied_reasons %}<li>{{reason}}</li>{% endfor %}</ul>
-  {% else %}
-    {{form.sandbox}}
-  {% endif %}
-
-{% endif %}
-
+{% load paypal_buttons %}{% paypal_shortcut user object %}
 {% endblock %}

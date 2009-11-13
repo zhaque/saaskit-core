@@ -8,7 +8,7 @@ def read(fname):
 
 install_requires = [
         'setuptools',
-        'django-muaccaunts',
+        'saaskit-muaccaunts',
         'Django',
         'python-openid',
         'django-autoslug',

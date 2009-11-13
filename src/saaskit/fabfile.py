@@ -20,21 +20,22 @@ def ifnotsetted(key, default, is_prompt=False, text=None, validate=None):
         else:
             env['key'] = default
 
-#env.hosts = []
-
-ifnotsetted('hosts', 'yotweets.com', True, 
-    "No hosts found. Please specify (single) host string for connection")
-ifnotsetted('user', 'root', True, "Server user name")
-ifnotsetted('VPS_IP', '97.107.138.174', True, "VPS IP")
-ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
-ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
-ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
-ifnotsetted('UBUNTU_VERSION', 'jaunty')
-ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
 
 env.SOURCE_PATH = 'src/saaskit'
 env.git_path = 'git@github.com:CrowdSense/saaskit-core.git'
 
+def production():
+    #env.hosts = []
+    
+    ifnotsetted('host_string', 'saaskit.org', True, 
+        "No hosts found. Please specify (single) host string for connection")
+    ifnotsetted('user', 'root', True, "Server user name")
+    ifnotsetted('VPS_IP', '97.107.138.174', True, "VPS IP")
+    ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
+    ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
+    ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
+    ifnotsetted('UBUNTU_VERSION', 'jaunty', True, "Ubuntu version name")
+    ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
 
 def install_packages():
     """Install system wide packages"""

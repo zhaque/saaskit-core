@@ -33,7 +33,6 @@ install_requires = [
         'django-paypal',
         'django-prepaid',
         'django-quotas',
-        'django-subscription',
         'django-pipes',
         'django-sso',
         'django-registration',
@@ -61,6 +60,7 @@ install_requires = [
         
         'saaskit-main-site',
         'saaskit-user-site',
+        'saaskit-subscription',
 ]
 
 extras_require = dict(

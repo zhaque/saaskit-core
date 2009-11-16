@@ -51,6 +51,7 @@ install_requires = [
         'vobject',
         'ybrowserauth',
         'simplejson',
+        'django-counter',
         
         'Reportlab',
         'pisa',

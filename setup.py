@@ -45,7 +45,7 @@ install_requires = [
         'python-dateutil',
         'sorl-thumbnail',
         'Fabric',
-        'PIL',
+        'PIL==1.1.6',
         'django-friends',
         'gdata',
         'vobject',
@@ -92,6 +92,7 @@ dependency_links = [
         'http://pypi.saaskit.org/django-sso/',
         'http://pypi.saaskit.org/django-subscription/',
         'http://pypi.saaskit.org/django-frontendadmin/',
+        'http://dist.repoze.org',
         'http://pypi.pinaxproject.com/',
         'http://distfiles.minitage.org/public/externals/minitage/',
 ]

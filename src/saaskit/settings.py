@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'tinymce',
     'frontendadmin',
     'django.contrib.flatpages',
+    'django_counter',
     
     # own
     'muaccounts',
@@ -123,6 +124,7 @@ INSTALLED_APPS = (
     'saaskit_profile',
     'muaccount_content',
     'simple_adsense',
+    'page_view_quotas',
     
 )
 
@@ -196,7 +198,10 @@ LOGIN_URL = '/accounts/signin/'
 QUOTAS = {
     'muaccount_members' : (3, 10, 50),
     'muaccounts': (1, 5),
+    'page_views': (10000, 10000000),
     }
+
+GRACE_PAGE_VIEW = 1000
 
 BUY_SITE_URL = 'http://example.com:8001/subscription/'
 

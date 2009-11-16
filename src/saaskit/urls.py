@@ -12,7 +12,7 @@ from subscription.models import Transaction
 
 def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):
     def wrapped(request, queryset, *args, **kwargs):
-        return func(request, queryset_edit(request, queryset), *args, **kwargs)
+        return func(request, queryset=queryset_edit(request, queryset), *args, **kwargs)
     wrapped.__name__ = func.__name__
     return wrapped
 

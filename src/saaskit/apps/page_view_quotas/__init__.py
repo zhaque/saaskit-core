@@ -1,11 +1,12 @@
 ### -*- coding: utf-8 -*- ##
 
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete
 from django.conf import settings
 import notification
 
 import subscription.signals
 from subscription.models import UserSubscription
+from muaccounts.models import MUAccount
 
 from django_counter.models import ViewCounter
 
@@ -31,3 +32,8 @@ def flush(sender, **kwargs):
                                content_type__name=MUACCOUNT_CT_NAME,
                                ).update(count=0)
 subscription.signals.recured.connect(flush, sender=UserSubscription)
+
+def cleanup(instance, **kwargs):
+    counter = ViewCounter.objects.get_for_object(instance)
+    couter.delete()
+post_delete.connect(cleanup, sender=MUAccount)

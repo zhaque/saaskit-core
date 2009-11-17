@@ -1,10 +1,8 @@
 ### -*- coding: utf-8 -*- ##
 
-#from django.http import Http404
 from django.conf import settings
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
-#import notification
 
 from django_counter.models import ViewCounter
 

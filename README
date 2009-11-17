@@ -111,6 +111,9 @@ EMAIL_PORT = 587
 	~~~~~~~~~~~~~~~~~~~~~
 	An app to edit the templates. To enable users to edit the templates
 	add them to a group named 'Editors'. Create it if not present.
+	By default, only 'admin' user has those rights.
+	   
+	   Listing page is accessible at /admin/templatesadmin/
 
 3.3 Static files
 ~~~~~~~~~~~~~~~~~~~

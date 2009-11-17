@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'muaccount_content',
     'simple_adsense',
     'page_view_quotas',
+    'muaccounts_quotas',
     
 )
 

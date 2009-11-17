@@ -40,7 +40,7 @@ Table of Contents
  
 1.2 Starting the Project
 ~~~~~~~~~~~~~~~~~
-  1. Create local_setting. For example:
+  1. Create local setting, for example:
 echo "
 DATABASE_ENGINE = 'postgresql_psycopg2'
 DATABASE_NAME = 'saaskit'
@@ -51,7 +51,7 @@ DATABASE_PORT = '5432'
 
 CACHE_BACKEND = 'dummy:///'
 " > ./src/saaskit/local_settings.py
-  2. Setup your local smtp server, postfix for example. Or add following lines to local_settings.py:
+  2. Setup your local smtp server, postfix for example. Or add following lines to local_settings.py to use gmail smtp:
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = '<gmail account>'
@@ -63,12 +63,10 @@ EMAIL_PORT = 587
   4. ./bin/main_site runserver 8001 # marketing site
   5. ./bin/user_site runserver 8000 # user's site
   
-  6. Create a new group 'Editors' for templates admin (http://example.com/admin/templates) and assign 'admin' user to the 'Editors' group.
-
 1.3 Deployment
 ----------
   1. It should be working copy, i.e. buildout have done.
-  2. export DJANGO_SETTINGS_MODULE=saaskit.settings # replace saaskit by your project name
+  2. export DJANGO_SETTINGS_MODULE=saaskit.settings # replace saaskit by your package name
   3. ./bin/fab production install_packages install_mail_transfer_agent log_setup github_config postgresql_setup webapp_setup install_project nginx_config apache2_config --fabfile=./src/saaskit/fabfile.py --user=root --host=<yorhost> -D
   4. After that you may exec any of this steps. But some of them have no reason, i.e. user setup.
 
@@ -112,7 +110,7 @@ EMAIL_PORT = 587
 	django-templatesadmin
 	~~~~~~~~~~~~~~~~~~~~~
 	An app to edit the templates. To enable users to edit the templates
-	add them to a group named 'TemplateAdmins'. Create it if not present.
+	add them to a group named 'Editors'. Create it if not present.
 
 3.3 Static files
 ~~~~~~~~~~~~~~~~~~~
@@ -148,102 +146,7 @@ EMAIL_PORT = 587
     markups to include the attribute <rel="shadowbox"> for single popup
     and <rel="shadowbox[Group]"> to group them as a collection/gallery.
 
-4 Django-pages-cms integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Django-pages-cms is integrated into project to provide dynamic
-	content for otherwise static templates (e.g. registration screen).
-
-	Two templates for this kind of content are provided:
-		- `Single body' for templates using single body of data, with
-	    page title and single block named `body',
-	  	- `Content before and after dynamic content' for templates using a
-	    block of text before and block of text after the dynamic content,
-	    with page title and blocks `before' and `after'.
-
-	For actual page-cms content the default template should be used.
-
-	Different templates contain hard-coded references to a page with a
-	specific slug.  That page can be located anywhere in django-page-cms
-	hierarchy and should be created as a hidden page (so that it is not
-	displayed in navigation).  Table of used slug names and desired
-	page templates follows.
-
-	   Template                              Slug                Page template     
-	  -------------------------------------+-------------------+------------------
-	   index.html                            main-page           Single body       
-	   registration/registration_form.html   registration-form   Before and after  
-	   subscription/subscription_list.html   subscription-list   Before and after  
-
-	Based on these, template editor (webmaster) can insert content from
-	page-cms pages into any other template where needed.  Other page
-	templates (for e.g. three-part content) can be added by:
-	  - Adding page template in `templates/page-templates/' directory,
-	    basing on existing ones,
-	  - Adding newly created template to `PAGE_TEMPLATES' in Django
-	    settings,
-	  - Documenting it in README.org and README.
-
-	For backing up your pages execute the following command from your console:
-
-	python manage.py dumpdata pages > pages.json 
-	Store pages.json for later use or in a repo.
-
-4.1 Adding CMS Content Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-	An example using Registration_form.html, for Main Site template related pages
-
-		1. Locate the template: templates/registration/registration_form.html
-		2. Examine the template and find places in HTML that you would need to
-		   fill with content. Here, we have two places: before the form and 
-		   after the form.
-		3. Look into templates/page-templates/ contents, see whether 
-		   there exists a template for this number and kind of content fields.
-		4. If it exists, remember its name. If it does not, create new template
-	       with correct number and names of placeholders, based on existing ones 
-		   (only placeholders count, other content is not used anywhere; 
-		   they also define what kind of widget WYMEditor, plain textarea, 
-		   some else WYSIWYG JS editor will be used in admin panel in CMS). 
-		   Add it to PAGE_TEMPLATES in settings.py. Information about 
-		   page template placeholders: 
-		   http://code.google.com/p/django-page-cms/wiki/PlaceHolders
-		5. Choose unique (not used yet) slug for the CMS page 
-		   (here: 'registration-form'), remember it.
-		   Add {% load pages_tags } after { extends 'main.html' } in the template.
-		   Add { show_content %} tags where CMS content should be included, 
-		   using slug chosen in step 4, and placeholder names defined by page 
-		   template from step 3. 
-		   See also http://code.google.com/p/django-page-cms/wiki/DisplayContentInTemplates
-		6. In admin panel, go to 'Pages' ? 'Add page'. Choose title, set slug to 
-		   slug chosen in step 4, template to template chosen in step 3. 
-		   In Sites, choose appropriate Site object (unfortunately Pages shows 
-		   only domain, not name of Site; in example data, www.example.com is
-		   main site, example.com are user sites. Set Site domains correctly in
-		   production database, these are used for links in e-mails!)
-		7. Content should be visible on site.
-		8. Page added in step 6 can be added anywhere in CMS hierarchy. 
-		   I suggest using a single root placeholder Page, e.g. __templates__, 
-		   keep all related pages as its children, and related templates in 
-		   hierarchy (e.g. __templates__/password-change-form/password-change-successful).
-		   The root -templates subdir can be then filtered in urls.py so that 
-		   no one accesses these pages directly at 
-		   e.g. /pages/__templates__/registration-form/ (which itself is not a problem,
-		   but is not elegant and Google may see it as duplicate content).
-
-4.2 CMS Only Pages (Main Site)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Pages not related to any template can be edited in CMS only, they will be
-	visible under /pages/hierarchy/slug URLs and their addresses can be 
-	inserted in templates as {% show_absolute_url 'slug } 
-	(with { load pages_tags }), or with { url pages-details-by-slug 'slug' %} 
-	(without pages_tags). They will be also visible in page navigation.
-
-	By default, templates/page.html is used to display; you may add other 
-	templates as well (I suggest to place those in templates/page-templages/) 
-	and use them instead. In this setup, the template actual contents will be used,
-	and placeholders will be replaced with the dynamic content.
-
-5 Plans & Pricing and Quota
+4 Plans & Pricing and Quota
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Every kind of quota used in the code is listed in settings.py as QUOTAS. 
 	After the name is a series of numbers; these are values of limits. 
@@ -265,7 +168,7 @@ EMAIL_PORT = 587
 		   a problem, I may address it later; if values are not in settings.py, 
 		   old permissions are meaningless).
 		
-6 Default Plans and Pricing
+5 Default Plans and Pricing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	By loading exampledata.json, data is populated with:
 		 - Silver Membership monthly recurring plan, linked to Silver Member group,
@@ -296,13 +199,13 @@ EMAIL_PORT = 587
 		're.search', not 're.match', so without using '^' anchor they 
 		can match anywhere in the domain name.
 
-7 List of third party code
+6 List of third party code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-7.1 Django applications
+6.1 Django applications
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-7.1.1 Used
+6.1.1 Used
 ----------
     Apps actually used by sample code.
 * django-authopenid

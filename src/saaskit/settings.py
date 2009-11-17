@@ -40,7 +40,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(KIT_ROOT, 'wide_media')
+MEDIA_ROOT = os.path.join(KIT_ROOT, 'site_media')
 APP_MEDIA_ROOT = MEDIA_ROOT
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
@@ -124,8 +124,8 @@ INSTALLED_APPS = (
     'saaskit_profile',
     'muaccount_content',
     'simple_adsense',
-    'page_view_quotas',
     'muaccounts_quotas',
+    'page_view_quotas',
     
 )
 
@@ -156,9 +156,11 @@ TEMPLATESADMIN_EDITHOOKS = (
 #        'templatesadmin.edithooks.gitcommit.GitCommitHook',
    )
 
+import user_site
+
 TEMPLATESADMIN_TEMPLATE_DIRS = (
-      ( os.path.join(KIT_ROOT, 'templates'), )
-   )
+      os.path.join(os.path.dirname(user_site.__file__), 'templates').replace('\\','/'),
+   ) + TEMPLATE_DIRS
 
 INTERNAL_IPS = ( '127.0.0.1', )
 

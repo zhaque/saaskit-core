@@ -5,9 +5,6 @@ from django.contrib.auth.decorators import login_required
 
 handler404 = 'perfect404.views.page_not_found'
 
-from django.contrib import admin
-admin.autodiscover()
-
 from subscription.models import Transaction
 
 def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):
@@ -24,6 +21,7 @@ urlpatterns = patterns('',
     (r'^subscription/', include('subscription.urls')),
     (r'^notices/', include('notification.urls')),
     (r'^content/', include('frontendadmin.urls')),
+    
 )
 
 # serve static files in dev mode

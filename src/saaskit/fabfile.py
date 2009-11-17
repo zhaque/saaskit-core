@@ -137,7 +137,7 @@ def nginx_config():
     sudo('apt-get -y install nginx', pty=True)
     sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/sites-enabled/default;', pty=True)
     
-    env.MEDIA_ROOT = '/webapp/%s/%s/wide_media' % (env.host_string, env.SOURCE_PATH)
+    env.MEDIA_ROOT = '/webapp/%s/%s/site_media' % (env.host_string, env.SOURCE_PATH)
     
     render_put('deploy/nginx/assets', '/etc/nginx/sites-available/assets', env)
     sudo('ln -f -s /etc/nginx/sites-available/assets /etc/nginx/sites-enabled/assets', pty=True)

@@ -1,7 +1,8 @@
 [{"pk": 1, "model": "sites.site", "fields": {"domain": "www.example.com", "name": "example.com main site"}},
  {"pk": 2, "model": "sites.site", "fields": {"domain": "example.com", "name": "example.com user sites"}},
  {"pk": 1, "model": "auth.group", "fields": {"name": "Registered Member", "permissions": []}},
- {"pk": 1, "model": "auth.user", "fields": {"username": "admin", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2009-06-17 08:41:56", "user_permissions": [], "password": "sha1$39a68$30e05495ade5215f052ede22597cb15cfdeb17c2", "email": "admin@example.com", "date_joined": "2009-06-17 07:58:22"}},
+ {"pk": 2, "model": "auth.group", "fields": {"name": "Editors", "permissions": []}},
+ {"pk": 1, "model": "auth.user", "fields": {"username": "admin", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2009-06-17 08:41:56", "groups": [2], "user_permissions": [], "password": "sha1$39a68$30e05495ade5215f052ede22597cb15cfdeb17c2", "email": "admin@example.com", "date_joined": "2009-06-17 07:58:22"}},
  {"pk": 1, "model": "subscription.subscription", 
 	 "fields": {
 	 	"name": "Silver Membership", 

@@ -114,7 +114,7 @@ EMAIL_PORT = 587
 
 3.3 Static files
 ~~~~~~~~~~~~~~~~~~~
-	Static files for each project is in project's media/ subdir. 
+	Static files for each project is in project's site_media subdir. 
 	Most of these are symlinks, and (in case of user_sites project) 
 	uploaded site logos. Site logos are available only for user_sites.
     

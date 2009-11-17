@@ -114,6 +114,11 @@ EMAIL_PORT = 587
 	By default, only 'admin' user has those rights.
 	   
 	   Listing page is accessible at /admin/templatesadmin/
+	
+	Templatesadmin may only be used to edit existing templates. 
+	But, man, who implements some ui changes, should be able to work with 
+	file system without any WEB interface. He should basicaly acquaintance 
+	with django template system.
 
 3.3 Static files
 ~~~~~~~~~~~~~~~~~~~
@@ -126,7 +131,9 @@ EMAIL_PORT = 587
             $ python manage.py link_app_media
     django-compress is used for combining and compressing of css and js:
             $ python manage.py synccompress
-
+  
+  django-compress uses COMPRESS_CSS, COMPRESS_JS settings to determine 
+  what styles, javascripts it should use.
 		
 3.4 Sites
 ~~~~~~~~~~~~

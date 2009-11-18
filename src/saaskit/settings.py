@@ -81,7 +81,7 @@ ROOT_URLCONF = 'saaskit.urls'
 
 INSTALLED_APPS = (
     'saaskit',
-    
+                  
     # builtin
     'django.contrib.auth',
     'django.contrib.contenttypes',

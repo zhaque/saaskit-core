@@ -77,7 +77,6 @@ install_requires.extend(extras_require['test'])
 
 dependency_links = [
         'http://pypi.saaskit.org/Fabric/',
-        'http://pypi.saaskit.org/South/',
         'http://pypi.saaskit.org/app-media/',
         'http://pypi.saaskit.org/django-ab/',
         'http://pypi.saaskit.org/django-authopenid/',

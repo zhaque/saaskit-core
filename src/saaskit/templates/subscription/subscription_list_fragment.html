@@ -16,9 +16,9 @@
             {% endifequal %}>
           <h2 class="text-center">{{ subscription.name }}</h2>
           <p class="text-center">{{ subscription.get_pricing_display }}</p>
-          <p class="text-center">{% trans 'trial' %}: {{ subscription.get_trial_display }}</p>
+          <p class="text-center">{% trans 'trial' %} - {{ subscription.get_trial_display }}</p>
           <ul class="plans">
-            {{ subscription.description }}
+            {{ subscription.description|safe }}
           </ul>
           <p class="text-center">{% trans "recurrence" %}: {{ subscription.get_recurrence_display }}</p>
           <p class="text-center">

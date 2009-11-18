@@ -226,7 +226,7 @@ MUACCOUNTS_THEMES = (
         ('default', 'CrowdSense', 'saaskit/css/default.css'),
         ('fireflynight', 'Firefly Night', 'saaskit/css/fireflynight.css'),
         ('grayscale', 'Grayscale', 'saaskit/css/grayscale.css'),
-        ('grayscalem', 'Grayscale Modified', 'saaskit/css/grayscalemodified.css'),
+        ('graygreen', 'Grayscale Green', 'saaskit/css/gray-green.css'),
         ('overcast', 'Overcast', 'saaskit/css/overcast.css'),
         ('sunshine', 'Sunshine', 'saaskit/css/sunshine.css'),
         )),

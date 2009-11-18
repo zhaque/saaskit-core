@@ -1,151 +1,71 @@
 {% extends "main.html" %}
-
-{% block title %}Index{% endblock %}
-{% block head %}
-    <link rel="stylesheet" href="{{ MEDIA_URL }}saaskit/css/shadowbox.css" type="text/css">
-    <script type="text/javascript" src="{{ MEDIA_URL }}saaskit/js/sb/shadowbox.js"></script>
-    <script type="text/javascript">
-    Shadowbox.init();
-    </script>
-{% endblock %}
-{% block fake-header %}
-  <div class="block">
-                    <br>
-            	<table>
-                	<tr>
-                    	<td><p><font size="+5">Welcome to your SaaS Project!</font></p>
-                        <p> Great SaaS project byline</p>                       
-                 	<a href="{% url subscription_list %}"><div id="button">
-                        <p>See pricing & plans</p>
-                        <h6>30 day free trial, sign up now</h6>                        
-                        </div></a>
-                        
-                        </td>
-                        <td><a href="{{ MEDIA_URL }}saaskit/img/features_benefits_detail.png" rel="shadowbox" title="Features & Benefits"><img src="{{ MEDIA_URL }}saaskit/img/features_benefits.png"></a></td>
-                    </tr>
-                </table>
-            </div>
-
-{% endblock %}
+{% load i18n %}
+{% block title %}Welcome to SaaSkit{% endblock %}
 {% block body %}
-<div id="yui-main"><div class="yui-b"><div class="yui-g">
-   <!--Start of info block -->
-                    <div class="block">
-                        <p>Are you posting links to your company's products online? Project is a campaign manager made for you! Project <font color="#00CC00">tracks 
-your conversions</font> and shows you how to improve your future campaigns to increase sales, signups and more. <font color="#FF0033">With Project you'll be able to…</fon
-t></p>
-                    </div>
-                    <!--End of info block -->
-<!--Start of advantages block --> 
-                    <div class="block">
-                    <table>
-                        <tr>
-                        <td>
-                        <div id="test"><p><a href="{{ MEDIA_URL }}saaskit/img/feature_one_detail.png" rel="shadowbox[Features]" title="Build an Audience"><img src="{{ MEDIA_URL }}saaskit/img/feature_one.png"></a></p></div>
-                        </td>
-                        <td><h2>Build an Audience <span class="new">NEW</span></h2> 
-                        <p>Project's <img src="{{ MEDIA_URL }}saaskit/img/icon_audience_builder.gif"> <strong>Audience Builder</strong> automatically follows people on line 
-who are relevant to you or your company. Over a matter of days Project <strong>can increase your total audience size</strong> giving you more people to connect with and h
-elp spread the word about you or your company.</p></td>
-                        </tr>
-                        <tr>
-                        <td>
-                        <div id="test"><p><a href="{{ MEDIA_URL }}saaskit/img/feature_two_detail.png" rel="shadowbox[Features]" title="Measure ROI"><img src="{{ MEDIA_URL }}saaskit/img/feature_two.png"></a></p></div>
-                        </td>
-                        <td><h2>Measure ROI <span class="new">NEW</span></h2> 
-                        <p>Project tracks exactly how much of <strong>your website's sales</strong> are generated from you posting links online . Learn from successful
- campaigns and increase your sales!</p>
-                        <span class="info">Supports many types of conversions e.g. Sales, Registrations, Mailing List opt-ins etc</span></td>
-                        </tr>
-                        <tr>
-                        <td>
-                        <div id="test"><p><a href="{{ MEDIA_URL }}saaskit/img/feature_three_detail.png" rel="shadowbox[Features]" title="Set & Track Goals"><img src="{{ MEDIA_URL }}saaskit/img/feature_three.png"></a></p></div>
-                        </td>
-                        <td><h2>Set & Track Goals</h2> 
-                        <p>Project allows you to create campaigns with <strong>granular goals</strong> to give your campaigns context and strategy. You can check your pro
-gress at any time and Project will <strong>notify you by email</strong> when your campaign goals are complete.</p></td>
-                        </tr>
-                        <tr>
-                        <td>
-                        <div id="test"><p><a href="{{ MEDIA_URL }}saaskit/img/feature_four_detail.png" rel="shadowbox[Features]" title="Respond to Campaign Activity"><img src="{{ MEDIA_URL }}saaskit/img/feature_four.png"></a></p></div>
-                        </td>
-                        <td><h2>Respond to Campaign Activity</h2> 
-                        <p>With Project's <img src="{{ MEDIA_URL }}saaskit/img/icon_active_listening.gif"> <strong>Active Listening</strong> technology, online activity about 
-your campaign is included in your campaign reports. When your campaign gets a spike in clicks or conversions, <strong>you'll instantly know why!</strong></p></td>
-                        </tr>
-                        <tr>
-                        <td>
-                        <div id="test"><p><a href="{{ MEDIA_URL }}saaskit/img/feature_five_detail.png" rel="shadowbox[Features]" title="Get Noticed"><img src="{{ MEDIA_URL }}saaskit/img/feature_five.png"></a></p></div>
-                        </td>
-                        <td><h2>Get Noticed</h2> 
-                        <p>Projects can create campaign links using  <strong>your own website address</strong>, helping you to preserve your brand name in your marketing c
-ampaigns, increasing trust, clickthroughs and mindshare.</p>
-                        <span class="info">Projects also has its own short domain http://pea.to available to all users.</span></td>
-                        </tr>
-                        <tr>
-                        <td>
-                        <div id="test"><p><a href="{{ MEDIA_URL }}saaskit/img/feature_six_detail.png" rel="shadowbox[Features]" title="Get Real-Time Insights"><img src="{{ MEDIA_URL }}saaskit/img/feature_six.png"></a></p></div>
-                        </td>
-                        <td><h2>Get Real-Time Insights</h2> 
-                        <p>Every Projects account features <strong>real-time click tracking</strong> allowing you to see clicks and conversions on your campaign links comi
-ng in from all over the world as they happen — see the <strong>Quick Tour</strong> video below for more info!</p></td>
-                        </tr>
-                    </table>
-                    </div>                    
-                    
-                    <!-- End of advantages block -->
-                  
- 
-</div></div></div>
+   <div id="yui-main"><div class="yui-b"><div class="yui-g">
+    <!--Start of contact form block -->
+     <div class="block">
+       <div class="bd">
+         <h2>Build SaaS Webapp Fast!</h2>
+         <p>Choosing the best possible alternative? How fast can I reach my target market? Can I use my current payment gateway? Will it add to operational costs? Where will I find the most reliable support? If you find yourself always asking the above questions, then here is the right place for you.</p>
 
-<div id="sidebar" class="yui-b">
-  
-    <!--Start of quickfacts-->
-                <div class="block">
-                    
-                    <div class="bd">
-                        <ul id="facts">
-                                <li>100% Browser-Based</li>
-                            <li>No Install Needed</li>
-                            <li>Conversion Tracking</li>
-                            <li>URL Shortening</li>
-                            <li>SEO Friendly</li>
-                            <li>Custom Goals</li>
-                            <li>Progress Reports</li>
-                            <li>Real-time Click Map</li>
-                            <li>Printable Reports</li>
-                            <li>Export Data to CSV</li>
-                            <li>Google Analytics Integration</li>
-                            <li>Tutorials & Help Docs</li>
-                            <li>21 day Free Trial!</li>
-                        </ul> 
-                        <img src="images/socialmediaroireport.gif"></img>
-                        <p>Want to know more about Social Media ROI?</p>
-                        <p>Get our <span class="new">Free</span> 28-page Social Media ROI Report in PDF by joining our mailing list!</p> 
-                        <form action="#" method="get">
-                        <p><input type="text" class="text highlight" name="email" value="Enter your email" /></p>
-                        <p><input type="button" name="submit" value="Submit"></p>
-                        </form>                    
-                        
-                    </div>
-                </div>
-                 <!--end of quick facts-->
-                
+         <b>Software as a Service Model</b><br/>
+         <ul>
+           <li> - We offer you a ready to use toolkit for all your basic needs with capabilities to provide on demand services to your/clients</li>
+           <li> - Open Source version of SaaSkit together with key components available for those who require greater customization!</li>
+           <li> - Bundled with a sample “Polls app” and tutorial to kick start your application</li>
+         </ul>
+         <br/><b>Use your choice of Business Model</b><br/>
+         <ul>
+           <li> - Use subscription, prepaid based model for your customers on periodic basis which may be: weekly/monthly/quarterly/yearly</li>
+           <li> - Make use of the Quota system to suit your subscription/business models better</li>
+           <li> - Use trial subscriptions to allow your customer to explore the possibilities with your unique apps</li>
+         </ul>
+         <br/><b>Let your Client Customize</b><br/>
+         <ul>
+           <li> - Let your clients selects their domain or sub domains to uniquely identify themselves</li>
+           <li> - Supports themes and layouts so your client can modify/integrate apps with their brand identity</li>
+           <li> - Support Google Adsense and other Ad networks as well as Google Analytics and Webmaster Tools</li>
+         </ul>
+         <br/><b>Limitless Flexibility</b><br/>
+         <ul>
+           <li> - Use an advanced content management system to adapt to your business/process requirements<</li>
+           <li> - Allow users to log in using their Google/yahoo/open id logins</li>
+           <li> - Support for exposing your application data to 3rd party developers</li>
+           <li> - Make your website go global by using built in internationalzation</li>
+         </ul>
+         <br/><b>Open Source</b><br/>
+         <ul>
+           <li> - Most important of all Open Source version of SaaSkit is available if you require higher level of customization</li>
+           <li> - Use the power of Django Web framework to easily deploy, develop and customize your apps</li>
+         </ul>
+       </div>
+     </div>
+    <!--End of contact form block -->
+   </div></div></div> 
 
+   <div id="sidebar" class="yui-b">
+    <!--Start of sidebar-->
+     <div class="block"><div class="bd">
+       <h2>How Do I ...</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit</p> 
+         <p>Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc.</p>
+     </div></div>
+    <!--End of sidebar-->
 </div>
 {% endblock %}
-{% block fake-footer %}
-<div class="block">
-                <div class="bd">
-                <table>
-                <tr>
-                    <td><img src="{{ MEDIA_URL }}saaskit/img/"></td>
-                    <td><h2>Vivamus cursus est nec turpis cursus vitae posuere elit ornare. Suspendisse a lectus non quam cursus tempor. Phasellus eget tortor vitae nunc elementum vestibulum.</h2></td>
-                </tr>
 
-            </table>
-            </div>
-        </div>
 
-{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
 

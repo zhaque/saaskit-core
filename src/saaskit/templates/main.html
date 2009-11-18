@@ -39,15 +39,11 @@
                 </ul> 
               </div> 
           <!--End of user navigation -->  
-          <!--Start of title -->
-  
-          <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/logo/saaskit_logo.png"></img></a>
-  
-          <!--End of title -->
           <!--Start of navigation bar -->                                                 
          
         <div id="navigation">
           <ul id="primary-navigation">
+            <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
             <li{% class_if_reverse /about/ active %}><a href="/about">About Us</a></li>
             <li{% class_if_reverse /support/ active %}><a href="/support">Support</a></li>
              {% if not user.is_authenticated %}
@@ -55,7 +51,7 @@
              {% else %}
               <li{% class_if_reverse muaccounts_listing active %}><a href="{% url muaccounts_listing %}">Mu Accounts</a></li>
              {% endif %}     
-            <li {% class_if_reverse / active %}><a href="/">Home</a></li>
+            <li {% class_if_reverse /$ active %}><a href="/">SaaSkit</a></li>
                                   
                   
                   
@@ -78,9 +74,9 @@
         <div id="ft">
             <div class="footer-navigation">
                 <ul>
-                    <li><a href="/about">About CrowdSense</a></li> | 
                     <li><a href="/support">Support</a></li> | 
-                    <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
+                    <li><a href="/about">About</a></li> | 
+                    <li><a href="{% url contact_form %}">Contact us</a></li>
                 </ul>
             </div>
             <div class="pseudo-footer">
@@ -93,49 +89,6 @@
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

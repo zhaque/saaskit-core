@@ -23,11 +23,15 @@ table thead { background-color:#757474;}
 	color: #14cfc0;	
 }
 .asHeader { color:#14cfc0;}
+#searchBar {background-color:#0C7878;} 
 #bd {
 	background-color: #ececec;
 	color: #565656;
 }
-
+#listA .qstA H2 a {color:#0C7878; }
+#listA .qstA .stat .num {color:#0C7878;}
+.boxB {background:#0C7878;}
+.boxB h3 {color:#fff;}
 #primary-navigation li.active a { background-color: #ececec; color:#14cfc0;}
 #user-navigation li a {
 	background-color: #272727;

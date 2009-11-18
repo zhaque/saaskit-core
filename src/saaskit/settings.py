@@ -225,7 +225,6 @@ MUACCOUNTS_THEMES = (
         ('tan-blue', 'Tan Blue', 'saaskit/yui-app-theme/tan_blue.css'),
         ('default', 'CrowdSense', 'saaskit/css/default.css'),
         ('fireflynight', 'Firefly Night', 'saaskit/css/fireflynight.css'),
-        ('girly', 'Girly', 'saaskit/css/girly.css'),
         ('grayscale', 'Grayscale', 'saaskit/css/grayscale.css'),
         ('grayscalem', 'Grayscale Modified', 'saaskit/css/grayscalemodified.css'),
         ('overcast', 'Overcast', 'saaskit/css/overcast.css'),

@@ -1,51 +1,39 @@
 @charset "UTF-8";
 /* CSS Document */
-#navigation li {float:right;}
-#user-nav {margin:0; float:right; color:#fff; }
-#user-nav li {display: inline; padding: 0; margin: 0; }
+#user-nav {margin:0 1em 0 1em; float:right; color:#fff; }
+#user-nav li {display: inline; padding: 0; margin: 0 0.2em 0 0.2em; }
 #user-nav li a {color:#fff; font-weight:600;}
 
+#primary-navigation {margin-left:20%; display:block;}
+#primary-navigation a {color:#333333; background-color:#F9F7ED;border: 1px solid #aaaaaa;
+                border-bottom: none; padding:0px 12px 3px 12px; height:25px; line-height:30px;margin-left:10px; font-size:14px; font-weight:400; text-decoration:none;display: block;float: left; }
+#primary-navigation a:hover{text-decoration:underline;}
+#primary-navigation .nav a.on {height:24px;line-height:28px;border:1px solid #d64000; background:#B02B2C; color:#FFF; font-weight:600; text-decoration:none}
+#primary-navigation .nav a.special {font-size:15px; color:#B02B2C; font-weight:bold; text-decoration:none; }
+#primary-navigation .nav a.special:hover {text-decoration:underline;}
 
-#button {width:270px; height:50px; background-color:#000000; padding: 5px 1px 1px 1px;}
-#button p {color:#FFFFFF; font-size:20px; text-align:center; font-weight:800; margin-bottom:1px;}
-#button h6 {text-align:center; color:#CCCCCC; font-size:10px; }
+#logo {padding: 5px 15px 0px 15px; width:200px height:50px;
+}
+#logo h2 {font-size:140%;}
+#logo p {font-style:italic; color:#fff}
 
-#test p {border:5px solid #CCCCCC;}
-#test p:hover {border:5px solid #999999;}
-
-.new { background:#FF0000; color:#FFFFFF; font-weight:600; font-size:9px; padding-left:2px; padding-right:2px}
-
-.comment { margin-left: 50px; }
-
-ul#facts li {margin-bottom:3px; color:#009933;}
-
-
-#related-search {margin:0; float:left; margin-bottom:1em; }
-#related-search li {display:inline;}
-#related-search li a { font-weight:600; color:#0854C7;}
-.block .hed { color: #333; padding-left:0.5em; padding-bottom:0.5em; padding-top:0.3em;}
-.block .hed h5 { font-size:120%; color: #FFFFFF; font-weight:700;}
-
-#padding {padding:20px;}
-
-.pseudo-footer {float:right; padding:0.5em 1em; color:#262626;}
-.footer-navigation {float:left; margin-top:1em;}
-.footer-navigation li {display: inline; }
-.footer-navigation li a { font-weight:600; }
+#search-bar {background-color:#9db2b1;}
+#searchBar .searchInput {font-size:13px; height:18px; width:400px; margin-left:25%; }
+#searchBar .searchBtn {font-size:14px; height:26px; width:80px; }
+#searchBar .options {padding-top:5px; font-size:100%;color:#EEE; text-align:center;}
+#searchBar .options INPUT {margin-left:15px;}
+#searchBar .options INPUT:hover {cursor:pointer}
 
 
-.questions {font-size:130%; color:#000000; font-weight:700;}
 
-.block table.plans {background-color:#FFFFFF; border:5px solid #999999;}
-.block table.plans td {background:#FFFFFF; height:280px;}
-.block .plans td#higlighted {border:5px solid #009933; height: 300px;}
-.block ul.plans { list-style-image:url(file:///Macintosh%20HD/Users/premis/Desktop/user_site/images/checkmark.gif); text-align:center; font-size:16px}
-.block .plans ul li { list-style-image:url(file:///Macintosh%20HD/Users/premis/Desktop/user_site/images/checkmark.gif); text-align:center; font-size:16px; list-style-position:inside;}
 
-.block .plans li#negative {list-style-image:url(file:///Macintosh%20HD/Users/premis/Desktop/user_site/images/icon_x.gif);}
 
-.table-font {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:110%;}
-.big { font-size:140%; font-family:"Garamond Premr Pro", Arial, sans-serif; font-style:italic; color:#333333;}
+
+
+
+
+
+
 
 
 

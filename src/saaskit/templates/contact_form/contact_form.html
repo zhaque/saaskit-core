@@ -1,33 +1,41 @@
 {% extends "main.html" %}
 {% load uni_form %}
-
 {% block title %}Contact us{% endblock %}
 {% block body %}
-<div id="yui-main"><div class="yui-b"><div class="yui-g">
+   <div id="yui-main"><div class="yui-b"><div class="yui-g">
+    <!--Start of contact form block -->
+     <div class="block">
+       <div class="bd">
+         <h2>Contact us</h2>
+          <form action="" method="POST" class="uniForm">
+           <table>
+             {{ form|as_uni_form }}
+               <tr>
+                <td>
+                  <input type="submit" value="Send message">
+                </td>
+               </tr>
+           </table>
+          </form>
+       </div>
+     </div>
+    <!--End of contact form block -->
+   </div></div></div> 
 
-<!--Start of contact form block -->
-<div class="block">
-<div class="bd">
-<h2>Contact us</h2>
-
-<form action="" method="POST" class="uniForm">
- <table>
-  {{ form|as_uni_form }}
-  <tr><td><input type="submit" value="Send message"></tr></td>
- </table>
-</form>
-</div></div>
-<!--End of contact form block -->
-</div></div></div> 
-
-<div id="sidebar" class="yui-b">
-<!--Start of sidebar-->
-<div class="block"><div class="bd">
-<h2>About Us</h2>
-<p>Lorem ipsum</p>
-</div></div>
-<!--End of sidebar-->
+   <div id="sidebar" class="yui-b">
+    <!--Start of sidebar-->
+     <div class="block"><div class="bd">
+       <h2>How Do I ...</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit</p> 
+         <p>Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc.</p>
+     </div></div>
+    <!--End of sidebar-->
 </div>
 {% endblock %}
+
+
+
+
+
 
 

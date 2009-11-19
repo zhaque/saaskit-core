@@ -5,7 +5,7 @@
 {% load paypal_buttons %}
 
 <h2>{{object.name}}</h2>
-<p>{{object.description}}</p>
+<p>{{ object.description|safe}}</p>
 
 <p>{{object.get_pricing_display}}, trial: {{object.get_trial_display}}</p>
 {% load paypal_buttons %}{% paypal_shortcut user object %}

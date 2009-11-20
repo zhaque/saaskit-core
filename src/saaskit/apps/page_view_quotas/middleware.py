@@ -12,9 +12,10 @@ class PageViewQuotasMiddleware(object):
     def process_request(self, request):
         if request.muaccount.owner:
             page_views = request.muaccount.owner.quotas.page_views
-            if not request.path.startswith(settings.MEDIA_URL) \
-            and not isinstance(page_views, Unlimited) \
-            and ViewCounter.objects.get_for_object(request.muaccount).count >= page_views + settings.GRACE_PAGE_VIEW \
+            if (page_views is None
+            or (not isinstance(page_views, Unlimited)
+                and ViewCounter.objects.get_for_object(request.muaccount).count >= page_views + settings.GRACE_PAGE_VIEW)) \
+            and not request.path.startswith(settings.MEDIA_URL) \
             and request.path != reverse('muaccount_suspended'):
                 return redirect('muaccount_suspended')
         

@@ -13,7 +13,8 @@ from django_counter.models import ViewCounter
 MUACCOUNT_CT_NAME = 'mu account'
 
 def handle_notify(instance, created, **kwargs):
-    if created or instance.content_type.name != MUACCOUNT_CT_NAME:
+    if created or instance.content_type.name != MUACCOUNT_CT_NAME \
+    or instance.object.owner is None:
         return
     
     if instance.count + settings.GRACE_PAGE_VIEW == instance.object.owner.quotas.page_views:

@@ -67,6 +67,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'sso.middleware.SingleSignOnMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django_authopenid.middleware.OpenIDMiddleware',
     'subscription.middleware.SubscriptionMiddleware',
@@ -198,6 +199,10 @@ ACCOUNT_ACTIVATION_DAYS=7
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/signin/'
 
+SSO_URL = '/sso/'
+LOGOUT_URL = '/accounts/signout/'
+
+
 QUOTAS = {
     'muaccount_members' : (3, 10, 50),
     'muaccounts': (1, 5),
@@ -205,8 +210,6 @@ QUOTAS = {
     }
 
 GRACE_PAGE_VIEW = 1000
-
-BUY_SITE_URL = 'http://example.com:8001/subscription/'
 
 MUACCOUNTS_ROOT_DOMAIN = 'example.com'
 MUACCOUNTS_DEFAULT_URL = 'http://www.example.com:8001/'

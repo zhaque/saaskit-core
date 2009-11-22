@@ -1,7 +1,16 @@
 {% extends "main.html" %}
 
+{% block head %}
+<META http-equiv="refresh" content="5;URL={% url frontendadmin_add app_label='muaccounts',model_name='muaccount' %}">
+{% endblock %}
+
 {% block title %}Subscription confirmed.{% endblock %} 
 {% block body %}
-<p>Subscription process OK, should be processed in a minute.</p>
-<p><a href="{% url muaccounts_listing %}">Go here</a> and create your own muaccounts.</p>
+<p>Subscription process OK, should be processed in a second.</p>
+<div>
+{% url frontendadmin_add app_label='muaccounts',model_name='muaccount' as mua_create_url %}
+<p><a href="{{ mua_create_url }}">Go here</a> and create your own muaccounts.</p>
+<p>You will be redirected thither automatically in 5 seconds.</p>
+<p>If you was not redirected click <a href="{{ mua_create_url }}">this link</a></p>
+<div>
 {% endblock %}

@@ -34,7 +34,7 @@ install_requires = [
         'django-prepaid',
         'django-quotas',
         'django-pipes',
-        'django-sso',
+        'django-sso==0.1.1',
         'django-registration',
         'django-profiles',
         'django-contact-form',

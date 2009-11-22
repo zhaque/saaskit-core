@@ -50,6 +50,9 @@ DATABASE_HOST = ''
 DATABASE_PORT = '5432'
 
 CACHE_BACKEND = 'dummy:///'
+
+MAIN_SITE_PORT = 8001
+
 " > ./src/saaskit/local_settings.py
   2. Setup your local smtp server, postfix for example. Or add following lines to local_settings.py to use gmail smtp:
 EMAIL_USE_TLS = True

@@ -15,9 +15,7 @@ def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):
 
 urlpatterns = patterns('',
     url(r'^sso/$', 'sso.views.sso', name="sso"),
-    (r'^profiles/', include('saaskit_profile.urls')),
     
-    (r'^notices/', include('notification.urls')),
     (r'^content/', include('frontendadmin.urls')),
     
 )

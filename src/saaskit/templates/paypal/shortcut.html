@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if current %}
   {% if not current.active %}
     <p><strong>You have cancelled subscription to this plan.</strong>
@@ -17,7 +18,11 @@
     {% endfor %}
     </ul>
   {% else %}
+    {% if not subscription.preparation_required %}
     {{ form.sandbox }}
+    {% else %}
+    <a href="{% url contact_form %}">{% trans "Contact us"%}</a>
+    {% endif %}
   {% endif %}
 
 {% endif %}

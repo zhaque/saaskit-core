@@ -17,18 +17,40 @@
    {% endfor %}
   </table>
   
-  <h2>{% trans "Join Requests Sent" %}</h2>
-  {% if joins_sent %}
+  <h2>{% trans "Invitations Sent" %}</h2>
+  {% if invitations_sent %}
       <table class="invitation_list">
-          {% for invitation in joins_sent %}
+          {% for invitation in invitations_sent %}
               <tr>
                   <td>{{ invitation.contact.email }}</td>
-                  <td>{{ invitation.sent }}</td>
+                  <td>{{ invitation.sent|date:_("DATE_FORMAT") }}</td>
                   <td class="invitation_{{ invitation.status }}">{{ invitation.get_status_display }}</td>
                   <td>
                       {% for other_user in invitation.contact.users.all %}
                           {{ other_user }}
                       {% endfor %}
+                  </td>
+              </tr>
+          {% endfor %}
+      </table>
+  {% else %}
+      <p>{% trans "No invitations sent." %}</p>
+  {% endif %}
+  
+  <h2>{% trans "Join Requests Received" %}</h2>
+  {% if joins_received %}
+      <table class="invitation_list">
+          {% for join_request in joins_received %}
+              <tr>
+                  <td>{{ join_request.user }}</td>
+                  <td>{{ join_request.created|date:_("DATETIME_FORMAT") }}</td>
+                  <td>{{ join_request.notes|safe }}</td>
+                  <td>{{ join_request.get_state_display }}</td>
+                  <td>
+                    {% ifequal join_request.state join_request.STATE_INIT %}
+                      <a href="{% url proceed_join_request user_id=join_request.user.id,state='join' %}">{% trans 'Accept'%}</a>
+                      | <a href="{% url proceed_join_request user_id=join_request.user.id,state='reject' %}">{% trans 'Reject'%}</a>
+                    {% endifequal %}
                   </td>
               </tr>
           {% endfor %}

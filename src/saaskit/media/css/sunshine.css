@@ -15,7 +15,8 @@ a {
 	text-decoration: none; 
 }
 table thead { background-color:#757474;}
-
+#logo a {color:#fff;}
+#searchBar {background-color: #fcca24;}
 #hd {
 	background-color: #2486d7;
 }
@@ -26,7 +27,11 @@ table thead { background-color:#757474;}
 	background-color: #f7f7f7;
 	color: #565656;
 }
-
+#listA .qstA H2 a {color:#2486d7; }
+#listA .qstA .stat .num {color:#2486d7;}
+.boxB {background:#2486d7;}
+.boxB h3 {color:#fff;}
+.questions-count {color: #2486d7;}
 #primary-navigation li.active a { background-color: #fedc6a; color:#ffffff;}
 #user-navigation li a {
 	background-color: #fcca24;

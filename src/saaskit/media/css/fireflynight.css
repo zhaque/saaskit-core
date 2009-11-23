@@ -17,13 +17,21 @@ a {
 table thead { background-color:#757474;}
 
 #hd {
-	background-color: #272727;
+	background-color: #ececec;
 }
 #hd h1, h2{
 	color: #14cfc0;	
 }
+
 .asHeader { color:#14cfc0;}
-#searchBar {background-color:#0C7878;} 
+#user-nav {background-color:#272727;}
+#logo a {color:#14cfc0;}
+#logo p {color:#14cfc0;}
+#searchBar .options {color:#14cfc0;}
+#primary-navigation {border-bottom:1px solid #14cfc0;}
+#primary-navigation a {background-color:#14cfc0; color:#fff; border-bottom:2px solid #14cfc0;}
+#primary-navigation a:hover{background-color:#F9F7ED; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
+#primary-navigation a.active {background-color:#fff; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
 #bd {
 	background-color: #ececec;
 	color: #565656;
@@ -32,6 +40,7 @@ table thead { background-color:#757474;}
 #listA .qstA .stat .num {color:#0C7878;}
 .boxB {background:#0C7878;}
 .boxB h3 {color:#fff;}
+.questions-count {#0c7878;}
 #primary-navigation li.active a { background-color: #ececec; color:#14cfc0;}
 #user-navigation li a {
 	background-color: #272727;
@@ -60,3 +69,5 @@ table thead { background-color:#757474;}
 
 ul.pager li a { padding:0.1em 0.3em; margin-right:0.3em; border:1px solid #ccc; text-decoration:none; color:#333; }
 ul.pager li.active a, ul.pager li a:hover { background-color:#757474; color:#fff; }
+#ft {background-color:#272727; color:#fff;}
+#ft a {color:#fff;}

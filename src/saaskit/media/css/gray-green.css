@@ -17,12 +17,26 @@ a {
 table thead { background-color:#757474;}
 
 #hd {
-	background-color: #272727;
+	background-color: #ececec;
 }
 #hd h1{
 	color: #989898;	
 }
 .asHeader { color:#989898;}
+ #user-nav {background-color:#006600;}
+#logo a {color:#006600;}
+#logo p {color:#006600;}
+#searchBar .options {color:#006600;}
+#primary-navigation {border-bottom:1px solid #006600;}
+#primary-navigation a {background-color:#006600; color:#fff; border-bottom:2px solid #006600;}
+#primary-navigation a:hover{background-color:#F9F7ED; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
+#primary-navigation a.active {background-color:#fff; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
+
+#listA .qstA H2 a {color:#272727; }
+#listA .qstA .stat .num {color:#272727;}
+.boxB {background:#272727;}
+.boxB h3 {color:#fff;}
+.questions-count {color:#006600;}
 #bd {
 	background-color: #ececec;
 	color: #565656;
@@ -56,3 +70,10 @@ table thead { background-color:#757474;}
 
 ul.pager li a { padding:0.1em 0.3em; margin-right:0.3em; border:1px solid #ccc; text-decoration:none; color:#333; }
 ul.pager li.active a, ul.pager li a:hover { background-color:#757474; color:#fff; }
+#ft {background-color:#006600; color:#fff;}
+#ft a {color:#fff;}
+
+
+
+
+

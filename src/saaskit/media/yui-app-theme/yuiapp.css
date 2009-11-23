@@ -4,7 +4,7 @@ html, body { background-color:#f0f0ee; color:#222; }
 #doc3 { margin:0; }
 
 /* Header */
-#hd { padding:1.2em 0 0 0; background-color:#7a1818; }
+#hd { background-color:#7a1818;}
 h1 { font-size:230%; color:#fff; }
 
 #navigation { margin-top:1.5em; background-color:#262626; height:1%; }
@@ -101,7 +101,7 @@ ul.biglist li a { display:block; padding:0.5em 0; text-decoration:none; color:#0
 ul.biglist li a:hover { text-decoration:underline; }
 
 /* Footer */
-#ft { text-align:center; font-size:85%; padding:0.5em 1em; color:#262626; }
+#ft { text-align:left; font-size:85%; padding:0.4em 1.2em 0.5em 0; color:#262626; }
 
 /* Generics */
 p { margin-bottom:1em; }
@@ -117,5 +117,14 @@ abbr, acronym { border-bottom:1px dotted #000; cursor:help; }
 .text-left { text-align:left; }
 .text-right { text-align:right; }
 .text-center { text-align:center; }
+
+
+
+
+
+
+
+
+
 
 

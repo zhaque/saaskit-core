@@ -17,15 +17,28 @@ a {
 table thead { background-color:#685841;}
 
 #hd {
-	background-color: #967E59;
+	background-color: #fff;
 }
 #hd h1{
 	color: #fff;	
 }
+#user-nav {background-color:#967E59;}
+#logo a {color:#967E59;}
+#logo p {color:#967E59;}
+#searchBar .options {color:#967E59;}
+#primary-navigation {border-bottom:1px solid #064780;}
+#primary-navigation a {background-color:#064780; color:#fff; border-bottom:2px solid #064780;}
+#primary-navigation a:hover{background-color:#F9F7ED; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
+#primary-navigation a.active {background-color:#fff; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
 #bd {
 	background-color: #fff;
 	color: #333;
 }
+#listA .qstA H2 a {color:#967E59; }
+#listA .qstA .stat .num {color:#967E59;}
+.boxB {background:#967E59;}
+.boxB h3 {color:#fff;}
+.questions-count {#967e59;}
 
 #primary-navigation li.active a { background-color: #fff; color:#333;}
 #navigation {
@@ -55,3 +68,5 @@ table thead { background-color:#685841;}
 
 ul.pager li a { padding:0.1em 0.3em; margin-right:0.3em; border:1px solid #ccc; text-decoration:none; color:#333; }
 ul.pager li.active a, ul.pager li a:hover { background-color:#685841; color:#fff; }
+#ft {background-color:#967E59; color:#fff;}
+#ft a {color:#fff;}

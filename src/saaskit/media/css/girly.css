@@ -4,14 +4,14 @@
    want to do more complex operations. */
 
 html, body { 
-	background-color:#272727;
+	background-color:#ffffff;
 	/*padding-top: .3em;*/
 }
 h1, h2, h3 {
 	color: #989898;
 }
 a { 
-	color:#989898;
+	color:#e9a7dc;
 	text-decoration: none; 
 }
 table thead { background-color:#757474;}
@@ -20,15 +20,15 @@ table thead { background-color:#757474;}
 	background-color: #ececec;
 }
 #hd h1{
-	color: #989898;	
+	color: #e9a7dc;	
 }
-.asHeader { color:#989898;}
+
 #user-nav {background-color:#272727;}
-#logo a {color:#272727;}
-#logo p {color:#272727;}
-#searchBar .options {color:#272727;}
-#primary-navigation {border-bottom:1px solid #272727;}
-#primary-navigation a {background-color:#272727; color:#fff; border-bottom:2px solid #272727;}
+#logo a {color:#e9a7dc;}
+#logo p {color:#e9a7dc;}
+#searchBar .options {color:#e9a7dc;}
+#primary-navigation {border-bottom:1px solid #e9a7dc;}
+#primary-navigation a {background-color:#e9a7dc; color:#fff; border-bottom:2px solid #e9a7dc;}
 #primary-navigation a:hover{background-color:#F9F7ED; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
 #primary-navigation a.active {background-color:#fff; color:#333; border: 1px solid #777;border-bottom:3px solid #f0f0ee;}
 #bd {
@@ -39,15 +39,15 @@ table thead { background-color:#757474;}
 #listA .qstA .stat .num {color:#272727;}
 .boxB {background:#272727;}
 .boxB h3 {color:#fff;}
-.questions-count {color:#272727;}
-#primary-navigation li.active a { background-color: #ececec; color:#989898;}
+.questions-count {color: #e9a7dc;}
+#primary-navigation li.active a { background-color: #ececec; color:#e9a7dc;}
 #user-navigation li a {
 	background-color: #272727;
 }
 
-.block .hd { background-color: #272727; color: #333; border-bottom: 5px solid #989898}
+.block .hd { background-color: #272727; color: #333; border-bottom: 5px solid #e9a7dc}
 .tabs .hd {
-	background-color: #989898;
+	background-color: #e9a7dc;
 	border-bottom: 5px solid #272727;
 }
 
@@ -57,14 +57,16 @@ table thead { background-color:#757474;}
 .spaces .hd ul li { background-color:#187a7a; }
 
 .tabs ul {
-	background-color: #989898;
+	background-color: #e9a7dc;
 }
 
 .tabs .hd ul li a:hover { background-color:#CDEFFF; 	color: #989898;
 }
 
 .tabs .hd ul li.active a { background-color:#272727!important; color:#989898; text-decoration:none; }
-.spaces .hd ul li { background-color:#989898; margin-right:0.1em; }
+.spaces .hd ul li { background-color:#e9a7dc; margin-right:0.1em; }
 
 ul.pager li a { padding:0.1em 0.3em; margin-right:0.3em; border:1px solid #ccc; text-decoration:none; color:#333; }
 ul.pager li.active a, ul.pager li a:hover { background-color:#757474; color:#fff; }
+#ft {background-color:#272727; color:#fff;}
+#ft a {color:#fff;}

@@ -4,7 +4,7 @@
 {% block body %}
 <h2>{{notice.notice_type.display}}</h2>
 
-<p>{{notice.message}}</p>
+<p>{{notice.message|safe}}</p>
 
 <a href="{% url notification_notices %}">back</a>
 {% endblock %}

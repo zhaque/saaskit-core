@@ -5,23 +5,23 @@
 {% block body %}
     <h2>Dashboard</h2>
     <h3>Messages</h3>
-        <p>{# <a href="{% url notification_mark_all_seen %}">mark all seen</a> | #}
-        <a href="{% url notification_feed_for_user %}">RSS</a></p>
+    <p>{# <a href="{% url notification_mark_all_seen %}">mark all seen</a> | #}
+    <a href="{% url notification_feed_for_user %}">RSS</a></p>
 
-        <ul>{% for notice in notices %}
-            <li{% if notice.is_unseen %} style="font-weight:bold;"{% endif %}>
-                <em title="{{notice.notice_type.description}}">{{notice.notice_type.display}}</em>
-                &mdash; {{notice.message|safe}}
-                <a href="{{notice.get_absolute_url}}">#</a></li>
-            {% endfor %}
-        </ul>
-
+    <ul>{% for notice in notices %}
+        <li{% if notice.is_unseen %} style="font-weight:bold;"{% endif %}>
+            <em title="{{notice.notice_type.description}}">{{notice.notice_type.display}}</em>
+            &mdash; {{notice.message|safe}}
+            <a href="{{notice.get_absolute_url}}">#</a></li>
+        {% endfor %}
+    </ul>
+    
     {% sites_owned request.user as sites_owned %}
     {% if sites_owned|length %}
         <h3>Sites you own</h3>
         <ul>
             {% for site in sites_owned %}
-                <li><a href="{{ site.get_absolute_url }}">{{ site }}</a></li>
+                <li><a href="{% url sso %}?next={{ site.get_absolute_url }}">{{ site }}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
@@ -31,17 +31,16 @@
         <h3>Sites you are member of</h3>
         <ul>
             {% for site in member_of  %}
-                <li><a href="{{ site.get_absolute_url }}">{{ site }}</a></li>
+                <li><a href="{% url sso %}?next={{ site.get_absolute_url }}">{{ site }}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
     
-    {% with request.muaccount.owner.get_profile as profile %}
-    {% if profile.is_public %}
-    <h3>About Site Owner</h3>
-    {% include "profiles/profile_detail.html" %}
+    {% with request.user.get_profile as profile %}
+    {% if profile and profile.is_public %}
+      <h3>Profile</h3>
+      {% include "profiles/profile_detail.html" %}
     {% endif %}
     {% endwith %}
     
 {% endblock %}
-

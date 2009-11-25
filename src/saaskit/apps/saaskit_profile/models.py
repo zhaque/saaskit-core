@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
-    user = models.ForeignKey(User, unique=True, related_name="saaskit_profiles")
+    user = models.OneToOneField(User, related_name="saaskit_profile")
     real_name = models.CharField(max_length=100)
     about = models.TextField(blank=True)
 

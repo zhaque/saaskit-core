@@ -1,14 +1,16 @@
 {% extends "main.html" %}
-{% load uni_form %}
+{% load i18n uni_form %}
 
 {% block title %}Edit profile{% endblock %} 
 {% block body %}
 <h2>Edit your profile</h2>
 <form action="" method="POST" class="uniForm">
- <table>
+ <fieldset class="inlineLabels">
   {{form|as_uni_form}}
-  <tr><td><input type="submit"></td></tr>
- </table>
+  <div class="buttonHolder">
+    <input type="submit" value="{% trans 'Update profile' %}" />
+  </div>
+ </fieldset>
 </form>
 <a href="{{user.get_profile.get_absolute_url}}">See your profile</a>
 {% endblock %}

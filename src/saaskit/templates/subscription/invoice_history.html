@@ -1,0 +1,39 @@
+{% extends "account/base.html" %}
+{% block title %}Invoice History{% endblock %}
+{% load i18n %}
+
+{% block body %}
+  <h2>Invoice History</h2>
+  {% if transaction_list %}
+  <table border="0" id="tasktable" style="max-width:600px;">
+     <thead>
+     <tr>
+       <td>Invoice Date</td>
+       <td>Receipt</td>
+       <td>Amount</td>
+       <td>Status</td>
+       <td>Details</td>
+     </tr></thead>
+     
+     <tbody>
+        {% for transaction in transaction_list %}
+        <tr class="{% cycle row1,row2 %}">
+          <td>{{ transaction.timestamp|date:_("DATETIME_FORMAT")}}</td>
+          <td>{{ transaction.ipn }}</td>
+          <td>${{ transaction.amount }}</td>
+          <td>{{ transaction.ipn.payment_status }}</td>
+          <td><a href="{% url invoice_detail transaction.pk %}">{% trans "Export as PDF" %}</a></td>
+        </tr>
+        {% endfor %}
+     </tbody>
+  </table>
+  {% else %}
+  <p>You have no transactions yet.</p>
+  {% endif %}
+{% endblock %}
+
+
+
+
+
+

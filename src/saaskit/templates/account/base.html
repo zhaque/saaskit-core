@@ -2,15 +2,15 @@
 {% block title %}Manage your account{% endblock %} 
 
 {% block body %}
+<div id="yui-main"><div class="yui-b"><div class="yui-g">
   <div class="block">
     <div class="bd">
-     <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
-     {% block content %}{% endblock %}
+      <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
+      {% block content %}{% endblock %}
     </div>
   </div>
-{% endblock %}
-
-{% block sidebar %}
+</div></div></div>
+<div id="sidebar" class="yui-b">
   <div class="block">
       <div class="bd">
          <h2><a href="{% url account_dashboard %}">Dashboard</a></h2>
@@ -20,4 +20,5 @@
          <h2><a href="{% url invoice_listing %}">Invoice History</a></h2>
       </div>
     </div>
+</div>
 {% endblock %}

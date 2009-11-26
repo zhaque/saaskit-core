@@ -8,7 +8,7 @@ from tinymce import widgets as tinymce_widgets
 from uni_form.helpers import FormHelper, Submit
 
 from muaccount_content.models import MUFlatPage
-from muaccount_content.widgets import ReadOnlyWidgetWithHidden
+from saaskit.widgets.readonlyhidden import ReadOnlyWidgetWithHidden
 
 class MuFlatpageAddForm(forms.ModelForm):
     

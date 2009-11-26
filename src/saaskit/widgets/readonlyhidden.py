@@ -1,9 +1,6 @@
 from django import forms
-from django.forms.util import flatatt
-from django.utils.html import escape
-from django.utils.safestring import mark_safe
 
-from muaccount_content.external.readonly import ReadOnlyWidget
+from readonly import ReadOnlyWidget
 
 class ReadOnlyWidgetWithHidden(ReadOnlyWidget):
     

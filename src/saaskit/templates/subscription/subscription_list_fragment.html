@@ -32,7 +32,9 @@
         {% endfor %}
       </tr>
   </table>
-  <p><a href="{% url invoice_listing %}">{% trans "history" %}</a></p>
+  {% if us %}
+  <p class="text-right"><a href="{% url invoice_listing %}">{% trans "View history" %}</a></p>
+  {% endif %}
   
   {% endwith %}
 </div>

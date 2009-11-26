@@ -1,17 +1,17 @@
 {% extends "main.html" %}
-{% load uni_form %}
+{% load i18n uni_form %}
 
 {% block title %}Registration Form{% endblock %}
 {% block body %}
 <h2>Registration Form</h2>
 
 <form method="post" action="" class="uniForm">
-  <fieldset>
-  <table>
-   {{ form|as_uni_form }}
-  <tr><td><input type="submit" value="Submit" /></td></tr>
+  <fieldset class="inlineLabels">
+    {{ form|as_uni_form }}
+    <div class="buttonHolder">
+      <input type="submit" value="{% trans 'Register' %}" />
+    </div>
   </fieldset>
-  </table>
 </form>
 {% endblock %}
 

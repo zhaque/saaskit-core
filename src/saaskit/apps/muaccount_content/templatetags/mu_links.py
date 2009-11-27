@@ -1,16 +1,6 @@
 ### -*- coding: utf-8 -*- ####################################################
-#
-# Copyright (c) 2009 Arvid Paeglit. All Rights Reserved.
-#
-##############################################################################
-"""
-$Id:interfaces.py 11316 2008-05-19 12:07:19Z arvid $
-"""
 
 from django import template
-
-from django.db.models.aggregates import Count, Max
-from django.db.models import F
 
 from muaccount_content.models import MUFlatPage, mu_queryset
 

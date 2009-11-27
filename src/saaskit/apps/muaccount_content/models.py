@@ -7,6 +7,7 @@ from django.db.models.query import Q
 from django.contrib.flatpages.models import FlatPage
 
 from muaccounts.models import MUAccount
+from muaccounts.utils import mu_queryset
 
 class MUFlatPage(FlatPage):
     muaccount = models.ForeignKey(MUAccount, related_name="muflatpages", blank=True, null=True)
@@ -25,11 +26,3 @@ class MUFlatPage(FlatPage):
                                              url__exact=self.url, 
                                              sites__id__exact=settings.SITE_ID
                                              ).count()
-
-
-def mu_queryset(muaccount, queryset, field):
-    customized = queryset.filter(muaccount=muaccount)
-    return queryset.filter(Q(muaccount__exact=None) | Q(muaccount=muaccount))\
-                        .exclude(muaccount__exact=None, 
-                 **{'%s__in' % field: customized.values_list(field, flat=True),})
-    

@@ -124,7 +124,7 @@ INSTALLED_APPS = (
     # local
     'saaskit_profile',
     'muaccount_content',
-    'simple_adsense',
+    'muaccount_adsense',
     'muaccounts_quotas',
     'page_view_quotas',
     

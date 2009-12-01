@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% load i18n thumbnail muaccounts_tags %}
+
+{% block fake-header %}
+{% if request.REQUEST.muaccount %}
+{% get_muaccount request.REQUEST.muaccount as ref_mua %}
+<div id="logo">
+  <a href="/" title="{% trans 'back to home page' %}">
+  {% if ref_mua.logo %}
+    <img src="{% thumbnail ref_mua.logo 143x59 %}" id="site-logo">
+  {% else %}
+    <h2>{{ ref_mua.name }}</h2>
+  {% endif %}
+  </a>
+  <p>{{ ref_mua.tag_line }}</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,7 +1,8 @@
-{% extends "main.html" %}
+{% extends "ref_base.html" %}
 {% load i18n %}
 
 {% block title %}Sign in{% endblock %} 
+
 {% block body %}
 <h2>Sign in</h2>
 {% if msg %}
@@ -27,12 +28,13 @@
 <br>
 {% endif %}
 <h2>Make a choice:</h2>
-<p> <a href="{% url registration_register %}?redirect_to={{ next }}">Register</a>
+<p> <a href="{% url registration_register %}?redirect_to={{ next }}&muaccount={{ request.REQUEST.muaccount }}">Register</a>
   | <a href="{% url auth_password_reset %}">Reset password</a></p>
 <div class="login">
 
     <form id="auth_form" name="auth_form" action="{% url user_signin %}" method="post">
     <input type="hidden" name="next" value="{{ next }}" />
+    <input type="hidden" name="muaccount" value="{{ request.REQUEST.muaccount }}" />
 	<fieldset>
 	    
 	    
@@ -47,6 +49,7 @@
 <form id="openid_form" name="openid_form" action="{% url user_signin %}" method="post">
     <input type="hidden" name="action" value="verify" />
     <input type="hidden" name="next" value="{{ next }}" />
+    <input type="hidden" name="muaccount" value="{{ request.REQUEST.muaccount }}" />
 	<fieldset>
 		<legend>{% trans "Sign In Using Your OpenID URL" %}</legend>
 		<div id="openid_choice">

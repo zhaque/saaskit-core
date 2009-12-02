@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 
 
 class UserProfile(models.Model):
@@ -7,7 +8,7 @@ class UserProfile(models.Model):
     real_name = models.CharField(max_length=100)
     about = models.TextField(blank=True)
 
-    website = models.URLField('Website/Blog', verify_exists=False, blank=True)
+    website = models.URLField(_('Website/Blog'), verify_exists=False, blank=True)
     company_url = models.URLField(verify_exists=False, blank=True)
     location = models.CharField(max_length=100, blank=True)
 

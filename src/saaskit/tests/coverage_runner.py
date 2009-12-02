@@ -4,7 +4,6 @@
 Test runner with code coverage.
 Falls back to django simple runner if coverage-lib not installed 
 
-$Id:interfaces.py 11316 2008-05-19 12:07:19Z arvid $
 """
 
 import os

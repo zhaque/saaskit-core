@@ -1,15 +1,15 @@
 {% extends "main.html" %}
 {% load i18n %}
 
-{% block title %}Associate OpenID {% endblock %} 
+{% block title %}{% trans "Associate OpenID" %}{% endblock %} 
 {% block body %}
-<h2>OpenID associations</h2>
+<h2>{% trans "OpenID associations" %}</h2>
 {% if msg %}
 	<div class="errors"><p>{{ msg }}</p></div>
 {% endif %}
 
 {% if form.errors %}
-    <div class="errors"><p>Openid url : {{ form.openid_url.errors }}</p></div>
+    <div class="errors"><p>{% trans "Openid url" %} : {{ form.openid_url.errors }}</p></div>
 {% endif %}
 
 <div class="login">
@@ -20,12 +20,12 @@
 	<fieldset>
 		<legend>{% trans "Add a new OpenID URL" %}</legend>
 		<div id="openid_choice">
-    		<p>Please click your account provider:</p>
+    		<p>{% trans "Please click your account provider" %}:</p>
     		<div id="openid_btns"></div>
     	</div>
     	<div id="openid_input_area">
             <label for="id_openid_url">{% trans "OpenId URL :" %}</label><br />{{ form.openid_url }}
-            <input name="openid_submit" type="submit" value="{% trans "Add OpenID" %}">
+            <input name="openid_submit" type="submit" value="{% trans 'Add OpenID' %}">
 		</div>
 	</fieldset>
 </form>	

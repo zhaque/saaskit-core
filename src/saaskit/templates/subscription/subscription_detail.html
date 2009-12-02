@@ -1,12 +1,12 @@
 {% extends "main.html" %}
-
-{% block title %} Details for {{object.name}}. {% endblock %} 
+{% load i18n %}
+{% block title %}{% blocktrans with object.name as object_name %}Details for {{ object_name }}.{% endblocktrans %}{% endblock %} 
 {% block body %}
 {% load paypal_buttons %}
 
 <h2>{{object.name}}</h2>
 <p>{{ object.description|safe}}</p>
 
-<p>{{object.get_pricing_display}}, trial: {{object.get_trial_display}}</p>
+<p>{{object.get_pricing_display}}, {% trans "trial" %}: {{object.get_trial_display}}</p>
 {% load paypal_buttons %}{% paypal_shortcut user object %}
 {% endblock %}

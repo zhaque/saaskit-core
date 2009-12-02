@@ -6,7 +6,7 @@
     <p class="text-center">{% trans "Expires" %}: {{ us.expires|date:_("DATE_FORMAT") }}</p>
     <p class="text-center">{% trans "Paypal will get money from your account itself. Or you may do it manually in your paypal account." %}</p>
   {% else %}
-  <p class="text-center">Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like.</p>
+  <p class="text-center">{% trans "Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like." %}</p>
   {% endif %}
   <table frame="box" class="plans" align="center">
       <tr>
@@ -14,7 +14,7 @@
         <td {% ifequal us.subscription subscription %}
             class="{% if us.active %}current{% else %}unsubscribed{% endif %}"
             {% endifequal %}>
-          <h2 class="text-center">{{ subscription.name }}</h2>
+          <h2 class="text-center">{% trans subscription.name noop %}</h2>
           <p class="text-center">{{ subscription.get_pricing_display }}</p>
           <p class="text-center">{% trans 'trial' %} - {{ subscription.get_trial_display }}</p>
           <ul class="plans">

@@ -1,10 +1,10 @@
 {% extends "ref_base.html" %}
 {% load i18n %}
 
-{% block title %}Sign in{% endblock %} 
+{% block title %}{% trans "Sign in" %}{% endblock %}
 
 {% block body %}
-<h2>Sign in</h2>
+<h2>{% trans "Sign in" %}</h2>
 {% if msg %}
 <br />
 	<p class="warning">{{ msg }}</p>
@@ -27,9 +27,11 @@
 </div>
 <br>
 {% endif %}
-<h2>Make a choice:</h2>
-<p> <a href="{% url registration_register %}?redirect_to={{ next }}&muaccount={{ request.REQUEST.muaccount }}">Register</a>
-  | <a href="{% url auth_password_reset %}">Reset password</a></p>
+<h2>{% trans "Make a choice" %}:</h2>
+<p> 
+  <a href="{% url registration_register %}?redirect_to={{ next }}&muaccount={{ request.REQUEST.muaccount }}">{% trans "Register" %}</a>
+  | <a href="{% url auth_password_reset %}">{% trans "Reset password" %}</a>
+</p>
 <div class="login">
 
     <form id="auth_form" name="auth_form" action="{% url user_signin %}" method="post">
@@ -53,7 +55,7 @@
 	<fieldset>
 		<legend>{% trans "Sign In Using Your OpenID URL" %}</legend>
 		<div id="openid_choice">
-    		<p>Please click your account provider:</p>
+    		<p>{% trans "Please click your account provider:"%}</p>
     		<div id="openid_btns"></div>
     	</div>
     	    <div id="openid_input_area">

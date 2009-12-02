@@ -1,9 +1,9 @@
 {% extends "main.html" %}
-{% load uni_form %}
+{% load i18n uni_form %}
 
-{% block title %}Create profile{% endblock %} 
+{% block title %}{% trans "Create profile" %}{% endblock %} 
 {% block body %}
-<h2>Create your profile</h2>
+<h2>{% trans "Create your profile" %}</h2>
 <form action="" method="POST" class="uniForm">
   <table>
   {{form|as_uni_form}}

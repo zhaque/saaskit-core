@@ -6,7 +6,7 @@
         {{ join_request_form|as_uni_form }}
         <div class="submit form_block buttonHolder">
             <input type="submit" value="invite" />
-            or <a href="{% url muaccounts_member_list %}">cancel</a>
+            or <a href="{% url muaccounts_member_list %}">{% trans "cancel" %}</a>
         </div>
     </fieldset>
 </form>

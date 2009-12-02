@@ -9,7 +9,8 @@
     {% if mua_count < user.quotas.muaccounts %}
       {% frontendadmin_add mua_list %}
     {% else %}
-    <p>You can not add more domains. <a href="{% url subscription_list %}">Upgrade</a> your plan.</p>
+    {% url subscription_list as subscription_url %}
+    <p>{% blocktrans %}You can not add more domains. <a href="{{ subscription_url }}">Upgrade</a> your plan.{% endblocktrans %}</p>
     {% endif %}
   {% endwith %}
   
@@ -26,7 +27,7 @@
     {% endfor %}
   </ul>
   {% else %}
-  <p>You have no mu accounts.</p>
+  <p>{% trans "You have no mu accounts." %}</p>
   {% endif %}
 </div></div></div>
 {% endblock %}

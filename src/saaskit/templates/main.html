@@ -1,9 +1,9 @@
 {% load compressed %}
-{% load class_if_reverse %}
+{% load i18n class_if_reverse %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-    <title>{% block title %}Home : SaaS Kit{% endblock %}</title>
+    <title>{% block title %}{% trans "Home : SaaS Kit" %}{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
     <link rel="shortcut icon" href="{{ MEDIA_URL }}saaskit/img/favicon.ico">
@@ -23,18 +23,18 @@
            <div id="user-nav">
                 <ul id="user-nav">
                   {% if user.is_authenticated %}
-                  <li{% class_if_reverse profiles_profile_list active %}>Welcome, <a href="{% url profiles_profile_list %}">{{user}}</a></li> |
-                  <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">dashboard</a></li> |
+                  <li{% class_if_reverse profiles_profile_list active %}>{% trans "Welcome" %}, <a href="{% url profiles_profile_list %}">{{user}}</a></li> |
+                  <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">{% trans "dashboard" %}</a></li> |
                   {% if user.get_profile %}
-                  <li><a href="{% url profiles_edit_profile %}">profile</a></li> | 
+                  <li><a href="{% url profiles_edit_profile %}">{% trans "profile" %}</a></li> | 
                   {% else %}
-                  <li><a href="{% url profiles_create_profile %}">profile</a></li> |
+                  <li><a href="{% url profiles_create_profile %}">{% trans "profile" %}</a></li> |
                   {% endif %}
-                  <li><a href="{% url subscription_list %}">subscription</a></li> |
-                  <li><a href="{% url auth_password_change %}">password</a></li> |
-                  <li><a href="{% url user_signout %}?next=/">logout [{{user}}]</a></li>
+                  <li><a href="{% url subscription_list %}">{% trans "subscription" %}</a></li> |
+                  <li><a href="{% url auth_password_change %}">{% trans "password" %}</a></li> |
+                  <li><a href="{% url user_signout %}?next=/">{% blocktrans %}logout [{{user}}]{% endblocktrans %}</a></li>
                   {% else %}
-                  <li><a href="{% url user_signin %}">Sign-up</a></li>
+                  <li><a href="{% url user_signin %}">{% trans "Sign-up" %}</a></li>
                   {% endif %}
                 </ul> 
               </div> 
@@ -43,17 +43,15 @@
          
         <div id="navigation">
           <ul id="primary-navigation">
-            <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">Contact us</a></li>
-            <li{% class_if_reverse /about/ active %}><a href="/about">About Us</a></li>
-            <li{% class_if_reverse /support/ active %}><a href="/support">Support</a></li>
+            <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">{% trans "Contact us" %}</a></li>
+            <li{% class_if_reverse /about/ active %}><a href="/about">{% trans "About Us" %}</a></li>
+            <li{% class_if_reverse /support/ active %}><a href="/support">{% trans "Support" %}</a></li>
              {% if not user.is_authenticated %}
-              <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">Plans and Pricing</a></li>
+              <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">{% trans "Plans and Pricing" %}</a></li>
              {% else %}
-              <li{% class_if_reverse muaccounts_listing active %}><a href="{% url muaccounts_listing %}">My Sites</a></li>
+              <li{% class_if_reverse muaccounts_listing active %}><a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a></li>
              {% endif %}     
-            <li {% class_if_reverse /$ active %}><a href="/">SaaSkit</a></li>
-                                  
-                  
+            <li {% class_if_reverse /$ active %}><a href="/">{% trans "SaaSkit" %}</a></li>
                   
           </ul>                  
         <div class="clear"></div>
@@ -74,13 +72,13 @@
         <div id="ft">
             <div class="footer-navigation">
                 <ul>
-                    <li><a href="/support">Support</a></li> | 
-                    <li><a href="/about">About</a></li> | 
-                    <li><a href="{% url contact_form %}">Contact us</a></li>
+                    <li><a href="/support">{% trans "Support" %}</a></li> | 
+                    <li><a href="/about">{% trans "About" %}</a></li> | 
+                    <li><a href="{% url contact_form %}">{% trans "Contact us" %}</a></li>
                 </ul>
             </div>
             <div class="pseudo-footer">
-                    <li><a href="/privacy" style="font-weight: 600;">Privacy & Copyright</a></li>
+                    <li><a href="/privacy" style="font-weight: 600;">{% trans "Privacy & Copyright" %}</a></li>
             </div>      
         </div>
         <!--End of footer -->
@@ -89,14 +87,3 @@
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

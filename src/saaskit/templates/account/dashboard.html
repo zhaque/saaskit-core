@@ -1,12 +1,12 @@
 {% extends "main.html" %}
-{% load uni_form muaccounts_tags settings %}
+{% load i18n uni_form muaccounts_tags settings %}
 
-{% block title %}Dashboard{% endblock %} 
+{% block title %}{% trans "Dashboard" %}{% endblock %} 
 {% block body %}
-    <h2>Dashboard</h2>
-    <h3>Messages</h3>
+    <h2>{% trans "Dashboard" %}</h2>
+    <h3>{% trans "Messages" %}</h3>
     <p>{# <a href="{% url notification_mark_all_seen %}">mark all seen</a> | #}
-    <a href="{% url notification_feed_for_user %}">RSS</a></p>
+    <a href="{% url notification_feed_for_user %}">{% trans "RSS" %}</a></p>
 
     <ul>{% for notice in notices %}
         <li{% if notice.is_unseen %} style="font-weight:bold;"{% endif %}>
@@ -18,7 +18,7 @@
     
     {% sites_owned request.user as sites_owned %}
     {% if sites_owned|length %}
-        <h3>Sites you own</h3>
+        <h3>{% trans "Sites you own" %}</h3>
         <ul>
             {% for site in sites_owned %}
                 <li><a href="{% url sso %}?next={{ site.get_absolute_url }}">{{ site }}</a></li>
@@ -28,7 +28,7 @@
 
     {% member_of request.user as member_of %}
     {% if member_of|length %}
-        <h3>Sites you are member of</h3>
+        <h3>{% trans "Sites you are member of" %}</h3>
         <ul>
             {% for site in member_of  %}
                 <li><a href="{% url sso %}?next={{ site.get_absolute_url }}">{{ site }}</a></li>
@@ -38,7 +38,7 @@
     
     {% with request.user.get_profile as profile %}
     {% if profile and profile.is_public %}
-      <h3>Profile</h3>
+      <h3>{% trans "Profile" %}</h3>
       {% include "profiles/profile_detail.html" %}
     {% endif %}
     {% endwith %}

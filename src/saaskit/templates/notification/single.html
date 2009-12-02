@@ -1,10 +1,10 @@
 {% extends "main.html" %}
-
-{% block title %}Dashboard{% endblock %} 
+{% load i18n %}
+{% block title %}{% trans "Dashboard" %}{% endblock %} 
 {% block body %}
 <h2>{{notice.notice_type.display}}</h2>
 
 <p>{{notice.message|safe}}</p>
 
-<a href="{% url notification_notices %}">back</a>
+<a href="{% url notification_notices %}">{% trans "back" %}</a>
 {% endblock %}

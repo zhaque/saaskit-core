@@ -1,13 +1,13 @@
 {% extends "main.html" %}
 {% load i18n %}
-{% block title %}Welcome to SaaSkit{% endblock %}
+{% block title %}{% trans "Welcome to SaaSkit" %}{% endblock %}
 {% block body %}
    <div id="yui-main"><div class="yui-b"><div class="yui-g">
      <div class="block">
        <div class="bd">
-         <h1>Build SaaS Webapp Fast!</h1>
-         <p>Choosing the best possible alternative? How fast can I reach my target market? Can I use my current payment gateway? Will it add to operational costs? Where will I find the most reliable support? If you find yourself always asking the above questions, then here is the right place for you.</p>
-
+         <h1>{% trans "Build SaaS Webapp Fast!" %}</h1>
+         <p>{% trans "Choosing the best possible alternative? How fast can I reach my target market? Can I use my current payment gateway? Will it add to operational costs? Where will I find the most reliable support? If you find yourself always asking the above questions, then here is the right place for you." %}</p>
+         {% blocktrans %}
          <b>Software as a Service Model</b><br/>
          <ul>
            <li> - We offer you a ready to use toolkit for all your basic needs with capabilities to provide on demand services to your/clients</li>
@@ -38,15 +38,16 @@
            <li> - Most important of all Open Source version of SaaSkit is available if you require higher level of customization</li>
            <li> - Use the power of Django Web framework to easily deploy, develop and customize your apps</li>
          </ul>
+         {% endblocktrans %}
        </div>
      </div>
    </div></div></div> 
 
    <div id="sidebar" class="yui-b">
      <div class="block"><div class="bd">
-       <h1>Help</h1>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit</p> 
-         <p>Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc.</p>
+       <h1>{% trans "Help" %}</h1>
+       <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit" %}</p> 
+       <p>{% trans "Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc." %}</p>
      </div></div>
 </div>
 {% endblock %}

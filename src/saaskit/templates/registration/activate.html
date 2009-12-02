@@ -1,7 +1,7 @@
 {% extends "main.html" %}
-
-{% block title %} Account activated. {% endblock %} 
+{% load i18n %}
+{% block title %}{% trans "Account activated." %} {% endblock %} 
 {% block body %}
-<h2>Account activated.</h2>
-<p>Activation of account {{user.username}} complete.</p>
+<h2>{% trans "Account activated." %}</h2>
+<p>{% blocktrans with user.username as username %}Activation of account {{ username }} complete.{% endblocktrans %}</p>
 {% endblock %}

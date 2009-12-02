@@ -9,7 +9,7 @@
 {% block content %}
     <h1>{% trans "Contacts" %}</h1>
     
-    <p>Contacts are people you know but who may or may not be on this site (yet).</p>
+    <p>{% trans "Contacts are people you know but who may or may not be on this site (yet)." %}</p>
     
     {% for import_form in import_forms %}
     <h2>{{ import_form.title }}</h2>
@@ -37,15 +37,17 @@
         </form>
     {% else %}
         <p>
+            {% blocktrans with import_service.auth_url as auth_url %}
             This will be a two step process. First you must
-            <a href="{{ import_service.auth_url }}">authenticate</a>.
+            <a href="{{ auth_url }}">authenticate</a>.
             Once you have agreed to let us have access to your address book, you will be taken back here and
             an "import" button will appear here.
+            {% endblocktrans %}
         </p>
     {% endif %}
     {% endfor %}
     
-    <h2>Contacts</h2>
+    <h2>{% trans "Contacts" %}</h2>
     
     {% with user.contacts.all as contacts %}
         

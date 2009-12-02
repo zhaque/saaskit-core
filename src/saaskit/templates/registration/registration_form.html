@@ -1,10 +1,10 @@
 {% extends "ref_base.html" %}
 {% load i18n uni_form %}
 
-{% block title %}Registration Form{% endblock %}
+{% block title %}{% trans "Registration Form" %}{% endblock %}
 
 {% block body %}
-<h2>Registration Form</h2>
+<h2>{% trans "Registration Form" %}</h2>
 
 <form method="post" action="" class="uniForm">
   <fieldset class="inlineLabels">
@@ -15,4 +15,3 @@
   </fieldset>
 </form>
 {% endblock %}
-

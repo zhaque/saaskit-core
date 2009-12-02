@@ -1,9 +1,9 @@
 {% extends "main.html" %}
 {% load i18n %}
 
-{% block title %} Dissociate OpenID {% endblock %} 
+{% block title %}{% trans "Dissociate OpenID" %} {% endblock %} 
 {% block body %}
-<h2>Dissociate OpenID</h2>
+<h2>{% trans "Dissociate OpenID" %}</h2>
 {% if msg %}
 	<p class="warning">{{ msg }}</p>
 {% endif %}
@@ -15,7 +15,7 @@
 	{{ form.openid_url }}
 	<fieldset>
 		<legend>{% trans "Dissociate OpenID URL" %}</legend>
-        <p>Confirm to dissociate {{ openid_url }} from your account</p>
+        <p>{% blocktrans %}Confirm to dissociate {{ openid_url }} from your account{% endblocktrans %}</p>
         <div class="submit-row "><input name="bdissociate" type="submit" value="{% trans "Dissociate OpenID" %}"></div>
 		
 	</fieldset>

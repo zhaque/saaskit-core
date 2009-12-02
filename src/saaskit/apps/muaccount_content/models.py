@@ -3,7 +3,6 @@
 from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.db.models.query import Q
 from django.contrib.flatpages.models import FlatPage
 
 from muaccounts.models import MUAccount

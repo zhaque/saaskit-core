@@ -1,17 +1,15 @@
 ### -*- coding: utf-8 -*- ####################################################
 from django.contrib.flatpages.models import FlatPage
 from django.template import loader, RequestContext
-from django.shortcuts import get_object_or_404, render_to_response
+from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.conf import settings
 from django.core.xheaders import populate_xheaders
 from django.utils.safestring import mark_safe
-from django.db.models.query import Q
-from django.views.generic.list_detail import object_list
 
 from django.contrib.flatpages.views import DEFAULT_TEMPLATE
 
-from muaccount_content.models import MUFlatPage, mu_queryset
+from muaccount_content.models import MUFlatPage
 
 def flatpage(request, url, queryset=FlatPage.objects.all()):
     """improved default view by extra parameter queryset instead hard-coded FlatPage"""

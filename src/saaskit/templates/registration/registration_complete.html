@@ -1,7 +1,8 @@
 {% extends "main.html" %}
+{% load i18n %}
 
-{% block title %} Registration complete {% endblock %} 
+{% block title %}{% trans "Registration complete" %} {% endblock %} 
 {% block body %}
-<h2>Registration complete.</h2>
-<p>Now go check your email to receive confirmation e-mail.</p>
+<h2>{% trans "Registration complete." %}</h2>
+<p>{% trans "Now go check your email to receive confirmation e-mail." %}</p>
 {% endblock %}

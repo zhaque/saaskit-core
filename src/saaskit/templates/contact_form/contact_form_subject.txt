@@ -1,1 +1,1 @@
-[{{site}}] Message from {{name}}
+{% load i18n %}[{{site}}] {% trans "Message from" %} {{name}}

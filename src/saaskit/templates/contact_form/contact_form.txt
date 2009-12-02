@@ -1,3 +1,4 @@
-Message from: {{name}} <{{email}}>
+{% load i18n %}
+{% blocktrans %}Message from: {{name}} <{{email}}>{% endblocktrans %}
 
 {{body}}

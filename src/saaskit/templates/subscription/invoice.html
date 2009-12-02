@@ -1,6 +1,6 @@
 {% load i18n %}
 {% block body %}
-  <h2>Invoice</h2>
+  <h2>{% trans "Invoice" %}</h2>
   <div>
     <label>{% trans "Invoice Date" %}:</label>
     <span>{{ transaction.timestamp|date:_("DATETIME_FORMAT")}}</span>

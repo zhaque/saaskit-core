@@ -1,1 +1,1 @@
-Activate your account at {{site}}
+{% load i18n %}{% blocktrans %}Activate your account at {{site}}{% endblocktrans %}

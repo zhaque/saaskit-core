@@ -1,9 +1,9 @@
 {% extends "main.html" %}
 {% load i18n uni_form %}
 
-{% block title %}Edit profile{% endblock %} 
+{% block title %}{% trans "Edit profile" %}{% endblock %} 
 {% block body %}
-<h2>Edit your profile</h2>
+<h2>{% trans "Edit your profile" %}</h2>
 <form action="" method="POST" class="uniForm">
  <fieldset class="inlineLabels">
   {{form|as_uni_form}}
@@ -12,6 +12,6 @@
   </div>
  </fieldset>
 </form>
-<a href="{{user.get_profile.get_absolute_url}}">See your profile</a>
+<a href="{{user.get_profile.get_absolute_url}}">{% trans "See your profile" %}</a>
 {% endblock %}
 

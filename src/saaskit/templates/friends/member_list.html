@@ -1,9 +1,8 @@
 {% extends "muaccounts/manage/base.html" %}
-{% load smartif settings %}
-{% block title %}Manage your site{% endblock %} 
-{% load i18n %}
+{% load smartif settings i18n %}
+{% block title %}{% trans "Manage your site" %}{% endblock %} 
 {% block content %}
-<h2>Members</h2>
+<h2>{% trans "Members" %}</h2>
   <table>
    {% for member in member_list %}
      <tr class="{% cycle 'row1' 'row2' %}">
@@ -66,8 +65,7 @@
           | <a href="{% url invitations_contacts %}">{% trans "Your contacts" %}</a>
          </p>
      {% else %}
-     <p><a href="{% url subscription_list %}">Upgrade your plan</a> to add
-       more users!</p>
+     <p><a href="{% url subscription_list %}">{% trans "Upgrade your plan" %}</a> {% trans "to add more users" %}!</p>
      {% endif %}
   {% endwith %}
 {% endblock %}

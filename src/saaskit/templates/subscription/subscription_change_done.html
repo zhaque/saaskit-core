@@ -1,6 +1,6 @@
 {% extends "main.html" %}
-
-{% block title %}Subscription upgrade confirmed.{% endblock %} 
+{% load i18n %}
+{% block title %}{% trans "Subscription upgrade confirmed." %}{% endblock %} 
 {% block body %}
-<p>Subscription change OK, should be processed in a minute.</p>
+<p>{% trans "Subscription change OK, should be processed in a minute." %}</p>
 {% endblock %}

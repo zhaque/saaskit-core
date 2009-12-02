@@ -1,1 +1,1 @@
-Thank you to join {{ site }}.
+{% load i18n%}{% blocktrans %}Thank you to join {{ site }}.{% endblocktrans %}

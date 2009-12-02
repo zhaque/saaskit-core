@@ -1,17 +1,19 @@
 {% load i18n %}
 {% if current %}
   {% if not current.active %}
-    <p><strong>You have cancelled subscription to this plan.</strong>
-    You may still resubscribe if you wish!</p>
+    <p><strong>{% trans "You have cancelled subscription to this plan." %}</strong>
+    {% trans "You may still resubscribe if you wish!" %}</p>
     {{ form.sandbox }}
   {% else %}
-    <p><strong>You are subscribed to this plan.</strong>
-    You may <a href="{{ cancel_url }}" > <img src="{{ image_url }}"></a> if you
-    wish.</p>
+    <p>{% blocktrans %}
+      <strong>You are subscribed to this plan.</strong>
+      You may <a href="{{ cancel_url }}" > <img src="{{ image_url }}"></a> if you
+      wish.
+    {% endblocktrans %}</p>
   {% endif %}
 {% else %}
   {% if change_denied_reasons %}
-    <p><strong>You cannot switch to this plan.</strong> Reasons:
+    <p><strong>{% trans "You cannot switch to this plan." %}</strong> {% trans "Reasons" %}:
     <ul>
     {% for reason in change_denied_reasons %}
       <li>{{ reason }}</li>

@@ -1,6 +1,6 @@
 {% extends "main.html" %}
-
-{% block title %} Pricing and Plans {% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Pricing and Plans" %}{% endblock %}
 {% block fake-header %}
 {% include "subscription/subscription_list_fragment.html" %}
 {% endblock %} 
@@ -11,8 +11,8 @@
                     <div class="block">
                         <div class="bd">
                         
-                        <h1>Questions & Answers</h1>
-                        <br>
+                        <h1>{% trans "Questions & Answers" %}</h1>
+                        <br>{% blocktrans %}
                                                 <p class="questions">How does the free trial work?</p>
 
                                                 <p>After signing up and completing your payment details, you won't be charged anything for 21 days. After 21 days your paid
@@ -39,6 +39,7 @@ se Project.</p>
                                                 <p class="questions">I have more questions!</p>
 
                                                 <p>Get in touch with us at support@project.com and we'll be happy to answer additional questions about the service!</p>
+                              {% endblocktrans %}
                                                 </div>
                     </div>
                     <!--End of info block -->
@@ -84,8 +85,3 @@ Rackspace experts in enterprise-level web hosting</p>
         </div>
 
 {% endblock %}
-
-
-
-
-

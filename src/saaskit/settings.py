@@ -260,6 +260,15 @@ MUACCOUNTS_THEMES = (
         )),
     )
 
+ugettext = lambda s: s
+
+LANGUAGES = (
+    ('en', ugettext('English')),
+    ('de', ugettext('German')),
+    ('fr', ugettext('French')),
+    ('ru', ugettext('Russian')),
+)
+
 # Prepare CSS files for configured color schemes
 for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
      COMPRESS_CSS[codename] = {

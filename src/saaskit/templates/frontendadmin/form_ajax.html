@@ -1,8 +1,7 @@
-{% load i18n uni_form %}
+{% load i18n uni_form_tags %}
 {% if form.helper %}
   {% uni_form form form.helper %}
 {% else %}
-  {% load uni_form i18n %}
   <form class="uniForm" action="" method="post">
     <fieldset class="inlineLabels">
       {{ form|as_uni_form }}

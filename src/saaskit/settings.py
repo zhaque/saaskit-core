@@ -71,7 +71,6 @@ MIDDLEWARE_CLASSES = (
     'django_authopenid.middleware.OpenIDMiddleware',
     'subscription.middleware.SubscriptionMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'pagination.middleware.PaginationMiddleware',
     'sso.middleware.SingleSignOnMiddleware',
     'muaccount_content.middleware.FlatpageFallbackMiddleware',

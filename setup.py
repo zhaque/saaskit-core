@@ -25,7 +25,7 @@ install_requires = [
         'django-rosetta',
         'django-tagging',
         'django-templatesadmin',
-        'django-uni-form',
+        'django-uni-form>=0.7.0',
         'django-authopenid',
         'django-notification==0.1.4',
         'app_media',

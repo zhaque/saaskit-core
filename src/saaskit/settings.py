@@ -114,6 +114,7 @@ INSTALLED_APPS = (
     'frontendadmin',
     'django.contrib.flatpages',
     'django_counter',
+    'rosetta',
     
     # own
     'muaccounts',

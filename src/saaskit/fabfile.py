@@ -46,7 +46,7 @@ def install_packages():
     
     #Because if high-possibility of hanging up by system when too much packages install. 
     sudo('apt-get -y install build-essential gcc libc6-dev', pty=True)
-    sudo('apt-get -y install wget nmap unzip wget csstidy ant curl python-dev python-egenix-mxdatetime memcached tar mc libmemcache-dev', pty=True)
+    sudo('apt-get -y install wget nmap unzip wget csstidy ant curl python-dev python-egenix-mxdatetime memcached tar mc libmemcache-dev gettext', pty=True)
     
 def install_mail_transfer_agent():
     sudo('apt-get -y install sendmail;', pty=True)

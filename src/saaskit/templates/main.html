@@ -1,7 +1,7 @@
 {% load compressed %}
 {% load i18n class_if_reverse %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
   <head>
     <title>{% block title %}{% trans "Home : SaaS Kit" %}{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >

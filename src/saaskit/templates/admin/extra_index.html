@@ -1,0 +1,9 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+{% block content %}
+  <div class="module">
+    <a href="{% url rosetta-home %}">{% trans "Rosetta" %}</a> |
+    <a href="{% url templatesadmin-overview %}">{% trans "Templates admin" %}</a>
+  </div>
+  {{ block.super }}
+{% endblock %}

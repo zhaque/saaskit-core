@@ -40,7 +40,7 @@ install_requires = [
         'django-contact-form',
         'django-pagination',
         'django-tinymce',
-        'django-flag',
+        'django-flags',
         'South',
         'html5lib',
         'python-dateutil',

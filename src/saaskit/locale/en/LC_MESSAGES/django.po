@@ -7,14 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-03 10:13+0000\n"
-"PO-Revision-Date: 2009-12-03 15:41\n"
+"POT-Creation-Date: 2009-12-03 15:34+0000\n"
+"PO-Revision-Date: 2009-12-03 15:36\n"
 "Last-Translator: <admin@example.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.5.1\n"
+
+#: settings.py:265
+msgid "English"
+msgstr ""
+
+#: settings.py:266
+msgid "German"
+msgstr ""
+
+#: settings.py:267
+msgid "French"
+msgstr ""
+
+#: settings.py:268
+msgid "Russian"
+msgstr ""
 
 #: apps/muaccount_adsense/forms.py:17
 msgid "Submit"
@@ -87,7 +103,7 @@ msgstr ""
 
 #: apps/saaskit_profile/management.py:11
 msgid "Welcome to CrowdSense Starter Kit!"
-msgstr ""
+msgstr "Welcome to CrowdSense Starter Kit!"
 
 #: apps/saaskit_profile/management.py:11
 msgid "you have successfully registered"
@@ -163,7 +179,7 @@ msgstr ""
 
 #: templates/index.html:3
 msgid "Welcome to SaaSkit"
-msgstr ""
+msgstr "Welcome to SaaSkit"
 
 #: templates/index.html:8
 msgid "Build SaaS Webapp Fast!"
@@ -215,7 +231,7 @@ msgstr ""
 
 #: templates/main.html:26
 msgid "Welcome"
-msgstr "Willkommen"
+msgstr "Welcome"
 
 #: templates/main.html:27
 msgid "dashboard"
@@ -242,39 +258,39 @@ msgstr ""
 msgid "Sign-up"
 msgstr ""
 
-#: templates/main.html:46 templates/main.html.py:77
+#: templates/main.html:56 templates/main.html.py:87
 #: templates/contact_form/contact_form.html:3
 #: templates/contact_form/contact_form.html:9
 #: templates/paypal/shortcut.html:26
 msgid "Contact us"
 msgstr ""
 
-#: templates/main.html:47
+#: templates/main.html:57
 msgid "About Us"
 msgstr ""
 
-#: templates/main.html:48 templates/main.html.py:75 templates/support.html:3
+#: templates/main.html:58 templates/main.html.py:85 templates/support.html:3
 #: templates/support.html.py:8
 msgid "Support"
 msgstr ""
 
-#: templates/main.html:50
+#: templates/main.html:60
 msgid "Plans and Pricing"
 msgstr ""
 
-#: templates/main.html:52
+#: templates/main.html:62
 msgid "My Sites"
 msgstr ""
 
-#: templates/main.html:54
+#: templates/main.html:64
 msgid "SaaSkit"
 msgstr ""
 
-#: templates/main.html:76
+#: templates/main.html:86
 msgid "About"
 msgstr ""
 
-#: templates/main.html:81
+#: templates/main.html:91
 msgid "Privacy & Copyright"
 msgstr ""
 
@@ -787,7 +803,7 @@ msgstr ""
 #: templates/notification/welcome/full.html:1
 #: templates/notification/welcome/notice.html:1
 msgid "Welcome to the CrowdSense Project Kit example project!"
-msgstr ""
+msgstr "Welcome to the CrowdSense Project Kit example project!"
 
 #: templates/paypal/shortcut.html:4
 msgid "You have cancelled subscription to this plan."

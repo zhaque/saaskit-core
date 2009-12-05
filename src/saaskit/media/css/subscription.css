@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* Subscription */
+
+table.plans {
+  width: auto;
+}
+
+table.plans td.current {
+  background-color: yellow !important;
+}
+
+table.plans td.unsubscribed {
+  background-color: #E5E5E5 !important;
+}

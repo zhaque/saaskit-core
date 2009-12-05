@@ -1,0 +1,71 @@
+/* This is the bare minimum needed to create your own theme.
+   In this example, all we're doing is overriding the default
+   color scheme with our own. In the real world, you'd probably
+   want to do more complex operations. */
+
+/* *** Skin Colour Scheme *** */
+
+/* Generics */
+.yui-skin-yuiapp a { color:#7A1818; text-decoration: none; }
+.yui-skin-yuiapp abbr,
+.yui-skin-yuiapp acronym { border-color: #000; }
+
+html, 
+body.yui-skin-yuiapp { background-color:#F0F0EE; color:#222; }
+
+/* *** Header *** */
+.yui-skin-yuiapp .yuiapp-hd { background-color:#7A1818; }
+.yui-skin-yuiapp .yuiapp-hd h1 { color:#fff; }
+.yui-skin-yuiapp .yuiapp-hd .yui-g { background-color:#000; }
+.yui-skin-yuiapp .yuiapp-hd li a { color:#fff; }
+.yui-skin-yuiapp .yuiapp-hd .yui-u.first li.yuiapp-nav-active a { background-color:#F0F0EE; color:#262626; }
+
+/* Generics */
+.yui-skin-yuiapp .yuiapp-bd h2 { } /* First, attempt to set font color using html element above to influence this element */
+.yui-skin-yuiapp .yuiapp-bd h3 { background-color:#7A1818; border-color:#262626; color: #fff; } 
+.yui-skin-yuiapp .yuiapp-bd h4 { color: #7A1818; }
+.yui-skin-yuiapp .yuiapp-bd h5 { color: #7A1818; }
+.yui-skin-yuiapp .yuiapp-bd { background-color:#fff; color: #262626; }
+
+/* Extend block with tabs */
+.yui-skin-yuiapp .yuiapp-bd .yuiapp-tabs { background-color: #7A1818; border-color:#262626; }
+.yui-skin-yuiapp .yuiapp-bd .yuiapp-tabs ul li a { color:#fff; }
+.yui-skin-yuiapp .yuiapp-bd .yuiapp-tabs ul li a:hover { background-color:#470E0E; color: #fff; }
+.yui-skin-yuiapp .yuiapp-bd .yuiapp-tabs ul li.yuiapp-tabs-active a { background-color:#262626 !important; color:#fff; } /* important! fixes IE cascade issue */
+
+/* Extend tab block with spaced tabs */
+.yui-skin-yuiapp .yuiapp-bd .yuiapp-tabs.yuiapp-spaces ul li { background-color:#7A1818; }
+
+/* Style the horizontal rules inside .block */
+.yui-skin-yuiapp .yuiapp-bd hr { background-color:#967E59; }
+
+/* Tables */
+.yui-skin-yuiapp .yuiapp-bd table thead { background-color:#262626; color:#fff; font-weight:bold; }
+.yui-skin-yuiapp .yuiapp-bd table thead a { color:#fff; }
+
+/* Pager control*/
+.yui-skin-yuiapp .yuiapp-bd ul.yuiapp-pager li a { border-color:#ccc; color:#333; }
+.yui-skin-yuiapp .yuiapp-bd ul.yuiapp-pager li a:hover { background-color:#262626; color:#fff; }
+.yui-skin-yuiapp .yuiapp-bd ul.yuiapp-pager li.yuiapp-pager-active a { background-color:#262626; color:#fff; }
+.yui-skin-yuiapp .yuiapp-bd ul.yuiapp-pager li.yuiapp-pager-active a:hover { background-color:#262626; color:#fff; }
+
+/* Forms */
+.yui-skin-yuiapp .yuiapp-bd form label span { color:#f00; }
+.yui-skin-yuiapp .yuiapp-bd form span.info { color:#ccc; }
+.yui-skin-yuiapp .yuiapp-bd form .text { border-color:#aaa; }
+
+/* Messages */
+.yui-skin-yuiapp .yuiapp-bd .error { background-color:#fdd; border-color:#fbb; }
+.yui-skin-yuiapp .yuiapp-bd .warning { background-color:#ffc; border-color:#fffaaa; }
+.yui-skin-yuiapp .yuiapp-bd .notice { background-color:#bbffb6; border-color:#1fdf00; }
+
+/* Lists */
+.yui-skin-yuiapp .yuiapp-bd .yuiapp-sidebar ul li a { color:#000; }
+.yui-skin-yuiapp .yuiapp-bd .yuiapp-sidebar ul li { border-color: #f0f0ee; }
+
+/* Footer */
+.yui-skin-yuiapp .yuiapp-ft { background-color:#F0F0EE; color:#262626; }
+
+/* Custom Classes */
+.yui-skin-yuiapp .gray { color:#999; }
+.yui-skin-yuiapp .highlight { background-color:#ffffcc; }

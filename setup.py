@@ -85,7 +85,7 @@ dependency_links = [
         'http://pypi.saaskit.org/django-notification/',
         'http://pypi.saaskit.org/django-paypal/',
         'http://pypi.saaskit.org/django-pipes/',
-        'http://pypi.saaskit.org/django-prepaid/',
+        'http://pypi.saaskit.org/django-paypal-api/',
         'http://pypi.saaskit.org/django-profiles/',
         'http://pypi.saaskit.org/django-quotas/',
         'http://pypi.saaskit.org/django-registration/',

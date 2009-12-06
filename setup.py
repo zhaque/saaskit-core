@@ -31,7 +31,6 @@ install_requires = [
         'app_media',
         'django-ab',
         'django-paypal',
-        'django-prepaid',
         'django-quotas',
         'django-pipes',
         'django-sso==0.1.1',
@@ -62,6 +61,7 @@ install_requires = [
         'saaskit-main-site',
         'saaskit-user-site',
         'saaskit-subscription',
+        'saaskit-prepaid',
 ]
 
 extras_require = dict(

@@ -22,3 +22,5 @@ ADMIN_MEDIA_PREFIX = 'http://assets.{{ host_string }}/admin/'
 
 DEFAULT_FROM_EMAIL = 'support@{{ host_string }}'
 CONTACT_EMAIL = DEFAULT_FROM_EMAIL
+
+ROOT_URL = MUACCOUNTS_DEFAULT_URL

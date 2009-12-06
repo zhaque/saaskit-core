@@ -14,23 +14,22 @@
     {% endblock %}
 </head>
 <body class="yui-skin-yuiapp rounded">
-	<div id="doc3" class="yui-t6">
+	<div id="doc4" class="yui-t6">
 
 		<div id="hd" class="yuiapp-hd">
-		  <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" /></a>
+		  <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" align="top"/></a>
 			<div class="yui-g">
 		      <div class="yuiapp-nav">
 		        <div class="yui-u first">
 		          <ul>
-			        <li {% class_if_reverse /$ active %}><a href="/">{% trans "SaaSkit" %}</a></li>
-        				  {% if not user.is_authenticated %}			
-				    <li{% class_if_reverse subscription_list active %}><a href="{% url subscription_list %}">{% trans "Plans and Pricing" %}</a></li>
-				          {% else %}
-			        <li{% class_if_reverse muaccounts_listing active %}><a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a></li>
+			        <li{% class_if_reverse /$ yuiapp-nav-active %}><a href="/">{% trans "SaaSkit" %}</a></li>
+        				  {% if user.is_authenticated %}
+                    <li{% class_if_reverse muaccounts_listing yuiapp-nav-active %}><a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a></li>		
+				           {% else %}
+				    <li{% class_if_reverse subscription_list yuiapp-nav-active %}><a href="{% url subscription_list %}">{% trans "Plans & Pricing" %}</a></li>
 			             {% endif %}
-				    <li{% class_if_reverse /support/ active %}><a href="/support">{% trans "Support" %}</a></li>
-				    <li{% class_if_reverse /about/ active %}><a href="/about">{% trans "About Us" %}</a></li>								
-				    <li{% class_if_reverse contact_form active %}><a href="{% url contact_form %}">{% trans "Contact us" %}</a></li>
+				    <li{% class_if_reverse /support/ yuiapp-nav-active %}><a href="/support/">{% trans "Support" %}</a></li>
+				    <li{% class_if_reverse /about/ yuiapp-nav-active %}><a href="/about/">{% trans "About Us" %}</a></li>								
 			      </ul>
 			    </div>
 		        <div class="yui-u">
@@ -50,17 +49,18 @@
 		                  {% else %}
 		                  <li><a href="{% url user_signin %}">{% trans "Sign-up" %}</a></li>
 		                  {% endif %}
-                          <li>
-		                  <form action="{% url django.views.i18n.set_language %}" method="post">
-		                  <select name="language">
-		                      {% for lang in LANGUAGES %}
-		                      <option value="{{ lang.0 }}" {% ifequal request.LANGUAGE_CODE lang.0 %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
-		                      {% endfor %}
-		                  </select>
-		                  <input type="submit" value="Go" />
-		                  </form>
-		                  </li>
-		                </ul> 
+                          <li><a href="{% url contact_form %}">{% trans "Contact us" %}</a></li>
+	                      <li>
+			                <form action="{% url django.views.i18n.set_language %}" method="post">
+			                  <select name="language">
+			                    {% for lang in LANGUAGES %}
+			                      <option value="{{ lang.0 }}" {% ifequal request.LANGUAGE_CODE lang.0 %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+			                    {% endfor %}
+			                  </select>
+			                <input type="submit" value="Go" />
+			              </form>
+			            </li>
+		              </ul> 
 		          </div>
 		        </div>
 		      </div>
@@ -75,33 +75,41 @@
 
 	          <div class="yui-g">
 	            <div class="teaser">
-		          {% block body %}{% endblock %}
+		          {% block teaser %}{% endblock %}
                 </div>
+              </div>
+
+	          <div class="yui-g">
+		          {% block body %}{% endblock %}
               </div>
 
             </div>
 
           </div>
 
-	      <div class="yui-b">
+	     <div class="yui-b">
 
-		    <div class="yuiapp-sidebar">
-
-		      <div class="yui-g">
-	            <h3>Sidebar Block  &larr; This is an H3 or H4</h3>
-	            <p>This sidebar block uses the exact same markup as the main body blocks. This lets you move them around easily - as they automatically resize to fit the available space.</p>
-	        </div>
+		   <div class="yuiapp-sidebar">
 
 	          <div class="yui-g">
-	            <h4>About yui-app-theme</h4>
-	            <p>This project is based on the great idea and design work done by the <a href="http://github.com/pilu/web-app-theme/tree/master">web-app-theme</a> project on GitHub.</p>
-	            <p>We loved the concept and simplicity of their web app template but needed it to be built with <a href="http://developer.yahoo.com/yui/">YUI</a> instead. So we decided to re-implement it ourselves.</p>
-	            <p>The result is a clean, semantically structured layout built using <a href="http://developer.yahoo.com/yui/grids/">YUI Grids</a>. We hope you find it useful.</p>
+		          {% block teaserbar %}{% endblock %}
 	          </div>
+	
+		      <div class="yui-g">
+				{% block sidebar %}
 
-	        </div>
+				  <h2>{% trans "How do I" %}</h2>
+				  <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit" %}</p>
+				
+				  <p>{% trans "Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc." %}</p>
 
-	      </div>
+				{% endblock %}
+
+              </div>
+			
+	       </div>
+
+	     </div>
 
         </div>
 

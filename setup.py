@@ -39,6 +39,7 @@ install_requires = [
         'django-contact-form',
         'django-pagination',
         'django-tinymce',
+        'django-paypal-api',
         'South',
         'html5lib',
         'python-dateutil',

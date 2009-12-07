@@ -1,5 +1,5 @@
 {% extends "ref_base.html" %}
-{% load i18n %}
+{% load i18n uni_form_tags %}
 
 {% block title %}{% trans "Sign in" %}{% endblock %}
 
@@ -9,61 +9,42 @@
 <br />
 	<p class="warning">{{ msg }}</p>
 {% endif %}
-{% if form2.errors %}
-<div class="errors"><p>{% trans "Please correct errors below:" %}<br />
-	{% if form2.username.errors %} 
-		<span class="error">{{ form2.username.errors|join:", " }}</span>
-	{% endif %}
-	{% if form2.password.errors %} 
-		<span class="error">{{ form2.password.errors|join:", " }}</span>
-	{% endif %}
-</p></div>
-<br>
-{% endif %}
 
-{% if form1.errors %}
-<div class="errors">
-    <p><span class="error">{{ form1.openid_url.errors|join:", " }}</span></p>
-</div>
-<br>
-{% endif %}
 <h2>{% trans "Make a choice" %}:</h2>
 <p> 
   <a href="{% url registration_register %}?redirect_to={{ next }}&muaccount={{ request.REQUEST.muaccount }}">{% trans "Register" %}</a>
   | <a href="{% url auth_password_reset %}">{% trans "Reset password" %}</a>
 </p>
 <div class="login">
-
-    <form id="auth_form" name="auth_form" action="{% url user_signin %}" method="post">
+    
+  <form class="uniForm" action="{% url user_signin %}" method="post">
+    <fieldset class="inlineLabels">
+      <legend>{% trans "Sign In Using Your Account ID" %}</legend>
+      {{ form2|as_uni_form }}
+      <div class="buttonHolder">
+        <input type="submit" name="blogin" value="{% trans 'Sign in' %}" />
+      </div>
+    </fieldset>
     <input type="hidden" name="next" value="{{ next }}" />
     <input type="hidden" name="muaccount" value="{{ request.REQUEST.muaccount }}" />
-	<fieldset>
-	    
-	    
-		<legend>{% trans "Sign In Using Your Account ID" %}</legend>
-		<div class="form-row"><label for="id_username">{% trans "Username:" %}</label><br />{{ form2.username }}</div>
-		<div class="form-row"><label for="id_password">{% trans "Password" %}</label><br />{{ form2.password }}</div>
-		
-        <div class="submit-row"><input type="submit" name="blogin" value="{% trans "Sign in" %}"> </div>
-	</fieldset>	
-</form>
-
-<form id="openid_form" name="openid_form" action="{% url user_signin %}" method="post">
-    <input type="hidden" name="action" value="verify" />
-    <input type="hidden" name="next" value="{{ next }}" />
-    <input type="hidden" name="muaccount" value="{{ request.REQUEST.muaccount }}" />
-	<fieldset>
-		<legend>{% trans "Sign In Using Your OpenID URL" %}</legend>
-		<div id="openid_choice">
-    		<p>{% trans "Please click your account provider:"%}</p>
-    		<div id="openid_btns"></div>
-    	</div>
-    	    <div id="openid_input_area">
-                <label for="id_openid_url">{% trans "OpenId URL :" %}</label>{{ form1.openid_url }}
-                <input name="openid_submit" type="submit" value="{% trans "Sign in with OpenID" %}">
-            </div>
-	</fieldset>
-</form>	
+  </form>
+    
+  <form id="openid_form" name="openid_form" action="{% url user_signin %}" method="post">
+      <input type="hidden" name="action" value="verify" />
+      <input type="hidden" name="next" value="{{ next }}" />
+      <input type="hidden" name="muaccount" value="{{ request.REQUEST.muaccount }}" />
+  	<fieldset>
+  		<legend>{% trans "Sign In Using Your OpenID URL" %}</legend>
+  		  <div id="openid_choice">
+      		<p>{% trans "Please click your account provider:"%}</p>
+      		<div id="openid_btns"></div>
+      	</div>
+  	    <div id="openid_input_area">
+          <label for="id_openid_url">{% trans "OpenId URL :" %}</label>{{ form1.openid_url }}
+          <input name="openid_submit" type="submit" value="{% trans "Sign in with OpenID" %}">
+        </div>
+  	</fieldset>
+  </form>	
 </div>	
 {% endblock %}
 

@@ -252,6 +252,8 @@ MUACCOUNTS_THEMES = (
         )),
     )
 
+ROOT_URL = MUACCOUNTS_DEFAULT_URL
+
 ugettext = lambda s: s
 
 LANGUAGES = (

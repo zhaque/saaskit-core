@@ -31,6 +31,7 @@
                   <li><a href="{% url profiles_create_profile %}">{% trans "profile" %}</a></li> |
                   {% endif %}
                   <li><a href="{% url subscription_list %}">{% trans "subscription" %}</a></li> |
+                  <li><a href="{% url prepaid-index %}">{% trans "points" %}</a></li> |
                   <li><a href="{% url auth_password_change %}">{% trans "password" %}</a></li> |
                   <li><a href="{% url user_signout %}?next=/">{% blocktrans %}logout [{{user}}]{% endblocktrans %}</a></li>
                   {% else %}

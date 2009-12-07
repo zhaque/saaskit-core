@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% block base_head %}
+<style type="text/css">
+#account-activity {
+  width:500px;
+  border:1px solid #8D8D8D;
+}
+#account-activity th {
+  font-weight:bold;
+  padding:10px;
+  border-bottom:1px solid #B1B1B1;
+}
+#account-activity td {
+  white-space: nowrap;
+  padding:5px;
+  text-align:center;
+}
+#account-activity td:first-child {
+  width:100%;
+  text-align:left;
+}
+#account-activity .credit {
+  color: #4D8B3E;
+}
+#account-activity .debit {
+  color: #8B453E;
+}
+#account-activity .time {
+  color: #B1B1B1;
+}
+</style>
+{% endblock %}
+
+{% load i18n %}
+{% block title %}{% trans "Dashboard" %}{% endblock %} 
+{% block body %}
+
+{% include "prepaid/get_points.html" %}
+
+{% include "prepaid/withdraw_points.html" %}
+
+{% include "prepaid/account_activity.html" %}
+
+{% endblock %}

@@ -3,7 +3,6 @@
 {% block title %}Your mu accounts{% endblock %} 
 
 {% block body %}
-<div id="yui-main"><div class="yui-b"><div class="yui-g">
   <h2>{% trans "Manage mu accounts" %}</h2>
   {% with mua_list|length as mua_count %}
     {% if mua_count < user.quotas.muaccounts %}
@@ -29,5 +28,4 @@
   {% else %}
   <p>{% trans "You have no mu accounts." %}</p>
   {% endif %}
-</div></div></div>
 {% endblock %}

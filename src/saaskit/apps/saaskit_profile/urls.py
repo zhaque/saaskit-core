@@ -19,7 +19,9 @@ urlpatterns = patterns('',
         'template_name': 'profiles/profile_detail_page.html'
     }, name='profiles_profile_detail'),
 
-    url(r'^$', views.profile_list, {
-        'public_profile_field': 'is_public'
-    }, name='profiles_profile_list'),
+#===============================================================================
+#    url(r'^$', views.profile_list, {
+#        'public_profile_field': 'is_public'
+#    }, name='profiles_profile_list'),
+#===============================================================================
 )

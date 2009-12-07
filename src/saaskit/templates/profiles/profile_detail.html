@@ -1,17 +1,21 @@
-{% load thumbnail %}
-<h3>{{ profile.real_name }}</h3>
-{% if profile.about %}
-<p>{{ profile.about }}</p>
-{% endif %}
-
-{% if profile.website %}
-<p>{{ profile.website }}</p>
-{% endif %}
-
-{% if profile.company_url %}
-<p>{{ profile.company_url }}</p>
-{% endif %}
-
-{% if profile.location %}
-<p>{{profile.location}}</p>
+{% load i18n thumbnail %}
+{% if profile %}
+  <h3>{{ profile.real_name }}</h3>
+  {% if profile.about %}
+  <p>{{ profile.about }}</p>
+  {% endif %}
+  
+  {% if profile.website %}
+  <p>{{ profile.website }}</p>
+  {% endif %}
+  
+  {% if profile.company_url %}
+  <p>{{ profile.company_url }}</p>
+  {% endif %}
+  
+  {% if profile.location %}
+  <p>{{profile.location}}</p>
+  {% endif %}
+{% else %}
+  {% trans "User have made his profile private." %}
 {% endif %}

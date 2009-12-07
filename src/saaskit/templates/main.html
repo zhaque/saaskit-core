@@ -36,7 +36,7 @@
 		          <div class="yuiapp-nav-rhs">
 		                <ul>
 		                  {% if user.is_authenticated %}
-		                  <li{% class_if_reverse profiles_profile_list active %}>{% trans "Welcome" %}, <a href="{% url profiles_profile_list %}">{{user}}</a></li> 
+		                  <li>{% trans "Welcome" %}, <span>{{user}}</span></li> 
 		                  <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">{% trans "dashboard" %}</a></li> 
 		                  {% if user.get_profile %}
 		                  <li><a href="{% url profiles_edit_profile %}">{% trans "profile" %}</a></li>

@@ -1,8 +1,8 @@
-{% extends "main.html" %}
+{% extends "account/base.html" %}
 {% load i18n %}
 
 {% block title %}{% trans "Associate OpenID" %}{% endblock %} 
-{% block body %}
+{% block content %}
 <h2>{% trans "OpenID associations" %}</h2>
 {% if msg %}
 	<div class="errors"><p>{{ msg }}</p></div>

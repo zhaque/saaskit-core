@@ -1,24 +1,16 @@
 {% extends "main.html" %}
-{% block title %}{% trans "Manage your account" %}{% endblock %} 
 {% load i18n %}
+{% block title %}{% trans "Manage your account" %}{% endblock %} 
 {% block body %}
-<div id="yui-main"><div class="yui-b"><div class="yui-g">
-  <div class="block">
-    <div class="bd">
-      <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
-      {% block content %}{% endblock %}
-    </div>
+  <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
+  {% block content %}{% endblock %}
+{% endblock %}
+{% block sidebar %}
+  <div>
+    <h2><a href="{% url account_dashboard %}">{% trans "Dashboard" %}</a></h2>
+    <h2><a href="{% url profiles_edit_profile %}">{% trans "Profile" %}</a></h2>
+    <h2><a href ="{% url auth_password_change %}">{% trans "Password Settings" %}</a></h2>
+    <h2><a href="{% url subscription_list %}">{% trans "Plans and Payments" %}</a></h2>
+    <h2><a href="{% url prepaid-index %}">{% trans "Points" %}</a></h2>
   </div>
-</div></div></div>
-<div id="sidebar" class="yui-b">
-  <div class="block">
-      <div class="bd">
-         <h2><a href="{% url account_dashboard %}">{% trans "Dashboard" %}</a></h2>
-         <h2><a href="{% url profiles_edit_profile %}">{% trans "Profile" %}</a></h2>
-         <h2><a href ="{% url auth_password_change %}">{% trans "Password Settings" %}</a></h2>
-         <h2><a href="{% url subscription_list %}">{% trans "Plans and Payments" %}</a></h2>
-         <h2><a href="{% url invoice_listing %}">{% trans "Invoice History" %}</a></h2>
-      </div>
-    </div>
-</div>
 {% endblock %}

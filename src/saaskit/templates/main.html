@@ -37,30 +37,22 @@
 		                <ul>
 		                  {% if user.is_authenticated %}
 		                  <li>{% trans "Welcome" %}, <span>{{user}}</span></li> 
-		                  <li{% class_if_reverse notification_notices active %}><a href="{% url notification_notices %}">{% trans "dashboard" %}</a></li> 
-		                  {% if user.get_profile %}
-		                  <li><a href="{% url profiles_edit_profile %}">{% trans "profile" %}</a></li>
+		                  <li><a href="{% url notification_notices %}">{% trans "Account" %}</a></li> 
+		                  <li><a href="{% url user_signout %}?next=/">{% trans 'Logout' %}</a></li>
 		                  {% else %}
-		                  <li><a href="{% url profiles_create_profile %}">{% trans "profile" %}</a></li>
+		                  <li><a href="{% url user_signin %}">{% trans "Log in or Sign up" %}</a></li>
 		                  {% endif %}
-		                  <li><a href="{% url subscription_list %}">{% trans "subscription" %}</a></li>
-                      <li><a href="{% url prepaid-index %}">{% trans "points" %}</a></li> |
-		                  <li><a href="{% url auth_password_change %}">{% trans "password" %}</a></li>
-		                  <li><a href="{% url user_signout %}?next=/">{% blocktrans %}logout [{{user}}]{% endblocktrans %}</a></li>
-		                  {% else %}
-		                  <li><a href="{% url user_signin %}">{% trans "Sign-up" %}</a></li>
-		                  {% endif %}
-                          <li><a href="{% url contact_form %}">{% trans "Contact us" %}</a></li>
-	                      <li>
-			                <form action="{% url django.views.i18n.set_language %}" method="post">
-			                  <select name="language">
-			                    {% for lang in LANGUAGES %}
-			                      <option value="{{ lang.0 }}" {% ifequal request.LANGUAGE_CODE lang.0 %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
-			                    {% endfor %}
-			                  </select>
-			                <input type="submit" value="Go" />
-			              </form>
-			            </li>
+                      <li>
+                        <form action="{% url django.views.i18n.set_language %}" method="post">
+                          <select name="language">
+                            {% for lang in LANGUAGES %}
+                              <option value="{{ lang.0 }}" {% ifequal request.LANGUAGE_CODE lang.0 %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+                            {% endfor %}
+                          </select>
+                        <input type="submit" value="Go" />
+                        </form>
+                      </li>
+                      <li><a href="{% url contact_form %}">{% trans "Contact us" %}</a></li>
 		              </ul> 
 		          </div>
 		        </div>

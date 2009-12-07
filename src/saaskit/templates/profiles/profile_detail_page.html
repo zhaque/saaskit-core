@@ -1,7 +1,6 @@
-{% extends "main.html" %}
+{% extends "account/base.html" %}
 {% load i18n %}
 {% block title %}{% trans "Profile" %}{% endblock %} 
-{% block body %}
-<h2>{% trans "Profile" %}</h2>
+{% block content %}
 {% include "profiles/profile_detail.html" %}
 {% endblock %}

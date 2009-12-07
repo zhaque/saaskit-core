@@ -1,4 +1,6 @@
-{% load credits %}
+{% load credits pagination_tags %}
+{% if request.user.prepaid_transactions.count %}
+{% autopaginate request.user.prepaid_transactions.all as transactions 10 %}
 <table id="account-activity">
 	<thead>
 		<th>Activity</th>
@@ -6,7 +8,7 @@
 		<th>Total</th>
 	</thead>
 	<tbody>
-		{% for t in request.user.prepaid_transactions.all %}
+		{% for t in transactions %}
 		<tr class="{% if t.credit %}credit{% else %}debit{% endif %}">
 			<td>{{ t.info|safe }}<span class="time"> {{ t.date|deltatime }}</span></td>
 			<td>{% if not t.credit %}-{% endif %}{{ t.amount }}</td>
@@ -15,3 +17,5 @@
 		{% endfor %}
 	</tbody>
 </table>
+{% paginate %}
+{% endif %}

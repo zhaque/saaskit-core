@@ -31,7 +31,6 @@ install_requires = [
         'app_media',
         'django-ab',
         'django-paypal',
-        'django-prepaid',
         'django-quotas',
         'django-pipes',
         'django-sso==0.1.1',
@@ -40,6 +39,7 @@ install_requires = [
         'django-contact-form',
         'django-pagination',
         'django-tinymce',
+        'django-paypal-api',
         'South',
         'html5lib',
         'python-dateutil',
@@ -62,6 +62,7 @@ install_requires = [
         'saaskit-main-site',
         'saaskit-user-site',
         'saaskit-subscription',
+        'saaskit-prepaid',
 ]
 
 extras_require = dict(
@@ -84,7 +85,7 @@ dependency_links = [
         'http://pypi.saaskit.org/django-notification/',
         'http://pypi.saaskit.org/django-paypal/',
         'http://pypi.saaskit.org/django-pipes/',
-        'http://pypi.saaskit.org/django-prepaid/',
+        'http://pypi.saaskit.org/django-paypal-api/',
         'http://pypi.saaskit.org/django-profiles/',
         'http://pypi.saaskit.org/django-quotas/',
         'http://pypi.saaskit.org/django-registration/',

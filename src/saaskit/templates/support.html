@@ -1,30 +1,21 @@
 {% extends "main.html" %}
 {% load i18n %}
 {% block title %}{% trans "Support" %}{% endblock %}
-{% block body %}
-   <div id="yui-main"><div class="yui-b"><div class="yui-g">
-     <div class="block">
-       <div class="bd">
+{% block teaser %}
+
          <h1>{% trans "Support" %}</h1>
-         {% blocktrans %}
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna.</p>
+         <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna." %}</p>
 
-          <p>Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc.</p>
-
-          <p>Praesent in accumsan neque. Vivamus suscipit sollicitudin orci, vitae ultricies risus condimentum id. Nullam viverra ante vitae tellus blandit eleifend. Suspendisse libero est, pellentesque id tristique vitae, convallis sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi elementum ante et libero bibendum eu mollis libero ultrices. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-
-          <p>Nascetur ridiculus mus. Morbi nisi ipsum, consequat et vulputate non, pretium condimentum dui. Praesent mi orci, tempus eu iaculis a, consectetur at ante. Proin vitae libero dui, quis tincidunt lorem. Suspendisse convallis, eros id mattis vestibulum, massa erat adipiscing ipsum, quis tempus purus risus non turpis. In euismod varius dictum. Proin at mi lorem. Nunc sed odio ut eros viverra rutrum vitae sed enim.</p>
-         {% endblocktrans %}
-       </div>
-     </div>
-   </div></div></div> 
-
-   <div id="sidebar" class="yui-b">
-     <div class="block"><div class="bd">
-       <h1>Help</h1>
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit</p> 
-       <p>Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc.</p>
-     </div></div>
-</div>
 {% endblock %}
+{% block body %}
+
+         <h2>{% trans "Support" %}</h2>
+         <p>{% trans "Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc." %}</p>
+         <p>{% trans "Praesent in accumsan neque. Vivamus suscipit sollicitudin orci, vitae ultricies risus condimentum id. Nullam viverra ante vitae tellus blandit eleifend. Suspendisse libero est, pellentesque id tristique vitae, convallis sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi elementum ante et libero bibendum eu mollis libero ultrices. Cum sociis natoque penatibus et magnis dis parturient montes." %}</p>
+         <p>{% trans "Nascetur ridiculus mus. Morbi nisi ipsum, consequat et vulputate non, pretium condimentum dui. Praesent mi orci, tempus eu iaculis a, consectetur at ante. Proin vitae libero dui, quis tincidunt lorem. Suspendisse convallis, eros id mattis vestibulum, massa erat adipiscing ipsum, quis tempus purus risus non turpis. In euismod varius dictum. Proin at mi lorem. Nunc sed odio ut eros viverra rutrum vitae sed enim." %}</p>
+       
+{% endblock %}
+
+
+
 

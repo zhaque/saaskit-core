@@ -1,55 +1,59 @@
 {% extends "main.html" %}
 {% load i18n %}
 {% block title %}{% trans "Welcome to SaaSkit" %}{% endblock %}
-{% block body %}
-   <div id="yui-main"><div class="yui-b"><div class="yui-g">
-     <div class="block">
-       <div class="bd">
-         <h1>{% trans "Build SaaS Webapp Fast!" %}</h1>
-         <p>{% trans "Choosing the best possible alternative? How fast can I reach my target market? Can I use my current payment gateway? Will it add to operational costs? Where will I find the most reliable support? If you find yourself always asking the above questions, then here is the right place for you." %}</p>
-         {% blocktrans %}
-         <b>Software as a Service Model</b><br/>
-         <ul>
-           <li> - We offer you a ready to use toolkit for all your basic needs with capabilities to provide on demand services to your/clients</li>
-           <li> - Open Source version of SaaSkit together with key components available for those who require greater customization!</li>
-           <li> - Bundled with a sample “Polls app” and tutorial to kick start your application</li>
-         </ul>
-         <br/><b>Use your choice of Business Model</b><br/>
-         <ul>
-           <li> - Use subscription, prepaid based model for your customers on periodic basis which may be: weekly/monthly/quarterly/yearly</li>
-           <li> - Make use of the Quota system to suit your subscription/business models better</li>
-           <li> - Use trial subscriptions to allow your customer to explore the possibilities with your unique apps</li>
-         </ul>
-         <br/><b>Let your Client Customize</b><br/>
-         <ul>
-           <li> - Let your clients selects their domain or sub domains to uniquely identify themselves</li>
-           <li> - Supports themes and layouts so your client can modify/integrate apps with their brand identity</li>
-           <li> - Support Google Adsense and other Ad networks as well as Google Analytics and Webmaster Tools</li>
-         </ul>
-         <br/><b>Limitless Flexibility</b><br/>
-         <ul>
-           <li> - Use an advanced content management system to adapt to your business/process requirements<</li>
-           <li> - Allow users to log in using their Google/yahoo/open id logins</li>
-           <li> - Support for exposing your application data to 3rd party developers</li>
-           <li> - Make your website go global by using built in internationalzation</li>
-         </ul>
-         <br/><b>Open Source</b><br/>
-         <ul>
-           <li> - Most important of all Open Source version of SaaSkit is available if you require higher level of customization</li>
-           <li> - Use the power of Django Web framework to easily deploy, develop and customize your apps</li>
-         </ul>
-         {% endblocktrans %}
-       </div>
-     </div>
-   </div></div></div> 
 
-   <div id="sidebar" class="yui-b">
-     <div class="block"><div class="bd">
-       <h1>{% trans "Help" %}</h1>
-       <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit" %}</p> 
-       <p>{% trans "Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc." %}</p>
-     </div></div>
-</div>
+{% block teaser %}
+
+        <h1>{% trans "Build SaaS Webapp Fast!" %}</h1>
+        <p>{% trans "Choosing the best possible alternative? How fast can I reach my target market? Can I use my current payment gateway? Will it add to operational costs? Where will I find the most reliable support? If you find yourself always asking the above questions, then here is the right place for you." %}</p>
+
+{% endblock %}
+
+{% block body %}
+{% blocktrans %}
+
+        <h3>Features & Benefits</h3>
+        <h5>Software as a Service Model</h5>
+        <ul>
+          <li> We offer you a ready to use toolkit for all your basic needs with capabilities to provide on demand services to your/clients</li>
+          <li> Open Source version of SaaSkit together with key components available for those who require greater customization!</li>
+          <li> Bundled with a sample “Polls app” and tutorial to kick start your application</li>
+        </ul>
+        <h5>Use your choice of Business Model</h5>
+        <ul>
+          <li> Use subscription, prepaid based model for your customers on periodic basis which may be: weekly/monthly/quarterly/yearly</li>
+          <li> Make use of the Quota system to suit your subscription/business models better</li>
+          <li> Use trial subscriptions to allow your customer to explore the possibilities with your unique apps</li>
+        </ul>
+        <h5>Let your Client Customize</h5>
+        <ul>
+          <li> Let your clients selects their domain or sub domains to uniquely identify themselves</li>
+          <li> Supports themes and layouts so your client can modify/integrate apps with their brand identity</li>
+          <li> Support Google Adsense and other Ad networks as well as Google Analytics and Webmaster Tools</li>
+        </ul>
+        <h5>Limitless Flexibility</h5>
+        <ul>
+          <li> Use an advanced content management system to adapt to your business/process requirements</li>
+          <li> Allow users to log in using their Google/yahoo/open id logins</li>
+          <li> Support for exposing your application data to 3rd party developers</li>
+          <li> Make your website go global by using built in internationalzation</li>
+        </ul>
+        <h5>Open Source</h5>
+        <ul>
+          <li> Most important of all Open Source version of SaaSkit is available if you require higher level of customization</li>
+          <li> Use the power of Django Web framework to easily deploy, develop and customize your apps</li>
+        </ul>
+
+{% endblocktrans %}
+{% endblock %}
+
+{% block sidebar %}
+
+		<h2>{% trans "WoW" %}</h2>
+       	<p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit" %}</p>
+ 
+       	<p>{% trans "Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc." %}</p>
+
 {% endblock %}
 
 

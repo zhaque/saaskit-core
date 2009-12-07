@@ -2,20 +2,10 @@
 {% load i18n %}
 {% block title %}{% trans "Internal error" %}{% endblock %}
 {% block body %}
-   <div id="yui-main"><div class="yui-b"><div class="yui-g">
-     <div class="block">
-       <div class="bd">
-         <h1>{% trans "Oops! internal error" %}</h1>
-         <p>{% blocktrans %}Please, go <a href="/">back</a> and don't do that anymore :){% endblocktrans %}</p>
-       </div>
-     </div>
-   </div></div></div> 
 
-   <div id="sidebar" class="yui-b">
-     <div class="block"><div class="bd">
-       <h1>{% trans "Help" %}</h1>
-       <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit" %}</p> 
-       <p>{% trans "Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc." %}</p>
-     </div></div>
-</div>
+    <center>
+    <h1>{% trans "Oops! internal error" %}</h1>
+    <h4>{% blocktrans %}Please, go <a href="/">back</a> and don't do that anymore :){% endblocktrans %}</h4>
+    </center>
+
 {% endblock %}

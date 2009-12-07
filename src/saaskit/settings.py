@@ -171,7 +171,7 @@ SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]5
 COMPRESS = False
 COMPRESS_VERSION = False
 
-_default_css_files = ('saaskit/yui-app-theme/yuiapp.css',
+_default_css_files = ('saaskit/yui-app-theme/css/yuiapp.css',
                       'saaskit/auth/css/openid.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
@@ -222,17 +222,11 @@ MUACCOUNTS_SUBDOMAIN_STOPWORDS = (r"^www$", r"^support$", r"^lab$", r"^labs$", r
 MUACCOUNTS_THEMES = (
     # color css
     ('color_scheme', 'Color scheme', (
-        ('aqua', 'Aqua', 'saaskit/yui-app-theme/aqua.css'),
-        ('green', 'Green', 'saaskit/yui-app-theme/green.css'),
-        ('purple', 'Purple', 'saaskit/yui-app-theme/purple.css'),
-        ('red', 'Red', 'saaskit/yui-app-theme/red.css'),
-        ('tan-blue', 'Tan Blue', 'saaskit/yui-app-theme/tan_blue.css'),
-        ('default', 'CrowdSense', 'saaskit/css/default.css'),
-        ('fireflynight', 'Firefly Night', 'saaskit/css/fireflynight.css'),
-        ('grayscale', 'Grayscale', 'saaskit/css/grayscale.css'),
-        ('graygreen', 'Grayscale Green', 'saaskit/css/gray-green.css'),
-        ('overcast', 'Overcast', 'saaskit/css/overcast.css'),
-        ('sunshine', 'Sunshine', 'saaskit/css/sunshine.css'),
+        ('aqua', 'Aqua', 'saaskit/yui-app-theme/css/aqua.css'),
+        ('green', 'Green', 'saaskit/yui-app-theme/css/green.css'),
+        ('purple', 'Purple', 'saaskit/yui-app-theme/css/purple.css'),
+        ('red', 'Red', 'saaskit/yui-app-theme/css/red.css'),
+        ('tan-blue', 'Tan Blue', 'saaskit/yui-app-theme/css/tan_blue.css'),
         )),
     # <body> id
     ('page_width', 'Page widgh', (

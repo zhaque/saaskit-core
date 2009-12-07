@@ -19,9 +19,10 @@ Table of Contents
     7.1 Django applications
         7.1.1 Used
         7.1.2 Disabled
-    7.2.1 Python libs
     7.2 Other code
+        7.2.1 Python libs
         7.2.1 yui-app-theme
+        7.2.3 FAMFAM Icons
 8 Runtime environment
     8.1 Warnings at startup
 9 Roadmap
@@ -356,6 +357,11 @@ EMAIL_PORT = 587
     A generic, skinnable, Yahoo YUI-based layot for web applications.
     - [http://clickontyler.com/yui-app-theme/]
     - [http://github.com/tylerhall/yui-app-theme/]
+
+7.2.3 FAMFAM Icons
+~~~~~~~~~~~~~~~~~~~~
+    Generic Icons added Thanks to FAMFAM. More details can be found here.
+    - [http://www.famfamfam.com/lab/icons/silk/]
 
 8 Runtime environment
 ~~~~~~~~~~~~~~~~~~~~~

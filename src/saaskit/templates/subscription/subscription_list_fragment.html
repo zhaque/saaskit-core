@@ -15,17 +15,17 @@
             class="{% if us.active %}current{% else %}unsubscribed{% endif %}"
             {% endifequal %}>
           <h2 class="text-center">{% trans subscription.name noop %}</h2>
-          <p class="text-center">{{ subscription.get_pricing_display }}</p>
-          <p class="text-center">{% trans 'trial' %} - {{ subscription.get_trial_display }}</p>
+          <p class="text-center">{% trans 'Price (USD)' %} : {{ subscription.get_pricing_display }}</p>
+          <p class="text-center">{% trans 'Trial Period' %} : {{ subscription.get_trial_display }}</p>
           <ul class="plans">
             {{ subscription.description|safe }}
           </ul>
-          <p class="text-center">{% trans "recurrence" %}: {{ subscription.get_recurrence_display }}</p>
+          <p class="text-center">{% trans "Recurrence" %}: {{ subscription.get_recurrence_display }}</p>
           <p class="text-center">
           {% if user.is_authenticated %}
             {% paypal_shortcut user subscription %}
           {% else %}
-            <a href="{% url subscription_detail subscription.pk %}">{% trans "Choose" %}</a>
+            <b><a href="{% url subscription_detail subscription.pk %}">{% trans "Signup" %}</a></b>
           {% endif %}
           </p>
         </td>

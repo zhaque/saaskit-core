@@ -1,0 +1,17 @@
+{% load credits %}
+<table id="account-activity">
+	<thead>
+		<th>Activity</th>
+		<th>Points</th>
+		<th>Total</th>
+	</thead>
+	<tbody>
+		{% for t in request.user.prepaid_transactions.all %}
+		<tr class="{% if t.credit %}credit{% else %}debit{% endif %}">
+			<td>{{ t.info|safe }}<span class="time"> {{ t.date|deltatime }}</span></td>
+			<td>{% if not t.credit %}-{% endif %}{{ t.amount }}</td>
+			<td>{{ t.total }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

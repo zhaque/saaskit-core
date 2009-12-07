@@ -1,31 +1,10 @@
 [{"pk": 1, "model": "sites.site", "fields": {"domain": "www.example.com", "name": "example.com main site"}},
  {"pk": 2, "model": "sites.site", "fields": {"domain": "example.com", "name": "example.com user sites"}},
- {"pk": 1, "model": "auth.group", "fields": {"name": "Registered Member", "permissions": []}},
- {"pk": 2, "model": "auth.group", "fields": {"name": "Editors", "permissions": []}},
+ {"pk": 2, "model": "auth.group", "fields": {"name": "Editors", "permissions": []}}, 
+ {"pk": 1, "model": "auth.group", "fields": {"name": "Registered Member", "permissions": [131, 132, 127, 128, 129, 97, 98, 99, 114, 105, 108]}},
  {"pk": 1, "model": "auth.user", "fields": {"username": "admin", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2009-06-17 08:41:56", "groups": [2], "user_permissions": [], "password": "sha1$39a68$30e05495ade5215f052ede22597cb15cfdeb17c2", "email": "admin@example.com", "date_joined": "2009-06-17 07:58:22"}},
- {"pk": 1, "model": "subscription.subscription", 
-	 "fields": {
-	 	"name": "Silver Membership", 
-	 	"price": "17", 
-	 	"description": "", 
-	 	"trial_unit": "D",
-	 	"trial_period": 21,
-	 	"recurrence_unit": "M", 
-	 	"recurrence_period": 1, 
-	 	"permissions": []
-	 }
- },
- {"pk": 2, "model": "subscription.subscription", 
-	 "fields": {
-	 	"name": "Gold Membership", 
-	 	"price": "23", 
-	 	"description": "", 
-	 	"recurrence_unit": "M", 
-	 	"recurrence_period": 1,
-	 	"permissions": []
-	 }
- },
- 
+ {"pk": 1, "model": "subscription.subscription", "fields": {"description": "<p>One site</p><p>Page Views - 10,000,000</p><p>Site - Public Only</p><p>Subdomain</p>", "name": "Silver Membership", "recurrence_unit": "M", "price": "1.00", "trial_unit": "M", "trial_period": 21, "preparation_required": false, "permissions": [105, 109], "recurrence_period": 1}}, 
+ {"pk": 2, "model": "subscription.subscription", "fields": {"description": "<p>Page Views - Unlimited</p><p>Sites - Unlimited</p><p>Public or Private</p><p>Subdomain or Domain</p>", "name": "Gold Membership", "recurrence_unit": "M", "price": "10.00", "trial_unit": "W", "trial_period": 2, "preparation_required": false, "permissions": [100, 101, 107, 110], "recurrence_period": 1}}, 
  {"pk": 2, "model": "auth.user", "fields": {"username": "free_user", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2009-06-17 08:40:30", "groups": [1], "user_permissions": [], "password": "sha1$dc664$fcc10c70d70b91bed1d98a53956237829769bf86", "email": "", "date_joined": "2009-06-17 08:27:35"}},
  {"pk": 3, "model": "auth.user", "fields": {"username": "silver_user", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2009-06-17 08:40:47", "groups": [1], "user_permissions": [], "password": "sha1$d58b2$1193767b6b4217715264bfda4f6e58427ba9529f", "email": "", "date_joined": "2009-06-17 08:27:54"}},
  {"pk": 4, "model": "auth.user", "fields": {"username": "gold_user", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2009-06-17 08:28:12", "groups": [1], "user_permissions": [], "password": "sha1$374dd$0e8d4f9b10331588f2cb9cb955afee355d448ef5", "email": "", "date_joined": "2009-06-17 08:28:12"}},
@@ -36,5 +15,11 @@
  {"pk": 2, "model": "muaccounts.muaccount", "fields": {"owner": 3, "is_public": false, "subdomain": "silver", "members": [5, 6]}},
  {"pk": 3, "model": "muaccounts.muaccount", "fields": {"owner": 4, "is_public": false, "domain": "www.gold-account.com", "subdomain": "gold", "members": [6, 7]}},
  {"pk": 1, "model": "subscription.usersubscription", "fields": {"user": 3, "subscription": 1}},
- {"pk": 2, "model": "subscription.usersubscription", "fields": {"user": 4, "subscription": 2}}
+ {"pk": 2, "model": "subscription.usersubscription", "fields": {"user": 4, "subscription": 2}},
+ 
+ {"pk": 5, "model": "muaccount_adsense.adsenseblock", "fields": {"muaccount": null, "code": "<a href=\"http://dummythings.com\">\r\n<strong>Buy me dummy thing! Please! I wantto eat.</strong>\r\n</a>", "name": "page-banner"}}, 
+ {"pk": 4, "model": "muaccount_adsense.adsenseblock", "fields": {"muaccount": null, "code": "<a href=\"http://dummythings.com\">\r\n<strong>Buy me dummy thing! Please! I want to eat.</strong>\r\n</a>", "name": "side-banner-bottom"}}, 
+ {"pk": 3, "model": "muaccount_adsense.adsenseblock", "fields": {"muaccount": null, "code": "<a href=\"http://dummythings.com\">\r\n<strong>Buy me dummy thing! Please! I want to eat.</strong>\r\n</a>", "name": "side-banner-middle"}}, 
+ {"pk": 2, "model": "muaccount_adsense.adsenseblock", "fields": {"muaccount": null, "code": "<a href=\"http://dummythings.com\">\r\n<strong>Buy me dummy thing! Please! I want to eat.</strong>\r\n</a>", "name": "side-banner-top"}}, 
+ {"pk": 1, "model": "muaccount_adsense.adsenseblock", "fields": {"muaccount": null, "code": "<a href=\"http://dummythings.com\">\r\n<strong>Buy me dummy thing! Please! I want to eat.</strong>\r\n</a>", "name": "top-banner"}}
  ]

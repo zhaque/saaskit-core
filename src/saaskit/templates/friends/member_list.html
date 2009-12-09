@@ -36,19 +36,19 @@
       <p>{% trans "No invitations sent." %}</p>
   {% endif %}
   
-  <h2>{% trans "Join Requests Received" %}</h2>
+  <h2>{% trans "Invitation Requests Received" %}</h2>
   {% if joins_received %}
       <table class="invitation_list">
           {% for join_request in joins_received %}
               <tr>
-                  <td>{{ join_request.user }}</td>
+                  <td>{{ join_request.email }}</td>
                   <td>{{ join_request.created|date:_("DATETIME_FORMAT") }}</td>
                   <td>{{ join_request.notes|safe }}</td>
                   <td>{{ join_request.get_state_display }}</td>
                   <td>
                     {% ifequal join_request.state join_request.STATE_INIT %}
-                      <a href="{% url proceed_join_request user_id=join_request.user.id,state='join' %}">{% trans 'Accept'%}</a>
-                      | <a href="{% url proceed_join_request user_id=join_request.user.id,state='reject' %}">{% trans 'Reject'%}</a>
+                      <a href="{% url proceed_invitation_request email=join_request.email,state='invite' %}">{% trans 'Invite' %}</a>
+                      | <a href="{% url proceed_invitation_request email=join_request.email,state='reject' %}">{% trans 'Reject' %}</a>
                     {% endifequal %}
                   </td>
               </tr>

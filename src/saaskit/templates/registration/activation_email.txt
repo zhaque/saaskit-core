@@ -1,5 +1,5 @@
-{% load i18n %}{% blocktrans %}
-Complete your registration at {{site}} by going to address http://{{site.domain}}/accounts/activate/{{activation_key}}
+{% load i18n %}{% blocktrans with site.domain as domain  %}
+Complete your registration at {{site}} by going to address http://{{ domain }}/accounts/activate/{{ activation_key }}
 
 This activation key will be valid for {{expiration_days}} days.
 {% endblocktrans %}

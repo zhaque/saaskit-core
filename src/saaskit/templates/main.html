@@ -17,7 +17,9 @@
 	<div id="doc4" class="yui-t6">
 
 		<div id="hd" class="yuiapp-hd">
-		  <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" align="top"/></a>
+      {% block header %}
+      <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" align="top"/></a>
+      {% endblock %}
 			<div class="yui-g">
 		      <div class="yuiapp-nav">
 		        <div class="yui-u first">

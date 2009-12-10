@@ -3,7 +3,11 @@
   {% if not current.active %}
     <p><strong>{% trans "You have cancelled subscription to this plan." %}</strong>
     {% trans "You may still resubscribe if you wish!" %}</p>
-    {{ form.sandbox }}
+    {% if test %}
+      {{ form.sandbox }}
+    {% else %}
+      {{ form.render }}
+    {% endif %}
   {% else %}
     <p>{% blocktrans %}
       <strong>You are subscribed to this plan.</strong>
@@ -21,7 +25,11 @@
     </ul>
   {% else %}
     {% if not subscription.preparation_required %}
-    {{ form.sandbox }}
+      {% if test %}
+        {{ form.sandbox }}
+      {% else %}
+        {{ form.render }}
+      {% endif %}
     {% else %}
     <a href="{% url contact_form %}">{% trans "Contact us"%}</a>
     {% endif %}

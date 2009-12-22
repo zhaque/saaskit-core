@@ -22,7 +22,7 @@ def ifnotsetted(key, default, is_prompt=False, text=None, validate=None):
 
 
 env.SOURCE_PATH = 'src/saaskit'
-env.git_path = 'git@github.com:CrowdSense/saaskit-core.git'
+env.git_path = 'git@github.com:saas-kit/saaskit-core.git'
 
 def production():
     #env.hosts = []

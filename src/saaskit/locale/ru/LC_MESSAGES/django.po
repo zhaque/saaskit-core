@@ -102,8 +102,8 @@ msgid "Your site was suspended."
 msgstr ""
 
 #: apps/saaskit_profile/management.py:11
-msgid "Welcome to CrowdSense Starter Kit!"
-msgstr "Добро пожаловать на CrowdSense Starter Kit!"
+msgid "Welcome to SaaS kit!"
+msgstr "Добро пожаловать на SaaS kit!"
 
 #: apps/saaskit_profile/management.py:11
 msgid "you have successfully registered"
@@ -802,7 +802,7 @@ msgstr ""
 
 #: templates/notification/welcome/full.html:1
 #: templates/notification/welcome/notice.html:1
-msgid "Welcome to the CrowdSense Project Kit example project!"
+msgid "Welcome to the SaaS kit example project!"
 msgstr ""
 
 #: templates/paypal/shortcut.html:4

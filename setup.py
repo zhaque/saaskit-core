@@ -99,9 +99,9 @@ dependency_links = [
 
 setup(name="saaskit-core",
             version="0.1",
-            description="Core of saaskit",
-            author="CrowdSense",
-            author_email="admin@crowdsense.com",
+            description="Software as a Service Core toolkit",
+            author="SaaS kit",
+            author_email="admin@saaskit.org",
             packages = find_packages('src'),
             package_dir = {'': 'src'},
             include_package_data = True,

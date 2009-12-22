@@ -248,9 +248,9 @@ EMAIL_PORT = 587
 * django-faq
   Used for frequently asked question list.
   - [http://github.com/howiworkdaily/django-faq/]
-* django-muaccounts
+* saaskit-muaccounts
   Used for multi-user SAAS accounts.
-  - [http://github.com/CrowdSense/django-muaccounts/]
+  - [http://github.com/saas-kit/saaskit-muaccounts/]
 * django-oembed
   Used for embedding obejects
   - [http://code.google.com/p/django-oembed/]
@@ -266,10 +266,10 @@ EMAIL_PORT = 587
 * django-pipes
   Used for external API consumption, by (TBD) django-mashup.
   - [http://github.com/mallipeddi/django-pipes/]
-* django-prepaid
+* saaskit-prepaid
   Used to support consumable, separately paid quotas (think prepaid
   phone minutes).
-  - [http://github.com/CrowdSense/django-prepaid/tree/master]
+  - [http://github.com/saas-kit/saaskit-prepaid/tree/master]
 * django-profiles
   Used for user profile management on main (shared/dashboard) site.
   - [http://bitbucket.org/ubernostrum/django-profiles/wiki/Home]
@@ -292,9 +292,9 @@ EMAIL_PORT = 587
   Allow the application to accept single sign on link from 
   other applications and authenticate users
   - [http://code.google.com/p/django-sso/  
-* django-subscription
+* saaskit-subscription
   Used for user subscription plans/levels.
-  - [http://github.com/CrowdSense/django-subscription/]
+  - [http://github.com/saas-kit/saaskit-subscription/]
   + django-paypal
     Used by django-subscription for PayPal payments interface.
     - [http://github.com/johnboxall/django-paypal/]

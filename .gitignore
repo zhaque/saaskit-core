@@ -1,0 +1,31 @@
+#Eclipse's specific
+.project
+.pydevproject
+.pydevproject.bak
+
+#buildout's specific
+.installed.cfg
+eggs/*
+bin/*
+develop-eggs/*
+parts/*
+downloads/*
+
+#egg's specific
+*.egg-info
+
+#defaults
+*.pyc
+*.pyo
+
+#coverage report
+src/test_a_khavr/coverage_report/*
+
+#sqlite3 db
+saaskit.db
+
+#temp file
+tempfile
+
+#media
+src/saaskit-core/site_media/*

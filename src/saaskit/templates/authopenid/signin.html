@@ -74,9 +74,9 @@
 {% endblock %}
 
 {% block extra_scripts %}
-<script type="text/javascript" src="{{ MEDIA_URL }}saaskit/auth/js/openid-jquery.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}saaskit/js/openid-jquery.js"></script>
 <script type="text/javascript">
-openid.img_path = "{{ MEDIA_URL }}saaskit/auth/images/";
+openid.img_path = "{{ MEDIA_URL }}saaskit/img/open-id/";
 $(document).ready(function() {
     //openId form initialization
     openid.init('id_openid_url');

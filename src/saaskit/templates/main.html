@@ -13,29 +13,29 @@
     {% block head %}
     {% endblock %}
 </head>
-<body class="yui-skin-yuiapp rounded">
+<body class="yui-skin-saaskit rounded">
 	<div id="doc4" class="yui-t6">
 
-		<div id="hd" class="yuiapp-hd">
+		<div id="hd" class="saaskit-hd">
       {% block header %}
       <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" align="top"/></a>
       {% endblock %}
 			<div class="yui-g">
-		      <div class="yuiapp-nav">
+		      <div class="saaskit-nav">
 		        <div class="yui-u first">
 		          <ul>
-			        <li{% class_if_reverse /$ yuiapp-nav-active %}><a href="/">{% trans "SaaSkit" %}</a></li>
+			        <li{% class_if_reverse /$ saaskit-nav-active %}><a href="/">{% trans "SaaSkit" %}</a></li>
         				  {% if user.is_authenticated %}
-                    <li{% class_if_reverse muaccounts_listing yuiapp-nav-active %}><a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a></li>		
+                    <li{% class_if_reverse muaccounts_listing saaskit-nav-active %}><a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a></li>		
 				           {% else %}
-				    <li{% class_if_reverse subscription_list yuiapp-nav-active %}><a href="{% url subscription_list %}">{% trans "Plans & Pricing" %}</a></li>
+				    <li{% class_if_reverse subscription_list saaskit-nav-active %}><a href="{% url subscription_list %}">{% trans "Plans & Pricing" %}</a></li>
 			             {% endif %}
-				    <li{% class_if_reverse /support/ yuiapp-nav-active %}><a href="/support/">{% trans "Support" %}</a></li>
-				    <li{% class_if_reverse /about/ yuiapp-nav-active %}><a href="/about/">{% trans "About Us" %}</a></li>								
+				    <li{% class_if_reverse /support/ saaskit-nav-active %}><a href="/support/">{% trans "Support" %}</a></li>
+				    <li{% class_if_reverse /about/ saaskit-nav-active %}><a href="/about/">{% trans "About Us" %}</a></li>								
 			      </ul>
 			    </div>
 		        <div class="yui-u">
-		          <div class="yuiapp-nav-rhs">
+		          <div class="saaskit-nav-rhs">
 		                <ul>
 		                  {% if user.is_authenticated %}
 		                  <li>{% trans "Welcome" %}, <span>{{user}}</span></li> 
@@ -62,7 +62,7 @@
 		    </div>
 		</div>	        		                
         
-	    <div id="bd" class="yuiapp-bd">		
+	    <div id="bd" class="saaskit-bd">		
 
 	      <div id="yui-main">		
 
@@ -84,7 +84,7 @@
 
         <div class="yui-b">
 
-		     <div class="yuiapp-sidebar">
+		     <div class="saaskit-sidebar">
 
 	          <div class="yui-g">
 		          {% block teaserbar %}{% endblock %}
@@ -108,7 +108,7 @@
 
       </div>
 
-	    <div id="ft" class="yuiapp-ft">
+	    <div id="ft" class="saaskit-ft">
           <p><a href="/privacy" style="font-weight: 600;">{% trans "Privacy & Copyright" %}</a></p>
       </div>
 

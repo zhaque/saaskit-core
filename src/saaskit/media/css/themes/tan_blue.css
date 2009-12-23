@@ -1,0 +1,99 @@
+/* *** - Tan Blue business colour scheme file *** */
+
+/* Generics */
+html {background-color:#232C30;}
+body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
+
+.yui-skin-saaskit a:link, a:visited { color: #07b; }
+.yui-skin-saaskit a, a:hover, a:active { color: #d30; }
+.yui-skin-saaskit abbr,
+.yui-skin-saaskit acronym { border-color: #000; }
+.yui-skin-saaskit h1 { color: #444 }
+.yui-skin-saaskit h2 { color: #444}
+.yui-skin-saaskit h3 { color: #444}
+
+/* *** Header *** */
+.yui-skin-saaskit .saaskit-hd {  background-color: #232C30; }
+.yui-skin-saaskit .saaskit-hd h1 { color:#fff; }
+/*.yui-skin-saaskit .saaskit-hd .yui-g { background-color:#064780; }
+.yui-skin-saaskit .saaskit-hd .yui-u.first li.saaskit-nav-active a { background-color:#fff; color:#000; }*/
+.yui-skin-saaskit .saaskit-hd li a { color:#fff; }
+.yui-skin-saaskit .saaskit-hd h1 a:link, .yui-skin-saaskit .saaskit-hd h1 a:active, .yui-skin-saaskit .saaskit-hd h1 a:hover, .yui-skin-saaskit .saaskit-hd h1 a:visited { color: #eaeaea; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, #user-navigation ul li a:visited {
+  color: #CDE; border-bottom: 1px dotted #345; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover {
+  color: #fff; border-bottom: 1px dotted #CDE; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li { background: #456; border-top: 1px solid #5C738A;
+  color: #eee; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li:hover {
+  border-top-color: #7593B0; background-color: #576C82 !important; color: #fff; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active {
+  border-top: 1px solid #fff; background-color: #eee !important; color: #333;}
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:link, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:visited, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:hover, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:active {color: #364b69;}
+
+
+/* Body */
+.yui-skin-saaskit .saaskit-bd h1 {color:#f00;}
+.yui-skin-saaskit .saaskit-bd h2 { } /* First, attempt to set font color using html element above to influence this element */
+.yui-skin-saaskit .saaskit-bd h3 { background-color:#A0C2DE; border-color:#064780; color: #456; } 
+.yui-skin-saaskit .saaskit-bd h4 { color: #456; }
+.yui-skin-saaskit .saaskit-bd h5 { color: #456; }
+.yui-skin-saaskit .saaskit-bd { background-color:#EBEBEB; color: #333; }
+.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-content { border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;
+  background: #fff;}
+
+/* Extend block with tabs */
+.yui-skin-saaskit .saaskit-bd .saaskit-tabs { background-color:#eaeaea; }
+.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li a { background-color: #456; border-top: 1px solid #5C738A; color: #eee; }
+.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li:hover a {border-top-color: #7593B0; background-color: #576C82 !important; color: #fff;}
+.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li.saaskit-tabs-active a{border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd; border-right: 1px solid #ccc; border-bottom: 1px solid #fff;
+  background-color: #fff !important; color: #333; }
+  .yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li.saaskit-tabs-active:hover a {background: #fff !important; border-top: 1px solid #ccc; border-right: 1px solid #ccc;}
+.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li.saaskit-tabs-active a { background-color:#fff !important; color:#333333; } /* important! fixes IE cascade issue */
+
+/* Style the horizontal rules inside .block */
+.yui-skin-saaskit .saaskit-bd hr { background-color: #aaa;}
+
+/* Tables */
+.yui-skin-saaskit .saaskit-bd table thead { background: #576C82;; color:#fff; font-weight:bold; }
+.yui-skin-saaskit .saaskit-bd table thead a { color:#fff; }
+.yui-skin-saaskit .saaskit-bd table td {border-bottom-color:#AAA;}
+
+/* Pager control*/
+.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li a { color: #364B69; border: 1px solid #ddd; }
+.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li a:hover { color: #444; background-color: #eaeaea; border: 1px solid #576C82;}
+.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li.saaskit-pager-active a { /*background-color:#685841; color:#fff;*/  background-color: #576C82;  color: #FFF; border: 1px solid #7593B0; -moz-border-radius:5px;}
+.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li.saaskit-pager-active a:hover { /*background-color:#685841; color:#fff;*/  background-color: #576C82;  color: #FFF; border: 1px solid #7593B0; -moz-border-radius:5px;}
+.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li.saaskit-disabled { background-color: #eee;
+  color: #aaa; border: 1px solid #ddd; -moz-border-radius:5px;}
+
+/* Forms */
+.yui-skin-saaskit .saaskit-bd form label span { color:#f00; }
+.yui-skin-saaskit .saaskit-bd form span.info { color:#aaa; }
+.yui-skin-saaskit .saaskit-bd form .text { border-color:#aaa; }
+.yui-skin-saaskit .saaskit-bd form input.text { border: 1px solid #ddd; }
+.yui-skin-saaskit .saaskit-bd form input.text_field, .yui-skin-saaskit .saaskit-bd form textarea.text_area { border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; border-top: 2px solid #ccc; border-left: 2px solid #ccc; }
+
+/* Messages */
+.yui-skin-saaskit .saaskit-bd .error { background-color:#fdd; border-color:#fbb; }
+.yui-skin-saaskit .saaskit-bd .warning { background-color:#ffffcc; border-color:#fffaaa; }
+.yui-skin-saaskit .saaskit-bd .notice { background-color:#eef; border-color:#ddf; }
+
+/* Lists */
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a { color:#000; }
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar h3 { background: #fff; border-bottom:1px solid #ccc;border-right:1px solid #ccc; border-left:1px solid #ddd; border-top:1px solid #ddd; color: #333; }
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:hover, .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:active { background: none; color: #444;} 
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:link, .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:visited {color:#6a6a6a;}
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar .saaskit-notice {background-color: #ffc; border-bottom:1px solid #ddd; border-right:1px solid #ddd; border-top:1px solid #fff; border-left:1px solid #fff;}
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar .saaskit-notice h2 {border-bottom:1px solid #456;}
+
+
+/* Footer */
+.yui-skin-saaskit .saaskit-ft { background-color: #ddd;; border-top-color:#bbb; color:#262626; padding-left:20px; }
+
+/* Custom Classes */
+.yui-skin-saaskit .gray { color:#999; }
+.yui-skin-saaskit .highlight { background-color:#ffffcc; }
+

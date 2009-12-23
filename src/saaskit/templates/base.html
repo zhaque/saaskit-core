@@ -1,0 +1,46 @@
+{% load compressed %}
+{% load i18n %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{% block head_title %}{% endblock %}</title>
+	    <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+	    {% compressed_css 'all' %}
+
+        {% block extra_head_base %}
+            {% block extra_style %}{% endblock %}
+            {% block extra_head %}{% endblock %}
+        {% endblock %}
+    </head>
+    
+    <body class="{% block skin_class %}{% endblock %}">
+	  <div id="{% block layout_type %}{% endblock %}" class="{% block layout_class %}{% endblock %}">
+        <div id="hd" class="saaskit-hd">{% block logo %}{% endblock %}
+          <div class="saaskit-nav-rhs">{% block nav-rhs %}{% endblock %}</div>
+	      <div class="clear"></div>
+	      <div class="saaskit-nav">{% block nav %}{% endblock %}</div>        
+		</div>
+	     	
+	    <div id="bd" class="saaskit-bd">
+	      <div id="yui-main">
+	        <div class="yui-b">
+              {% block content %}
+              {% endblock %}
+            </div>
+          </div>
+
+        <div class="yui-b saaskit-sidebar">{% block sidebar %}{% endblock %}</div>
+      </div>
+
+        {% block extra_body_base %}
+          {% block extra_body %}{% endblock %}
+          {% block extra_js %}{% endblock %}
+        {% endblock %}
+        
+      <div id="ft" class="saaskit-ft">{% block footer %}{% endblock %}</div>
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	    {% compressed_js 'all' %}
+    </body>
+</html>

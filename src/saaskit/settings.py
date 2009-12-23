@@ -171,26 +171,30 @@ SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]5
 COMPRESS = False
 COMPRESS_VERSION = False
 
-_default_css_files = ('saaskit/yui-app-theme/css/yuiapp.css',
-                      'saaskit/auth/css/openid.css',
+_default_css_files = ('saaskit/css/saaskit.css',
+                      'saaskit/themes/default.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
+                      'saaskit/css/openid.css',
                       'saaskit/css/friends.css',
                       'saaskit/css/subscription.css',
                       'saaskit/css/forms.css',
                       )
 
-COMPRESS_CSS = {                        # different themes for MUAs
+_default_js_files = ('saaskit/js/saaskit.js',
+                     'uni_form/uni_form/uni-form.jquery.js',
+                    )
+
+COMPRESS_CSS = {      
     'all' : {
         'name' : 'Default theme',
         'source_filenames' : _default_css_files,
         'output_filename' : 'style.css'},
     }
+
 COMPRESS_JS = {
     'all' : {
-        'source_filenames' : (# 'authopenid/js/jquery-1.3.2.min.js',
-                              'uni_form/uni_form/uni-form.jquery.js',
-                              ),
+        'source_filenames' : _default_js_files, 
         'output_filename' : 'scripts.js'},
     }
 
@@ -222,11 +226,12 @@ MUACCOUNTS_SUBDOMAIN_STOPWORDS = (r"^www$", r"^support$", r"^lab$", r"^labs$", r
 MUACCOUNTS_THEMES = (
     # color css
     ('color_scheme', 'Color scheme', (
-        ('aqua', 'Aqua', 'saaskit/yui-app-theme/css/aqua.css'),
-        ('green', 'Green', 'saaskit/yui-app-theme/css/green.css'),
-        ('purple', 'Purple', 'saaskit/yui-app-theme/css/purple.css'),
-        ('red', 'Red', 'saaskit/yui-app-theme/css/red.css'),
-        ('tan-blue', 'Tan Blue', 'saaskit/yui-app-theme/css/tan_blue.css'),
+        ('default', 'SaaS kit', 'saaskit/themes/default.css'),
+        ('aqua', 'Aqua', 'saaskit/themes/aqua.css'),
+        ('green', 'Green', 'saaskit/themes/green.css'),
+        ('purple', 'Purple', 'saaskit/themes/purple.css'),
+        ('red', 'Red', 'saaskit/themes/red.css'),
+        ('tan-blue', 'Tan Blue', 'saaskit/themes/tan_blue.css'),
         )),
     # <body> id
     ('page_width', 'Page widgh', (

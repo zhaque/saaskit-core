@@ -1,4 +1,4 @@
-/* *** - Green colour scheme file *** */
+/* *** - SaaS kit default colour scheme file *** */
 
 /* Generics */
 html {background-color:#232C30;}
@@ -89,6 +89,13 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar .saaskit-notice {background-color: #ffc; border-bottom:1px solid #ddd; border-right:1px solid #ddd; border-top:1px solid #fff; border-left:1px solid #fff;}
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar .saaskit-notice h2 {border-bottom:1px solid #456;}
 
+/* Extra */
+.yui-skin-saaskit .saaskit-extra ul li a { color:#000; }
+.yui-skin-saaskit .saaskit-extra h3 { background: #fff; border-bottom:1px solid #ccc;border-right:1px solid #ccc; border-left:1px solid #ddd; border-top:1px solid #ddd; color: #333; }
+.yui-skin-saaskit .saaskit-extra ul li a:hover, .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:active { background: none; color: #444;}
+.yui-skin-saaskit .saaskit-extra ul li a:link, .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:visited {color:#6a6a6a;}
+.yui-skin-saaskit .saaskit-extra-notice {background-color: #ffc; border-bottom:1px solid #ddd; border-right:1px solid #ddd; border-top:1px solid #fff; border-left:1px solid #fff;}
+.yui-skin-saaskit .saaskit-extra-notice h2 {border-bottom:1px solid #456;}
 
 /* Footer */
 .yui-skin-saaskit .saaskit-ft { background-color: #ddd;; border-top-color:#bbb; color:#262626; padding-left:20px; }

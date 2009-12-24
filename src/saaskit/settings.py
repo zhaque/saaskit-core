@@ -172,7 +172,6 @@ COMPRESS = False
 COMPRESS_VERSION = False
 
 _default_css_files = ('saaskit/css/saaskit.css',
-                      'saaskit/themes/default.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
                       'saaskit/css/openid.css',
@@ -181,8 +180,7 @@ _default_css_files = ('saaskit/css/saaskit.css',
                       'saaskit/css/forms.css',
                       )
 
-_default_js_files = ('saaskit/js/saaskit.js',
-                     'saaskit/js/openid-jquery.js',
+_default_js_files = ('saaskit/js/openid-jquery.js',
                      'uni_form/uni_form/uni-form.jquery.js',
                     )
 

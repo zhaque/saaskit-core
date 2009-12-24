@@ -18,14 +18,14 @@ var providers_large = {
     name: 'AOL',
     label: 'Enter your AOL screenname.',
     url: 'http://openid.aol.com/{username}/'
-  },
+  }
+};
+var providers_small = {
   openid: {
     name: 'OpenID',
     label: 'Enter your OpenID.',
     url: null
-  }
-};
-var providers_small = {
+  },
   myopenid: {
     name: 'MyOpenID',
     label: 'Enter your MyOpenID username.',

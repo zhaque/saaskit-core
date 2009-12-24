@@ -49,7 +49,3 @@ a.openid_large_btn:focus {
 .openid_selected {
     border: 4px solid #DDD;
 }
-
-#registration_form {
-  float: left;
-}

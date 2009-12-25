@@ -1,9 +1,9 @@
-{% extends "main.html" %}
+{% extends "my_account.html" %}
 {% load i18n uni_form_tags %}
 
 {% block title %}{% trans 'Payment confirm' %}{% endblock %} 
 
-{% block body %}
+{% block content %}
 <form class="uniForm" enctype="multipart/form-data" action="" method="post">
     <fieldset class="inlineLabels">
       {{ form|as_uni_form }}

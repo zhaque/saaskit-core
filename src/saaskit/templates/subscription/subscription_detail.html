@@ -1,7 +1,7 @@
-{% extends "main.html" %}
+{% extends "my_account.html" %}
 {% load i18n %}
 {% block title %}{% blocktrans with object.name as object_name %}Details for {{ object_name }}.{% endblocktrans %}{% endblock %} 
-{% block body %}
+{% block content %}
 {% load paypal_buttons %}
 
 <h2>{{object.name}}</h2>

@@ -1,8 +1,8 @@
-{% extends "main.html" %}
+{% extends "my_account.html" %}
 {% load smartif i18n frontendadmin_tags %}
 {% block title %}Your mu accounts{% endblock %} 
 
-{% block body %}
+{% block content %}
   <h2>{% trans "Manage mu accounts" %}</h2>
   {% with mua_list|length as mua_count %}
     {% if mua_count < user.quotas.muaccounts %}

@@ -1,9 +1,9 @@
-{% extends "main.html" %}
+{% extends "my_account.html" %}
 {% load i18n uni_form_tags %}
 
 {% block title %}{% trans 'Payment' %}{% endblock %} 
 
-{% block body %}
+{% block content %}
 <form class="uniForm" enctype="multipart/form-data" action="" method="post">
     <fieldset class="inlineLabels">
       <div align="center"><a href="?express">{% trans "Pay by PayPal" %}</a></div>

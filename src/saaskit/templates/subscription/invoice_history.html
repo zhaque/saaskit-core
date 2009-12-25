@@ -1,8 +1,8 @@
-{% extends "account/base.html" %}
+{% extends "my_account.html" %}
 {% load i18n %}
 {% block title %}{% trans "Invoice History" %}{% endblock %}
 
-{% block body %}
+{% block content %}
   <h2>{% trans "Invoice History" %}</h2>
   {% if transaction_list %}
   <table border="0" id="tasktable" style="max-width:600px;">

@@ -21,7 +21,7 @@ div.checker {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	background: #fff url(img/bg.png) repeat-x left 10px;
+	background: #fff url(/media/saaskit/img/bg.png) repeat-x left 10px;
 	float: left;
 	display: inline;
 	margin-right: 10px;
@@ -50,7 +50,7 @@ div.checker span {
 }
 
 div.checker span.checked {
-	background: url(img/check.gif) no-repeat center center;
+	background: url(/media/saaskit/img/check.gif) no-repeat center center;
 }
 
 div.checker span input {
@@ -64,7 +64,7 @@ div.radio {
 	height: 19px;
 	width: 19px;
 	overflow: hidden;
-	background: #fff url(img/bg.png) repeat-x left 10px;
+	background: #fff url(/media/saaskit/img/bg.png) repeat-x left 10px;
 	float: left;
 	display: inline;
 	margin-right: 10px;
@@ -98,7 +98,7 @@ div.radio span {
 }
 
 div.radio span.checked {
-	background: url(img/radio.gif) no-repeat center center;
+	background: url(/media/saaskit/img/radio.gif) no-repeat center center;
 }
 
 div.radio span input {
@@ -116,7 +116,7 @@ div.selector {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	position: relative;
-	background: url(img/bg.png) repeat-x left 12px;
+	background: url(/media/saaskit/img/bg.png) repeat-x left 12px;
 	line-height: 22px;
 	margin-top: 3px;
 	text-shadow: 0 1px 0 #fff;
@@ -141,7 +141,7 @@ div.selector span {
 	padding: 0;
 	display: block;
 	padding-right: 20px;
-	background: url(img/select.gif) no-repeat right 60%;
+	background: url(/media/saaskit/img/select.gif) no-repeat right 60%;
 	right: 0;
 }
 

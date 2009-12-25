@@ -1,8 +1,9 @@
 {% extends "main.html" %}
 {% load i18n uni_form_tags thumbnail muaccounts_tags %}
-{% block head_title %}{% trans "Sign in" %}{% endblock %}
 {% block class %}{% endblock %}
 {% block column %}{% endblock %}{% block grid %}yui-gb{% endblock %}
+
+{% block head_title %}{% trans "Sign in" %}{% endblock %}
 
 <h2>{% trans "Sign in" %}</h2>
 {% if msg %}

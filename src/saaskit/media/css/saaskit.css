@@ -15,7 +15,6 @@
 .yui-skin-saaskit acronym { border-width:0 0 1px; border-style: dashed; cursor:help; }
 
 /* Make the page full bleed */
-.yui-skin-saaskit #doc3 { margin:0; }
 
 /* *** Header *** */
 .yui-skin-saaskit .saaskit-hd { /*padding:1.2em 1.5em 0 1.5em;*/ position: relative; /*padding-top: 1px;*/ padding: 0 20px; }
@@ -39,6 +38,25 @@
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs li a { font-size:93%;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:visited, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:active { text-decoration: none; }
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover { text-decoration: none; }
+
+/* *** Teaser *** */
+.yui-skin-saaskit .saaskit-teaser { width: 100%; background-color:#000; color: #333; }
+.yui-skin-saaskit .saaskit-teaser dl { margin-left:2em; margin-bottom:1em; padding-left:0.5em; }
+.yui-skin-saaskit .saaskit-teaser ol { margin-left:2.2em; padding-left: 1.2em; }
+.yui-skin-saaskit .saaskit-teaser ul { margin-left:2.2em; padding-left: 0.8em; }
+.yui-skin-saaskit .saaskit-teaser ol li { list-style:decimal outside; }
+.yui-skin-saaskit .saaskit-teaser ul li { list-style:disc outside; padding-left:0.4em}
+.yui-skin-saaskit .saaskit-teaser dl dd { margin-left:1em; }
+.yui-skin-saaskit .saaskit-teaser h1 { font-size: 167%;  font-weight: bold;  margin:1em 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
+.yui-skin-saaskit .saaskit-teaser h2 { font-size:153.9%; margin: 0 0 0.4em 0.4em; }
+.yui-skin-saaskit .saaskit-teaser h3 { margin: 10px 0 0 0; background-color: none; padding: 5px 5px 5px 15px; font-size:18px; }  /* Coloured block headings */
+.yui-skin-saaskit .saaskit-teaser h4 { margin: 10px 0 5px 0; background-color: none; padding: 5px 5px 5px 15px; font-size:16px; }
+.yui-skin-saaskit .saaskit-teaser h5 { font-size:123.1%; margin:0.6em 1.2em; }
+.yui-skin-saaskit .saaskit-teaser p { margin:15px 0; font-size:12px; line-height:20px; }
+.yui-skin-saaskit .saaskit-teaser .saaskit-teaser-block{  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px; margin-bottom:20px; padding-bottom: 20px; background: transparent; padding-top:1px;}
+.yui-skin-saaskit .saaskit-teaser .saaskit-teaser-block .saaskit-teaser-content {padding-left: 15px; padding-right:15px; padding-bottom:20px;}
+
 
 /* *** Body *** */
 .yui-skin-saaskit .saaskit-bd  { width: 95%;}
@@ -156,7 +174,7 @@
 .yui-skin-saaskit .saaskit-extra h3 { padding: 5px 10px; font-weight: bold; font-size: 13px; margin-bottom:10px;;}
 .yui-skin-saaskit .saaskit-extra p { margin:1em 1em; }
 .yui-skin-saaskit .saaskit-extra ul { padding-left: 0; }
-.yui-skin-saaskit .saaskit-extra ul li { margin-top:-1px; /*border-style:solid; border-width:1px 0 1px 0;*/ }
+.yui-skin-saaskit .saaskit-extra ul li { margin-top:-1px; border-style:solid; border-width:1px 0 1px 0; }
 .yui-skin-saaskit .saaskit-extra ul li a { display:block; padding:0.5em 0; text-decoration:none; }
 .yui-skin-saaskit .saaskit-extra ul li a:hover, .yui-skin-saaskit .saaskit-extra ul li a:active { /*background: none;*/ text-decoration:underline; }
 .yui-skin-saaskit .saaskit-extra ul li a:link, .yui-skin-saaskit .saaskit-extra ul li a:visited { font-size:12px;  padding: 5px 10px; text-decoration: none; }

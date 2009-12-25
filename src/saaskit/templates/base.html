@@ -22,14 +22,19 @@
 	            <div class="saaskit-nav">{% block nav %}{% endblock %}</div>
 		    </div>
 	     	
-	        <div id="bd" class="saaskit-bd">
+	        <div id="bd" class="{% block type %}{% endblock %}">
 	            <div id="{% block column %}{% endblock %}">
-	                <div class="{% block grid %}{% endblock %}">{% block content %}{% endblock %}</div>
+	                <div class="{% block grid %}{% endblock %}">
+		              {% block teaser %}{% endblock %}
+		              {% block content %}{% endblock %}
+		              {% block extra_content %}{% endblock %}
+		            </div>
                 </div>
             </div>
 
+            {% block teaser_sidebar %}{% endblock %}
             {% block sidebar %}{% endblock %}
-            {% block extra_content %}{% endblock %}
+            {% block extra_body %}{% endblock %}
           
         
             <div id="ft" class="saaskit-ft">{% block footer %}{% endblock %}</div>

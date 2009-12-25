@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block skin %}yui-skin-saaskit{% endblock %}{% block doctype %}doc3{% endblock %}{% block class %}yui-t5{% endblock %}
+{% block type %}saaskit-bd{% endblock %}{% block column %}yui-main{% endblock %}{% block grid %}yui-b{% endblock %}
+
+{% block extra_head %}
+  <link rel="shortcut icon" href="{{ MEDIA_URL }}saaskit/img/favicon.ico">
+  <link rel="stylesheet" href="{{ MEDIA_URL }}saaskit/themes/default.css" type="text/css">
+{% endblock %}
+ 
+{% block logo %} 
+  <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" align="top"/></a>
+{% endblock %}
+
+{% block nav-rhs %} 
+  <ul>
+    <li>
+      <form action="{% url django.views.i18n.set_language %}" method="post">
+        <select name="language" id="language" onChange="this.form.submit();">
+          {% for lang in LANGUAGES %}
+            <option value="{{ lang.0 }}" {% ifequal request.LANGUAGE_CODE lang.0 %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+          {% endfor %}
+        </select>
+      </form> 
+    </li>	
+    {% if user.is_authenticated %}
+    <li><a href="{% url notification_notices %}">{% trans "My Account" %}</a></li> 	
+    <li><a href="{% url user_signout %}?next=/">{% trans 'Sign out' %}</a></li>
+    {% else %}
+    <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>
+    {% endif %}
+  </ul>		
+{% endblock %}
+
+{% block footer %}  
+  <p>
+    Copyright &copy; 2019 Blah Your Website | <a href="/privacy" style="font-weight: 600;">{% trans "Privacy & Copyright" %}</a>
+  </p>
+{% endblock %}

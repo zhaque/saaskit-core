@@ -1,9 +1,10 @@
-{% extends "account/base.html" %}
+{% extends "my_account.html" %}
 {% load i18n uni_form_tags muaccounts_tags settings %}
 
-{% block title %}{% trans "Dashboard" %}{% endblock %}
-{% block content_title %}{% trans "Dashboard" %}{% endblock %}
- % block content %}
+
+
+
+{% block content %}
     <h3>{% trans "Messages" %}</h3>
     <p>{# <a href="{% url notification_mark_all_seen %}">mark all seen</a> | #}
     <a href="{% url notification_feed_for_user %}">{% trans "RSS" %}</a></p>

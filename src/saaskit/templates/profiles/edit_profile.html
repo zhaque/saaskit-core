@@ -1,9 +1,11 @@
-{% extends "account/base.html" %}
+{% extends "my_account.html" %}
 {% load i18n uni_form_tags %}
 
-{% block title %}{% trans "Edit profile" %}{% endblock %} 
+{% block head_title %}{% trans "Edit your profile" %}{% endblock %}
 {% block content %}
 <h2>{% trans "Edit your profile" %}</h2>
+<div class="saaskit-block">
+<div class="saaskit-content">
 <form action="" method="POST" class="uniForm">
  <fieldset class="inlineLabels">
   {{form|as_uni_form}}
@@ -13,5 +15,7 @@
  </fieldset>
 </form>
 <a href="{{user.get_profile.get_absolute_url}}">{% trans "See your profile" %}</a>
+</div>
+</div>
 {% endblock %}
 

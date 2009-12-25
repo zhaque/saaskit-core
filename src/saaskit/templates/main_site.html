@@ -37,3 +37,10 @@
     Copyright &copy; 2019 Blah Your Website | <a href="/privacy" style="font-weight: 600;">{% trans "Privacy & Copyright" %}</a>
   </p>
 {% endblock %}
+{% block extra_js %}
+<script type="text/javascript" charset="utf-8">
+                $(function(){
+                        $("select").uniform();
+                });
+</script>
+{% endblock %}

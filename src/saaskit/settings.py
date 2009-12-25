@@ -182,8 +182,8 @@ _default_css_files = ('saaskit/css/saaskit.css',
                       )
 
 _default_js_files = ('saaskit/js/openid-jquery.js',
-                     'uni_form/uni_form/uni-form.jquery.js',
                      'saaskit/js/radio-select-checkbox.js',
+                     'uni_form/uni_form/uni-form.jquery.js',
                     )
 
 COMPRESS_CSS = {      

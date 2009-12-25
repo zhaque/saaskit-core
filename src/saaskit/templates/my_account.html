@@ -8,9 +8,10 @@
   <ul>
     <li><a href="{% url account_dashboard %}">{% trans "Dashboard" %}</a></li>
     <li><a href="{% url profiles_edit_profile %}">{% trans "Profile" %}</a></li>
-    <li><a href ="{% url auth_password_change %}">{% trans "Password Settings" %}</a></li>
-    <li><a href="{% url subscription_list %}">{% trans "Plans and Payments" %}</a></li>
     <li><a href="{% url prepaid-index %}">{% trans "Points" %}</a></li>
+    <li><a href ="{% url auth_password_change %}">{% trans "Authentication" %}</a></li>
     <li><a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a></li>		
+    <li><a href="{% url subscription_list %}">{% trans "Plans" %}</a></li>
+    <li><a href="{% url subscription_list %}">{% trans "Invoices" %}</a></li>
   </ul>
 {% endblock %}

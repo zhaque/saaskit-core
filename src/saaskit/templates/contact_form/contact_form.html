@@ -1,13 +1,7 @@
 {% extends "corp_tmpl.html" %}
 {% load i18n uni_form_tags %}
-{% block title %}{% trans "Contact us" %}{% endblock %}
-{% block teaser %}
 
-		 <h1>{% trans "Contact us" %}</h1>
-         <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna." %}</p>
-
-{% endblock %}
-{% block body %}
+{% block content %}
 
             <form action="" method="POST" class="uniForm">
                 {{ form|as_uni_form }}

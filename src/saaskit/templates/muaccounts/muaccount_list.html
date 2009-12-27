@@ -19,7 +19,8 @@
     {% for mua in mua_list %}
     <li>
       {% frontendadmin_delete mua %} | {% frontendadmin_change mua %} | 
-      <a href="{% url sso %}?next={{ mua.get_absolute_url }}">{{ mua.name }}{% if not mua.name %}{{ mua.get_absolute_url }}{% endif %}</a>
+      <a href="{% url sso %}?next={{ mua.get_absolute_url }}">Visit {{ mua.name }}{% if not mua.name %}{{ mua.get_absolute_url }}{% endif %}</a> |
+      <a href="{% url sso %}?next={{ mua.get_absolute_url }}">Manage {{ mua.name }}{% if not mua.name %}{{ mua.get_absolute_url }}{% endif %}</a>
       | {% load counter_tags %}{% view_count for muaccounts.muaccount mua.id as page_views %} 
         {% blocktrans with user.quotas.page_views as view_quotas %}Viewed: {{ page_views }}/{{ view_quotas }} times.{% endblocktrans %}
     </li>

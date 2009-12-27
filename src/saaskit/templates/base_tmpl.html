@@ -1,13 +1,11 @@
-{% load compressed %}
 {% load i18n %}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>{% block head_title %}{% endblock %}</title>
+        <title>{% block head_title %}SaaS kit{% endblock %}</title>
 	    <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-	    {% compressed_css 'all' %}
 
         {% block extra_style %}{% endblock %}
         {% block extra_head %}{% endblock %}
@@ -41,7 +39,6 @@
 	    </div>  
 
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-            {% compressed_js 'all' %}
         {% block extra_js %}{% endblock %}
 	
     </body>

@@ -227,7 +227,6 @@ MUACCOUNTS_SUBDOMAIN_STOPWORDS = (r"^www$", r"^support$", r"^lab$", r"^labs$", r
 MUACCOUNTS_THEMES = (
     # color css
     ('color_scheme', 'Color scheme', (
-        ('default', 'SaaS kit', 'saaskit/themes/default.css'),
         ('aqua', 'Aqua', 'saaskit/themes/aqua.css'),
         ('green', 'Green', 'saaskit/themes/green.css'),
         ('purple', 'Purple', 'saaskit/themes/purple.css'),

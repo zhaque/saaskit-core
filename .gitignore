@@ -28,4 +28,4 @@ saaskit.db
 tempfile
 
 #media
-src/saaskit-core/site_media/*
+src/saaskit/site_media/*

@@ -12,8 +12,8 @@
 
     </head>
     
-    <body class="{% block skin %}{% endblock %}">
-	    <div id="{% block doctype %}{% endblock %}" class="{% block class %}{% endblock %}">
+    <body class="{% block skin %}yui-skin-saaskit{% endblock %}">
+	    <div id="{% block doctype %}doc3{% endblock %}" class="{% block class %}yui-t5{% endblock %}">
             <div id="hd" class="saaskit-hd">{% block logo %}{% endblock %}{% block tagline %}{% endblock %}
                 <div class="saaskit-nav-rhs">
 					{% if user.is_authenticated %}		 
@@ -32,9 +32,9 @@
                 <div class="clear"></div>                		
 	     	    <div class="saaskit-nav">{% block nav %}{% endblock %}</div>
             </div>
-	        <div id="bd" class="{% block type %}{% endblock %}">
-	            <div id="{% block column %}{% endblock %}">
-	                <div class="{% block grid %}{% endblock %}">
+	        <div id="bd" class="{% block type %}saaskit-bd{% endblock %}">
+	            <div id="{% block column %}yui-main{% endblock %}">
+	                <div class="{% block grid %}yui-b{% endblock %}">
 		              {% block teaser %}{% endblock %}
 		              {% block content %}{% endblock %}
 		              {% block extra_content %}{% endblock %}

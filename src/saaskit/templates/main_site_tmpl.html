@@ -15,22 +15,10 @@
   {% endif %}
 {% endblock %}
 
-{% block nav-rhs %}
-{% if user.is_authenticated %}		 
-  <ul>
-    <li><b>{{user}}</b></li>	
-    {% ifequal user request.muaccount.owner %}
-    <li><a href="{% url muaccounts_manage_general %}">{% trans "Manage site" %}</a></li>
-    <li><a href="{% url notification_notices %}">{% trans "Visit site" %}</a></li>
-    {% endifequal %}
-    <li><a href="{% url notification_notices %}">{% trans "My account" %}</a></li>
-    <li><a href="{% url user_signout %}?next=/">{% trans "Sign out" %}</a></li>
-    {% else %}
-    <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>
-    {% endif %}
-  </ul>		
-{% endblock %}
 
+{% block nav-rhs %}
+    <li><a href="{% url account_dashboard %}">{% trans "My account" %}</a></li>	
+{% endblock %}
 
 {% block footer %}  
   <p>

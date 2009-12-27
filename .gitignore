@@ -26,6 +26,6 @@ saaskit.db
 
 #temp file
 tempfile
-
+src/saaskit/local_settings.py
 #media
 src/saaskit/site_media/*

@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n compressed settings %}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
@@ -7,14 +7,32 @@
         <title>{% block head_title %}SaaS kit{% endblock %}</title>
 	    <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
 
-        {% block extra_style %}{% endblock %}
+		{% block extra_style %}
+		  {% compressed_css 'all' %}
+		  <link rel="shortcut icon" href="{{ MEDIA_URL }}saaskit/img/favicon.ico">
+		{% endblock %}
+		
         {% block extra_head %}{% endblock %}
 
     </head>
     
     <body class="{% block skin %}yui-skin-saaskit{% endblock %}">
 	    <div id="{% block doctype %}doc3{% endblock %}" class="{% block class %}yui-t5{% endblock %}">
-            <div id="hd" class="saaskit-hd">{% block logo %}{% endblock %}{% block tagline %}{% endblock %}
+            <div id="hd" class="saaskit-hd">
+				{% block logo %} 
+				  <a href="{% setting MUACCOUNTS_DEFAULT_URL %}"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" align="top"/></a>
+				  {% block sitename %} 				
+				    {% if request.muaccount %}
+				      <div class="saaskit-block"><div class="saaskit-content">{{request.muaccount}}</div></div>
+				    {% endif %}
+				  {% endblock %}
+
+				{% endblock %}
+
+                {% block tagline %}
+                  saaskit-content-tagline
+                {% endblock %}
+
                 <div class="saaskit-nav-rhs">
 					{% if user.is_authenticated %}		 
 					  <ul>
@@ -22,7 +40,18 @@
 					    {% ifequal user request.muaccount.owner %}
 					      <li><a href="{% url muaccounts_manage_general %}">{% trans "Manage site" %}</a></li>
 					    {% endifequal %}
-		                {% block nav-rhs %}{% endblock %}
+		                {% block nav-rhs %}
+						  <li>
+						    <form action="{% url django.views.i18n.set_language %}" method="post">
+						      <select name="language" id="language" onChange="this.form.submit();">
+						        {% for lang in LANGUAGES %}
+						          <option value="{{ lang.0 }}" {% ifequal request.LANGUAGE_CODE lang.0 %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+						        {% endfor %}
+						      </select>
+						    </form> 
+						  </li>
+						  <li><a href="{% url account_dashboard %}">{% trans "My account" %}</a></li>	
+						{% endblock %}
 					      <li><a href="{% url user_signout %}?next=/">{% trans "Sign out" %}</a></li>
 					    {% else %}
 					      <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>
@@ -47,11 +76,18 @@
             {% block extra_body %}{% endblock %}
           
         
-            <div id="ft" class="saaskit-ft">{% block footer %}{% endblock %}</div>
+            <div id="ft" class="saaskit-ft">
+				{% block footer %}  
+				  <p>
+				    Copyright &copy; 2019 Blah Your Website | <a href="/privacy" style="font-weight: 600;">{% trans "Privacy & Copyright" %}</a>
+				  </p>
+				{% endblock %}
+	        </div>
 	    </div>  
 
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        {% block extra_js %}{% endblock %}
-	
+		{% block extra_js %}
+		  {% compressed_js 'all' %}
+		{% endblock %}	
     </body>
 </html>

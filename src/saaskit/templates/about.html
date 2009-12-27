@@ -1,6 +1,6 @@
 {% extends "main_site_tmpl.html" %}
 {% load i18n %}
-{% block title %}{% trans "About us" %}{% endblock %}
+{% block head_title %}{{ block.super }} : {% trans "About us" %}{% endblock %}
 {% block teaser %}
 
          <h1>{% trans "About us" %}</h1>

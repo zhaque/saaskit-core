@@ -1,30 +1,11 @@
 {% extends "base_tmpl.html" %}
-{% load i18n class_if_reverse compressed settings%}
+{% load i18n class_if_reverse %}
 {% block class %}{% endblock %}
 {% block type %}saaskit-teaser{% endblock %}
 
-{% block extra_style %}
-  {% compressed_css 'all' %}
-  <link rel="shortcut icon" href="{{ MEDIA_URL }}saaskit/img/favicon.ico">
-{% endblock %}
- 
-{% block logo %} 
-  <a href="{% setting MUACCOUNTS_DEFAULT_URL %}"><img src="{{ MEDIA_URL }}saaskit/img/saaskit_logo.png" alt="SaaSkit Logo" align="top"/></a>
-  {% if request.muaccount %}
-    <div class="saaskit-block"><div class="saaskit-content">{{request.muaccount}}</div></div>
-  {% endif %}
-{% endblock %}
+
+{% block content %}HELLO ZAHEED{% endblock %}
 
 
-{% block nav-rhs %}
-    <li><a href="{% url account_dashboard %}">{% trans "My account" %}</a></li>	
-{% endblock %}
 
-{% block footer %}  
-  <p>
-    Copyright &copy; 2019 Blah Your Website | <a href="/privacy" style="font-weight: 600;">{% trans "Privacy & Copyright" %}</a>
-  </p>
-{% endblock %}
-{% block extra_js %}
-  {% compressed_js 'all' %}
-{% endblock %}
+

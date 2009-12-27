@@ -1,13 +1,12 @@
 {% extends "main_site_tmpl.html" %}
 {% load i18n class_if_reverse %}
 
-{% block head_title %}SaaS kit : Toolkit for building subscription based webapp Fast!{% endblock %}
+{% block head_title %}{{ block.super }} : Toolkit for building subscription based webapp Fast!{% endblock %}
 
 {% block teaser %}
   <div class="saaskit-teaser">
     <p>Hello</p>
     <h3>Hello</h3>
-    <a href="/"><img src="{{ MEDIA_URL }}saaskit/img/qa_screenshot.png" alt="QA Service" align="right"/></a>
   </div>
 {% endblock %}
 

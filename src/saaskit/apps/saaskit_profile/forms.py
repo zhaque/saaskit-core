@@ -1,9 +1,10 @@
 from django import forms
 from saaskit_profile.models import UserProfile
-from uni_form.helpers import FormHelper, Submit, Reset 
+from django.utils.translation import ugettext_lazy as _
+from uni_form.helpers import FormHelper 
 
 class UserProfileForm(forms.ModelForm):
-    email = forms.EmailField(label="Character Field", help_text="I am help text hello hello hello I am a help text (340) - 232 (231) helloe helloe", required=False)
+    email = forms.EmailField(label=_('Email'), help_text=_('Email'), required=False)
     real_name = forms.CharField(label="Real Field", help_text="I am real")
 
     def __init__(self, *args, **kwargs):

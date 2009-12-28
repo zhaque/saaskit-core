@@ -5,14 +5,25 @@
 
 {% block content %}
 
+<div class="saaskit-block">
   <h3>{% trans "Create profile" %}</h3>
+    <div class="saaskit-content">
       <form action="" method="POST" class="uniForm">
         <fieldset class="inlineLabels">
         <legend>* {% trans "Required fields" %}</legend> 	
           {{form|as_uni_form}}				
         </fieldset>
-          <input type="submit" value="{% trans 'Create profile' %}" />
-      </form>
-      <a href="{{user.get_profile.get_absolute_url}}">{% trans "See your profile" %}</a>
-{% endblock %}
+		<div class="buttonHolder">
+		  <button class="button" type="submit">
+		    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" alt="Save" />{% trans "Save" %}
+		  </button>        
+	      <button class="button" type="reset">
+	        <img src="{{ MEDIA_URL }}saaskit/img/icons/cross.png" alt="Cancel"/>{% trans "Cancel" %}
+     	  </button>
+    	  <div class="clear"></div>
+    	</div>
 
+      </form>
+    </div>
+</div>
+{% endblock %}

@@ -12,3 +12,37 @@
     <li{% class_if_reverse invoice_listing saaskit-nav-active %}><a href="{% url invoice_listing %}">{% trans "Invoices" %}</a></li>
   </ul>
 {% endblock %}
+
+{% block sidebar %}
+
+<div class="yui-b saaskit-sidebar">
+  <div class="saaskit-block">
+    <h3>Sidebar Block  &larr; This is an H3 </h3>
+    <p>This sidebar block uses the exact same markup as the main body blocks. This lets you move them around easily - as 
+	   they automatically resize to fit the available space.
+	</p>
+  </div>
+
+  <div class="saaskit-notice">
+    <h4>Notice Title</h4>
+    <p>Morbi posuere urna vitae nunc. Curabitur ultrices, lorem ac aliquam blandit, lectus eros hendrerit eros, at 
+	   eleifend libero ipsum hendrerit urna. Suspendisse viverra. Morbi ut magna. Praesent id ipsum. Sed feugiat ipsum ut  
+	   felis. Fusce vitae nibh sed risus commodo pulvinar. Duis ut dolor. Cras ac erat pulvinar tortor porta sodales. 
+	   Aenean tempor venenatis dolor.
+	</p>
+  </div>
+</div>
+
+{% endblock %}
+{% block extra_body %}
+
+<div class="saaskit-notice">
+  <h4>Notice Title</h4>
+  <p>Morbi posuere urna vitae nunc. Curabitur ultrices, lorem ac aliquam blandit, lectus eros hendrerit eros, at 
+	   eleifend libero ipsum hendrerit urna. Suspendisse viverra. Morbi ut magna. Praesent id ipsum. Sed feugiat ipsum ut  
+	   felis. Fusce vitae nibh sed risus commodo pulvinar. Duis ut dolor. Cras ac erat pulvinar tortor porta sodales. 
+	   Aenean tempor venenatis dolor.
+	</p>
+</div>
+
+{% endblock %}

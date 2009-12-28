@@ -1,7 +1,7 @@
 {% extends "account_tmpl.html" %}
 {% load i18n %}
 {% block title %}{% trans "Profiles" %}{% endblock %} 
-{% block body %}
+{% block content %}
 <h2>{% trans "Profiles" %}</h2>
 <ul>{% for profile in object_list %}
   <li><a href="{{profile.get_absolute_url}}">{{profile.user}}</a></li>

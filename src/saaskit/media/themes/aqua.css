@@ -1,8 +1,8 @@
 /* *** - SaaS kit default colour scheme file *** */
 
 /* Generics */
-html {background-color:#232C30;}
-body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
+html {background-color:#f2f3f4;}
+body.yui-skin-saaskit { color: #a3a3a3; background-color: #b2b2b2; }
 
 .yui-skin-saaskit a:link, a:visited { color: #07b; }
 .yui-skin-saaskit a, a:hover, a:active { color: #d30; }
@@ -13,7 +13,7 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit h3 { color: #444}
 
 /* *** Header *** */
-.yui-skin-saaskit .saaskit-hd {  background-color: #232C30; }
+.yui-skin-saaskit .saaskit-hd {  background-color: #d5b5c5; }
 .yui-skin-saaskit .saaskit-hd h1 { color:#fff; }
 /*.yui-skin-saaskit .saaskit-hd .yui-g { background-color:#064780; }
 .yui-skin-saaskit .saaskit-hd .yui-u.first li.saaskit-nav-active a { background-color:#fff; color:#000; }*/

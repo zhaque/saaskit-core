@@ -175,14 +175,9 @@ _default_css_files = ('saaskit/css/saaskit.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
                       'saaskit/css/openid.css',
-                      'saaskit/css/radio-select-checkbox.css',
-                      'saaskit/css/friends.css',
-                      'saaskit/css/subscription.css',
-                      'saaskit/css/forms.css',
                       )
 
 _default_js_files = ('saaskit/js/openid-jquery.js',
-                     'saaskit/js/radio-select-checkbox.js',
                      'uni_form/uni_form/uni-form.jquery.js',
                     )
 

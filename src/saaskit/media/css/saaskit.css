@@ -137,21 +137,6 @@
 .yui-skin-saaskit .saaskit-bd ul.saaskit-list li .item {margin-left: 80px;}
 .yui-skin-saaskit .saaskit-bd ul.saaskit-list li .item .avatar {float: left; margin: 0 5px 5px 0; width: 30px; height: 30px;}
 
-/* Forms */
-.yui-skin-saaskit .saaskit-bd form p { padding-right: 1em;}
-.yui-skin-saaskit .saaskit-bd form label.label { font-weight:bold; font-size: 14px;  display: block; padding-bottom: 2px; font-weight: bold;}
-.yui-skin-saaskit .saaskit-bd form label span { font-weight:normal; font-size:85%; }
-.yui-skin-saaskit .saaskit-bd form span.info { color:#aaa; font-family:Georgia, serif; }
-.yui-skin-saaskit .saaskit-bd form textarea.text,
-.yui-skin-saaskit .saaskit-bd form input.text { padding: 5px; width:99%;}
-.yui-skin-saaskit .saaskit-bd form input.text_field, .yui-skin-saaskit .saaskit-bd form textarea.text_area { width:99%;}
-.yui-skin-saaskit .saaskit-bd form .group {margin-bottom:15px;}
-.yui-skin-saaskit .saaskit-bd form input.checkbox, .yui-skin-saaskit .saaskit-bd form input.radio {
-  margin-right: 5px;}
-.yui-skin-saaskit .saaskit-bd form input.checkbox {vertical-align:middle;}
-.yui-skin-saaskit .saaskit-bd form label.checkbox, .yui-skin-saaskit .saaskit-bd form label.radio {
-  line-height: 1.5em;}
-
 /* Messages */
 .yui-skin-saaskit .saaskit-bd p.alert { -moz-border-radius: 3px; -webkit-border-radius: 3px;text-align:center; margin:0 auto 5px; width:80%; padding-top:8px; padding-bottom:8px; }
 .yui-skin-saaskit .saaskit-bd p.error { border-width:1px; border-style: solid; }
@@ -261,13 +246,6 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-bd ul.saaskit-pager li.saaskit-pager-active a:hover { /*background-color:#685841; color:#fff;*/  background-color: #576C82;  color: #FFF; border: 1px solid #7593B0; -moz-border-radius:5px;}
 .yui-skin-saaskit .saaskit-bd ul.saaskit-pager li.saaskit-disabled { background-color: #eee;
   color: #aaa; border: 1px solid #ddd; -moz-border-radius:5px;}
-
-/* Forms */
-.yui-skin-saaskit .saaskit-bd form label span { color:#f00; }
-.yui-skin-saaskit .saaskit-bd form span.info { color:#aaa; }
-.yui-skin-saaskit .saaskit-bd form .text { border-color:#aaa; }
-.yui-skin-saaskit .saaskit-bd form input.text { border: 1px solid #ddd; }
-.yui-skin-saaskit .saaskit-bd form input.text_field, .yui-skin-saaskit .saaskit-bd form textarea.text_area { border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; border-top: 2px solid #ccc; border-left: 2px solid #ccc; }
 
 /* Messages */
 .yui-skin-saaskit .saaskit-bd .error { background-color:#fdd; border-color:#fbb; }

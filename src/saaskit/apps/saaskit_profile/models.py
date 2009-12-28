@@ -21,4 +21,3 @@ class UserProfile(models.Model):
     
     class Meta:
         db_table = 'saaskit_userprofile'
-        

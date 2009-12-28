@@ -1,9 +1,10 @@
 from django import forms
 from saaskit_profile.models import UserProfile
-
+from uni_form.helpers import FormHelper, Submit, Reset 
 
 class UserProfileForm(forms.ModelForm):
-    email = forms.EmailField(required=False)
+    email = forms.EmailField(label="Character Field", help_text="I am help text", required=False, widget=forms.TextInput())
+    real_name = forms.CharField(label="Real Field", help_text="I am real")
 
     def __init__(self, *args, **kwargs):
         instance = kwargs.pop('instance', None)

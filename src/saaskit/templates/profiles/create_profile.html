@@ -5,17 +5,14 @@
 
 {% block content %}
 
-<div class="saaskit-block">
   <h3>{% trans "Create profile" %}</h3>
-    <div class="saaskit-content">
       <form action="" method="POST" class="uniForm">
         <fieldset class="inlineLabels">
+        <legend>* {% trans "Required fields" %}</legend> 	
           {{form|as_uni_form}}				
-            <input type="submit" value="{% trans 'Create profile' %}" />
         </fieldset>
+          <input type="submit" value="{% trans 'Create profile' %}" />
       </form>
       <a href="{{user.get_profile.get_absolute_url}}">{% trans "See your profile" %}</a>
-    </div>
-</div>
 {% endblock %}
 

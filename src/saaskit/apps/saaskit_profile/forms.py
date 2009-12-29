@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from uni_form.helpers import FormHelper 
 
 class UserProfileForm(forms.ModelForm):
-    email = forms.EmailField(label=_('Email'), help_text=_('Email'), required=False)
+    email = forms.EmailField(label=_('Email'), help_text=_('Email'), required=True)
     real_name = forms.CharField(label="Real Field", help_text="I am real")
 
     def __init__(self, *args, **kwargs):

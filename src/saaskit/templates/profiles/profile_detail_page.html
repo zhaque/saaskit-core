@@ -1,6 +1,7 @@
-{% extends "account_tmpl.html" %}
+{% extends "main_site_tmpl.html" %}
 {% load i18n %}
-{% block title %}{% trans "Profile" %}{% endblock %} 
+
+{% block head_title %}{% trans "Profile" %}{% endblock %} 
 {% block content %}
 {% include "profiles/profile_detail.html" %}
 {% endblock %}

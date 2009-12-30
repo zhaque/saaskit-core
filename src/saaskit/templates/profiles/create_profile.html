@@ -7,6 +7,13 @@
 
 <div class="saaskit-block">
   <h3>{% trans "Create profile" %}</h3>
+  <p> 
+	<a href="{% url profiles_edit_profile %}">{% trans "Manage Profile" %}</a> | 
+  <a href ="{% url auth_password_change %}">{% trans "Passwords" %}</a> |
+  <a href ="{% url user_associate %}">{% trans "Associate OpenID" %}</a> |
+  <a href ="{% url user_dissociate %}">{% trans "Dissociate OpenID" %}</a> 
+	</p>
+  <hr/>
     <div class="saaskit-content">
       <form action="" method="POST" class="uniForm">
         <fieldset class="inlineLabels">

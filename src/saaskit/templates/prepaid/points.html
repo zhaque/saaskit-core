@@ -2,7 +2,12 @@
 {% load i18n %}
 
 {% block content %}
-
+    <h3>{% trans "Get Points" %}</h3>
+  <p> 
+	<a href="{% url account_dashboard %}">{% trans "Get Points" %}</a> | 
+   <a href="{% url prepaid-withdraw %}">{% trans "Withdraw Points" %}</a> |
+	</p>
+  <hr/>
 {% include "prepaid/get_points.html" %}
 
 {% include "prepaid/withdraw_points.html" %}

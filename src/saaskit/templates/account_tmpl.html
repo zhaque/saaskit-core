@@ -5,11 +5,9 @@
 {% block nav %}
   <ul>
      <li{% class_if_reverse account_dashboard saaskit-nav-active %}><a href="{% url account_dashboard %}">{% trans "Dashboard" %}</a></li>
-     <li{% class_if_reverse profiles_edit_profile saaskit-nav-active %}><a href="{% url profiles_edit_profile %}">{% trans "Profile" %}</a></li>
-     <li{% class_if_reverse prepaid-index saaskit-nav-active %}><a href="{% url prepaid-index %}">{% trans "Points" %}</a></li>
-     <li{% class_if_reverse auth_password_change saaskit-nav-active %}><a href ="{% url auth_password_change %}">{% trans "Authentication" %}</a></li>
-     <li{% class_if_reverse subscription_list saaskit-nav-active %}><a href="{% url subscription_list %}">{% trans "Plans" %}</a></li>
-     <li{% class_if_reverse muaccounts_listing saaskit-nav-active %}><a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a></li>
+     <li{% class_if_reverse profiles_edit_profile saaskit-nav-active %}><a href="{% url profiles_edit_profile %}">{% trans "Profiles and Passwords" %}</a></li>
+     <li{% class_if_reverse subscription_list saaskit-nav-active %}><a href="{% url subscription_list %}">{% trans "Plans and Pricing" %}</a></li>
+     <li{% class_if_reverse prepaid-index saaskit-nav-active %}><a href="{% url prepaid-index %}">{% trans "Manage Points" %}</a></li>
    {% if request.user.subscription %}		
      <li{% class_if_reverse invoice_listing saaskit-nav-active %}><a href="{% url invoice_listing %}">{% trans "Invoices" %}</a></li>
    {% endif %}

@@ -3,7 +3,13 @@
 {% block title %}Your mu accounts{% endblock %} 
 
 {% block content %}
-  <h2>{% trans "Manage mu accounts" %}</h2>
+  <h3>{% trans "Manage mu accounts" %}</h3>
+
+<p> 
+	<a href="{% url account_dashboard %}">{% trans "Messages" %}</a> | 
+ <a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a> |
+	</p>
+<hr/>
   {% with mua_list|length as mua_count %}
     {% if mua_count < user.quotas.muaccounts %}
       {% frontendadmin_add mua_list %}

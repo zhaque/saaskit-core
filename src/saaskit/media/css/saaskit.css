@@ -1,6 +1,6 @@
 /* Generics */
 .clear { clear: both; height: 0; }
-.yui-skin-saaskit body {font: normal 12px/1.5em "Lucida Grande", "Helvetica Neue", Arial, sans-serif;}
+.yui-skin-saaskit body {font: normal 1332px;}
 .yui-skin-saaskit h1 { margin: 15px 0; font-size: 22px; font-weight: normal;}
 .yui-skin-saaskit h2 { font-size: 22px; margin: 15px 0; font-weight: normal;}
 .yui-skin-saaskit h3 { font-size: 18px; margin: 10px 0; font-weight: normal;}
@@ -15,70 +15,57 @@
 .yui-skin-saaskit acronym { border-width:0 0 1px; border-style: dashed; cursor:help; }
 
 /* Make the page full bleed */
+.yui-skin-saaskit #doc3 { margin:0; }
 
-/* *** Header *** */
-.yui-skin-saaskit .saaskit-hd { /*padding:1.2em 1.5em 0 1.5em;*/ position: relative; /*padding-top: 1px;*/ padding: 0 20px; }
-.yui-skin-saaskit .saaskit-hd h1 { font-size: 28px; padding: 2px 0; margin:2px 0;}
+/* Header */
+.yui-skin-saaskit .saaskit-hd { padding:10px 0px 0px 10px; position: relative;}
+.yui-skin-saaskit .saaskit-hd h1 { font-size: 24px; padding: 0px 4px; margin:0px 5px; 
+     -moz-border-radius: 4px;
+	     -webkit-border-radius: 3px;
+}
+.yui-skin-saaskit .saaskit-hd .logo {margin: 0; padding: 0px 0px; float: left;}
+.yui-skin-saaskit .saaskit-hd .tagline { font-size: 14px; margin: 5px 0px 0px; font-weight: normal;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav {width: 100%;}
-.yui-skin-saaskit .saaskit-hd .saaskit-nav ul { margin: 0; padding: 0; list-style-type: none;  }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li {margin-right: 4px;  float: left; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li a { font-size: 12px; display: block;  padding: 4px 10px; }
-
-/*.yui-skin-saaskit .saaskit-hd .saaskit-nav li { float:left; display:inline; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav li a { display:block; text-decoration:none; }*/
-
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul { margin: 10px; padding: 0px; list-style-type: none;}
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li {margin-right: 5px;  float: left; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li a { font-size: 12px; display: block;  padding: 5px 10px; }
 .yui-skin-saaskit .saaskit-hd .saaskit-nav li a:hover { text-decoration:underline; }
 .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li { border-top-left-radius: 5px; border-top-right-radius: 5px;}
-
-/*.yui-skin-saaskit .saaskit-hd .saaskit-nav .yui-u.first li a { font-size:116%; padding:0.4em 1em; }*/
-
-.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs { position: absolute; top: 0px; right: 20px; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul { margin: 0; padding: 0; list-style-type: none;}
-.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li {float: left; padding: 3px 10px;}
-.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs li a { font-size:93%;}
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs { position: absolute; top: 5px; right: 20px; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul { margin: 1px; padding: 1px; list-style-type: none;}
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li {float: left; padding: 0px 5px;}
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs li a { font-size:95%;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:visited, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:active { text-decoration: none; }
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover { text-decoration: none; }
 
-/* *** Teaser *** */
-.yui-skin-saaskit .saaskit-teaser { width: 100%; background-color:#000; color: #333; }
-.yui-skin-saaskit .saaskit-teaser dl { margin-left:2em; margin-bottom:1em; padding-left:0.5em; }
-.yui-skin-saaskit .saaskit-teaser ol { margin-left:2.2em; padding-left: 1.2em; }
-.yui-skin-saaskit .saaskit-teaser ul { margin-left:2.2em; padding-left: 0.8em; }
+/* Teaser */
+.yui-skin-saaskit .saaskit-teaser dl { margin-left:2px; margin-bottom:1px; padding-left:0.5px; }
+.yui-skin-saaskit .saaskit-teaser ol { margin-left:2.2px; padding-left: 1.2px; }
+.yui-skin-saaskit .saaskit-teaser ul { margin-left:2.2px; padding-left: 0.8px; }
 .yui-skin-saaskit .saaskit-teaser ol li { list-style:decimal outside; }
-.yui-skin-saaskit .saaskit-teaser ul li { list-style:disc outside; padding-left:0.4em}
-.yui-skin-saaskit .saaskit-teaser dl dd { margin-left:1em; }
-.yui-skin-saaskit .saaskit-teaser h1 { font-size: 167%;  font-weight: bold;  margin:1em 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
-.yui-skin-saaskit .saaskit-teaser h2 { font-size:153.9%; margin: 0 0 0.4em 0.4em; }
+.yui-skin-saaskit .saaskit-teaser ul li { list-style:disc outside; padding-left:0.5px}
+.yui-skin-saaskit .saaskit-teaser dl dd { margin-left:1px; }
+.yui-skin-saaskit .saaskit-teaser h1 { font-size: 167%;  font-weight: bold;  margin:1px 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
+.yui-skin-saaskit .saaskit-teaser h2 { font-size:153.9%; margin: 0px 0px 0px 0px; }
 .yui-skin-saaskit .saaskit-teaser h3 { margin: 10px 0 0 0; background-color: none; padding: 5px 5px 5px 15px; font-size:18px; }  /* Coloured block headings */
 .yui-skin-saaskit .saaskit-teaser h4 { margin: 10px 0 5px 0; background-color: none; padding: 5px 5px 5px 15px; font-size:16px; }
-.yui-skin-saaskit .saaskit-teaser h5 { font-size:123.1%; margin:0.6em 1.2em; }
+.yui-skin-saaskit .saaskit-teaser h5 { font-size:123.1%; margin:0.6px 1.2px; }
 .yui-skin-saaskit .saaskit-teaser p { margin:15px 0; font-size:12px; line-height:20px; }
 .yui-skin-saaskit .saaskit-teaser .saaskit-teaser-block{  -moz-border-radius-topleft: 4px;
   -moz-border-radius-topright: 4px; margin-bottom:20px; padding-bottom: 20px; background: transparent; padding-top:1px;}
 .yui-skin-saaskit .saaskit-teaser .saaskit-teaser-block .saaskit-teaser-content {padding-left: 15px; padding-right:15px; padding-bottom:20px;}
 
-
-/* *** Body *** */
+/* Body */
 .yui-skin-saaskit .saaskit-bd  { width: 95%;}
-.yui-skin-saaskit .saaskit-bd .teaser p { margin-left: 0.62em; }
+.yui-skin-saaskit .saaskit-bd .teaser p { margin-left: 1px; }
 
 /* Lists */
-
-/*.yui-skin-saaskit .saaskit-bd ol,
-
-.yui-skin-saaskit .saaskit-bd ul,
-.yui-skin-saaskit .saaskit-bd dl { margin-left:2em; margin-bottom:1em; padding-left:0.5em; }
-.yui-skin-saaskit .saaskit-bd ol { margin-left:2.2em; padding-left: 1.2em; }
-.yui-skin-saaskit .saaskit-bd ul { margin-left:2.2em; padding-left: 0.8em; }
-.yui-skin-saaskit .saaskit-bd ol li { list-style:decimal outside; }
-.yui-skin-saaskit .saaskit-bd ul li { list-style:disc outside; padding-left:0.4em}
-.yui-skin-saaskit .saaskit-bd dl dd { margin-left:1em; }*/
-.yui-skin-saaskit .saaskit-bd { padding:1.5em 1em; }
-.yui-skin-saaskit .saaskit-bd h1 { font-size: 167%;  font-weight: bold;  margin:1em 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
-.yui-skin-saaskit .saaskit-bd h2 { font-size:153.9%; margin: 0 0 0.4em 0.4em; }
+.yui-skin-saaskit .saaskit-bd { padding:5px 20px; }
+.yui-skin-saaskit .saaskit-bd h1 { font-size: 167%;  font-weight: bold;  margin:1px 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
+.yui-skin-saaskit .saaskit-bd h2 { font-size:153.9%; margin: 0 0 0.4px 0.4px; }
 .yui-skin-saaskit .saaskit-bd h3 { margin: 10px 0 0 0; background-color: none; padding: 5px 5px 5px 15px; font-size:18px; }  /* Coloured block headings */
 .yui-skin-saaskit .saaskit-bd h4 { margin: 10px 0 5px 0; background-color: none; padding: 5px 5px 5px 15px; font-size:16px; }
-.yui-skin-saaskit .saaskit-bd h5 { font-size:123.1%; margin:0.6em 1.2em; }
+.yui-skin-saaskit .saaskit-bd h5 { font-size:123.1%; margin:0.6px 1.2px; }
 
 /* Basic block */
 .yui-skin-saaskit .saaskit-bd p { margin:15px 0; font-size:12px; line-height:20px; }
@@ -90,10 +77,6 @@
 .yui-skin-saaskit .saaskit-bd .saaskit-tabs {  font-size: 13px; border-bottom: 0px; }
 .yui-skin-saaskit .saaskit-bd .saaskit-tabs ul {margin: 0; padding: 0; list-style-type: none; }
 .yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li a {  margin-right: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 3px 10px; float:left; display:block;}
-
-/*.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li { float:left; list-style: none outside; padding-left: 0; }
-.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li a { /*display:block; text-decoration:none; padding:0.5em 1em;} */
-
 .yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li.saaskit-tabs-active a{ margin-bottom: -1px; text-decoration:none; }
 .yui-skin-saaskit .saaskit-bd .saaskit-tabs h2 { position:absolute; margin-left:-5000px; } /* Hidden SEO Header if needed */
 
@@ -124,7 +107,7 @@
 .yui-skin-saaskit .saaskit-bd table tbody a { text-decoration:underline; }
 
 /* Pager control*/
-.yui-skin-saaskit .saaskit-bd ul.saaskit-pager { text-align:right; padding-right:0.5em; }
+.yui-skin-saaskit .saaskit-bd ul.saaskit-pager { text-align:right; padding-right:0.5px; }
 .yui-skin-saaskit .saaskit-bd ul.saaskit-pager li { display:inline; margin-right: 5px; }
 .yui-skin-saaskit .saaskit-bd ul.saaskit-pager li a {text-decoration:none; font-size:11px;  -moz-border-radius:5px; padding: 2px 5px; }
 .yui-skin-saaskit .saaskit-bd ul.saaskit-pager li a:hover { }
@@ -145,30 +128,29 @@
 
 /* Sidebar */
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar h3 { padding: 5px 10px; font-weight: bold; font-size: 13px; margin-bottom:10px;;}
-.yui-skin-saaskit .saaskit-bd .saaskit-sidebar p { margin:1em 1em; }
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar p { margin:1px 1px; }
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul { padding-left: 0; }
-.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li { margin-top:-1px; /*border-style:solid; border-width:1px 0 1px 0;*/ }
-.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a { display:block; padding:0.5em 0; text-decoration:none; }
-.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:hover, .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:active { /*background: none;*/ text-decoration:underline; } 
-/*.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:link, .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:visited { font-size:12px;  padding: 5px 10px; text-decoration: none; }*/
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li { margin-top:-1px; }
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a { display:block; padding:0.5px 0; text-decoration:none; }
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:hover, .yui-skin-saaskit .saaskit-bd .saaskit-sidebar ul li a:active {text-decoration:underline; } 
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar .saaskit-notice {padding: 0 10px; }
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar .saaskit-notice h2 {font-size:16px; margin: 5px 0; }
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar .saaskit-notice p {font-size:12px;}
 
 /* Extra Body */
 .yui-skin-saaskit .saaskit-extra h3 { padding: 5px 10px; font-weight: bold; font-size: 13px; margin-bottom:10px;;}
-.yui-skin-saaskit .saaskit-extra p { margin:1em 1em; }
+.yui-skin-saaskit .saaskit-extra p { margin:1px 1px; }
 .yui-skin-saaskit .saaskit-extra ul { padding-left: 0; }
 .yui-skin-saaskit .saaskit-extra ul li { margin-top:-1px; border-style:solid; border-width:1px 0 1px 0; }
-.yui-skin-saaskit .saaskit-extra ul li a { display:block; padding:0.5em 0; text-decoration:none; }
-.yui-skin-saaskit .saaskit-extra ul li a:hover, .yui-skin-saaskit .saaskit-extra ul li a:active { /*background: none;*/ text-decoration:underline; }
+.yui-skin-saaskit .saaskit-extra ul li a { display:block; padding:1px 0; text-decoration:none; }
+.yui-skin-saaskit .saaskit-extra ul li a:hover, .yui-skin-saaskit .saaskit-extra ul li a:active { text-decoration:underline; }
 .yui-skin-saaskit .saaskit-extra ul li a:link, .yui-skin-saaskit .saaskit-extra ul li a:visited { font-size:12px;  padding: 5px 10px; text-decoration: none; }
 .yui-skin-saaskit .saaskit-extra-notice {padding: 0 10px; }
 .yui-skin-saaskit .saaskit-extra-notice h2 {font-size:16px; margin: 5px 0; }
 .yui-skin-saaskit .saaskit-extra-notice p {font-size:12px;}
 
 /* Footer */
-.yui-skin-saaskit .saaskit-ft { /*text-align:center; font-size:85%; padding:1em;*/ border-top-width:1px; border-top-style:solid; padding-bottom: 20px;}
+.yui-skin-saaskit .saaskit-ft {border-top-width:1px; border-top-style:solid; padding-bottom: 15px;}
 
 /* Custom Classes */
 .yui-skin-saaskit .small {  font-size: 11px; }
@@ -177,10 +159,10 @@
 .yui-skin-saaskit .text-center { text-align:center; }
 .yui-skin-saaskit .clear { clear:both; }
 
-/* *** - SaaS kit default colour scheme file *** */
+/**** - SaaS kit default colour scheme file ****/
 
 /* Generics */
-html {background-color:#232C30;}
+html {background-color: #1a1a1a; font-family: "Trebuchet";}
 body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 
 .yui-skin-saaskit a:link, a:visited { color: #07b; }
@@ -191,11 +173,10 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit h2 { color: #444}
 .yui-skin-saaskit h3 { color: #444}
 
-/* *** Header *** */
-.yui-skin-saaskit .saaskit-hd {  background-color: #232C30; }
-.yui-skin-saaskit .saaskit-hd h1 { color:#fff; }
-/*.yui-skin-saaskit .saaskit-hd .yui-g { background-color:#064780; }
-.yui-skin-saaskit .saaskit-hd .yui-u.first li.saaskit-nav-active a { background-color:#fff; color:#000; }*/
+/* Header */
+.yui-skin-saaskit .saaskit-hd { background-color: #1a1a1a; }
+.yui-skin-saaskit .saaskit-hd h1 {color:#fff; /* background: #cc0000;*/}
+.yui-skin-saaskit .saaskit-hd .tagline { color:#fff; }
 .yui-skin-saaskit .saaskit-hd li a { color:#fff; }
 .yui-skin-saaskit .saaskit-hd h1 a:link, .yui-skin-saaskit .saaskit-hd h1 a:active, .yui-skin-saaskit .saaskit-hd h1 a:hover, .yui-skin-saaskit .saaskit-hd h1 a:visited { color: #eaeaea; }
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, #user-navigation ul li a:visited {
@@ -209,6 +190,9 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active {
   border-top: 1px solid #fff; background-color: #eee !important; color: #333;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:link, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:visited, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:hover, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:active {color: #364b69;}
+
+/* Teaser */
+.yui-skin-saaskit .saaskit-teaser {background-color: #1a1a1a; width: 100%;}
 
 /* Body */
 .yui-skin-saaskit .saaskit-bd h1 {color:#f00;}

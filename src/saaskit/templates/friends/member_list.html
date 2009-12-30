@@ -1,73 +1,63 @@
 {% extends "manage_site_tmpl.html" %}
-{% load smartif settings i18n %}
-{% block title %}{% trans "Manage your site" %}{% endblock %} 
+{% load i18n pagination_tags %}
+
+{% block head_title %}{{block.super}} : {% trans "Manage site" %} : {% trans "Members" %} : {% trans "Current members" %} {% endblock %} 
+
 {% block content %}
-<h2>{% trans "Members" %}</h2>
-  <table>
-   {% for member in member_list %}
-     <tr class="{% cycle 'row1' 'row2' %}">
-         <td>{{ member }}</td>
-         <td>{{ member.date_joined|date }}</td>
-         <td>
-             <form class="inline-form" method="POST" action="{% url muaccounts_remove_member user_id=member.id %}">
-                 <p><input type="submit" value="remove user"></p></form>
-         </td>
-     </tr>
-   {% endfor %}
-  </table>
-  
-  <h2>{% trans "Invitations Sent" %}</h2>
-  {% if invitations_sent %}
-      <table class="invitation_list">
-          {% for invitation in invitations_sent %}
-              <tr>
-                  <td>{{ invitation.contact.email }}</td>
-                  <td>{{ invitation.sent|date:_("DATE_FORMAT") }}</td>
-                  <td class="invitation_{{ invitation.status }}">{{ invitation.get_status_display }}</td>
-                  <td>
-                      {% for other_user in invitation.contact.users.all %}
-                          {{ other_user }}
-                      {% endfor %}
-                  </td>
-              </tr>
-          {% endfor %}
-      </table>
-  {% else %}
-      <p>{% trans "No invitations sent." %}</p>
-  {% endif %}
-  
-  <h2>{% trans "Invitation Requests Received" %}</h2>
-  {% if joins_received %}
-      <table class="invitation_list">
-          {% for join_request in joins_received %}
-              <tr>
-                  <td>{{ join_request.email }}</td>
-                  <td>{{ join_request.created|date:_("DATETIME_FORMAT") }}</td>
-                  <td>{{ join_request.notes|safe }}</td>
-                  <td>{{ join_request.get_state_display }}</td>
-                  <td>
-                    {% ifequal join_request.state join_request.STATE_INIT %}
-                      <a href="{% url proceed_invitation_request email=join_request.email,state='invite' %}">{% trans 'Invite' %}</a>
-                      | <a href="{% url proceed_invitation_request email=join_request.email,state='reject' %}">{% trans 'Reject' %}</a>
-                    {% endifequal %}
-                  </td>
-              </tr>
-          {% endfor %}
-      </table>
-  {% else %}
-      <p>{% trans "No join requests sent." %}</p>
-  {% endif %}
-    
-  {% with member_list|length as member_count %}
-     {% if member_count < user.quotas.muaccount_members %}
-         <p>
-          <a href="{% url muaccounts_add_member %}" rel="facebox">{% trans "Invite someone new to join" %}</a>
-          | <a href="{% url invitations_contacts %}">{% trans "Your contacts" %}</a>
-         </p>
-     {% else %}
-     <p><a href="{% url subscription_list %}">{% trans "Upgrade your plan" %}</a> {% trans "to add more users" %}!</p>
-     {% endif %}
-  {% endwith %}
+
+<div class="saaskit-block">
+  <h3>{% trans "Current members" %}</h3>
+    <div class="saaskit-content">
+	    <p> 
+		<a href="{% url muaccounts_member_list %}">{% trans "Current members" %}</a> | 
+        <a href ="{% url muaccounts_add_member %}">{% trans "Invite new" %}</a> |
+        <a href ="{% url muaccounts_manage_advanced %}">{% trans "Manage invitations" %}</a> |
+        <a href ="{% url invitations_contacts %}">{% trans "Import contacts" %}</a> |
+        <a href ="{% url muaccounts_manage_styles %}">{% trans "Manage contacts" %}</a>
+		</p>
+        <hr/>
+     <table>
+     <thead>
+       <tr>
+         <td>Username</td>
+         <td><a href="#">Member Since</a></td>
+         <td>&nbsp;</td>
+       </tr>
+     </thead>
+     <tbody>
+	   {% for member in member_list %}
+	     <tr class="{% cycle 'row1' 'row2' %}">
+	         <td>{{ member }}</td>
+	         <td>{{ member.date_joined|date }}</td>
+	         <td>
+	             <form class="inline-form" method="POST" action="{% url muaccounts_remove_member user_id=member.id %}">
+	             <input type="submit" value="remove user"></form>
+	         </td>
+	     </tr>
+	   {% endfor %}
+     </tbody>
+	</table>
+ 
+    <ul class="saaskit-pager">
+      <li class="saaskit-disabled"><a href="#">&#171; Prev</a></li>
+      <li class="saaskit-pager-active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">8</a></li>
+      <li><a href="#">9</a></li>
+      <li><a href="#">10</a></li>
+      <li><a href="#">11</a></li>
+      <li><a href="#">12</a></li>
+      <li><a href="#">Next &#187;</a></li>
+    </ul>
+    <div class="clear"></div>
+	</div>
+</div>
+
 {% endblock %}
 
 

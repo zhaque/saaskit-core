@@ -14,33 +14,32 @@
         <a href ="{% url muaccounts_add_member %}">{% trans "Invite new" %}</a> |
         <a href ="{% url muaccounts_manage_advanced %}">{% trans "Manage invitations" %}</a> |
         <a href ="{% url invitations_contacts %}">{% trans "Import contacts" %}</a> |
-        <a href ="{% url muaccounts_manage_styles %}">{% trans "Manage contacts" %}</a>
+        <a href ="{% url manage_contacts %}">{% trans "Manage contacts" %}</a>
 		</p>
         <hr/>
-    
     {% for import_form in import_forms %}
-    <h2>{{ import_form.title }}</h2>
+    <h4>{{ import_form.title }}</h4>
     <form class="uniForm" enctype="multipart/form-data" method="post" action="">
         <input type="hidden" name="action" value="{{ import_form.action }}" />
         <fieldset class="inlineLabels">
             {{ import_form.form|as_uni_form }}
-            <div class="submit form_block buttonHolder">
-                <input type="submit" value="{% trans 'upload' %}" />
-            </div>
         </fieldset>
+		  <button class="button" type="submit">
+		    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" alt={% trans "Import" %} />{% trans "Import" %}
+		  </button>
     </form>
     {% endfor %}
     
     {% for import_service in import_services %}
-    <h2>{{ import_service.title }}</h2>
+    <h5>{{ import_service.title }}</h5>
     {% if import_service.token %}
         <form class="uniForm" method="POST" action="">
           <input type="hidden" name="action" value="{{ import_service.action }}" />
           <fieldset>
-            <div class="submit form_block buttonHolder">
-                <input type="submit" value="{% trans 'import' %}" />
-            </div>
           </fieldset>
+		  <button class="button" type="submit">
+		    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" alt={% trans "Import" %} />{% trans "Import" %}
+		  </button>
         </form>
     {% else %}
         <p>
@@ -53,33 +52,8 @@
         </p>
     {% endif %}
     {% endfor %}
-    
-    <h2>{% trans "Contacts" %}</h2>
-    
-    {% with user.contacts.all as contacts %}
-        
-        {% autopaginate contacts %}
-        
-        {% if contacts %}
-            <table class="contact_list">
-                {% for contact in contacts %}
-                    <tr>
-                        <td>{% if contact.name %}{{ contact.name }}{% else %}?{% endif %}</td>
-                        <td>{{ contact.email }}</td>
-                        <td>
-                            {% for other_user in contact.users.all %}
-                                <a href="">{{ other_user }}</a>
-                            {% endfor %}
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
-            
-            {% paginate %}
-            
-        {% else %}
-            <p>{% trans "No contacts." %}</p>
-        {% endif %}
-    {% endwith %}
+
+    </div>    
+</div>
     
 {% endblock %}

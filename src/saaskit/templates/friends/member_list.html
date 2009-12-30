@@ -13,7 +13,7 @@
         <a href ="{% url muaccounts_add_member %}">{% trans "Invite new" %}</a> |
         <a href ="{% url muaccounts_manage_advanced %}">{% trans "Manage invitations" %}</a> |
         <a href ="{% url invitations_contacts %}">{% trans "Import contacts" %}</a> |
-        <a href ="{% url muaccounts_manage_styles %}">{% trans "Manage contacts" %}</a>
+        <a href ="{% url manage_contacts %}">{% trans "Manage contacts" %}</a>
 		</p>
         <hr/>
      <table>
@@ -38,22 +38,11 @@
      </tbody>
 	</table>
  
-    <ul class="saaskit-pager">
-      <li class="saaskit-disabled"><a href="#">&#171; Prev</a></li>
-      <li class="saaskit-pager-active"><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">6</a></li>
-      <li><a href="#">7</a></li>
-      <li><a href="#">8</a></li>
-      <li><a href="#">9</a></li>
-      <li><a href="#">10</a></li>
-      <li><a href="#">11</a></li>
-      <li><a href="#">12</a></li>
-      <li><a href="#">Next &#187;</a></li>
-    </ul>
+ <ul class="saaskit-pager">
+   <li class="saaskit-pager-active">
+     {% paginate %}
+   <li>
+  </ul>
     <div class="clear"></div>
 	</div>
 </div>

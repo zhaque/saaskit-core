@@ -9,11 +9,11 @@
   <h3>{% trans "Invite someone new to join" %}</h3>
     <div class="saaskit-content">
 	    <p> 
-			<a href="{% url muaccounts_member_list %}">{% trans "Current members" %}</a> | 
-	        <a href ="{% url muaccounts_add_member %}">{% trans "Invite new" %}</a> |
-	        <a href ="{% url muaccounts_manage_advanced %}">{% trans "Manage invitations" %}</a> |
-	        <a href ="{% url invitations_contacts %}">{% trans "Import contacts" %}</a> |
-	        <a href ="{% url muaccounts_manage_styles %}">{% trans "Manage contacts" %}</a>
+		<a href="{% url muaccounts_member_list %}">{% trans "Current members" %}</a> | 
+        <a href ="{% url muaccounts_add_member %}">{% trans "Invite new" %}</a> |
+        <a href ="{% url muaccounts_manage_advanced %}">{% trans "Manage invitations" %}</a> |
+        <a href ="{% url invitations_contacts %}">{% trans "Import contacts" %}</a> |
+        <a href ="{% url manage_contacts %}">{% trans "Manage contacts" %}</a>
 		</p>
         <hr/>
         {% trans "If you'd like to invite someone to join your site, you can enter their email address and a message for them below or you may" %} <a href="{% url invitations_contacts %}">{% trans "import your contacts" %}</a>.
@@ -21,4 +21,52 @@
         {% include "friends/invite_form.html" %}
     </div>
 </div>
+
+===== GGG ====
+{% endblock %}
+
+{% block extra_body %}
+
+<h2>{% trans "Invitations Sent" %}</h2>
+{% if invitations_sent %}
+    <table class="invitation_list">
+        {% for invitation in invitations_sent %}
+            <tr>
+                <td>{{ invitation.contact.email }}</td>
+                <td>{{ invitation.sent|date:_("DATE_FORMAT") }}</td>
+                <td class="invitation_{{ invitation.status }}">{{ invitation.get_status_display }}</td>
+                <td>
+                    {% for other_user in invitation.contact.users.all %}
+                        {{ other_user }}
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>{% trans "No invitations sent." %}</p>
+{% endif %}
+
+<h2>{% trans "Invitation Requests Received" %}</h2>
+{% if joins_received %}
+    <table class="invitation_list">
+        {% for join_request in joins_received %}
+            <tr>
+                <td>{{ join_request.email }}</td>
+                <td>{{ join_request.created|date:_("DATETIME_FORMAT") }}</td>
+                <td>{{ join_request.notes|safe }}</td>
+                <td>{{ join_request.get_state_display }}</td>
+                <td>
+                  {% ifequal join_request.state join_request.STATE_INIT %}
+                    <a href="{% url proceed_invitation_request email=join_request.email,state='invite' %}">{% trans 'Invite' %}</a>
+                    | <a href="{% url proceed_invitation_request email=join_request.email,state='reject' %}">{% trans 'Reject' %}</a>
+                  {% endifequal %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>{% trans "No join requests sent." %}</p>
+{% endif %}
+
 {% endblock %}

@@ -4,17 +4,29 @@
 {% block head_title %}{{ block.super }} : Toolkit for building subscription based webapp Fast!{% endblock %}
 
 {% block teaser %}
-<a href="/"><img src="{{ MEDIA_URL }}saaskit/img/screenshot.png" alt="Subscription App Screenshot" width="720" height="480"/ align="right"></a>
-<p>Fully Loaded web application toolkit </p>
-			<p>Choose a city…</p>
-			<ul class="citylist">
-			  <li class="beta"><a href="http://atlanta.everyblock.com/">Atlanta</a></li>
-				<li><a href="http://boston.everyblock.com/">Boston</a></li>
-				<li><a href="http://charlotte.everyblock.com/">Charlotte</a></li>
-			</ul>
+  <div class="saaskit-teaser">
+	<h2>The quick &amp; easy way to build your "open for business" application without scratching deep.</h2> 
+	<img src="{{ MEDIA_URL }}saaskit/img/screenshot.png" alt="Subscription App Screenshot" width="720" height="480" align="right">
+    <p>Features includes..</p>
+      <ul>
+        <li>Atlanta</li>
+        <li>Boston</li>
+        <li>Charlotte</li>
+        <li>Atlanta</li>
+        <li>Boston</li>
+        <li>Charlotte</li>
+        <li>Atlanta</li>
+        <li>Boston</li>
+        <li>Charlotte</li>
+      </ul>
+  </div>
 {% endblock %}
 
-
+{% block extra_body %}
+<div class="saaskit-extra-notice">
+<h3>Body Body Body</h3>
+</div>
+{% endblock %}
 
 
 

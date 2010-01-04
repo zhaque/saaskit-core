@@ -20,14 +20,14 @@
 	    <div id="{% block doctype %}doc3{% endblock %}" class="{% block class %}yui-t5{% endblock %}">
             <div id="hd" class="saaskit-hd">
 				{% block logo %} 
-				  <div class="logo"><a href="/"><h1>SaaS Kit</h1></a></div>
+				  <div class="logo"><a href="/"><h1>SaaS Kit | </h1></a></div>
 				{% endblock %}
 
 				{% block sitename %} 				
 				{% endblock %}
 
                 {% block tagline %}
-                  <div class="tagline">{% trans "Toolkit for building subscription based webapp" %} <em>{% trans "Fast!" %}</em></div>
+                  <div id="hd" class="tagline"><a href="/">{% trans "Toolkit for building subscription based webapp" %} <em>{% trans "Fast!" %}</em></a></div>
                 {% endblock %}
 
                 <div class="saaskit-nav-rhs">
@@ -60,17 +60,14 @@
 	        <div id="bd" class="{% block type %}saaskit-bd{% endblock %}">
 	            <div id="{% block column %}yui-main{% endblock %}">
 	                <div class="{% block grid %}yui-b{% endblock %}">
-		              {% block teaser %}{% endblock %}
+		              {% block landing_main %}{% endblock %}
 		              {% block content %}{% endblock %}
-		              {% block extra_content %}{% endblock %}
 		            </div>
+		            {% block extra_content %}{% endblock %}		
                 </div>
-     	            {% block teaser_sidebar %}{% endblock %}		
-		            {% block sidebar %}{% endblock %}
-            </div>
-
-            {% block extra_body %}{% endblock %}
-          
+     	            {% block sidebar %}{% endblock %}		
+		            {% block extra_sidebar %}{% endblock %}
+            </div>          
         
             <div id="ft" class="saaskit-ft">
 				{% block footer %}  

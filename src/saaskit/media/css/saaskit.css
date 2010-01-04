@@ -40,20 +40,32 @@
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover { text-decoration: none; }
 
 /* Landing Page */
-.yui-skin-saaskit .saaskit-landing-main { padding:10px 0px 0px 10px; }
+.yui-skin-saaskit .saaskit-landing-main { padding:10px 0px 0px 0px; }
 .yui-skin-saaskit .saaskit-landing-main h1 { font-size: 24px; padding: 0px 4px; margin:0px 5px; 
      -moz-border-radius: 4px;
 	     -webkit-border-radius: 3px;
 }
 .yui-skin-saaskit .saaskit-landing-main h4 {margin: 0px 0px 0px 120px; width: 340px; font-size: 16px; line-height: 1.16em; margin-bottom: 1.25em;}
 .yui-skin-saaskit .saaskit-landing-main ul li {margin: 0px 0px 0px 120px; width: 340px; font-size: 16px;}
-.yui-skin-saaskit .saaskit-landing-main p {margin: 0px 0px 0px 120px; width: 340px; font-size: 12px; line-height: 1.16em; margin-bottom: 1.25em;}
-.yui-skin-saaskit .saaskit-landing-img {margin: -320px 0px 0px 270px; width:720px; height:480px; margin-bottom: 1.25em;}
+.yui-skin-saaskit .saaskit-landing-main p {margin: 0px 0px 0px 120px; width: 340px; font-size: 14px; line-height: 1.16em; margin-bottom: 1.25em;}
+.yui-skin-saaskit .saaskit-landing-main .plans {margin: 40px 0px 0px 90px; width: 200px; font-size: 20px; margin-bottom: 1em;
+     -moz-border-radius: 15px;
+	     -webkit-border-radius: 15px;
+}
+.yui-skin-saaskit .saaskit-landing-main .plans p {margin: 0px 0px 0px 10px; width: 180px; font-size: 12px;}
+.yui-skin-saaskit .saaskit-landing-main .tour {margin: 0px 0px 0px 120px; width: 140px; font-size: 20px; margin-bottom: 2em;
+     -moz-border-radius: 10px;
+	     -webkit-border-radius: 10px;
+}
 
-.yui-skin-saaskit .saaskit-landing-main .benefits_list {padding:0px 0px 0px 30px;}
-.yui-skin-saaskit .saaskit-landing-main .benefit {width:280px; float:left; margin: 0px 25px 0px 0px;}
-.yui-skin-saaskit .saaskit-landing-main .benefit h5 {font-size:100%; font-weight:600;}
-.yui-skin-saaskit .saaskit-landing-main .benefit p {width:80%; margin: 10px 0px 0px 25px; font-size: 12px; margin-bottom: 20px;}
+
+.yui-skin-saaskit .saaskit-landing-img {margin: -500px 0px 0px 295px; width:720px; height:480px; margin-bottom: -1em;}
+
+.yui-skin-saaskit .saaskit-landing-extra { width:100%; }
+.yui-skin-saaskit .saaskit-landing-extra .benefits_list { width: 95%; margin:0px 0px 0px 50px;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit {width:280px; float:left; margin: 20px 30px 0px 0px;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit h5 {font-size:120%; font-weight:600;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit p {width:100%; margin: 10px 0px 0px 20px; font-size: 12px; margin-bottom: 30px;}
 
 /* Body */
 .yui-skin-saaskit .saaskit-bd  { width: 95%;}
@@ -139,6 +151,7 @@
 /* Footer */
 .yui-skin-saaskit .saaskit-ft {border-top-width:1px; border-top-style:none; padding-bottom: 20px;}
 
+
 /* Custom Classes */
 .yui-skin-saaskit .small {  font-size: 11px; }
 .yui-skin-saaskit .text-left { text-align:left; }
@@ -164,7 +177,7 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-hd .logo {margin: 0; padding: 0px 0px; float: left;}
 .yui-skin-saaskit .saaskit-hd .tagline { color:#fff; }
 .yui-skin-saaskit .saaskit-hd .tagline a:link, .yui-skin-saaskit .saaskit-hd .tagline a:visited { color:#fff;}
-.yui-skin-saaskit .saaskit-hd h1 { color:#fff; }
+.yui-skin-saaskit .saaskit-hd h1 {color:#fff; }
 .yui-skin-saaskit .saaskit-hd li a { color:#fff; }
 .yui-skin-saaskit .saaskit-hd h1 a:link, .yui-skin-saaskit .saaskit-hd h1 a:active, .yui-skin-saaskit .saaskit-hd h1 a:hover, .yui-skin-saaskit .saaskit-hd h1 a:visited { color: #eaeaea; }
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, .saaskit-nav ul li a:visited {
@@ -184,11 +197,12 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-landing-main h4 {color:#fff;}
 .yui-skin-saaskit .saaskit-landing-main ul li {color:#fff;}
 .yui-skin-saaskit .saaskit-landing-main p {color:#fff;}
+.yui-skin-saaskit .saaskit-landing-main .plans {background-color:#cc0000; color:#fff;}
+.yui-skin-saaskit .saaskit-landing-main .tour {background-color:#0B43A8; color:#fff;}
 
-.yui-skin-saaskit .saaskit-landing-main .benefits_list {background-color:#cfcfcf;}
-.yui-skin-saaskit .saaskit-landing-main .benefit {background-color:#cfcfcf;}
-.yui-skin-saaskit .saaskit-landing-main .benefit h5 {background-color:#cfcfcf; color:#1a1a1a;}
-.yui-skin-saaskit .saaskit-landing-main .benefit p {background-color:#cfcfcf; color:#1a1a1a;}
+.yui-skin-saaskit .saaskit-landing-extra { background-color:#cfcfcf;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit h5 {color:#1a1a1a;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit p {color:#1a1a1a;}
 
 
 /* Footer */

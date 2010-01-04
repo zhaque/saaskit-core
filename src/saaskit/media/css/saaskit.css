@@ -48,24 +48,24 @@
 .yui-skin-saaskit .saaskit-landing-main h4 {margin: 0px 0px 0px 120px; width: 340px; font-size: 16px; line-height: 1.16em; margin-bottom: 1.25em;}
 .yui-skin-saaskit .saaskit-landing-main ul li {margin: 0px 0px 0px 120px; width: 340px; font-size: 16px;}
 .yui-skin-saaskit .saaskit-landing-main p {margin: 0px 0px 0px 120px; width: 340px; font-size: 14px; line-height: 1.16em; margin-bottom: 1.25em;}
-.yui-skin-saaskit .saaskit-landing-main .plans {margin: 40px 0px 0px 90px; width: 200px; font-size: 20px; margin-bottom: 1em;
+.yui-skin-saaskit .saaskit-landing-main .plans {margin: 25px 0px 0px 70px; width: 200px; font-size: 20px; margin-bottom: 1em;
      -moz-border-radius: 15px;
 	     -webkit-border-radius: 15px;
 }
 .yui-skin-saaskit .saaskit-landing-main .plans p {margin: 0px 0px 0px 10px; width: 180px; font-size: 12px;}
-.yui-skin-saaskit .saaskit-landing-main .tour {margin: 0px 0px 0px 120px; width: 140px; font-size: 20px; margin-bottom: 2em;
+.yui-skin-saaskit .saaskit-landing-main .tour {margin: 0px 0px 0px 100px; width: 140px; font-size: 20px; margin-bottom: 2em;
      -moz-border-radius: 10px;
 	     -webkit-border-radius: 10px;
 }
 
 
-.yui-skin-saaskit .saaskit-landing-img {margin: -500px 0px 0px 295px; width:720px; height:480px; margin-bottom: -1em;}
+.yui-skin-saaskit .saaskit-landing-img {margin: -470px 0px 0px 260px; width:720px; height:480px; margin-bottom: -1em;}
 
 .yui-skin-saaskit .saaskit-landing-extra { width:100%; }
 .yui-skin-saaskit .saaskit-landing-extra .benefits_list { width: 95%; margin:0px 0px 0px 50px;}
 .yui-skin-saaskit .saaskit-landing-extra .benefit {width:280px; float:left; margin: 20px 30px 0px 0px;}
 .yui-skin-saaskit .saaskit-landing-extra .benefit h5 {font-size:120%; font-weight:600;}
-.yui-skin-saaskit .saaskit-landing-extra .benefit p {width:100%; margin: 10px 0px 0px 20px; font-size: 12px; margin-bottom: 30px;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit p {width:85%; margin: 10px 0px 0px 20px; font-size: 12px; margin-bottom: 30px;}
 
 /* Body */
 .yui-skin-saaskit .saaskit-bd  { width: 95%;}

@@ -1,11 +1,12 @@
 {% extends "main_site_tmpl.html" %}
 {% load i18n %}
-{% block title %}{{block.super}} : {% trans "Privacy" %}{% endblock %}
+{% block head_title %}{{block.super}} : {% trans "Privacy & Copyright" %}{% endblock %}
 
 {% block content %}
 <div class="saaskit-block">
-	<div class="saaskit-content">
-         <h2>{% trans "Privacy" %}</h2>
+  <div class="saaskit-content">
+
+         <h2>{% trans "Privacy & Copyright" %}</h2>
 		Highrise Privacy Policy
 
 		We collect the e-mail addresses of those who communicate with us via e-mail, aggregate information on what pages consumers access or visit, and information volunteered by the consumer (such as survey information and/or site registrations). The information we collect is used to improve the content of our Web pages and the quality of our service, and is not shared with or sold to other organizations for commercial purposes, except to provide products or services you've requested, when we have your permission, or under the following circumstances:
@@ -36,7 +37,6 @@
 
 		Any questions about this Privacy Policy should be addressed to support at 37signals.com or by mail at: 37signals, 400 North May Street #301, Chicago, IL 60622 USA
        
+  </div>
+</div>
 {% endblock %}
-
-</div>
-</div>

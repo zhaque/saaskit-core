@@ -1,6 +1,6 @@
 /* Generics */
 .clear { clear: both; height: 0; }
-.yui-skin-saaskit body {font: normal 1332px;}
+.yui-skin-saaskit body {font: normal 12px/1.5em "Lucida Grande", "Helvetica Neue", Arial, sans-serif;}
 .yui-skin-saaskit h1 { margin: 15px 0; font-size: 22px; font-weight: normal;}
 .yui-skin-saaskit h2 { font-size: 22px; margin: 15px 0; font-weight: normal;}
 .yui-skin-saaskit h3 { font-size: 18px; margin: 10px 0; font-weight: normal;}
@@ -71,11 +71,12 @@
 .yui-skin-saaskit .saaskit-bd .teaser p { margin-left: 1px; }
 
 /* Lists */
-.yui-skin-saaskit .saaskit-bd { padding:5px 20px; }
-.yui-skin-saaskit .saaskit-bd h2 { font-size:153.9%; margin: 0 0 5px 5px; }
+.yui-skin-saaskit .saaskit-bd { padding:1.5em 1em; }
+.yui-skin-saaskit .saaskit-bd h1 { font-size: 167%;  font-weight: bold;  margin:1em 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
+.yui-skin-saaskit .saaskit-bd h2 { font-size:153.9%; margin: 0 0 0.4em 0.4em; }
 .yui-skin-saaskit .saaskit-bd h3 { margin: 10px 0 0 0; background-color: none; padding: 5px 5px 5px 15px; font-size:18px; }  /* Coloured block headings */
 .yui-skin-saaskit .saaskit-bd h4 { margin: 10px 0 5px 0; background-color: none; padding: 5px 5px 5px 15px; font-size:16px; }
-.yui-skin-saaskit .saaskit-bd h5 { font-size:123.1%; margin:0.6px 1.2px; }
+.yui-skin-saaskit .saaskit-bd h5 { font-size:123.1%; margin:0.6em 1.2em; }
 
 /* Basic block */
 .yui-skin-saaskit .saaskit-bd p { margin:15px 0; font-size:12px; line-height:20px; }
@@ -202,6 +203,19 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-landing-extra .benefit h5 {color:#1a1a1a;}
 .yui-skin-saaskit .saaskit-landing-extra .benefit p {color:#1a1a1a;}
 
+/* Body */
+.yui-skin-saaskit .saaskit-bd h1 {color:#f00;}
+.yui-skin-saaskit .saaskit-bd h2 {color:#f00;} 
+.yui-skin-saaskit .saaskit-bd h3 { background-color:#A0C2DE; border-color:#064780; color: #456; } 
+.yui-skin-saaskit .saaskit-bd h4 { color: #456; }
+.yui-skin-saaskit .saaskit-bd h5 { color: #456; }
+.yui-skin-saaskit .saaskit-bd { background-color:#EBEBEB; color: #333; }
+.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-content { border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;
+  background: #fff;}
+
+/* Style the horizontal rules inside .block */
+.yui-skin-saaskit .saaskit-bd hr { background-color: #aaa;}
 
 /* Footer */
 .yui-skin-saaskit .saaskit-ft { background-color: #ddd;; border-top-style:solid; border-top-color:#bbb; color:#262626; padding-left:20px; }

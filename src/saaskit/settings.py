@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.flatpages',
     
     'compress',
     'contact_form',
@@ -110,7 +111,6 @@ INSTALLED_APPS = (
     'friends',
     'tinymce',
     'frontendadmin',
-    'django.contrib.flatpages',
     'django_counter',
     'rosetta',
     

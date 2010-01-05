@@ -1,11 +1,8 @@
-{% extends "main_site_tmpl.html" %}
+{% extends "base_tmpl.html" %}
 {% load i18n %}
-{% block title %}{% trans "Internal error" %}{% endblock %}
-{% block body %}
+{% block head_title %}{{ block.super }} : {% trans "It's broke calling the engineers now" %}{% endblock %}
 
-    <center>
-    <h1>{% trans "Oops! internal error" %}</h1>
-    <h4>{% blocktrans %}Please, go <a href="/">back</a> and don't do that anymore :){% endblocktrans %}</h4>
-    </center>
-
+{% block content %}
+HELLO 500
 {% endblock %}
+

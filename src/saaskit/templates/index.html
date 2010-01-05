@@ -1,5 +1,7 @@
-{% extends "main_site_tmpl.html" %}
-{% load i18n class_if_reverse %}
+{% extends "base_tmpl.html" %}
+{% load i18n %}
+{% block class %}yui-t7{% endblock %}
+{% block type %}saaskit-landing-main{% endblock %}
 
 {% block head_title %}{{ block.super }} : Toolkit for building subscription based webapp Fast!{% endblock %}
 
@@ -11,21 +13,21 @@
         <li>3rd Party API</li>
         <li>OpenID</li>
         <li>Contacts Import</li>
-        <li>Mobile ready</li>
+        <li>Mobile access</li>
         <li>Multilingual</li>
         <li>EC2 Deployment</li>
         <li>Built-in App API</li>
-        <li>Custom Themes</li>
-        <li>Adsense</li>
-        <li>Analytics</li>
+        <li>Google Adsense</li>
         <li>Paypal</li>
+        <li>Custom Themes</li>
+        <li>Google Analytics</li>
         <li>and more ...</li>
       </ul>
     <div class="plans">
-	  <center>See Plans & Pricing<p>21 day free trial, sign-up in 3 minutes!</p></center>
+	  <center><a href="/plans">See Plans & Pricing<p>21 day free trial, sign-up in 3 minutes!</a></p></center>
     </div>
 
-    <div class="tour"><a href="/tour"><center>Take a Tour</center>
+    <div class="tour"><center><a href="/tour">Take a Tour</a></center>
     </div>
 
     <div class="saaskit-landing-img">

@@ -27,13 +27,13 @@
 				{% endblock %}
 
                 {% block tagline %}
-                  <div id="hd" class="tagline"><a href="/">{% trans "Toolkit for building subscription based webapp" %} <em>{% trans "Fast!" %}</em></a></div>
+                  <div id="hd" class="tagline"><a href="/tour">{% trans "Toolkit for building subscription based webapp" %} <em>{% trans "Fast!" %}</em></a></div>
                 {% endblock %}
 
                 <div class="saaskit-nav-rhs">
-					{% if user.is_authenticated %}		 
 					  <ul>
-					      <li><b>{{user}}</b></li>	
+						{% if user.is_authenticated %}		 
+					      <li><a href="">{{user}}</a></li>	
 					    {% ifequal user request.muaccount.owner %}
 					      <li><a href="{% url muaccounts_manage_general %}">{% trans "Manage site" %}</a></li>					
 					    {% endifequal %}
@@ -61,7 +61,7 @@
 	            <div id="{% block column %}yui-main{% endblock %}">
 	                <div class="{% block grid %}yui-b{% endblock %}">
 		              {% block landing_main %}{% endblock %}
-		              {% block content %}{% endblock %}
+		              {% block content %}{% endblock %}	
 		            </div>
 		            {% block extra_content %}{% endblock %}		
                 </div>

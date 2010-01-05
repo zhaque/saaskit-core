@@ -1,10 +1,11 @@
-{% extends "main_site_tmpl.html" %}
+{% extends "base_tmpl.html" %}
 {% load i18n %}
 {% block head_title %}{{block.super}} : {% trans "Terms and Conditions" %}{% endblock %}
+{% block class %}yui-t7{% endblock %}
 
 {% block content %}
-<div class="saaskit-block">
-  <div class="saaskit-content">
+  <div class="saaskit-block">
+    <div class="saaskit-content">
 
 
 Terms of Use
@@ -69,7 +70,6 @@ Crowdsense.com does not warrant that (i) the service will meet your specific req
 You expressly understand and agree that Crowdsense.com shall not be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses (even if Crowdsense.com has been advised of the possibility of such damages), resulting from: (i) the use or the inability to use the service; (ii) the cost of procurement of substitute goods and services resulting from any goods, data, information or services purchased or obtained or messages received or transactions entered into through or from the service; (iii) unauthorized access to or alteration of your transmissions or data; (iv) statements or conduct of any third party on the service; (v) or any other matter relating to the service.
 The failure of Crowdsense.com to exercise or enforce any right or provision of the Terms of Use shall not constitute a waiver of such right or provision. The Terms of Use constitutes the entire agreement between you and Crowdsense.com and govern your use of the Service, superceding any prior agreements between you and Crowdsense.com (including, but not limited to, any prior versions of the Terms of Use).
 
-       
+    </div>       
   </div>
-</div>
 {% endblock %}

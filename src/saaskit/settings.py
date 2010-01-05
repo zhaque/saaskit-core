@@ -11,7 +11,7 @@ TEMPLATE_DEBUG = DEBUG
 DEBUG_PROPAGATE_EXCEPTIONS = False
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('SaaS kit', 'admin@saaskit.org'),
 )
 
 MANAGERS = ADMINS

@@ -25,7 +25,7 @@
 }
 .yui-skin-saaskit .saaskit-hd .logo {margin: 0; padding: 0px 0px; float: left;}
 .yui-skin-saaskit .saaskit-hd .tagline {margin: 6px 0px 0px 105px; width: 455px; font-size: 18px; line-height: 1.16em; margin-bottom: 1.25em;}
-.yui-skin-saaskit .saaskit-hd .tagline a:link, .yui-skin-saaskit .saaskit-hd .tagline a:visited { text-decoration: none;}
+.yui-skin-saaskit .saaskit-hd .tagline a:link, .yui-skin-saaskit .saaskit-hd .tagline a:visited, .yui-skin-saaskit .saaskit-hd .tagline a:hover, .yui-skin-saaskit .saaskit-hd .tagline a:active { text-decoration: none;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav {width: 100%;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav ul { margin: 10px; padding: 0px; list-style-type: none;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li {margin-right: 5px;  float: left; }
@@ -37,7 +37,6 @@
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li {float: left; padding: 0px 5px;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs li a { font-size:95%;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:visited, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:active { text-decoration: none; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover { text-decoration: none; }
 
 /* Landing Page */
 .yui-skin-saaskit .saaskit-landing-main { padding:10px 0px 0px 0px; }
@@ -180,25 +179,24 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-hd h1 {color:#fff; }
 .yui-skin-saaskit .saaskit-hd li a { color:#fff; }
 .yui-skin-saaskit .saaskit-hd h1 a:link, .yui-skin-saaskit .saaskit-hd h1 a:active, .yui-skin-saaskit .saaskit-hd h1 a:hover, .yui-skin-saaskit .saaskit-hd h1 a:visited { color: #eaeaea; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, .saaskit-nav ul li a:visited {
-  color: #CDE; border-bottom: 1px dotted #345; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover {
-  color: #fff; border-bottom: 1px dotted #CDE; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li { background: #456; border-top: 1px solid #5C738A;
-  color: #eee; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li:hover {
-  border-top-color: #7593B0; background-color: #576C82 !important; color: #fff; }
-.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active {
-  border-top: 1px solid #fff; background-color: #eee !important; color: #333;}
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:link, .yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:visited {color: #CDE; border-bottom: 1px dotted #345; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav-rhs ul li a:hover {color: #fff; border-bottom: 1px dotted #CDE;}
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li { background: #456; border-top: 1px solid #5C738A; color: #eee; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li:hover { border-top-color: #7593B0; background-color: #576C82 !important; color: #fff; }
+.yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active { border-top: 1px solid #fff; background-color: #eee !important; color: #333;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:link, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:visited, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:hover, .yui-skin-saaskit .saaskit-hd .saaskit-nav ul li.saaskit-nav-active a:active {color: #364b69;}
+.yui-skin-saaskit .saaskit-hd .tagline a:link, .yui-skin-saaskit .saaskit-hd .tagline a:visited {color: #CDE; border-bottom: 1px dotted #345;}
+.yui-skin-saaskit .saaskit-hd .tagline a:hover {color: #fff; border-bottom: 1px dotted #CDE;}
 
 /* Landing Main */
-.yui-skin-saaskit .saaskit-landing-main { background-color:#232C30; }
+.yui-skin-saaskit .saaskit-landing-main {background-color:#232C30;}
 .yui-skin-saaskit .saaskit-landing-main h4 {color:#fff;}
 .yui-skin-saaskit .saaskit-landing-main ul li {color:#fff;}
-.yui-skin-saaskit .saaskit-landing-main p {color:#fff;}
 .yui-skin-saaskit .saaskit-landing-main .plans {background-color:#cc0000; color:#fff;}
 .yui-skin-saaskit .saaskit-landing-main .tour {background-color:#0B43A8; color:#fff;}
+.yui-skin-saaskit .saaskit-landing-main .tour a {color:#fff;}
+.yui-skin-saaskit .saaskit-landing-main .plans a {color:#fff;}
+.yui-skin-saaskit .saaskit-landing-main p {color:#fff;}
 
 .yui-skin-saaskit .saaskit-landing-extra { background-color:#cfcfcf;}
 .yui-skin-saaskit .saaskit-landing-extra .benefit h5 {color:#1a1a1a;}

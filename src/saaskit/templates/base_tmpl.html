@@ -27,7 +27,7 @@
 				{% endblock %}
 
                 {% block tagline %}
-                  <div id="hd" class="tagline"><a href="/tour">{% trans "Toolkit for building subscription based webapp" %} <em>{% trans "Fast!" %}</em></a></div>
+                  <div id="hd" class="tagline"><a href="/pages/take-the-saas-kit-service-tour/">{% trans "Toolkit for building subscription based webapp" %} <em>{% trans "Fast!" %}</em></a></div>
                 {% endblock %}
 
                 <div class="saaskit-nav-rhs">
@@ -52,6 +52,7 @@
 					      <li><a href="{% url user_signout %}?next=/">{% trans "Sign out" %}</a></li>
 					    {% else %}
 					      <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>
+						  <li><a href="/contact">{% trans "Help" %}</a></li>		
 					    {% endif %}
 					  </ul>		
 		        </div>
@@ -73,7 +74,7 @@
 				{% block footer %}  
 				  <p>
 					<strong>
-						Copyright &copy; 2010 saaskit.org | <a href="/about-us">{% trans "About us" %}</a> | <a href="/contact">{% trans "Help & Support" %}</a> | <a href="/privacy">{% trans "Privacy & Copyright" %}</a> | <a href="/terms">{% trans "Terms" %}</a>
+						Copyright &copy; 2010 saaskit.org | <a href="/pages/about-saas-kit-services/">{% trans "About us" %}</a> | <a href="/contact/">{% trans "Help & Support" %}</a> | <a href="/pages/saas-kit-service-copyright-privacy/">{% trans "Privacy & Copyright" %}</a> | <a href="/pages/saas-kit-service-terms-condition/">{% trans "Terms" %}</a>
 					</strong>
 				  </p>
 				{% endblock %}

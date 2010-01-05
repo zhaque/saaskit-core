@@ -1,0 +1,15 @@
+{% extends "base_tmpl.html" %}
+{% load i18n %}
+{% block head_title %}{{block.super}} : {% trans "Privacy & Copyright" %}{% endblock %}
+{% block class %}yui-t7{% endblock %}
+
+{% block content %}
+<div class="saaskit-content">
+  	<h3>{% trans "Privacy Policy" %}</h3>
+	<h3>{% trans "Information Gathering and Usage" %}</h3>
+	<h3>{% trans "Data Storage" %}</h3>
+	<h3>{% trans "Disclosure" %}</h3>
+	<h3>{% trans "Changes" %}</h3>
+	<h3>{% trans "Questions" %}</h3>
+</div>
+{% endblock %}

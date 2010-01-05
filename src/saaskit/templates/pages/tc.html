@@ -1,0 +1,16 @@
+{% extends "base_tmpl.html" %}
+{% load i18n %}
+{% block head_title %}{{block.super}} : {% trans "Terms and Conditions" %}{% endblock %}
+{% block class %}yui-t7{% endblock %}
+
+{% block content %}
+<div class="saaskit-content">
+  	<h3>{% trans "Terms of Service" %}</h3>
+	<h3>{% trans "Account Terms" %}</h3>
+	<h3>{% trans "Payment, Refunds, Upgrading and Downgrading Terms" %}</h3>
+	<h3>{% trans "Cancellation and Termination" %}</h3>
+	<h3>{% trans "Modifications to the Service and Prices" %}</h3>
+	<h3>{% trans "Copyright and Content Ownership" %}</h3>
+	<h3>{% trans "General Conditions" %}</h3>
+</div>
+{% endblock %}

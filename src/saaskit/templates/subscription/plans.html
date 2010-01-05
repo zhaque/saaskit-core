@@ -1,0 +1,9 @@
+{% extends "base_tmpl.html" %}
+{% load i18n %}
+{% block head_title %}{{ block.super }} : {% trans "Choose your Plan" %}{% endblock %}
+
+{% block content %}
+
+{% include "subscription/subscription_list_fragment.html" %}
+                        
+{% endblock %}

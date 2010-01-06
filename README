@@ -258,10 +258,6 @@ EMAIL_PORT = 587
 * django-tagging
     Tagging support, used by django-page-cms.
     - [http://code.google.com/p/django-tagging/]
-* django-perfect404
-  A perfect 404 page, based on A List Apart's article.
-  Used only when `DEBUG=False'.
-  - [http://github.com/svetlyak40wt/django-perfect404/]
 * django-pipes
   Used for external API consumption, by (TBD) django-mashup.
   - [http://github.com/mallipeddi/django-pipes/]

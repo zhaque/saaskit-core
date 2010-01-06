@@ -7,54 +7,57 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-03 15:34+0000\n"
-"PO-Revision-Date: 2009-12-03 15:36\n"
-"Last-Translator: <admin@example.com>\n"
+"POT-Creation-Date: 2010-01-06 23:10+0000\n"
+"PO-Revision-Date: 2010-01-06 23:21\n"
+"Last-Translator: SaaS kit Administrator <admin@saaskit.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.5.1\n"
 
-#: settings.py:265
+#: settings.py:260
 msgid "English"
-msgstr ""
+msgstr "English"
 
-#: settings.py:266
+#: settings.py:261
 msgid "German"
-msgstr ""
+msgstr "German"
 
-#: settings.py:267
+#: settings.py:262
 msgid "French"
-msgstr ""
+msgstr "French"
 
-#: settings.py:268
+#: settings.py:263
 msgid "Russian"
-msgstr ""
+msgstr "Russian"
 
 #: apps/muaccount_adsense/forms.py:17
 msgid "Submit"
-msgstr ""
+msgstr "Submit"
 
 #: apps/muaccount_adsense/forms.py:18 apps/muaccount_content/forms.py:19
+#: templates/friends/invite_form.html:11
+#: templates/profiles/create_profile.html:28
+#: templates/profiles/edit_profile.html:27
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 #: apps/muaccount_adsense/models.py:15
 msgid "Adsense block"
-msgstr ""
+msgstr "Adsense block"
 
 #: apps/muaccount_adsense/models.py:16
 msgid "Adsense blocks"
-msgstr ""
+msgstr "Adsense blocks"
 
 #: apps/muaccount_content/admin.py:22
 msgid "Advanced options"
-msgstr ""
+msgstr "Advanced options"
 
 #: apps/muaccount_content/forms.py:18
 msgid "Create"
-msgstr ""
+msgstr "Create"
 
 #: apps/muaccount_content/models.py:13
 msgid "show link"
@@ -101,6 +104,10 @@ msgstr ""
 msgid "Your site was suspended."
 msgstr ""
 
+#: apps/saaskit_profile/forms.py:7 templates/authopenid/complete.html:45
+msgid "Email"
+msgstr ""
+
 #: apps/saaskit_profile/management.py:11
 msgid "Welcome to SaaS kit!"
 msgstr "Welcome to SaaS kit!"
@@ -129,279 +136,190 @@ msgstr ""
 msgid "Website/Blog"
 msgstr ""
 
-#: templates/500.html:3
-msgid "Internal error"
+#: templates/404.html:3
+msgid "Hmmm.. Somehow we can't find this page!"
 msgstr ""
 
-#: templates/500.html:8
-msgid "Oops! internal error"
-msgstr ""
-
-#: templates/500.html:9
-msgid "Please, go <a href=\"/\">back</a> and don't do that anymore :)"
-msgstr ""
-
-#: templates/500.html:16 templates/about.html:19 templates/index.html:48
-msgid "Help"
-msgstr ""
-
-#: templates/500.html:17 templates/about.html:20 templates/index.html:49
-#: templates/contact_form/contact_form.html:29
-#: templates/contact_form/contact_form_sent.html:21
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna. Vivamus sit"
-msgstr ""
-
-#: templates/500.html:18 templates/about.html:21 templates/index.html:50
-#: templates/contact_form/contact_form.html:30
-#: templates/contact_form/contact_form_sent.html:22
-msgid "Hamet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc."
-msgstr ""
-
-#: templates/about.html:3 templates/about.html.py:8
-msgid "About us"
-msgstr ""
-
-#: templates/about.html:9 templates/contact_form/contact_form_sent.html:10
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna."
-msgstr ""
-
-#: templates/about.html:10 templates/contact_form/contact_form_sent.html:11
-msgid "Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc."
-msgstr ""
-
-#: templates/about.html:11
-msgid "Praesent in accumsan neque. Vivamus suscipit sollicitudin orci, vitae ultricies risus condimentum id. Nullam viverra ante vitae tellus blandit eleifend. Suspendisse libero est, pellentesque id tristique vitae, convallis sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi elementum ante et libero bibendum eu mollis libero ultrices. Cum sociis natoque penatibus et magnis dis parturient montes."
-msgstr ""
-
-#: templates/about.html:12
-msgid "Nascetur ridiculus mus. Morbi nisi ipsum, consequat et vulputate non, pretium condimentum dui. Praesent mi orci, tempus eu iaculis a, consectetur at ante. Proin vitae libero dui, quis tincidunt lorem. Suspendisse convallis, eros id mattis vestibulum, massa erat adipiscing ipsum, quis tempus purus risus non turpis. In euismod varius dictum. Proin at mi lorem. Nunc sed odio ut eros viverra rutrum vitae sed enim."
-msgstr ""
-
-#: templates/index.html:3
-msgid "Welcome to SaaSkit"
-msgstr "Welcome to SaaSkit"
-
-#: templates/index.html:8
-msgid "Build SaaS Webapp Fast!"
-msgstr ""
-
-#: templates/index.html:9
-msgid "Choosing the best possible alternative? How fast can I reach my target market? Can I use my current payment gateway? Will it add to operational costs? Where will I find the most reliable support? If you find yourself always asking the above questions, then here is the right place for you."
-msgstr ""
-
-#: templates/index.html:10
-msgid ""
-"\n"
-"         <b>Software as a Service Model</b><br/>\n"
-"         <ul>\n"
-"           <li> - We offer you a ready to use toolkit for all your basic needs with capabilities to provide on demand services to your/clients</li>\n"
-"           <li> - Open Source version of SaaSkit together with key components available for those who require greater customization!</li>\n"
-"           <li> - Bundled with a sample “Polls app” and tutorial to kick start your application</li>\n"
-"         </ul>\n"
-"         <br/><b>Use your choice of Business Model</b><br/>\n"
-"         <ul>\n"
-"           <li> - Use subscription, prepaid based model for your customers on periodic basis which may be: weekly/monthly/quarterly/yearly</li>\n"
-"           <li> - Make use of the Quota system to suit your subscription/business models better</li>\n"
-"           <li> - Use trial subscriptions to allow your customer to explore the possibilities with your unique apps</li>\n"
-"         </ul>\n"
-"         <br/><b>Let your Client Customize</b><br/>\n"
-"         <ul>\n"
-"           <li> - Let your clients selects their domain or sub domains to uniquely identify themselves</li>\n"
-"           <li> - Supports themes and layouts so your client can modify/integrate apps with their brand identity</li>\n"
-"           <li> - Support Google Adsense and other Ad networks as well as Google Analytics and Webmaster Tools</li>\n"
-"         </ul>\n"
-"         <br/><b>Limitless Flexibility</b><br/>\n"
-"         <ul>\n"
-"           <li> - Use an advanced content management system to adapt to your business/process requirements<</li>\n"
-"           <li> - Allow users to log in using their Google/yahoo/open id logins</li>\n"
-"           <li> - Support for exposing your application data to 3rd party developers</li>\n"
-"           <li> - Make your website go global by using built in internationalzation</li>\n"
-"         </ul>\n"
-"         <br/><b>Open Source</b><br/>\n"
-"         <ul>\n"
-"           <li> - Most important of all Open Source version of SaaSkit is available if you require higher level of customization</li>\n"
-"           <li> - Use the power of Django Web framework to easily deploy, develop and customize your apps</li>\n"
-"         </ul>\n"
-"         "
-msgstr ""
-
-#: templates/main.html:6
-msgid "Home : SaaS Kit"
-msgstr ""
-
-#: templates/main.html:26
-msgid "Welcome"
-msgstr "Welcome"
-
-#: templates/main.html:27
-msgid "dashboard"
-msgstr ""
-
-#: templates/main.html:29 templates/main.html.py:31
-msgid "profile"
-msgstr ""
-
-#: templates/main.html:33
-msgid "subscription"
-msgstr ""
-
-#: templates/main.html:34
-msgid "password"
-msgstr ""
-
-#: templates/main.html:35
-#, python-format
-msgid "logout [%(user)s]"
-msgstr ""
-
-#: templates/main.html:37
-msgid "Sign-up"
-msgstr ""
-
-#: templates/main.html:56 templates/main.html.py:87
-#: templates/contact_form/contact_form.html:3
-#: templates/contact_form/contact_form.html:9
-#: templates/paypal/shortcut.html:26
-msgid "Contact us"
-msgstr ""
-
-#: templates/main.html:57
-msgid "About Us"
-msgstr ""
-
-#: templates/main.html:58 templates/main.html.py:85 templates/support.html:3
-#: templates/support.html.py:8
-msgid "Support"
-msgstr ""
-
-#: templates/main.html:60
-msgid "Plans and Pricing"
-msgstr ""
-
-#: templates/main.html:62
-msgid "My Sites"
-msgstr ""
-
-#: templates/main.html:64
-msgid "SaaSkit"
-msgstr ""
-
-#: templates/main.html:86
-msgid "About"
-msgstr ""
-
-#: templates/main.html:91
-msgid "Privacy & Copyright"
-msgstr ""
-
-#: templates/perfect404.html:3 templates/perfect404.html.py:8
+#: templates/404.html:6
 msgid "Page not found"
 msgstr ""
 
-#: templates/perfect404.html:9
+#: templates/404.html:8
 msgid "We're sorry, but the requested page could not be found."
 msgstr ""
 
-#: templates/perfect404.html:13
+#: templates/404.html:12
 #, python-format
 msgid ""
 "\n"
-"                               <p>You have found an outdated link on <a href=\"%(referer)s\">this page</a>.</p>\n"
-"                            "
+"<p>You have found an outdated link on <a href=\"%(referer)s\">this page</a>.</p>\n"
+"            "
 msgstr ""
 
-#: templates/perfect404.html:17
+#: templates/404.html:16
 #, python-format
 msgid ""
 "\n"
-"                        <p>Please, write about this fact to <a href=\"mailto:%(email)s\">%(name)s</a>.</p>\n"
-"                      "
+"<p>Please, write about this fact to <a href=\"mailto:%(email)s\">%(name)s</a>.</p>\n"
+"                "
 msgstr ""
 
-#: templates/perfect404.html:24
+#: templates/404.html:21
 #, python-format
 msgid ""
 "\n"
-"                   <p>It seems, that you found a broken or outdated link at <a href=\"%(referer)s\">%(referer)s</a> page.</p>\n"
-"                 "
+"<p>It seems, that you found a broken or outdated link at <a href=\"%(referer)s\">%(referer)s</a> page.</p>\n"
+"            "
 msgstr ""
 
-#: templates/perfect404.html:31
+#: templates/404.html:26
 msgid ""
 "\n"
-"              <p>Probably, this happens because of:</p>\n"
-"              <ul>\n"
-"                  <li>An outdated bookmark in your browser.</li>\n"
-"                  <li>A mis-typed address.</li>  \n"
-"              </ul>\n"
-"              <p>Please, correct the URL and try again.</p>\n"
-"         "
+"<p>Probably, this happens because of:</p>\n"
+"<ul>\n"
+"  <li>An outdated bookmark in your browser.</li>\n"
+"  <li>A mis-typed address.</li>\n"
+"</ul>\n"
+"<p>Please, correct the URL and try again.</p>\n"
+"        "
 msgstr ""
 
-#: templates/ref_base.html:8
-msgid "back to home page"
+#: templates/500.html:3
+msgid "It's broke calling the engineers now"
 msgstr ""
 
-#: templates/support.html:9
-msgid ""
-"\n"
-"          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna.</p>\n"
-"\n"
-"          <p>Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc.</p>\n"
-"\n"
-"          <p>Praesent in accumsan neque. Vivamus suscipit sollicitudin orci, vitae ultricies risus condimentum id. Nullam viverra ante vitae tellus blandit eleifend. Suspendisse libero est, pellentesque id tristique vitae, convallis sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi elementum ante et libero bibendum eu mollis libero ultrices. Cum sociis natoque penatibus et magnis dis parturient montes.</p>\n"
-"\n"
-"          <p>Nascetur ridiculus mus. Morbi nisi ipsum, consequat et vulputate non, pretium condimentum dui. Praesent mi orci, tempus eu iaculis a, consectetur at ante. Proin vitae libero dui, quis tincidunt lorem. Suspendisse convallis, eros id mattis vestibulum, massa erat adipiscing ipsum, quis tempus purus risus non turpis. In euismod varius dictum. Proin at mi lorem. Nunc sed odio ut eros viverra rutrum vitae sed enim.</p>\n"
-"         "
-msgstr ""
-
-#: templates/tc.html:3 templates/tc.html.py:8
-msgid "Privacy and Terms"
-msgstr ""
-
-#: templates/account/base.html:2
-msgid "Manage your account"
-msgstr ""
-
-#: templates/account/base.html:16 templates/account/dashboard.html:4
-#: templates/account/dashboard.html.py:6 templates/notification/single.html:3
+#: templates/account_tmpl.html:7 templates/notification/dashboard.html:6
+#: templates/notification/single.html:3
 msgid "Dashboard"
 msgstr ""
 
-#: templates/account/base.html:17 templates/account/dashboard.html:41
-#: templates/profiles/profile_detail_page.html:3
-#: templates/profiles/profile_detail_page.html:5
-msgid "Profile"
+#: templates/account_tmpl.html:8
+msgid "Profiles and Passwords"
 msgstr ""
 
-#: templates/account/base.html:18
-msgid "Password Settings"
+#: templates/account_tmpl.html:9
+msgid "Plans and Pricing"
 msgstr ""
 
-#: templates/account/base.html:19
-msgid "Plans and Payments"
+#: templates/account_tmpl.html:10
+msgid "Bounty Points"
 msgstr ""
 
-#: templates/account/base.html:20
-#: templates/subscription/invoice_history.html:3
-#: templates/subscription/invoice_history.html:6
-msgid "Invoice History"
+#: templates/account_tmpl.html:12
+msgid "Invoices"
 msgstr ""
 
-#: templates/account/dashboard.html:7
-msgid "Messages"
+#: templates/base_tmpl.html:30
+msgid "Toolkit for building subscription based webapps"
 msgstr ""
 
-#: templates/account/dashboard.html:9
-msgid "RSS"
+#: templates/base_tmpl.html:30
+msgid "Fast!"
 msgstr ""
 
-#: templates/account/dashboard.html:21
-msgid "Sites you own"
+#: templates/base_tmpl.html:49 templates/friends/contacts.html:5
+#: templates/friends/invite.html:4 templates/friends/manage_contacts.html:5
+#: templates/friends/member_list.html:4
+msgid "Manage site"
 msgstr ""
 
-#: templates/account/dashboard.html:31
-msgid "Sites you are member of"
+#: templates/base_tmpl.html:51
+msgid "My account"
+msgstr ""
+
+#: templates/base_tmpl.html:52
+msgid "Sign out"
+msgstr ""
+
+#: templates/base_tmpl.html:54 templates/authopenid/signin.html:6
+#: templates/authopenid/signin.html.py:8 templates/authopenid/signin.html:21
+msgid "Sign in"
+msgstr ""
+
+#: templates/base_tmpl.html:55
+msgid "Help"
+msgstr ""
+
+#: templates/base_tmpl.html:77 templates/pages/about.html:4
+msgid "About us"
+msgstr ""
+
+#: templates/base_tmpl.html:77
+msgid "Help & Support"
+msgstr ""
+
+#: templates/base_tmpl.html:77 templates/pages/privacy.html:3
+msgid "Privacy & Copyright"
+msgstr ""
+
+#: templates/base_tmpl.html:77
+msgid "Terms"
+msgstr ""
+
+#: templates/admin/associate.html:4 templates/admin/associate.html.py:20
+#: templates/authopenid/associate.html:4
+#: templates/authopenid/dissociate.html:16
+#: templates/authopenid/password_change_form.html:17
+#: templates/authopenid/password_change_form.html:53
+#: templates/profiles/create_profile.html:13
+#: templates/profiles/edit_profile.html:13
+msgid "Associate OpenID"
+msgstr ""
+
+#: templates/admin/associate.html:6 templates/authopenid/associate.html:6
+msgid "OpenID associations"
+msgstr ""
+
+#: templates/admin/associate.html:12 templates/authopenid/associate.html:12
+msgid "Openid url"
+msgstr ""
+
+#: templates/admin/associate.html:18 templates/authopenid/dissociate.html:14
+#: templates/authopenid/password_change_form.html:15
+#: templates/authopenid/password_change_form.html:51
+#: templates/profiles/create_profile.html:11
+#: templates/profiles/edit_profile.html:11
+msgid "Manage Profile"
+msgstr ""
+
+#: templates/admin/associate.html:19 templates/authopenid/dissociate.html:15
+#: templates/authopenid/password_change_form.html:16
+#: templates/authopenid/password_change_form.html:52
+#: templates/profiles/create_profile.html:12
+#: templates/profiles/edit_profile.html:12
+msgid "Passwords"
+msgstr ""
+
+#: templates/admin/associate.html:21 templates/authopenid/dissociate.html:4
+#: templates/authopenid/dissociate.html:6
+#: templates/authopenid/dissociate.html:17
+#: templates/authopenid/dissociate.html:27
+#: templates/authopenid/password_change_form.html:18
+#: templates/authopenid/password_change_form.html:54
+#: templates/profiles/create_profile.html:14
+#: templates/profiles/edit_profile.html:14
+msgid "Dissociate OpenID"
+msgstr ""
+
+#: templates/admin/associate.html:29 templates/authopenid/associate.html:21
+#: templates/authopenid/password_change_form.html:93
+msgid "Add a new OpenID URL"
+msgstr ""
+
+#: templates/admin/associate.html:31 templates/authopenid/associate.html:23
+#: templates/authopenid/password_change_form.html:95
+msgid "Please click your account provider"
+msgstr ""
+
+#: templates/admin/associate.html:35 templates/authopenid/associate.html:27
+#: templates/authopenid/password_change_form.html:99
+#: templates/authopenid/signin.html:47
+msgid "OpenId URL :"
+msgstr ""
+
+#: templates/admin/associate.html:36 templates/authopenid/associate.html:28
+#: templates/authopenid/password_change_form.html:100
+msgid "Add OpenID"
 msgstr ""
 
 #: templates/admin/extra_index.html:5
@@ -410,34 +328,6 @@ msgstr ""
 
 #: templates/admin/extra_index.html:6
 msgid "Templates admin"
-msgstr ""
-
-#: templates/authopenid/associate.html:4
-msgid "Associate OpenID"
-msgstr ""
-
-#: templates/authopenid/associate.html:6
-msgid "OpenID associations"
-msgstr ""
-
-#: templates/authopenid/associate.html:12
-msgid "Openid url"
-msgstr ""
-
-#: templates/authopenid/associate.html:21
-msgid "Add a new OpenID URL"
-msgstr ""
-
-#: templates/authopenid/associate.html:23
-msgid "Please click your account provider"
-msgstr ""
-
-#: templates/authopenid/associate.html:27 templates/authopenid/signin.html:62
-msgid "OpenId URL :"
-msgstr ""
-
-#: templates/authopenid/associate.html:28
-msgid "Add OpenID"
 msgstr ""
 
 #: templates/authopenid/complete.html:4 templates/authopenid/complete.html:7
@@ -463,7 +353,6 @@ msgid ""
 msgstr ""
 
 #: templates/authopenid/complete.html:19 templates/authopenid/complete.html:29
-#: templates/authopenid/signin.html:13
 msgid "Please correct errors below:"
 msgstr ""
 
@@ -475,29 +364,19 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: templates/authopenid/complete.html:45
-msgid "Email"
-msgstr ""
-
 #: templates/authopenid/complete.html:58
 msgid "An exisiting account"
 msgstr ""
 
-#: templates/authopenid/complete.html:60 templates/authopenid/signin.html:45
+#: templates/authopenid/complete.html:60
 msgid "Password"
 msgstr ""
 
-#: templates/authopenid/dissociate.html:4
-#: templates/authopenid/dissociate.html:6
-#: templates/authopenid/dissociate.html:19
-msgid "Dissociate OpenID"
-msgstr ""
-
-#: templates/authopenid/dissociate.html:17
+#: templates/authopenid/dissociate.html:25
 msgid "Dissociate OpenID URL"
 msgstr ""
 
-#: templates/authopenid/dissociate.html:18
+#: templates/authopenid/dissociate.html:26
 #, python-format
 msgid "Confirm to dissociate %(openid_url)s from your account"
 msgstr ""
@@ -507,140 +386,189 @@ msgid "OpenID failed"
 msgstr ""
 
 #: templates/authopenid/password_change_form.html:4
-#: templates/authopenid/password_change_form.html:9
-msgid "Set password"
+msgid "Set password or Open ID"
 msgstr ""
 
 #: templates/authopenid/password_change_form.html:5
-#: templates/authopenid/password_change_form.html:33
-msgid "Password change"
+msgid "Change password or Open ID"
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:10
+#: templates/authopenid/password_change_form.html:12
+msgid "Set password"
+msgstr ""
+
+#: templates/authopenid/password_change_form.html:21
 msgid "Please enter your new password twice so we can verify you typed it in correctly."
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:16
-#: templates/authopenid/password_change_form.html:45
+#: templates/authopenid/password_change_form.html:26
+#: templates/authopenid/password_change_form.html:67
 msgid "New password:"
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:22
-#: templates/authopenid/password_change_form.html:50
+#: templates/authopenid/password_change_form.html:31
+#: templates/authopenid/password_change_form.html:72
 msgid "Confirm password:"
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:26
-#: templates/authopenid/password_change_form.html:54
-msgid "Change my password"
+#: templates/authopenid/password_change_form.html:37
+msgid "Set my password"
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:34
+#: templates/authopenid/password_change_form.html:48
+msgid "Change password"
+msgstr ""
+
+#: templates/authopenid/password_change_form.html:57
 msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:40
+#: templates/authopenid/password_change_form.html:62
 msgid "Old password:"
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:61
-msgid "dissociate"
+#: templates/authopenid/password_change_form.html:78
+msgid "Change my password"
 msgstr ""
 
-#: templates/authopenid/password_change_form.html:63
+#: templates/authopenid/password_change_form.html:83
+#: templates/authopenid/password_change_form.html:88
+#: templates/authopenid/password_change_form.html:105
 msgid "Associate other OpenID"
 msgstr ""
 
-#: templates/authopenid/signin.html:4 templates/authopenid/signin.html.py:7
-#: templates/authopenid/signin.html:47
-msgid "Sign in"
+#: templates/authopenid/password_change_form.html:86
+msgid "dissociate"
 msgstr ""
 
-#: templates/authopenid/signin.html:30
-msgid "Make a choice"
+#: templates/authopenid/signin.html:18
+msgid "Sign In Using Your Account ID"
 msgstr ""
 
-#: templates/authopenid/signin.html:32
+#: templates/authopenid/signin.html:25
+msgid "Reset password"
+msgstr ""
+
+#: templates/authopenid/signin.html:31
+msgid "Reset"
+msgstr ""
+
+#: templates/authopenid/signin.html:41
+msgid "Sign In Using Your OpenID URL"
+msgstr ""
+
+#: templates/authopenid/signin.html:43
+msgid "Please click your account provider:"
+msgstr ""
+
+#: templates/authopenid/signin.html:48
+msgid "Sign in with OpenID"
+msgstr ""
+
+#: templates/authopenid/signin.html:57
+#: templates/registration/registration_form.html:4
+#: templates/registration/registration_form.html:7
+msgid "Registration Form"
+msgstr ""
+
+#: templates/authopenid/signin.html:60
 #: templates/registration/registration_form.html:13
 msgid "Register"
 msgstr ""
 
-#: templates/authopenid/signin.html:33
-msgid "Reset password"
+#: templates/authopenid/signin.html:70
+msgid "back to home page"
 msgstr ""
 
-#: templates/authopenid/signin.html:43
-msgid "Sign In Using Your Account ID"
+#: templates/contact_form/contact_form.html:4
+#: templates/contact_form/contact_form_sent.html:4
+#: templates/paypal/shortcut.html:34
+msgid "Contact us"
 msgstr ""
 
-#: templates/authopenid/signin.html:44
-msgid "Username:"
+#: templates/contact_form/contact_form_sent.html:4
+msgid "Thanks - message sent"
 msgstr ""
 
-#: templates/authopenid/signin.html:56
-msgid "Sign In Using Your OpenID URL"
-msgstr ""
-
-#: templates/authopenid/signin.html:58
-msgid "Please click your account provider:"
-msgstr ""
-
-#: templates/authopenid/signin.html:63
-msgid "Sign in with OpenID"
-msgstr ""
-
-#: templates/contact_form/contact_form.html:28
-#: templates/contact_form/contact_form_sent.html:20
-msgid "How Do I ..."
-msgstr ""
-
-#: templates/contact_form/contact_form_sent.html:3
-msgid "Thank you"
+#: templates/contact_form/contact_form_sent.html:8
+msgid "Message Sent!"
 msgstr ""
 
 #: templates/contact_form/contact_form_sent.html:9
-msgid "Message sent! - Thanks"
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna."
 msgstr ""
 
-#: templates/emailconfirmation/confirm_email.html:4
+#: templates/contact_form/contact_form_sent.html:10
+msgid "Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc."
+msgstr ""
+
+#: templates/emailconfirmation/confirm_email.html:3
 msgid "Confirm Email"
 msgstr ""
 
-#: templates/emailconfirmation/confirm_email.html:8
+#: templates/emailconfirmation/confirm_email.html:7
 msgid "Email Confirmed"
 msgstr ""
 
-#: templates/emailconfirmation/confirm_email.html:9
+#: templates/emailconfirmation/confirm_email.html:8
 #, python-format
 msgid "You have confirmed that %(email)s is an email address for user '%(user)s'."
 msgstr ""
 
-#: templates/emailconfirmation/confirm_email.html:11
+#: templates/emailconfirmation/confirm_email.html:10
 msgid "Invalid confirmation key."
 msgstr ""
 
-#: templates/flatpages/default.html:13
+#: templates/flatpages/default.html:12
 msgid "edit"
 msgstr ""
 
-#: templates/friends/contacts.html:7 templates/friends/contacts.html.py:10
-#: templates/friends/contacts.html:50
-msgid "Contacts"
+#: templates/friends/contacts.html:5 templates/friends/invite.html:4
+#: templates/friends/manage_contacts.html:5
+#: templates/friends/member_list.html:4
+msgid "Members"
 msgstr ""
 
-#: templates/friends/contacts.html:12
-msgid "Contacts are people you know but who may or may not be on this site (yet)."
+#: templates/friends/contacts.html:5 templates/friends/contacts.html.py:10
+#: templates/friends/contacts.html:16 templates/friends/invite.html:15
+#: templates/friends/manage_contacts.html:5
+#: templates/friends/manage_contacts.html:16
+#: templates/friends/member_list.html:15
+msgid "Import contacts"
 msgstr ""
 
-#: templates/friends/contacts.html:21
-msgid "upload"
+#: templates/friends/contacts.html:13 templates/friends/invite.html:12
+#: templates/friends/manage_contacts.html:13
+#: templates/friends/member_list.html:4 templates/friends/member_list.html:9
+#: templates/friends/member_list.html:12
+msgid "Current members"
 msgstr ""
 
-#: templates/friends/contacts.html:34
-msgid "import"
+#: templates/friends/contacts.html:14 templates/friends/invite.html:4
+#: templates/friends/invite.html.py:13
+#: templates/friends/manage_contacts.html:14
+#: templates/friends/member_list.html:13
+msgid "Invite new"
 msgstr ""
 
-#: templates/friends/contacts.html:40
+#: templates/friends/contacts.html:15 templates/friends/invite.html:14
+#: templates/friends/manage_contacts.html:15
+#: templates/friends/member_list.html:14
+msgid "Manage invitations"
+msgstr ""
+
+#: templates/friends/contacts.html:17 templates/friends/invite.html:16
+#: templates/friends/manage_contacts.html:10
+#: templates/friends/manage_contacts.html:17
+#: templates/friends/member_list.html:16
+msgid "Manage contacts"
+msgstr ""
+
+#: templates/friends/contacts.html:28 templates/friends/contacts.html.py:41
+msgid "Import"
+msgstr ""
+
+#: templates/friends/contacts.html:46
 #, python-format
 msgid ""
 "\n"
@@ -651,111 +579,126 @@ msgid ""
 "            "
 msgstr ""
 
-#: templates/friends/contacts.html:74
-msgid "No contacts."
-msgstr ""
-
-#: templates/friends/invite.html:4 templates/friends/invite.html.py:8
-#: templates/friends/invite_facebox.html:3
-#: templates/friends/member_list.html:64
+#: templates/friends/hello.html:6 templates/friends/invite.html:9
 msgid "Invite someone new to join"
 msgstr ""
 
-#: templates/friends/invite.html:10
-msgid "If you'd like to invite someone to join your site, you can enter their email address and a message for them below:"
+#: templates/friends/hello.html:7
+msgid "Your contacts"
 msgstr ""
 
-#: templates/friends/invite.html:11
-msgid "You may"
+#: templates/friends/hello.html:10
+msgid "Upgrade your plan"
 msgstr ""
 
-#: templates/friends/invite.html:11
+#: templates/friends/hello.html:10
+msgid "to add more users"
+msgstr ""
+
+#: templates/friends/invite.html:19
+msgid "If you'd like to invite someone to join your site, you can enter their email address and a message for them below or you may"
+msgstr ""
+
+#: templates/friends/invite.html:19
 msgid "import your contacts"
 msgstr ""
 
-#: templates/friends/invite_form.html:9
-#: templates/frontendadmin/form_ajax.html:10
-msgid "cancel"
-msgstr ""
-
-#: templates/friends/member_list.html:3
-msgid "Manage your site"
-msgstr ""
-
-#: templates/friends/member_list.html:5
-msgid "Members"
-msgstr ""
-
-#: templates/friends/member_list.html:19
+#: templates/friends/invite.html:30
 msgid "Invitations Sent"
 msgstr ""
 
-#: templates/friends/member_list.html:25
+#: templates/friends/invite.html:36
 #: templates/subscription/subscription_list_fragment.html:6
 msgid "DATE_FORMAT"
 msgstr ""
 
-#: templates/friends/member_list.html:36
+#: templates/friends/invite.html:47
 msgid "No invitations sent."
 msgstr ""
 
-#: templates/friends/member_list.html:39
-msgid "Join Requests Received"
+#: templates/friends/invite.html:50
+msgid "Invitation Requests Received"
 msgstr ""
 
-#: templates/friends/member_list.html:45 templates/subscription/invoice.html:6
+#: templates/friends/invite.html:56 templates/subscription/invoice.html:6
 #: templates/subscription/invoice_history.html:21
 msgid "DATETIME_FORMAT"
 msgstr ""
 
-#: templates/friends/member_list.html:50
-msgid "Accept"
+#: templates/friends/invite.html:61 templates/friends/invite_form.html:8
+msgid "Invite"
 msgstr ""
 
-#: templates/friends/member_list.html:51
+#: templates/friends/invite.html:62
 msgid "Reject"
 msgstr ""
 
-#: templates/friends/member_list.html:58
+#: templates/friends/invite.html:69
 msgid "No join requests sent."
 msgstr ""
 
-#: templates/friends/member_list.html:65
-msgid "Your contacts"
+#: templates/friends/manage_contacts.html:35
+msgid "Unknown"
 msgstr ""
 
-#: templates/friends/member_list.html:68
-msgid "Upgrade your plan"
+#: templates/friends/manage_contacts.html:53
+msgid "No contacts."
 msgstr ""
 
-#: templates/friends/member_list.html:68
-msgid "to add more users"
+#: templates/frontendadmin/form_ajax.html:9
+msgid "cancel"
 msgstr ""
 
-#: templates/frontendadmin/form_ajax.html:11
+#: templates/frontendadmin/form_ajax.html:10
 msgid "submit"
 msgstr ""
 
-#: templates/muaccounts/muaccount_list.html:7
+#: templates/muaccounts/muaccount_list.html:6
 msgid "Manage mu accounts"
 msgstr ""
 
-#: templates/muaccounts/muaccount_list.html:13
+#: templates/muaccounts/muaccount_list.html:9
+#: templates/notification/dashboard.html:8
+msgid "Messages"
+msgstr ""
+
+#: templates/muaccounts/muaccount_list.html:10
+#: templates/notification/dashboard.html:9
+msgid "My Sites"
+msgstr ""
+
+#: templates/muaccounts/muaccount_list.html:18
 #, python-format
 msgid "You can not add more domains. <a href=\"%(subscription_url)s\">Upgrade</a> your plan."
 msgstr ""
 
-#: templates/muaccounts/muaccount_list.html:17
+#: templates/muaccounts/muaccount_list.html:22
 msgid "Your mu accounts"
 msgstr ""
 
-#: templates/muaccounts/muaccount_list.html:25
+#: templates/muaccounts/muaccount_list.html:31
 #, python-format
 msgid "Viewed: %(page_views)s/%(view_quotas)s times."
 msgstr ""
 
-#: templates/muaccounts/muaccount_list.html:30
+#: templates/muaccounts/muaccount_list.html:36
 msgid "You have no mu accounts."
+msgstr ""
+
+#: templates/notification/dashboard.html:13
+msgid "RSS"
+msgstr ""
+
+#: templates/notification/dashboard.html:30
+msgid "Sites you own"
+msgstr ""
+
+#: templates/notification/dashboard.html:42
+msgid "Sites you are member of"
+msgstr ""
+
+#: templates/notification/dashboard.html:54
+msgid "About You"
 msgstr ""
 
 #: templates/notification/single.html:9
@@ -805,6 +748,75 @@ msgstr ""
 msgid "Welcome to the SaaS kit example project!"
 msgstr "Welcome to the SaaS kit example project!"
 
+#: templates/pages/about.html:8
+#, fuzzy
+msgid "About SaaS kit"
+msgstr "Welcome to SaaS kit!"
+
+#: templates/pages/privacy.html:8
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/pages/privacy.html:10
+msgid "Information Gathering and Usage"
+msgstr ""
+
+#: templates/pages/privacy.html:11
+msgid "Data Storage"
+msgstr ""
+
+#: templates/pages/privacy.html:12
+msgid "Disclosure"
+msgstr ""
+
+#: templates/pages/privacy.html:13
+msgid "Changes"
+msgstr ""
+
+#: templates/pages/privacy.html:14
+msgid "Questions"
+msgstr ""
+
+#: templates/pages/tc.html:3
+msgid "Terms and Conditions"
+msgstr ""
+
+#: templates/pages/tc.html:8
+msgid "Terms of Service"
+msgstr ""
+
+#: templates/pages/tc.html:10
+msgid "Account Terms"
+msgstr ""
+
+#: templates/pages/tc.html:11
+msgid "Payment, Refunds, Upgrading and Downgrading Terms"
+msgstr ""
+
+#: templates/pages/tc.html:12
+msgid "Cancellation and Termination"
+msgstr ""
+
+#: templates/pages/tc.html:13
+msgid "Modifications to the Service and Prices"
+msgstr ""
+
+#: templates/pages/tc.html:14
+msgid "Copyright and Content Ownership"
+msgstr ""
+
+#: templates/pages/tc.html:15
+msgid "General Conditions"
+msgstr ""
+
+#: templates/pages/tour.html:4
+msgid "Take the Grand Tour!"
+msgstr ""
+
+#: templates/pages/tour.html:8
+msgid "Take the Tour"
+msgstr ""
+
 #: templates/paypal/shortcut.html:4
 msgid "You have cancelled subscription to this plan."
 msgstr ""
@@ -813,7 +825,7 @@ msgstr ""
 msgid "You may still resubscribe if you wish!"
 msgstr ""
 
-#: templates/paypal/shortcut.html:8
+#: templates/paypal/shortcut.html:12
 #, python-format
 msgid ""
 "\n"
@@ -823,36 +835,51 @@ msgid ""
 "    "
 msgstr ""
 
-#: templates/paypal/shortcut.html:16
+#: templates/paypal/shortcut.html:20
 msgid "You cannot switch to this plan."
 msgstr ""
 
-#: templates/paypal/shortcut.html:16
+#: templates/paypal/shortcut.html:20
 msgid "Reasons"
 msgstr ""
 
+#: templates/prepaid/points.html:5 templates/prepaid/points.html.py:7
+msgid "Get Points"
+msgstr ""
+
+#: templates/prepaid/points.html:8
+msgid "Withdraw Points"
+msgstr ""
+
 #: templates/profiles/create_profile.html:4
+#: templates/profiles/create_profile.html:9
 msgid "Create profile"
 msgstr ""
 
-#: templates/profiles/create_profile.html:6
-msgid "Create your profile"
+#: templates/profiles/create_profile.html:20
+#: templates/profiles/edit_profile.html:19
+msgid "Required fields"
+msgstr ""
+
+#: templates/profiles/create_profile.html:25
+msgid "Save"
 msgstr ""
 
 #: templates/profiles/edit_profile.html:4
+#: templates/profiles/edit_profile.html:8
 msgid "Edit profile"
 msgstr ""
 
-#: templates/profiles/edit_profile.html:6
-msgid "Edit your profile"
+#: templates/profiles/edit_profile.html:24
+msgid "Update"
 msgstr ""
 
-#: templates/profiles/edit_profile.html:11
-msgid "Update profile"
+#: templates/profiles/profile_detail.html:22
+msgid "User have made his profile private."
 msgstr ""
 
-#: templates/profiles/edit_profile.html:15
-msgid "See your profile"
+#: templates/profiles/profile_detail_page.html:4
+msgid "Profile"
 msgstr ""
 
 #: templates/profiles/profile_list.html:3
@@ -914,16 +941,11 @@ msgstr ""
 msgid "Now go check your email to receive confirmation e-mail."
 msgstr ""
 
-#: templates/registration/registration_form.html:4
-#: templates/registration/registration_form.html:7
-msgid "Registration Form"
-msgstr ""
-
 #: templates/subscription/confirm.html:4
 msgid "Payment confirm"
 msgstr ""
 
-#: templates/subscription/confirm.html:12
+#: templates/subscription/confirm.html:11
 msgid "confirm"
 msgstr ""
 
@@ -954,6 +976,11 @@ msgstr ""
 msgid "Tax"
 msgstr ""
 
+#: templates/subscription/invoice_history.html:3
+#: templates/subscription/invoice_history.html:6
+msgid "Invoice History"
+msgstr ""
+
 #: templates/subscription/invoice_history.html:14
 msgid "Status"
 msgstr ""
@@ -974,12 +1001,16 @@ msgstr ""
 msgid "Payment"
 msgstr ""
 
-#: templates/subscription/payment.html:10
+#: templates/subscription/payment.html:9
 msgid "Pay by PayPal"
 msgstr ""
 
-#: templates/subscription/payment.html:13
+#: templates/subscription/payment.html:12
 msgid "pay"
+msgstr ""
+
+#: templates/subscription/plans.html:3
+msgid "Choose your Plan"
 msgstr ""
 
 #: templates/subscription/subscription_cancel.html:3
@@ -1005,7 +1036,6 @@ msgid "Details for %(object_name)s."
 msgstr ""
 
 #: templates/subscription/subscription_detail.html:10
-#: templates/subscription/subscription_list_fragment.html:19
 msgid "trial"
 msgstr ""
 
@@ -1030,40 +1060,19 @@ msgstr ""
 msgid "Pricing and Plans"
 msgstr ""
 
-#: templates/subscription/subscription_list.html:14
+#: templates/subscription/subscription_list.html:8
 msgid "Questions & Answers"
 msgstr ""
 
-#: templates/subscription/subscription_list.html:15
+#: templates/subscription/subscription_list.html:9
 msgid ""
 "\n"
-"                                                <p class=\"questions\">How does the free trial work?</p>\n"
+"        <h5>What forms of payment do you accept?</h5>\n"
+"        <p>Payments are via credit card and are processed by PayPal. PayPal accepts most major credit cards such as Visa, Mastercar d, American Express & Discover. We do not offer other forms of payment at this time.</p>\n"
 "\n"
-"                                                <p>After signing up and completing your payment details, you won't be charged anything for 21 days. After 21 days your paid\n"
-" plan will start and your first payment will be made. If you cancel your Project account before the 21 day free trial ends, you will not be charged any amount.</p>\n"
-"                                                <p class=\"questions\">Is this a long-term commitment?</p>\n"
+"        <h5>I have more questions!?</h5>\n"
+"        <p>Get in touch at support@curiousforest.com and I'll be happy to answer additional questions about the service!</p>\n"
 "\n"
-"                                                <p>Nope! You pay a monthly fee and are able to cancel at any time or upgrade / downgrade to a plan that suits you better.</\n"
-"p>\n"
-"                                                <p class=\"questions\">What forms of payment do you accept?</p>\n"
-"\n"
-"                                                <p>Payments are via credit card and are processed by PayPal. PayPal accepts most major credit cards such as Visa, Mastercar\n"
-"d, American Express & Discover. We do not offer other forms of payment at this time.</p>\n"
-"                                                <p class=\"questions\">Is Project SEO Friendly?</p>\n"
-"\n"
-"                                                <p>Project links use a 301 Redirect which passes all \"link juice\" on to the target URL and is SEO friendly.</p>\n"
-"                                                <p class=\"questions\">What happens to my campaign links if I cancel my account?</p>\n"
-"\n"
-"                                                <p>Your campaign links will continue to redirect people to the target url. You just won't be able to log in and view conver\n"
-"sions and click reports :(</p>\n"
-"                                                <p class=\"questions\">Can I Use Project For Non-Social Media Purposes?</p>\n"
-"\n"
-"                        <p>Yes. Our customers use Project in their email newsletters, on press releases — even on their banner ads. Anywhere you can put a link, you can u\n"
-"se Project.</p>\n"
-"                                                <p class=\"questions\">I have more questions!</p>\n"
-"\n"
-"                                                <p>Get in touch with us at support@project.com and we'll be happy to answer additional questions about the service!</p>\n"
-"                              "
 msgstr ""
 
 #: templates/subscription/subscription_list_fragment.html:5
@@ -1082,14 +1091,28 @@ msgstr ""
 msgid "Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like."
 msgstr ""
 
+#: templates/subscription/subscription_list_fragment.html:18
+msgid "Price (USD)"
+msgstr ""
+
+#: templates/subscription/subscription_list_fragment.html:19
+msgid "Trial Period"
+msgstr ""
+
 #: templates/subscription/subscription_list_fragment.html:23
-msgid "recurrence"
+msgid "Recurrence"
 msgstr ""
 
 #: templates/subscription/subscription_list_fragment.html:28
-msgid "Choose"
+msgid "Signup"
 msgstr ""
 
 #: templates/subscription/subscription_list_fragment.html:36
 msgid "View history"
 msgstr ""
+
+#~ msgid "Welcome to SaaSkit"
+#~ msgstr "Welcome to SaaSkit"
+
+#~ msgid "Welcome"
+#~ msgstr "Welcome"

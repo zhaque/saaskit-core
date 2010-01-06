@@ -261,6 +261,7 @@ LANGUAGES = (
     ('de', ugettext('German')),
     ('fr', ugettext('French')),
     ('ru', ugettext('Russian')),
+    ('sv', ugettext('Swedish')),
 )
 
 # Prepare CSS files for configured color schemes

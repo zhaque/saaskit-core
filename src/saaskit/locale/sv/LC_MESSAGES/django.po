@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 23:10+0000\n"
-"PO-Revision-Date: 2009-12-03 15:52\n"
-"Last-Translator: <admin@example.com>\n"
+"PO-Revision-Date: 2010-01-06 23:31\n"
+"Last-Translator: SaaS kit Administrator <admin@saaskit.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,46 +18,46 @@ msgstr ""
 
 #: settings.py:260
 msgid "English"
-msgstr ""
+msgstr "Engelska"
 
 #: settings.py:261
 msgid "German"
-msgstr ""
+msgstr "Tyska"
 
 #: settings.py:262
 msgid "French"
-msgstr ""
+msgstr "Franska"
 
 #: settings.py:263
 msgid "Russian"
-msgstr ""
+msgstr "Ryska"
 
 #: apps/muaccount_adsense/forms.py:17
 msgid "Submit"
-msgstr ""
+msgstr "Skicka in"
 
 #: apps/muaccount_adsense/forms.py:18 apps/muaccount_content/forms.py:19
 #: templates/friends/invite_form.html:11
 #: templates/profiles/create_profile.html:28
 #: templates/profiles/edit_profile.html:27
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: apps/muaccount_adsense/models.py:15
 msgid "Adsense block"
-msgstr ""
+msgstr "Adsense block"
 
 #: apps/muaccount_adsense/models.py:16
 msgid "Adsense blocks"
-msgstr ""
+msgstr "Adsense block"
 
 #: apps/muaccount_content/admin.py:22
 msgid "Advanced options"
-msgstr ""
+msgstr "Avancerat"
 
 #: apps/muaccount_content/forms.py:18
 msgid "Create"
-msgstr ""
+msgstr "Skapa"
 
 #: apps/muaccount_content/models.py:13
 msgid "show link"
@@ -93,9 +93,7 @@ msgid "Page view quota was ended!"
 msgstr ""
 
 #: apps/page_view_quotas/management.py:17
-msgid ""
-"Upgrade your plan to increase quota. Every moment your account may be "
-"suspended."
+msgid "Upgrade your plan to increase quota. Every moment your account may be suspended."
 msgstr ""
 
 #: apps/page_view_quotas/management.py:19
@@ -112,7 +110,7 @@ msgstr ""
 
 #: apps/saaskit_profile/management.py:11
 msgid "Welcome to SaaS kit!"
-msgstr "Добро пожаловать на SaaS kit!"
+msgstr ""
 
 #: apps/saaskit_profile/management.py:11
 msgid "you have successfully registered"
@@ -154,8 +152,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"<p>You have found an outdated link on <a href=\"%(referer)s\">this page</a>."
-"</p>\n"
+"<p>You have found an outdated link on <a href=\"%(referer)s\">this page</a>.</p>\n"
 "            "
 msgstr ""
 
@@ -163,8 +160,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"<p>Please, write about this fact to <a href=\"mailto:%(email)s\">%(name)s</"
-"a>.</p>\n"
+"<p>Please, write about this fact to <a href=\"mailto:%(email)s\">%(name)s</a>.</p>\n"
 "                "
 msgstr ""
 
@@ -172,8 +168,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"<p>It seems, that you found a broken or outdated link at <a href=\"%(referer)"
-"s\">%(referer)s</a> page.</p>\n"
+"<p>It seems, that you found a broken or outdated link at <a href=\"%(referer)s\">%(referer)s</a> page.</p>\n"
 "            "
 msgstr ""
 
@@ -196,15 +191,15 @@ msgstr ""
 #: templates/account_tmpl.html:7 templates/notification/dashboard.html:6
 #: templates/notification/single.html:3
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: templates/account_tmpl.html:8
 msgid "Profiles and Passwords"
-msgstr ""
+msgstr "Profiler och lösenord"
 
 #: templates/account_tmpl.html:9
 msgid "Plans and Pricing"
-msgstr ""
+msgstr "Planer och prissättning"
 
 #: templates/account_tmpl.html:10
 msgid "Bounty Points"
@@ -216,7 +211,7 @@ msgstr ""
 
 #: templates/base_tmpl.html:30
 msgid "Toolkit for building subscription based webapps"
-msgstr ""
+msgstr "Toolkit för att bygga den teckning som sker webapps"
 
 #: templates/base_tmpl.html:30
 msgid "Fast!"
@@ -230,11 +225,11 @@ msgstr ""
 
 #: templates/base_tmpl.html:51
 msgid "My account"
-msgstr ""
+msgstr "Kontot"
 
 #: templates/base_tmpl.html:52
 msgid "Sign out"
-msgstr ""
+msgstr "Logga ut"
 
 #: templates/base_tmpl.html:54 templates/authopenid/signin.html:6
 #: templates/authopenid/signin.html.py:8 templates/authopenid/signin.html:21
@@ -342,8 +337,7 @@ msgstr ""
 #: templates/authopenid/complete.html:8
 msgid ""
 "\n"
-"\t<p>Your OpenID can now be associated with a new or existing membership. "
-"You can change the association later in your preferences.</p>\n"
+"\t<p>Your OpenID can now be associated with a new or existing membership. You can change the association later in your preferences.</p>\n"
 "\t"
 msgstr ""
 
@@ -354,9 +348,7 @@ msgstr ""
 #: templates/authopenid/complete.html:13
 msgid ""
 "\n"
-"\t<p>If you're joining <strong>Sitename</strong>, associate your OpenID with "
-"a new account. If you're already a member, associate with your existing "
-"account.</p>\n"
+"\t<p>If you're joining <strong>Sitename</strong>, associate your OpenID with a new account. If you're already a member, associate with your existing account.</p>\n"
 "\t"
 msgstr ""
 
@@ -406,9 +398,7 @@ msgid "Set password"
 msgstr ""
 
 #: templates/authopenid/password_change_form.html:21
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
 msgstr ""
 
 #: templates/authopenid/password_change_form.html:26
@@ -430,9 +420,7 @@ msgid "Change password"
 msgstr ""
 
 #: templates/authopenid/password_change_form.html:57
-msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
 msgstr ""
 
 #: templates/authopenid/password_change_form.html:62
@@ -507,21 +495,11 @@ msgid "Message Sent!"
 msgstr ""
 
 #: templates/contact_form/contact_form_sent.html:9
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta "
-"tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis "
-"placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, "
-"mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, "
-"nec semper urna."
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna."
 msgstr ""
 
 #: templates/contact_form/contact_form_sent.html:10
-msgid ""
-"Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum "
-"sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus "
-"mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum "
-"sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. "
-"Quisque vitae lacus nunc."
+msgid "Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc."
 msgstr ""
 
 #: templates/emailconfirmation/confirm_email.html:3
@@ -534,8 +512,7 @@ msgstr ""
 
 #: templates/emailconfirmation/confirm_email.html:8
 #, python-format
-msgid ""
-"You have confirmed that %(email)s is an email address for user '%(user)s'."
+msgid "You have confirmed that %(email)s is an email address for user '%(user)s'."
 msgstr ""
 
 #: templates/emailconfirmation/confirm_email.html:10
@@ -597,8 +574,7 @@ msgid ""
 "\n"
 "            This will be a two step process. First you must\n"
 "            <a href=\"%(auth_url)s\">authenticate</a>.\n"
-"            Once you have agreed to let us have access to your address book, "
-"you will be taken back here and\n"
+"            Once you have agreed to let us have access to your address book, you will be taken back here and\n"
 "            an \"import\" button will appear here.\n"
 "            "
 msgstr ""
@@ -620,9 +596,7 @@ msgid "to add more users"
 msgstr ""
 
 #: templates/friends/invite.html:19
-msgid ""
-"If you'd like to invite someone to join your site, you can enter their email "
-"address and a message for them below or you may"
+msgid "If you'd like to invite someone to join your site, you can enter their email address and a message for them below or you may"
 msgstr ""
 
 #: templates/friends/invite.html:19
@@ -695,9 +669,7 @@ msgstr ""
 
 #: templates/muaccounts/muaccount_list.html:18
 #, python-format
-msgid ""
-"You can not add more domains. <a href=\"%(subscription_url)s\">Upgrade</a> "
-"your plan."
+msgid "You can not add more domains. <a href=\"%(subscription_url)s\">Upgrade</a> your plan."
 msgstr ""
 
 #: templates/muaccounts/muaccount_list.html:22
@@ -736,8 +708,7 @@ msgstr ""
 #: templates/notification/account_suspended_page_view_quotas_ends/full.html:1
 #: templates/notification/account_suspended_page_view_quotas_ends/notice.html:1
 #, python-format
-msgid ""
-"Your site %(muaccount)s suspended because members extend page view quota."
+msgid "Your site %(muaccount)s suspended because members extend page view quota."
 msgstr ""
 
 #: templates/notification/member_add/notice.html:1
@@ -778,9 +749,8 @@ msgid "Welcome to the SaaS kit example project!"
 msgstr ""
 
 #: templates/pages/about.html:8
-#, fuzzy
 msgid "About SaaS kit"
-msgstr "Добро пожаловать на SaaS kit!"
+msgstr ""
 
 #: templates/pages/privacy.html:8
 msgid "Privacy Policy"
@@ -859,8 +829,7 @@ msgstr ""
 msgid ""
 "\n"
 "      <strong>You are subscribed to this plan.</strong>\n"
-"      You may <a href=\"%(cancel_url)s\" > <img src=\"%(image_url)s\"></a> "
-"if you\n"
+"      You may <a href=\"%(cancel_url)s\" > <img src=\"%(image_url)s\"></a> if you\n"
 "      wish.\n"
 "    "
 msgstr ""
@@ -1049,9 +1018,7 @@ msgstr ""
 
 #: templates/subscription/subscription_cancel.html:6
 #, python-format
-msgid ""
-"Subscription process cancelled. <a href=\"%(subscription_url)s\">Back to "
-"subscription list</a>."
+msgid "Subscription process cancelled. <a href=\"%(subscription_url)s\">Back to subscription list</a>."
 msgstr ""
 
 #: templates/subscription/subscription_change_done.html:3
@@ -1083,11 +1050,9 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"<p><a href=\"%(mua_create_url)s\">Go here</a> and create your own muaccounts."
-"</p>\n"
+"<p><a href=\"%(mua_create_url)s\">Go here</a> and create your own muaccounts.</p>\n"
 "<p>You will be redirected thither automatically in 5 seconds.</p>\n"
-"<p>If you was not redirected click <a href=\"%(mua_create_url)s\">this link</"
-"a></p>\n"
+"<p>If you was not redirected click <a href=\"%(mua_create_url)s\">this link</a></p>\n"
 msgstr ""
 
 #: templates/subscription/subscription_list.html:3
@@ -1102,13 +1067,10 @@ msgstr ""
 msgid ""
 "\n"
 "        <h5>What forms of payment do you accept?</h5>\n"
-"        <p>Payments are via credit card and are processed by PayPal. PayPal "
-"accepts most major credit cards such as Visa, Mastercar d, American Express "
-"& Discover. We do not offer other forms of payment at this time.</p>\n"
+"        <p>Payments are via credit card and are processed by PayPal. PayPal accepts most major credit cards such as Visa, Mastercar d, American Express & Discover. We do not offer other forms of payment at this time.</p>\n"
 "\n"
 "        <h5>I have more questions!?</h5>\n"
-"        <p>Get in touch at support@curiousforest.com and I'll be happy to "
-"answer additional questions about the service!</p>\n"
+"        <p>Get in touch at support@curiousforest.com and I'll be happy to answer additional questions about the service!</p>\n"
 "\n"
 msgstr ""
 
@@ -1121,15 +1083,11 @@ msgid "Expires"
 msgstr ""
 
 #: templates/subscription/subscription_list_fragment.html:7
-msgid ""
-"Paypal will get money from your account itself. Or you may do it manually in "
-"your paypal account."
+msgid "Paypal will get money from your account itself. Or you may do it manually in your paypal account."
 msgstr ""
 
 #: templates/subscription/subscription_list_fragment.html:9
-msgid ""
-"Each month of service for less than the cost of a pizza :) Upgrade or "
-"downgrade whenever you like."
+msgid "Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like."
 msgstr ""
 
 #: templates/subscription/subscription_list_fragment.html:18
@@ -1151,9 +1109,3 @@ msgstr ""
 #: templates/subscription/subscription_list_fragment.html:36
 msgid "View history"
 msgstr ""
-
-#~ msgid "Welcome to SaaSkit"
-#~ msgstr "Добро пожаловать на SaaSkit"
-
-#~ msgid "Welcome"
-#~ msgstr "Добро пожаловать"

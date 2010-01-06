@@ -1,7 +1,7 @@
 {% extends "base_tmpl.html" %}
-{% load i18n uni_form_tags %}
+{% load i18n %}
 
-{% block head_title %}{{ block.super }} : {% trans "Contact us" %} : {% trans "Thanks message sent" %}{% endblock %}
+{% block head_title %}{{ block.super }} : {% trans "Contact us" %} : {% trans "Thanks - message sent" %}{% endblock %}
 
 {% block content %}
 
@@ -9,4 +9,8 @@
          <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis placerat euismod eu est. Ut turpis nulla, gravida sit amet feugiat sit amet, mollis nec arcu. Nullam eu erat quam, et facilisis erat. Sed ut leo purus, nec semper urna." %}</p>
          <p>{% trans "Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sed dolor elit, ut volutpat libero. Curabitur gravida vestibulum sem, ac blandit dui dictum ut. Nunc id ligula eu nisi pellentesque volutpat. Quisque vitae lacus nunc." %}</p>
 
+{% endblock %}
+
+{% block sidebar %}
+  {% include "pages/sidebar_tmpl.html" %}
 {% endblock %}

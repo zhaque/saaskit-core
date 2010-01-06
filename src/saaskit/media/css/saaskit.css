@@ -74,8 +74,10 @@
 .yui-skin-saaskit .saaskit-bd h1 { font-size: 167%;  font-weight: bold;  margin:1em 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
 .yui-skin-saaskit .saaskit-bd h2 { font-size:153.9%; margin: 0 0 0.4em 0.4em; }
 .yui-skin-saaskit .saaskit-bd h3 { margin: 10px 0 0 0; background-color: none; padding: 5px 5px 5px 15px; font-size:18px; }  /* Coloured block headings */
-.yui-skin-saaskit .saaskit-bd h4 { margin: 10px 0 5px 0; background-color: none; padding: 5px 5px 5px 15px; font-size:16px; }
+.yui-skin-saaskit .saaskit-bd h4 { margin: 10px 0 0px 0; background-color: none; font-size:16px; }
 .yui-skin-saaskit .saaskit-bd h5 { font-size:123.1%; margin:0.6em 1.2em; }
+.yui-skin-saaskit .saaskit-bd ul { padding-left: 0; }
+.yui-skin-saaskit .saaskit-bd ul li { font-size:12px; margin-left: 10px;}
 
 /* Basic block */
 .yui-skin-saaskit .saaskit-bd p { margin:15px 0; font-size:12px; line-height:20px; }
@@ -83,9 +85,22 @@
   -moz-border-radius-topright: 4px; margin-bottom:20px; padding-bottom: 20px; background: transparent; padding-top:1px;}
 .yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-content {padding-left: 15px; padding-right:15px; padding-bottom:20px;}
 
+/* Extend block and header to have rounded corners */
+.yui-skin-saaskit.rounded #hd .yui-g,
+.yui-skin-saaskit.rounded #hd .yui-g ul li,
+.yui-skin-saaskit.rounded #hd .yui-g ul li a,
+.yui-skin-saaskit.rounded .saaskit-bd .saaskit-tabs,
+.yui-skin-saaskit.rounded .saaskit-bd .saaskit-tabs ul li,
+.yui-skin-saaskit.rounded .saaskit-bd .saaskit-tabs ul li a,
+.yui-skin-saaskit.rounded .saaskit-bd h3 {
+    -moz-border-radius-topright:7px;
+    -moz-border-radius-topleft:7px;
+    -webkit-border-top-right-radius:7px;
+    -webkit-border-top-left-radius:7px;
+}
+
 /* Style the horizontal rules inside .block */
 .yui-skin-saaskit .saaskit-bd hr { height:1px; border:0; }
-
 
 /* Sidebar */
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar h3 { padding: 5px 10px; font-weight: bold; font-size: 13px; margin-bottom:10px;;}
@@ -101,7 +116,6 @@
 /* Footer */
 .yui-skin-saaskit .saaskit-ft {border-top-width:1px; border-top-style:none; padding-bottom: 20px;}
 
-
 /* Custom Classes */
 .yui-skin-saaskit .small {  font-size: 11px; }
 .yui-skin-saaskit .text-left { text-align:left; }
@@ -111,7 +125,7 @@
 
 /* Default SaaS kit Skin Colour Scheme */
 
-/* Generics #232C30; #fff; */
+/* Generics */
 html {background-color:#232C30;}
 body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit a:link, a:visited { color: #07b; }
@@ -156,7 +170,7 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 
 /* Body */
 .yui-skin-saaskit .saaskit-bd h1 {color:#f00;}
-.yui-skin-saaskit .saaskit-bd h2 {color:#f00;} 
+.yui-skin-saaskit .saaskit-bd h2 {color:#0f00;} 
 .yui-skin-saaskit .saaskit-bd h3 { background-color:#A0C2DE; border-color:#064780; color: #456; } 
 .yui-skin-saaskit .saaskit-bd h4 { color: #456; }
 .yui-skin-saaskit .saaskit-bd h5 { color: #456; }
@@ -173,3 +187,7 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 
 /* Footer */
 .yui-skin-saaskit .saaskit-ft { background-color: #ddd;; border-top-style:solid; border-top-color:#bbb; color:#262626; padding-left:20px; }
+
+/* Custom Classes */
+.yui-skin-saaskit .gray { color:#999; }
+.yui-skin-saaskit .highlight { background-color:#ffffcc; }

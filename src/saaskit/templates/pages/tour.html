@@ -1,10 +1,11 @@
 {% extends "base_tmpl.html" %}
 {% load i18n %}
+
 {% block head_title %}{{ block.super }} : {% trans "Take the Grand Tour!" %}{% endblock %}
 
 {% block content %}
 <div class="saaskit-block">
-	<h3>{% trans "Grand Tour" %}</h3>
+	<h3>{% trans "Take the Tour" %}</h3>
 	    <div class="saaskit-content">
 
 		<h4>Manage Subscriptions & Business Models</h4>
@@ -51,3 +52,6 @@
 {% endblock %}
 
 
+{% block sidebar %}
+  {% include "pages/sidebar_tmpl.html" %}
+{% endblock %}

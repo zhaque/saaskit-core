@@ -1,14 +1,17 @@
 {% extends "base_tmpl.html" %}
 {% load i18n %}
+
 {% block head_title %}{{ block.super }} : {% trans "About us" %}{% endblock %}
 
 {% block content %}
 <div class="saaskit-block">
   <h3>{% trans "About SaaS kit" %}</h3>
     <div class="saaskit-content">
-	<p>SaaS kit is a complete SaaS-type website template, ready for deployment. 
-
-	<h4>Key features</h4>		
+	<p>
+	SaaS kit is a complete SaaS-type website template, ready for deployment. SaaS kit is a complete SaaS-type website template, ready for deployment. SaaS kit is a complete SaaS-type website template, ready for deployment. SaaS kit is a complete SaaS-type website template, ready for deployment.
+	</p>
+	<h4>Key features</h4>
+	<p>SaaS kit is a complete SaaS-type website template, ready for deployment. SaaS kit is a complete SaaS-type website template, ready for deployment.</p>		
 	<ul>
 		<li>3rd Party API & Developer Support (API)</li>
 		<li>Google Adsense</li>		
@@ -18,8 +21,8 @@
 		<li>Google and Yahoo Contacts Import (Marketing)</li>		
 		<li>Powered by Django Web framework (Future-proof)</li>
 		<li>Manage Subscriptions & Business Models (Billing)</li>
-		<li>Mobile Ready!(Mobile)</li>
-	</ul>	
+		<li>Mobile Ready!(Mobile)</li> 
+	</ul>	  
 	<h4>Services & Support</h4>
 	<p>saaskit.org help you get the most out of your SaaS Kit whether you're using it personally or professionally. We get beginners up and running and give advanced users guidance with more complex usage; offering advice and support for each step along the way.</p>
 
@@ -32,3 +35,6 @@
 </div>
 {% endblock %}
 
+{% block sidebar %}
+  {% include "pages/sidebar_tmpl.html" %}
+{% endblock %}

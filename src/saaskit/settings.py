@@ -6,7 +6,7 @@ from django.conf import global_settings
 
 KIT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True 
+DEBUG = False 
 TEMPLATE_DEBUG = DEBUG
 DEBUG_PROPAGATE_EXCEPTIONS = False
 
@@ -97,7 +97,6 @@ INSTALLED_APPS = (
     'django_pipes',
     'notification',
     'paypal.standard.ipn',
-    'perfect404',
     'profiles',
     'sorl.thumbnail',
     'south',

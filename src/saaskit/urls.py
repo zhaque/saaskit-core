@@ -1,8 +1,6 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
 
-handler404 = 'perfect404.views.page_not_found'
-
 def wrapped_queryset(func, queryset_edit=lambda request, queryset: queryset):
     def wrapped(request, queryset, *args, **kwargs):
         return func(request, queryset=queryset_edit(request, queryset), *args, **kwargs)

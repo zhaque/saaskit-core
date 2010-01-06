@@ -24,7 +24,7 @@
 	     -webkit-border-radius: 3px;
 }
 .yui-skin-saaskit .saaskit-hd .logo {margin: 0; padding: 0px 0px; float: left;}
-.yui-skin-saaskit .saaskit-hd .tagline {margin: 6px 0px 0px 105px; width: 455px; font-size: 18px; line-height: 1.16em; margin-bottom: 1.25em;}
+.yui-skin-saaskit .saaskit-hd .tagline {margin: 6px 0px 0px 105px; width: 455px; font-size: 14px; line-height: 1.16em;}
 .yui-skin-saaskit .saaskit-hd .tagline a:link, .yui-skin-saaskit .saaskit-hd .tagline a:visited, .yui-skin-saaskit .saaskit-hd .tagline a:hover, .yui-skin-saaskit .saaskit-hd .tagline a:active { text-decoration: none;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav {width: 100%;}
 .yui-skin-saaskit .saaskit-hd .saaskit-nav ul { margin: 10px; padding: 0px; list-style-type: none;}
@@ -60,6 +60,7 @@
 
 .yui-skin-saaskit .saaskit-landing-img {margin: -470px 0px 0px 260px; width:720px; height:480px; margin-bottom: -1em;}
 
+/* Landing Extra */
 .yui-skin-saaskit .saaskit-landing-extra { width:100%; }
 .yui-skin-saaskit .saaskit-landing-extra .benefits_list { width: 95%; margin:0px 0px 0px 50px;}
 .yui-skin-saaskit .saaskit-landing-extra .benefit {width:280px; float:left; margin: 20px 30px 0px 0px;}
@@ -69,8 +70,6 @@
 /* Body */
 .yui-skin-saaskit .saaskit-bd  { width: 95%;}
 .yui-skin-saaskit .saaskit-bd .teaser p { margin-left: 1px; }
-
-/* Lists */
 .yui-skin-saaskit .saaskit-bd { padding:1.5em 1em; }
 .yui-skin-saaskit .saaskit-bd h1 { font-size: 167%;  font-weight: bold;  margin:1em 1%; }  /* This style serves purely as a warning - if you see it in the page, remove the tag!  Only one h1 allowed in page! */
 .yui-skin-saaskit .saaskit-bd h2 { font-size:153.9%; margin: 0 0 0.4em 0.4em; }
@@ -84,58 +83,9 @@
   -moz-border-radius-topright: 4px; margin-bottom:20px; padding-bottom: 20px; background: transparent; padding-top:1px;}
 .yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-content {padding-left: 15px; padding-right:15px; padding-bottom:20px;}
 
-/* Extend block with tabs */
-.yui-skin-saaskit .saaskit-bd .saaskit-tabs {  font-size: 13px; border-bottom: 0px; }
-.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul {margin: 0; padding: 0; list-style-type: none; }
-.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li a {  margin-right: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 3px 10px; float:left; display:block;}
-.yui-skin-saaskit .saaskit-bd .saaskit-tabs ul li.saaskit-tabs-active a{ margin-bottom: -1px; text-decoration:none; }
-.yui-skin-saaskit .saaskit-bd .saaskit-tabs h2 { position:absolute; margin-left:-5000px; } /* Hidden SEO Header if needed */
-
-/* Extend block and header to have rounded corners */
-.yui-skin-saaskit.rounded #hd .yui-g,
-.yui-skin-saaskit.rounded #hd .yui-g ul li,
-.yui-skin-saaskit.rounded #hd .yui-g ul li a,
-.yui-skin-saaskit.rounded .saaskit-bd .saaskit-tabs,
-.yui-skin-saaskit.rounded .saaskit-bd .saaskit-tabs ul li,
-.yui-skin-saaskit.rounded .saaskit-bd .saaskit-tabs ul li a,
-.yui-skin-saaskit.rounded .saaskit-bd h3 {
-    -moz-border-radius-topright:7px;
-    -moz-border-radius-topleft:7px;
-    -webkit-border-top-right-radius:7px;
-    -webkit-border-top-left-radius:7px;
-}
-
 /* Style the horizontal rules inside .block */
 .yui-skin-saaskit .saaskit-bd hr { height:1px; border:0; }
 
-/* Tables */
-.yui-skin-saaskit .saaskit-bd table {  width: 100%; border-collapse: collapse; margin-bottom: 15px; }
-.yui-skin-saaskit .saaskit-bd table td { padding: 10px; border-bottom-width: 1px; border-bottom-style:solid;}
-.yui-skin-saaskit .saaskit-bd table thead td { font-weight: bold; text-align: left; font-weight:normal; padding:3px; height: 12px; }
-.yui-skin-saaskit .saaskit-bd table .checkbox {margin-left: 10px;}
-.yui-skin-saaskit .saaskit-bd table thead a { text-decoration:none; }
-.yui-skin-saaskit .saaskit-bd table thead a:hover { text-decoration:underline; }
-.yui-skin-saaskit .saaskit-bd table tbody a { text-decoration:underline; }
-
-/* Pager control*/
-.yui-skin-saaskit .saaskit-bd ul.saaskit-pager { text-align:right; padding-right:0.5px; }
-.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li { display:inline; margin-right: 5px; }
-.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li a {text-decoration:none; font-size:11px;  -moz-border-radius:5px; padding: 2px 5px; }
-.yui-skin-saaskit .saaskit-bd ul.saaskit-pager li a:hover { }
-
-/* Lists */
-.yui-skin-saaskit .saaskit-bd ul.saaskit-list { margin: 0; padding: 0 15px 0 15px; list-style-type: none; }
-.yui-skin-saaskit .saaskit-bd ul.saaskit-list li {clear: left; padding-bottom: 5px;}
-.yui-skin-saaskit .saaskit-bd ul.saaskit-list li .left {float: left; padding: 5px 5px;}
-.yui-skin-saaskit .saaskit-bd ul.saaskit-list li .left .avatar {width: 50px;height: 50px;  margin: 3px 10px 0 0;}
-.yui-skin-saaskit .saaskit-bd ul.saaskit-list li .item {margin-left: 80px;}
-.yui-skin-saaskit .saaskit-bd ul.saaskit-list li .item .avatar {float: left; margin: 0 5px 5px 0; width: 30px; height: 30px;}
-
-/* Messages */
-.yui-skin-saaskit .saaskit-bd p.alert { -moz-border-radius: 3px; -webkit-border-radius: 3px;text-align:center; margin:0 auto 5px; width:80%; padding-top:8px; padding-bottom:8px; }
-.yui-skin-saaskit .saaskit-bd p.error { border-width:1px; border-style: solid; }
-.yui-skin-saaskit .saaskit-bd p.warning { border-width:1px; border-style:solid; }
-.yui-skin-saaskit .saaskit-bd p.notice { border-width:1px; border-style:solid; }
 
 /* Sidebar */
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar h3 { padding: 5px 10px; font-weight: bold; font-size: 13px; margin-bottom:10px;;}
@@ -199,6 +149,7 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-landing-main .plans a {color:#fff;}
 .yui-skin-saaskit .saaskit-landing-main p {color:#fff;}
 
+/* Landing Extra */
 .yui-skin-saaskit .saaskit-landing-extra { background-color:#cfcfcf;}
 .yui-skin-saaskit .saaskit-landing-extra .benefit h5 {color:#1a1a1a;}
 .yui-skin-saaskit .saaskit-landing-extra .benefit p {color:#1a1a1a;}
@@ -213,6 +164,9 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-content { border-left: 1px solid #ddd;
   border-top: 1px solid #ddd; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;
   background: #fff;}
+
+/* Sidebar */
+.yui-skin-saaskit .saaskit-bd .saaskit-sidebar h3 { background: #fff; border-bottom:1px solid #ccc;border-right:1px solid #ccc; border-left:1px solid #ddd; border-top:1px solid #ddd; color: #333; }
 
 /* Style the horizontal rules inside .block */
 .yui-skin-saaskit .saaskit-bd hr { background-color: #aaa;}

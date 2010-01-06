@@ -4,13 +4,15 @@
 {% block class %}yui-t7{% endblock %}
 
 {% block content %}
-<div class="saaskit-content">
-  	<h3>{% trans "Terms of Service" %}</h3>
-	<h3>{% trans "Account Terms" %}</h3>
-	<h3>{% trans "Payment, Refunds, Upgrading and Downgrading Terms" %}</h3>
-	<h3>{% trans "Cancellation and Termination" %}</h3>
-	<h3>{% trans "Modifications to the Service and Prices" %}</h3>
-	<h3>{% trans "Copyright and Content Ownership" %}</h3>
-	<h3>{% trans "General Conditions" %}</h3>
+<div class="saaskit-block">
+	<h3>{% trans "Terms of Service" %}</h3>
+	    <div class="saaskit-content">
+			<h4>{% trans "Account Terms" %}</h4>
+			<h4>{% trans "Payment, Refunds, Upgrading and Downgrading Terms" %}</h4>
+			<h4>{% trans "Cancellation and Termination" %}</h4>
+			<h4>{% trans "Modifications to the Service and Prices" %}</h4>
+			<h4>{% trans "Copyright and Content Ownership" %}</h4>
+			<h4>{% trans "General Conditions" %}</h4>
+		</div>
 </div>
 {% endblock %}

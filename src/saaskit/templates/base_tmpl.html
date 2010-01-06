@@ -27,16 +27,11 @@
 				{% endblock %}
 
                 {% block tagline %}
-                  <div id="hd" class="tagline"><a href="/pages/take-the-saas-kit-service-tour/">{% trans "Toolkit for building subscription based webapp" %} <em>{% trans "Fast!" %}</em></a></div>
+                  <div id="hd" class="tagline"><a href="/pages/take-the-saas-kit-service-tour/">{% trans "Toolkit for building subscription based webapps" %} <em>{% trans "Fast!" %}</em></a></div>
                 {% endblock %}
 
                 <div class="saaskit-nav-rhs">
 					  <ul>
-						{% if user.is_authenticated %}		 
-					      <li><a href="">{{user}}</a></li>	
-					    {% ifequal user request.muaccount.owner %}
-					      <li><a href="{% url muaccounts_manage_general %}">{% trans "Manage site" %}</a></li>					
-					    {% endifequal %}
 		                {% block nav-rhs-add %}
 						  <li>
 						    <form action="{% url django.views.i18n.set_language %}" method="post">
@@ -47,7 +42,12 @@
 						      </select>
 						    </form> 
 						  </li>
-						{% endblock %}
+						{% endblock %}						
+						{% if user.is_authenticated %}		 
+					      <li><a href="">{{user}}</a></li>	
+					    {% ifequal user request.muaccount.owner %}
+					      <li><a href="{% url muaccounts_manage_general %}">{% trans "Manage site" %}</a></li>					
+					    {% endifequal %}
 						  <li><a href="{% main_site_url account_dashboard %}">{% trans "My account" %}</a></li>	
 					      <li><a href="{% url user_signout %}?next=/">{% trans "Sign out" %}</a></li>
 					    {% else %}

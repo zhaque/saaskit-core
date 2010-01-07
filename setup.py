@@ -26,7 +26,6 @@ install_requires = [
         'django-authopenid',
         'django-notification==0.1.4',
         'django-paypal',
-        'django-registration',
         'django-pagination',
         'django-tinymce',
         'South',
@@ -47,6 +46,7 @@ install_requires = [
         
         'django-frontendadmin',
         'django-profiles',
+        'django-registration',
         'django-ab',
         'django-sso',
         'django-uni-form',
@@ -78,7 +78,6 @@ dependency_links = [
         'http://pypi.saaskit.org/django-authopenid/',
         'http://pypi.saaskit.org/django-notification/',
         'http://pypi.saaskit.org/django-paypal/',
-        'http://pypi.saaskit.org/django-registration/',
         'http://dist.repoze.org',
         'http://pypi.pinaxproject.com/',
         'http://distfiles.minitage.org/public/externals/minitage/',

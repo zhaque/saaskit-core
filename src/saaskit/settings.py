@@ -174,10 +174,12 @@ _default_css_files = ('saaskit/css/saaskit.css',
                       'uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
                       'saaskit/css/openid.css',
+                      'saaskit/css/custom-form-elements.css',
                       )
 
 _default_js_files = ('saaskit/js/openid-jquery.js',
                      'uni_form/uni_form/uni-form.jquery.js',
+                     'saaskit/js/custom-form-elements.js',
                     )
 
 COMPRESS_CSS = {      

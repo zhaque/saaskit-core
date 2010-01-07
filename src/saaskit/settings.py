@@ -289,7 +289,7 @@ PAYPAL_PRO = False
 
 #Dummy paypal settings
 PAYPAL_TEST = True
-PAYPAL_RECEIVER_EMAIL='example@example.com'
+PAYPAL_RECEIVER_EMAIL='admin_1259179300_biz@crowdsense.com'
 SUBSCRIPTION_PAYPAL_SETTINGS = {
     'business' : PAYPAL_RECEIVER_EMAIL,
     }

@@ -1,7 +1,7 @@
-{% extends "main2.html" %}
+{% extends "base_tmpl.html" %}
 {% load i18n %}
-{% block title %}{% trans "Dashboard" %}{% endblock %} 
-{% block body %}
+{% block heade_title %}{% trans "Dashboard" %}{% endblock %} 
+{% block content %}
 <h2>{{notice.notice_type.display}}</h2>
 
 <p>{{notice.message|safe}}</p>

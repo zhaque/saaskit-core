@@ -55,6 +55,7 @@ install_requires = [
         
         'django-paypal-api',
         'django-pipes',
+        'django-contact',
         'django-quotas',
         'saaskit-main-site',
         'saaskit-user-site',

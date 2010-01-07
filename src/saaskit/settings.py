@@ -89,7 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     
     'compress',
-    'contact_form',
+    'contact',
     'emailconfirmation',
     'registration',
     'django_authopenid',

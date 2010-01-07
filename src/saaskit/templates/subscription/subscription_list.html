@@ -1,18 +1,8 @@
 {% extends "account_tmpl.html" %}
 {% load i18n %}
 {% block title %}{% trans "Pricing and Plans" %}{% endblock %}
+
 {% block content %}
-
-{% include "subscription/subscription_list_fragment.html" %}
-                        
-        <h2>{% trans "Questions & Answers" %}</h2>
-        {% blocktrans %}
-        <h5>What forms of payment do you accept?</h5>
-        <p>Payments are via credit card and are processed by PayPal. PayPal accepts most major credit cards such as Visa, Mastercar d, American Express & Discover. We do not offer other forms of payment at this time.</p>
-
-        <h5>I have more questions!?</h5>
-        <p>Get in touch at support@curiousforest.com and I'll be happy to answer additional questions about the service!</p>
-
-{% endblocktrans %}
+  {% include "subscription/subscription_list_fragment.html" %}
 {% endblock %}
 

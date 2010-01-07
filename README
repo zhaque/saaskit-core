@@ -231,10 +231,9 @@ EMAIL_PORT = 587
   + python-openid
     Python library for OpenID, used internally by django-authopenid.
     - [http://openidenabled.com/python-openid/]
-* django-contact-form
+* django-contact
   Contact Us form for the website
-  - [http://bitbucket.org/ubernostrum/django-contact-form/wiki/Home]
-  - [http://bitbucket.org/ubernostrum/django-contact-form/overview/]
+  - [http://github.com/rcoyner/django-contact]
 * django-compress
   Consolidates and minifies static CSS and JavaScript files.
   - [http://github.com/pelme/django-compress/]
@@ -244,9 +243,6 @@ EMAIL_PORT = 587
 * django-debug-toolbar
   Toolbar that helps debugging Django code.
   - [http://github.com/robhudson/django-debug-toolbar/]
-* django-faq
-  Used for frequently asked question list.
-  - [http://github.com/howiworkdaily/django-faq/]
 * saaskit-muaccounts
   Used for multi-user SAAS accounts.
   - [http://github.com/saas-kit/saaskit-muaccounts/]
@@ -260,7 +256,7 @@ EMAIL_PORT = 587
     - [http://code.google.com/p/django-tagging/]
 * django-pipes
   Used for external API consumption, by (TBD) django-mashup.
-  - [http://github.com/mallipeddi/django-pipes/]
+  - [git@github.com:saas-kit/django-pipes.git]
 * saaskit-prepaid
   Used to support consumable, separately paid quotas (think prepaid
   phone minutes).
@@ -291,7 +287,7 @@ EMAIL_PORT = 587
   Used for user subscription plans/levels.
   - [http://github.com/saas-kit/saaskit-subscription/]
   + django-paypal
-    Used by django-subscription for PayPal payments interface.
+    Used by saaskit-subscription for PayPal payments interface.
     - [http://github.com/johnboxall/django-paypal/]
 * sorl-thumbnail
   Thumbnail creation utility for Django
@@ -368,7 +364,7 @@ EMAIL_PORT = 587
   - make sure your page is visible from outside world (necessary for IPN callbacks)
   - set your page's IP or root domain (MUACCOUNTS_ROOT_DOMAIN) and port, in form
     12.34.56.78:8000 (when deploying on standard port, set just IP or root domain),
-    as `example.com' Site's domain name in admin panel, so that django-subscription
+    as `example.com' Site's domain name in admin panel, so that saaskit-subscription
     can give correct IPN URL to PayPal.
   To run with live PayPal, you'll need to change {{form.sandbox}} to {{form.render}}
   in templates/subscription/subscription_detail.html and set PAYPAL_TEST to False in

@@ -4,20 +4,28 @@
 {% block head_title %}{{ block.super }} : {% trans "Contact us" %}{% endblock %}
 
 {% block content %}
-& Support</h4>
-<p>Welcome to SaaS Kit Support page. Here you will find all the possible links where you can get the best possible help/troubleshooting with your customized version of SaaS Kit.</p>
-
-<p>You can join the SaaS Kit <a href="http://groups.google.com/group/saaskit?lnk=" target="_blank">Google Group</a> to stay up to date with the chatter relating to the latest version of SaaS Kit.</p>
-
-<p>By opting for SaaS Kit's Commercial License, you can get access to a range of services available to you and your business, ensuring SaaS Kit works for you all the time.</p>
-
-Have a question or comment regarding our service? contact us via the form below and we'll be in touch with you at the earliest convenience.
-
-            <form action="" method="POST" class="uniForm">
-                {{ form|as_uni_form }}
-                    <input type="submit" value="Send message">
-            </form>
-
+<div class="saaskit-block">
+	<h3>{% trans "Need help - contact us" %}</h3>
+	    <div class="saaskit-content">
+			<p>Welcome to SaaS Kit Support page. Here you will find all the possible links where you can get the best possible help/troubleshooting with your customized version of SaaS Kit.</p>
+			<p>Have a question or comment regarding our service? contact us via the form below and we'll be in touch with you at the earliest convenience.</p>
+			<form action="" method="POST" class="uniForm">
+  				<fieldset class="inlineLabels">
+  					<legend>* {% trans "Required fields" %}</legend> 		
+    						{{form|as_uni_form}}
+  				</fieldset>
+				<div class="buttonHolder">
+	  				<button class="button" type="submit">
+	    				<img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" alt="Send message" />{% trans "Send message" %}
+	  				</button>        
+    				<button class="button" type="reset">
+      					<img src="{{ MEDIA_URL }}saaskit/img/icons/cross.png" alt="Cancel"/>{% trans "Cancel" %}
+	  				</button>
+	  				<div class="clear"></div>
+				</div>      
+			</form>
+		</div>
+</div>
 {% endblock %}
 
 {% block sidebar %}

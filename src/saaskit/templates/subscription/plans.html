@@ -1,9 +1,18 @@
 {% extends "base_tmpl.html" %}
 {% load i18n %}
+{% block class %}yui-t7{% endblock %}
+
 {% block head_title %}{{ block.super }} : {% trans "Choose your Plan" %}{% endblock %}
 
 {% block content %}
-
-{% include "subscription/subscription_list_fragment.html" %}
-                        
-{% endblock %}
+  <center>
+	<h1>{% trans "21-day Free Trial on All Accounts" %}</h1>
+    <h4>{% trans "Each month of service for less than the cost of a pizza :) Upgrade or downgrade whenever you like." %}</h4>
+    <p></p>
+	<div class="saaskit-block">
+		<div class="saaskit-content">
+  			{% include "subscription/subscription_list_fragment.html" %}   
+		</div>
+	</div>
+  </center>
+{% endblock %}		

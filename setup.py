@@ -24,7 +24,6 @@ install_requires = [
         'django-tagging',
         'django-templatesadmin',
         'django-authopenid',
-        'django-notification==0.1.4',
         'django-pagination',
         'django-tinymce',
         'South',
@@ -43,6 +42,7 @@ install_requires = [
         'pisa',
         'django-email-confirmation',
         
+        'django-notification',
         'django-paypal',
         'django-frontendadmin',
         'django-profiles',
@@ -76,7 +76,6 @@ install_requires.extend(extras_require['test'])
 dependency_links = [
         'http://pypi.saaskit.org/Fabric/',
         'http://pypi.saaskit.org/django-authopenid/',
-        'http://pypi.saaskit.org/django-notification/',
         'http://dist.repoze.org',
         'http://pypi.pinaxproject.com/',
         'http://distfiles.minitage.org/public/externals/minitage/',

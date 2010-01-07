@@ -23,10 +23,8 @@ install_requires = [
         'django-rosetta',
         'django-tagging',
         'django-templatesadmin',
-        'django-uni-form>=0.7.0',
         'django-authopenid',
         'django-notification==0.1.4',
-        'app_media',
         'django-ab',
         'django-paypal',
         'django-sso==0.1.1',
@@ -53,10 +51,12 @@ install_requires = [
         'django-frontendadmin==0.3.1',
         'django-email-confirmation',
         
+        'django-uni-form',
         'django-paypal-api',
         'django-pipes',
         'django-contact',
         'django-quotas',
+        'app_media',
         'saaskit-main-site',
         'saaskit-user-site',
         'saaskit-muaccounts',
@@ -77,7 +77,6 @@ install_requires.extend(extras_require['test'])
 
 dependency_links = [
         'http://pypi.saaskit.org/Fabric/',
-        'http://pypi.saaskit.org/app-media/',
         'http://pypi.saaskit.org/django-ab/',
         'http://pypi.saaskit.org/django-authopenid/',
         'http://pypi.saaskit.org/django-notification/',

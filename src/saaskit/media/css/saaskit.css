@@ -123,6 +123,10 @@
 .yui-skin-saaskit .text-center { text-align:center; }
 .yui-skin-saaskit .clear { clear:both; }
 
+.yui-skin-saaskit .checkbox, .radio {width: 19px; height: 25px; padding: 0 5px 0 0; background: url(/media/saaskit/img/checkbox.gif) no-repeat; display: block; clear: left; float: left;}
+.yui-skin-saaskit .radio {background: url(/media/saaskit/img/radio.gif) no-repeat;}
+.yui-skin-saaskit span.select {position: absolute; width: 100px; height: 15px; padding: 0px 18px 0px 10px; color: #fff; font: 11px/16px arial,sans-serif; background: url(/media/saaskit/img/select.png) no-repeat; overflow: hidden; }
+
 /* Default SaaS kit Skin Colour Scheme */
 
 /* Generics */

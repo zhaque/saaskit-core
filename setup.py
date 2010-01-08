@@ -30,7 +30,6 @@ install_requires = [
         'html5lib',
         'python-dateutil',
         'sorl-thumbnail',
-        'Fabric',
         'PIL==1.1.6',
         'django-friends',
         'gdata',
@@ -41,6 +40,8 @@ install_requires = [
         'Reportlab',
         'pisa',
         'django-email-confirmation',
+
+        'Fabric',
         
         'django-notification',
         'django-paypal',
@@ -74,7 +75,6 @@ install_requires.extend(extras_require['test'])
 
 
 dependency_links = [
-        'http://pypi.saaskit.org/Fabric/',
         'http://pypi.saaskit.org/django-authopenid/',
         'http://dist.repoze.org',
         'http://pypi.pinaxproject.com/',

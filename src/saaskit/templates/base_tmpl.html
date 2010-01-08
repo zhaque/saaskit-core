@@ -35,8 +35,9 @@
 		                {% block nav-rhs-add %}
 						  <li>
 						    <form action="{% url django.views.i18n.set_language %}" method="post">
-						      <select name="language" onChange="this.form.submit();">
-						        {% for lang in LANGUAGES %}
+						      <select name="language" class="styled" />
+						          <option value="language">Select language</option>
+							  {% for lang in LANGUAGES %}
 						          <option value="{{ lang.0 }}" {% ifequal request.LANGUAGE_CODE lang.0 %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
 						        {% endfor %}
 						      </select>

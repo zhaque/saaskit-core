@@ -75,7 +75,6 @@ install_requires.extend(extras_require['test'])
 
 
 dependency_links = [
-        'http://pypi.saaskit.org/django-authopenid/',
         'http://dist.repoze.org',
         'http://pypi.pinaxproject.com/',
         'http://distfiles.minitage.org/public/externals/minitage/',

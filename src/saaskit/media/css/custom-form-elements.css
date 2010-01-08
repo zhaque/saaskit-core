@@ -2,21 +2,21 @@
 	width: 19px;
 	height: 25px;
 	padding: 0 5px 0 0;
-	background: url(checkbox.gif) no-repeat;
+	background: url(/media/saaskit/img/checkbox.gif) no-repeat;
 	display: block;
 	clear: left;
 	float: left;
 }
 .radio {
-	background: url(radio.gif) no-repeat;
+	background: url(/media/saaskit/img/radio.gif) no-repeat;
 }
-.select {
+span.select {
 	position: absolute;
-	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
-	height: 21px;
-	padding: 0 24px 0 8px;
+	width: 100px;
+	height: 15px;
+	padding: 0px 18px 0px 10px;
 	color: #fff;
-	font: 12px/21px arial,sans-serif;
-	background: url(select.gif) no-repeat;
+	font: 11px/16px arial,sans-serif;
+	background: url(/media/saaskit/img/select.png) no-repeat;
 	overflow: hidden;
 }

@@ -55,6 +55,7 @@ install_requires = [
         'django-pipes',
         'django-contact',
         'django-quotas',
+        'pylibmc',
         'app_media',
         'saaskit-main-site',
         'saaskit-user-site',

@@ -42,6 +42,7 @@ install_requires = [
         'django-email-confirmation',
 
         'Fabric',
+        'python-memcached',
         
         'django-notification',
         'django-paypal',

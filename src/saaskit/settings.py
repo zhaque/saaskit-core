@@ -181,10 +181,10 @@ SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]5
 COMPRESS = False
 COMPRESS_VERSION = False
 
-_default_css_files = ('saaskit/css/saaskit.css',
-                      'uni_form/uni_form/uni-form-generic.css',
+_default_css_files = ('uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
                       'saaskit/css/openid.css',
+                      'saaskit/css/saaskit.css',
                       )
 
 _default_js_files = ('saaskit/js/openid-jquery.js',

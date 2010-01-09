@@ -30,7 +30,7 @@ def production():
     ifnotsetted('host_string', 'saaskit.org', True, 
         "No hosts found. Please specify (single) host string for connection")
     ifnotsetted('user', 'root', True, "Server user name")
-    ifnotsetted('VPS_IP', '97.107.138.174', True, "VPS IP")
+    ifnotsetted('VPS_IP', '97.107.129.224', True, "VPS IP")
     ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
     ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
     ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
@@ -62,9 +62,9 @@ def github_config():
     sudo('apt-get -y install git-core', pty=True)
     
     #Github user's settings
-    run('git config --global github.user deploy-admin', pty=True)
-    run('git config --global github.email deploy@crowdsense.com', pty=True)
-    run('git config --global github.token 445c8da5521cd969ec42a3de85f323d7', pty=True)
+    run('git config --global github.user CrowdSense', pty=True)
+    run('git config --global github.email admin@crowdsense.com', pty=True)
+    run('git config --global github.token 5a38b0029b0f5c77e011bb57df8ea0e4', pty=True)
     
     #ssh public keys
     run('mkdir -p ~/.ssh', pty=True)

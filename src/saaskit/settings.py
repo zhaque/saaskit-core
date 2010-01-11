@@ -183,6 +183,7 @@ COMPRESS_VERSION = False
 
 _default_css_files = ('uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
+                      'saaskit/css/facebox.css',
                       'saaskit/css/openid.css',
                       'saaskit/css/saaskit.css',
                       )
@@ -190,6 +191,7 @@ _default_css_files = ('uni_form/uni_form/uni-form-generic.css',
 _default_js_files = ('saaskit/js/openid-jquery.js',
                      'uni_form/uni_form/uni-form.jquery.js',
                      'saaskit/js/custom-form-elements.js',
+                     'saaskit/js/facebox.js',
                     )
 
 COMPRESS_CSS = {      

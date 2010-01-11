@@ -182,7 +182,11 @@ def webapp_setup():
 def update_webapp():
     sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
     build_webapp()
-    
+    touchy_touch()
+
+def touchy_touch():
+    sudo('cd /webapp/%s/bin; touch main_site.wsgi; touch user_site.wsgi;' % env.host_string, pty=True)
+
 def build_webapp():
     #create local settings
     render_put('deploy/_local_settings.py', 

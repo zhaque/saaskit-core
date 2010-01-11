@@ -37,31 +37,31 @@ def prompts():
 
 def common_settings():
     source_settings()
-    	env.user = 'root'
-    	env.POSTGRES_USER = 'saaskit' 
-    	env.POSTGRES_PASSWORD = 'saaskitS3n89mkk'
-    	env.POSTGRES_DB = 'saaskit'
-    	env.UBUNTU_VERSION = 'jaunty'
+    env.user = 'root'
+    env.POSTGRES_USER = 'saaskit' 
+    env.POSTGRES_PASSWORD = 'saaskitS3n89mkk'
+    env.POSTGRES_DB = 'saaskit'
+    env.UBUNTU_VERSION = 'jaunty'
 
 def stage_settings():
     common_settings()
-    	env.host_string = 'saas-kit.com'
-    	env.VPS_IP = '192.168.1.73'
-    	env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
-    	env.PAYPAL_TEST = 'True'
+    env.host_string = 'saas-kit.com'
+    env.VPS_IP = '192.168.1.73'
+    env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
+    env.PAYPAL_TEST = 'True'
 
 def production_settings():
     common_settings()
-    	env.host_string = 'answerlog.net'
-    	env.VPS_IP = '97.107.129.224'
-    	env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
-    	env.PAYPAL_TEST = 'True'
+    env.host_string = 'answerlog.net'
+    env.VPS_IP = '97.107.129.224'
+    env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
+    env.PAYPAL_TEST = 'True'
 
 def server_setup():
-	install_packages()
-	mail_server_setup()
-	log_setup()
-	github_setup()
+    install_packages()
+    mail_server_setup()
+    log_setup()
+    github_setup()
     postgresql_setup()
     postgresql_user_db_flush()
 
@@ -79,8 +79,8 @@ def setup_stage():
 def setup_production():
     production_settings()
     server_setup()
-	mount_disks()
-	project_setup
+    mount_disks()
+    project_setup
 
 def update_stage():
     stage_settings()

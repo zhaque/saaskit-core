@@ -40,7 +40,8 @@ Table of Contents
  
 1.2 Starting the Project
 ~~~~~~~~~~~~~~~~~
-  1. Create local setting, for example:
+  1. Create local setting for your development enviornment.
+
 echo "
 DATABASE_ENGINE = 'postgresql_psycopg2'
 DATABASE_NAME = 'saaskit'
@@ -50,16 +51,14 @@ DATABASE_HOST = ''
 DATABASE_PORT = '5432'
 
 CACHE_BACKEND = 'dummy:///'
-
 MAIN_SITE_PORT = 8001
 
-" > ./src/saaskit/local_settings.py
-  2. Setup your local smtp server, postfix for example. Or add following lines to local_settings.py to use gmail smtp:
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = '<gmail account>'
 EMAIL_HOST_PASSWORD = '<gmail password>'
 EMAIL_PORT = 587
+" > ./src/saaskit/local_settings.py
 
   2. python ./bootstrap.py -c ./buildout.cfg # or production.cfg
   3. ./bin/buildout -c ./buildout.cfg #or production.cfg

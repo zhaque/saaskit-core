@@ -8,7 +8,7 @@ if "notification" in settings.INSTALLED_APPS:
     from notification import models as notification
     
     def create_member_notice_types(app, created_models, verbosity, **kwargs):
-        notification.create_notice_type("welcome", _("Welcome to SaaS kit!"), _("you have successfully registered"), default=2)
+        notification.create_notice_type("welcome", _("Welcome to SaaSkit!"), _("you have successfully registered"), default=2)
         notification.create_notice_type("member_add", _("Added to site"), _("you were added as a member to a site"), default=2)
         notification.create_notice_type("member_remove", _("Removed from site"), _("you were removed from membership in a site"), default=2)
     

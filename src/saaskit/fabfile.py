@@ -95,11 +95,13 @@ def postgresql_user_db_flush():
     run('sudo -u postgres createdb --owner=%s %s' % (env.POSTGRES_USER, env.POSTGRES_DB), pty=True)
 
 
-def webapp_setup():
+def mount_disk():
     """webapp folder and user """
     sudo('echo "/dev/xvdc /webapp ext3   noatime  0 0" >> /etc/fstab', pty=True)
     sudo('mkdir -p /webapp', pty=True)
     sudo('mount /webapp', pty=True)
+
+def create_app_user():
     sudo('useradd webapp', pty=True) 
     sudo('usermod -d /webapp webapp; usermod -a -G www-data webapp;', pty=True) 
     sudo('chsh webapp -s /bin/bash', pty=True)

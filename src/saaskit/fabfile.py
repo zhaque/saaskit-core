@@ -3,15 +3,14 @@
 import os
 
 from django.template import loader
-from fabric.api import env, run, sudo, require, local, prompt, put
+from fabric.api import env, settings, run, sudo, require, local, prompt, put
 
 def render_put(template_name, dest, params, mode=None, tempfile='tempfile'):
-    """ render template and write result into temporary file, then send him to server with put command """
+    """ render template and write result into temporary file, then send the file to server with put command """
     data = loader.render_to_string(template_name, dictionary=params)
     open(tempfile, 'w').write(data)
     put(tempfile, dest, mode)
     os.remove(tempfile)
-
 
 def ifnotsetted(key, default, is_prompt=False, text=None, validate=None):
     if not (key in env and env[key]):
@@ -20,13 +19,7 @@ def ifnotsetted(key, default, is_prompt=False, text=None, validate=None):
         else:
             env['key'] = default
 
-
-env.SOURCE_PATH = 'src/saaskit'
-env.git_path = 'git@github.com:saas-kit/saaskit-core.git'
-
-def production():
-    #env.hosts = []
-    
+def prompts():
     ifnotsetted('host_string', 'saaskit.org', True, 
         "No hosts found. Please specify (single) host string for connection")
     ifnotsetted('user', 'root', True, "Server user name")
@@ -36,7 +29,46 @@ def production():
     ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
     ifnotsetted('UBUNTU_VERSION', 'jaunty', True, "Ubuntu version name")
     ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
-    ifnotsetted('PAYPAL_TEST', 'True', True, "PAYPAL TEST (True or False)?", r'^(True|False)$')
+    ifnotsetted('PAYPAL_TEST', 'True', True, "PAYPAL TEST (True or False)?", r'^(True|False)$')	
+
+def common_settings():
+    env.user = 'root'
+    env.POSTGRES_USER = 'saaskit' 
+    env.POSTGRES_PASSWORD = 'saaskitS3n89mkk'
+    env.POSTGRES_DB = 'saaskit'
+    env.UBUNTU_VERSION = 'jaunty'
+	env.SOURCE_PATH = 'src/saaskit'
+	env.git_path = 'git@github.com:saas-kit/saaskit-core.git'
+
+def stage_settings():
+    env.host_string = 'saas-kit.com'
+    env.VPS_IP = '192.168.1.73'
+    env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
+    env.PAYPAL_TEST = 'True'
+
+def production_settings():
+    env.host_string = 'answerlog.net'
+    env.VPS_IP = '97.107.129.224'
+    env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
+    env.PAYPAL_TEST = 'True'
+
+def deploy_stage():
+    common_settings()
+    stage_settings()
+
+def deploy_production():
+    common_settings()
+    production_settings()
+
+def update_stage():
+    common_settings()
+    stage_settings()
+    update_project()
+
+def update_production():
+    common_settings()
+    production_settings()
+    update_project()
 
 def install_packages():
     """Install system wide packages"""
@@ -48,7 +80,7 @@ def install_packages():
     #Because if high-possibility of hanging up by system when too much packages install. 
     sudo('apt-get -y install build-essential gcc libc6-dev', pty=True)
     sudo('apt-get -y install wget nmap unzip wget csstidy ant curl python-dev python-egenix-mxdatetime memcached tar mc libmemcache-dev gettext', pty=True)
-    
+
 def install_mail_transfer_agent():
     sudo('apt-get -y install sendmail;', pty=True)
     

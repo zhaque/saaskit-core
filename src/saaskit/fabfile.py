@@ -186,7 +186,7 @@ def build_webapp():
                '/webapp/%s/%s/local_settings.py' % (env.host_string, env.SOURCE_PATH), env)
     render_put('deploy/sites.json', 
                '/webapp/%s/%s/sites.json' % (env.host_string, env.SOURCE_PATH), env)
-    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg;' % (env.host_string, env.SOURCE_PATH), pty=True)
+    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg;' % env.host_string, pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
 
 def update_webapp():

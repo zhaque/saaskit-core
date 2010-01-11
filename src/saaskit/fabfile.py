@@ -80,7 +80,7 @@ def setup_production():
     production_settings()
     server_setup()
     mount_disks()
-    project_setup
+    project_setup()
 
 def update_stage():
     stage_settings()

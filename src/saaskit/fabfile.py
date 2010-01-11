@@ -5,6 +5,10 @@ import os
 from django.template import loader
 from fabric.api import env, settings, run, sudo, require, local, prompt, put
 
+def source_settings():
+    env.SOURCE_PATH = 'src/saaskit'
+    env.git_path = 'git@github.com:saas-kit/saaskit-core.git'
+
 def render_put(template_name, dest, params, mode=None, tempfile='tempfile'):
     """ render template and write result into temporary file, then send the file to server with put command """
     data = loader.render_to_string(template_name, dictionary=params)
@@ -20,55 +24,83 @@ def ifnotsetted(key, default, is_prompt=False, text=None, validate=None):
             env['key'] = default
 
 def prompts():
-    ifnotsetted('host_string', 'saaskit.org', True, 
-        "No hosts found. Please specify (single) host string for connection")
-    ifnotsetted('user', 'root', True, "Server user name")
-    ifnotsetted('VPS_IP', '97.107.129.224', True, "VPS IP")
-    ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
-    ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
-    ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
-    ifnotsetted('UBUNTU_VERSION', 'jaunty', True, "Ubuntu version name")
-    ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
-    ifnotsetted('PAYPAL_TEST', 'True', True, "PAYPAL TEST (True or False)?", r'^(True|False)$')	
+	source_settings()
+    	ifnotsetted('host_string', 'saas-kit.com', True, "No hosts found. Please specify single host string for connection")
+    	ifnotsetted('user', 'root', True, "Server user name")
+    	ifnotsetted('VPS_IP', '97.107.129.224', True, "VPS IP")
+    	ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
+    	ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
+    	ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
+    	ifnotsetted('UBUNTU_VERSION', 'jaunty', True, "Ubuntu version name")
+    	ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
+    	ifnotsetted('PAYPAL_TEST', 'True', True, "PAYPAL TEST (True or False)?", r'^(True|False)$')	
 
 def common_settings():
-    env.user = 'root'
-    env.POSTGRES_USER = 'saaskit' 
-    env.POSTGRES_PASSWORD = 'saaskitS3n89mkk'
-    env.POSTGRES_DB = 'saaskit'
-    env.UBUNTU_VERSION = 'jaunty'
-	env.SOURCE_PATH = 'src/saaskit'
-	env.git_path = 'git@github.com:saas-kit/saaskit-core.git'
+    source_settings()
+    	env.user = 'root'
+    	env.POSTGRES_USER = 'saaskit' 
+    	env.POSTGRES_PASSWORD = 'saaskitS3n89mkk'
+    	env.POSTGRES_DB = 'saaskit'
+    	env.UBUNTU_VERSION = 'jaunty'
 
 def stage_settings():
-    env.host_string = 'saas-kit.com'
-    env.VPS_IP = '192.168.1.73'
-    env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
-    env.PAYPAL_TEST = 'True'
+    common_settings()
+    	env.host_string = 'saas-kit.com'
+    	env.VPS_IP = '192.168.1.73'
+    	env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
+    	env.PAYPAL_TEST = 'True'
 
 def production_settings():
-    env.host_string = 'answerlog.net'
-    env.VPS_IP = '97.107.129.224'
-    env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
-    env.PAYPAL_TEST = 'True'
-
-def deploy_stage():
     common_settings()
+    	env.host_string = 'answerlog.net'
+    	env.VPS_IP = '97.107.129.224'
+    	env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
+    	env.PAYPAL_TEST = 'True'
+
+def server_setup():
+	install_packages()
+	mail_server_setup()
+	log_setup()
+	github_setup()
+    postgresql_setup()
+    postgresql_user_db_flush()
+
+def project_setup():
+    user_setup()    
+    webapp_setup()
+    nginx_setup()
+    apache2_setup()
+
+def setup_stage():
     stage_settings()
+    server_setup()
+    project_setup()
 
-def deploy_production():
-    common_settings()
+def setup_production():
     production_settings()
+    server_setup()
+	mount_disks()
+	project_setup
 
 def update_stage():
-    common_settings()
     stage_settings()
-    update_project()
+    update_webapp()
 
 def update_production():
-    common_settings()
     production_settings()
-    update_project()
+    update_webapp()
+
+def rollback_stage():
+    stage_settings()
+
+def rollback_production():
+    production_settings()
+
+def release_stage():
+    stage_settings()
+
+def release_production():
+    production_settings()
 
 def install_packages():
     """Install system wide packages"""
@@ -81,7 +113,7 @@ def install_packages():
     sudo('apt-get -y install build-essential gcc libc6-dev', pty=True)
     sudo('apt-get -y install wget nmap unzip wget csstidy ant curl python-dev python-egenix-mxdatetime memcached tar mc libmemcache-dev gettext', pty=True)
 
-def install_mail_transfer_agent():
+def mail_server_setup():
     sudo('apt-get -y install sendmail;', pty=True)
     
 def log_setup():
@@ -89,7 +121,7 @@ def log_setup():
     sudo('mkdir -p /var/log/webapp; mkdir -p /var/log/webapp/main;', pty=True)
     sudo('mkdir -p /var/log/webapp/assets; mkdir -p /var/log/webapp/user_sites;', pty=True)
 
-def github_config():
+def github_setup():
     """setup user config for github. global and ssh public keys """
     sudo('apt-get -y install git-core', pty=True)
     
@@ -127,31 +159,31 @@ def postgresql_user_db_flush():
     run('sudo -u postgres createdb --owner=%s %s' % (env.POSTGRES_USER, env.POSTGRES_DB), pty=True)
 
 
-def mount_disk():
+def mount_disks():
     """webapp folder and user """
     sudo('echo "/dev/xvdc /webapp ext3   noatime  0 0" >> /etc/fstab', pty=True)
     sudo('mkdir -p /webapp', pty=True)
     sudo('mount /webapp', pty=True)
 
-def create_app_user():
+def user_setup():
     sudo('useradd webapp', pty=True) 
     sudo('usermod -d /webapp webapp; usermod -a -G www-data webapp;', pty=True) 
     sudo('chsh webapp -s /bin/bash', pty=True)
 
-def install_project():
+def webapp_setup():
     """get source from repository and build it"""
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', 'SOURCE_PATH')
     
     sudo('cd /webapp; rm -f -r %(host_string)s; git clone %(git_path)s %(host_string)s;' \
          % env, pty=True)
     
-    build_source()
+    build_webapp()
 
-def update_project():
+def update_webapp():
     sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
-    build_source()
+    build_webapp()
     
-def build_source():
+def build_webapp():
     #create local settings
     render_put('deploy/_local_settings.py', 
                '/webapp/%s/%s/local_settings.py' % (env.host_string, env.SOURCE_PATH), 
@@ -166,7 +198,7 @@ def build_source():
             % (env.host_string, env.SOURCE_PATH), pty=True)
     sudo('chown -R webapp:www-data /webapp', pty=True)
 
-def nginx_config():
+def nginx_setup():
     """setup nginx"""
     require('SOURCE_PATH')
     sudo('apt-get -y install nginx', pty=True)
@@ -183,7 +215,7 @@ def nginx_config():
     
     sudo('/etc/init.d/nginx start', pty=True)
 
-def apache2_config():
+def apache2_setup():
     """ setup apache2 """
     sudo('apt-get -y install apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf', pty=True)
     sudo('apache2ctl stop; a2dissite 000-default;', pty=True)
@@ -196,16 +228,6 @@ def apache2_config():
     render_put('deploy/apache/security', '/etc/apache2/conf.d/security', env)
     
     sudo('a2enmod rewrite; apache2ctl start;', pty=True)
-
-#===============================================================================
-# def install_development_tarball():
-#    "Compress development packages, put them to server, extract."
-#    
-#    local('cd ../../; tar cf - "src" | gzip -f9 > "src.tar.gz"')
-#    put("../../src.tar.gz", '%s/' % env.path)
-#    run('cd %s; tar zxf src.tar.gz;' % env.path)
-#    local('rm -f ../../src.tar.gz')
-#===============================================================================
 
 def restart_webserver():
     "Restart the web server"

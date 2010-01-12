@@ -10,50 +10,61 @@
 <br />
 	<p class="warning">{{ msg }}</p>
 {% endif %}
+
 {% block content %}
 <div class="yui-u first">
-	  <form class="uniForm" action="" method="post">
-	    <fieldset class="inlineLabels">
-	      <legend>{% trans "Sign In Using Your Account ID" %}</legend>
-	      {{ form2|as_uni_form }}
-	    </fieldset>
-		<div class="buttonHolder">
-		  <button class="button" type="submit">
-		    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="blogin" alt="Sign in" />{% trans 'Sign in' %}
-		  </button>        
-    	  <div class="clear"></div>
-    	</div>
-	  </form>
-	  <a id="password_reset_link" href="{% url auth_password_reset %}">{% trans "Reset password" %}</a>
-	  <form id="password_reset_form" method="post" action="" class="uniForm" style="display:none;">
-	    <fieldset class="inlineLabels">
-	      {{ password_reset_form|as_uni_form }}
-	    </fieldset>
-	    <div class="buttonHolder">
-		  <button class="button" type="submit">
-		    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="{{ password_reset_action }}" alt="Reset" />{% trans 'Reset' %}
-		  </button>        
-    	  <div class="clear"></div>
-	    </div>
-	  </form>
-</div> 
+  <div class="saaskit-block">
+    <h3>{% trans "Sign in" %}</h3>
+      <div class="saaskit-content">
+	    <form class="uniForm" action="" method="post">
+	      <fieldset class="inlineLabels">
+	        <legend>{% trans "Your Account ID" %}</legend>
+	        {{ form2|as_uni_form }}
+	      </fieldset>
+		  <div class="buttonHolder">
+		    <button class="button" type="submit">
+		      <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="blogin" alt="Sign in" />{% trans 'Sign in' %}
+		    </button>        
+    	    <div class="clear"></div>
+    	  </div>
+	    </form>
+	    <a id="password_reset_link" href="{% url auth_password_reset %}">{% trans "Reset password" %}</a>
+	    <form id="password_reset_form" method="post" action="" class="uniForm" style="display:none;">
+	      <fieldset class="inlineLabels">
+	        {{ password_reset_form|as_uni_form }}
+	      </fieldset>
+	      <div class="buttonHolder">
+		    <button class="button" type="submit">
+		      <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="{{ password_reset_action }}" alt="Reset" />{% trans 'Reset' %}
+		    </button>        
+    	    <div class="clear"></div>
+	      </div>
+	    </form>
+      </div> 
+  </div>
+</div>
 
-<div class="yui-u"> 
-	<form id="openid_form" name="openid_form" action="" method="post" class="uniForm">
-	  <input type="hidden" name="action" value="verify" />
-	   <fieldset class="inlineLabels">
-	    <legend>{% trans "Sign In Using Your OpenID URL" %}</legend>
-	        <div id="openid_btns"></div>
-	        <p>{% trans "OpenId URL :" %} {{ form1.openid_url }}</p>
-	    </fieldset>
-		    <div class="buttonHolder">
-			  <button class="button" type="submit">
-			    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="openid_submit" alt="Sign in with OpenID" />{% trans 'Sign in with OpenID' %}
-			  </button>        
-	    	  <div class="clear"></div>
-		    </div>
-	</form>
-</div> 
+<div class="yui-u">
+  <div class="saaskit-block">
+    <h3>{% trans "Open ID" %}</h3>
+      <div class="saaskit-content">
+	  <form action="" method="post" class="uniForm">
+	    <input type="hidden" name="action" value="verify" />
+	      <fieldset class="inlineLabels">
+	        <legend>{% trans "Select OpenID" %}</legend>
+	          <div id="openid_btns"></div>
+	          <p>{{ form1.openid_url }}</p>
+	      </fieldset>
+		  <div class="buttonHolder">
+			<button class="button" type="submit">
+			  <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="openid_submit" alt="Sign in with OpenID" />{% trans 'Sign in with OpenID' %}
+			</button>        
+	      <div class="clear"></div>
+		  </div>
+	  </form>
+      </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block defunct %}

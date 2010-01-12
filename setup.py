@@ -40,10 +40,12 @@ install_requires = [
         'Reportlab',
         'pisa',
         'django-email-confirmation',
+        'PyYAML',
 
         'Fabric',
         'python-memcached',
-        
+
+	    'django-error-capture-middleware',        
         'django-notification',
         'django-paypal',
         'django-frontendadmin',

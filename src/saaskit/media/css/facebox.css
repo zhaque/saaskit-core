@@ -1,27 +1,27 @@
 #facebox .b {
-  background:url(../images/b.png);
+  background:url(../img/facebox/b.png);
 }
  
 #facebox .tl {
-  background:url(../images/fbx-border-sprite.png) 0 0;
+  background:url(../img/facebox/fbx-border-sprite.png) 0 0;
   width: 10px; 
   height: 10px;
  }
  
 #facebox .tr {
-  background:url(../images/fbx-border-sprite.png) -10px 0;
+  background:url(../img/facebox/fbx-border-sprite.png) -10px 0;
   width: 10px; 
   height: 10px;
  }
  
 #facebox .bl {
-  background:url(../images/fbx-border-sprite.png) -20px 0;
+  background:url(../img/facebox/fbx-border-sprite.png) -20px 0;
   width: 10px; 
   height: 10px;
 }
  
 #facebox .br {
-  background:url(../images/fbx-border-sprite.png) -30px 0;
+  background:url(../img/facebox/fbx-border-sprite.png) -30px 0;
   width: 10px; 
   height: 10px;
 }

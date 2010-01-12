@@ -6,7 +6,7 @@ from django.conf import global_settings
 
 KIT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True 
+DEBUG = False 
 TEMPLATE_DEBUG = DEBUG
 DEBUG_PROPAGATE_EXCEPTIONS = False
 
@@ -164,7 +164,7 @@ TEMPLATESADMIN_VALID_FILE_EXTENSIONS = (
    )
 
 TEMPLATESADMIN_EDITHOOKS = (
-        'templatesadmin.edithooks.dotbackupfiles.DotBackupFilesHook',
+         'templatesadmin.edithooks.dotbackupfiles.DotBackupFilesHook',
 #        'templatesadmin.edithooks.gitcommit.GitCommitHook',
    )
 
@@ -180,18 +180,28 @@ AUTH_PROFILE_MODULE = 'saaskit_profile.UserProfile'
 
 SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
 
-# Error Reporting handlers
-ERROR_CAPTURE_HANDLER = (
+ERROR_CAPTURE_ENABLE_MULTPROCESS = True
+ERROR_CAPTURE_HANDLERS = (
     'django_error_capture_middleware.handlers.github.GitHubHandler',
 )
 
-# If set to True and debug is on then don't execute the handlers
-ERROR_CAPTURE_NOOP_ON_DEBUG = False
+# regular expressions to block
+#ERROR_CAPTURE_TRACE_CONTENT_BLACKLIST = (
+#)
 
-# Most handlers have some kind of configuration that are required.
+# (ACTUAL) classes to blacklist
+#ERROR_CAPTURE_TRACE_CLASS_BLACKLIST = (
+#)
+
 ERROR_CAPTURE_GITHUB_REPO = 'saas-kit/saaskit-core'
 ERROR_CAPTURE_GITHUB_TOKEN = 'fdb2f708d1a7b8be999771d037d401cc'
 ERROR_CAPTURE_GITHUB_LOGIN = 'saas-kit'
+
+ERROR_CAPTURE_NOOP_ON_DEBUG = False
+
+SERVER_EMAIL = 'admin@saaskit.org'
+ERROR_CAPTURE_EMAIL_FAIL_SILENTLY = False
+ERROR_CAPTURE_IGNORE_DUPE_SEC = False
 
 COMPRESS = False
 COMPRESS_VERSION = False
@@ -205,8 +215,8 @@ _default_css_files = ('uni_form/uni_form/uni-form-generic.css',
 
 _default_js_files = ('saaskit/js/openid-jquery.js',
                      'uni_form/uni_form/uni-form.jquery.js',
-                     'saaskit/js/custom-form-elements.js',
                      'saaskit/js/facebox.js',
+                     'saaskit/js/custom-form-elements.js',
                     )
 
 COMPRESS_CSS = {      
@@ -301,7 +311,7 @@ for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
          'output_filename' : 'style.%s.css' % codename,
          }
 
-SITE_NAME = 'Saaskit'
+SITE_NAME = 'SaaSkit'
 DEFAULT_FROM_EMAIL = 'support@example.com'
 CONTACT_EMAIL = DEFAULT_FROM_EMAIL
 EMAIL_SUBJECT_PREFIX = "[SaaSKit] "

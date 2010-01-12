@@ -76,8 +76,8 @@ install_requires.extend(extras_require['test'])
 
 
 dependency_links = [
-        'http://dist.repoze.org',
         'http://pypi.pinaxproject.com/',
+        'http://pypi.appspot.com/',
         'http://distfiles.minitage.org/public/externals/minitage/',
 ]
 

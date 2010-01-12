@@ -85,6 +85,7 @@ MIDDLEWARE_CLASSES = (
     'pagination.middleware.PaginationMiddleware',
     'sso.middleware.SingleSignOnMiddleware',
     'muaccount_content.middleware.FlatpageFallbackMiddleware',
+    'django_error_capture_middleware.ErrorCaptureMiddleware',
 )
 
 ROOT_URLCONF = 'saaskit.urls'
@@ -123,7 +124,8 @@ INSTALLED_APPS = (
     'frontendadmin',
     'django_counter',
     'rosetta',
-    
+    'django_error_capture_middleware',    
+
     # own
     'muaccounts',
     'prepaid',
@@ -177,6 +179,19 @@ INTERNAL_IPS = ( '127.0.0.1', )
 AUTH_PROFILE_MODULE = 'saaskit_profile.UserProfile'
 
 SSO_SECRET = "6O4nVw|~w't2mxV%oeSUDew{9zhN.\"lY1T.xi9nmZL+lNxGlr@K5+~>NnLMHNAN]57s"
+
+# Error Reporting handlers
+ERROR_CAPTURE_HANDLER = (
+    'django_error_capture_middleware.handlers.github.GitHubHandler',
+)
+
+# If set to True and debug is on then don't execute the handlers
+ERROR_CAPTURE_NOOP_ON_DEBUG = False
+
+# Most handlers have some kind of configuration that are required.
+ERROR_CAPTURE_GITHUB_REPO = 'saas-kit/saaskit-core'
+ERROR_CAPTURE_GITHUB_TOKEN = 'fdb2f708d1a7b8be999771d037d401cc'
+ERROR_CAPTURE_GITHUB_LOGIN = 'saas-kit'
 
 COMPRESS = False
 COMPRESS_VERSION = False

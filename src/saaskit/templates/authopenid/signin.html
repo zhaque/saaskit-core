@@ -1,7 +1,7 @@
 {% extends "base_tmpl.html" %}
 {% load i18n uni_form_tags thumbnail muaccounts_tags %}
 {% block class %}{% endblock %}
-{% block column %}{% endblock %}{% block grid %}yui-gb{% endblock %}
+{% block column %}{% endblock %}{% block grid %}yui-g{% endblock %}
 
 {% block head_title %}{% trans "Sign in" %}{% endblock %}
 
@@ -12,15 +12,17 @@
 {% endif %}
 {% block content %}
 <div class="yui-u first">
-	<div id="login-block">
-	  <form id="auth_form" class="uniForm" action="" method="post">
+	  <form class="uniForm" action="" method="post">
 	    <fieldset class="inlineLabels">
 	      <legend>{% trans "Sign In Using Your Account ID" %}</legend>
 	      {{ form2|as_uni_form }}
-	      <div class="buttonHolder">
-	        <input type="submit" name="blogin" value="{% trans 'Sign in' %}" />
-	      </div>
 	    </fieldset>
+		<div class="buttonHolder">
+		  <button class="button" type="submit">
+		    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="blogin" alt="Sign in" />{% trans 'Sign in' %}
+		  </button>        
+    	  <div class="clear"></div>
+    	</div>
 	  </form>
 	  <a id="password_reset_link" href="{% url auth_password_reset %}">{% trans "Reset password" %}</a>
 	  <form id="password_reset_form" method="post" action="" class="uniForm" style="display:none;">
@@ -28,29 +30,33 @@
 	      {{ password_reset_form|as_uni_form }}
 	    </fieldset>
 	    <div class="buttonHolder">
-	      <input type="submit" name="{{ password_reset_action }}" value="{% trans 'Reset' %}" />
+		  <button class="button" type="submit">
+		    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="{{ password_reset_action }}" alt="Reset" />{% trans 'Reset' %}
+		  </button>        
+    	  <div class="clear"></div>
 	    </div>
 	  </form>
-	</div>
 </div> 
 
 <div class="yui-u"> 
 	<form id="openid_form" name="openid_form" action="" method="post" class="uniForm">
 	  <input type="hidden" name="action" value="verify" />
-	  <fieldset>
+	   <fieldset class="inlineLabels">
 	    <legend>{% trans "Sign In Using Your OpenID URL" %}</legend>
-	      <div id="openid_choice">
-	        <p>{% trans "Please click your account provider:"%}</p>
 	        <div id="openid_btns"></div>
-	      </div>
-	      <div id="openid_input_area">
-	        <label for="id_openid_url">{% trans "OpenId URL :" %}</label>{{ form1.openid_url }}
-	        <input name="openid_submit" type="submit" value="{% trans 'Sign in with OpenID' %}">
-	      </div>
-	  </fieldset>
+	        <p>{% trans "OpenId URL :" %} {{ form1.openid_url }}</p>
+	    </fieldset>
+		    <div class="buttonHolder">
+			  <button class="button" type="submit">
+			    <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="openid_submit" alt="Sign in with OpenID" />{% trans 'Sign in with OpenID' %}
+			  </button>        
+	    	  <div class="clear"></div>
+		    </div>
 	</form>
 </div> 
+{% endblock %}
 
+{% block defunct %}
 <div class="yui-u"> 
 	<form id="registration_form" method="post" action="" class="uniForm">
 	  <fieldset class="inlineLabels">
@@ -61,9 +67,7 @@
 	    </div>
 	  </fieldset>
 	</form>
-{% endblock %}
-
-{% block defunct %}
+</div>
 {% if request.REQUEST.muaccount %}
 {% get_muaccount request.REQUEST.muaccount as ref_mua %}
 <div id="logo">

@@ -201,20 +201,18 @@ ERROR_CAPTURE_NOOP_ON_DEBUG = False
 
 SERVER_EMAIL = 'admin@saaskit.org'
 ERROR_CAPTURE_EMAIL_FAIL_SILENTLY = False
-ERROR_CAPTURE_IGNORE_DUPE_SEC = True 
+ERROR_CAPTURE_IGNORE_DUPE_SEC = False 
 
 COMPRESS = False
 COMPRESS_VERSION = False
 
 _default_css_files = ('uni_form/uni_form/uni-form-generic.css',
                       'uni_form/uni_form/uni-form.css',
-                      'saaskit/css/facebox.css',
                       'saaskit/css/saaskit.css',
                       )
 
 _default_js_files = ('saaskit/js/openid-jquery.js',
                      'uni_form/uni_form/uni-form.jquery.js',
-                     'saaskit/js/facebox.js',
                      'saaskit/js/saaskit.js',
                     )
 

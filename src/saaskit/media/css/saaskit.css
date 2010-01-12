@@ -1,12 +1,12 @@
 /* Generics */
 .clear { clear: both; height: 0; }
-.yui-skin-saaskit body {font: normal 12px/1.5em "Lucida Grande", "Helvetica Neue", Arial, sans-serif;}
-.yui-skin-saaskit h1 { margin: 15px 0; font-size: 22px; font-weight: normal;}
-.yui-skin-saaskit h2 { font-size: 22px; margin: 15px 0; font-weight: normal;}
-.yui-skin-saaskit h3 { font-size: 18px; margin: 10px 0; font-weight: normal;}
-.yui-skin-saaskit h4 { font-size: 16px; margin: 10px 0; font-weight: normal;}
-.yui-skin-saaskit hr {height: 1px; border: 0;}
-.yui-skin-saaskit p { margin: 15px 0;  font-size: 12px; line-height: 20px;}
+.yui-skin-saaskit body { font: normal 12px/1.5em "Lucida Grande", "Helvetica Neue", Arial, sans-serif; }
+.yui-skin-saaskit h1 { margin: 15px 0; font-size: 22px; font-weight: normal; }
+.yui-skin-saaskit h2 { font-size: 22px; margin: 15px 0; font-weight: normal; }
+.yui-skin-saaskit h3 { font-size: 18px; margin: 10px 0; font-weight: normal; }
+.yui-skin-saaskit h4 { font-size: 16px; margin: 10px 0; font-weight: normal; }
+.yui-skin-saaskit hr { height: 1px; border: 0; }
+.yui-skin-saaskit p { margin: 15px 0;  font-size: 12px; line-height: 20px; }
 .yui-skin-saaskit img { border: none; }
 .yui-skin-saaskit strong { font-weight:bold; }
 .yui-skin-saaskit em { font-style:italic; }
@@ -18,7 +18,7 @@
 .yui-skin-saaskit #doc3 { margin:0; }
 
 /* Header */
-.yui-skin-saaskit .saaskit-hd { padding:10px 0px 0px 10px; position: relative;}
+.yui-skin-saaskit .saaskit-hd { padding:10px 0px 0px 10px; position: relative; }
 .yui-skin-saaskit .saaskit-hd h1 { font-size: 24px; padding: 0px 4px; margin:0px 5px; 
      -moz-border-radius: 4px;
 	     -webkit-border-radius: 3px;
@@ -44,10 +44,10 @@
      -moz-border-radius: 4px;
 	     -webkit-border-radius: 3px;
 }
-.yui-skin-saaskit .saaskit-landing-main h4 {margin: 0px 0px 0px 120px; width: 340px; font-size: 16px; line-height: 1.16em; margin-bottom: 1.25em;}
-.yui-skin-saaskit .saaskit-landing-main ul li {margin: 0px 0px 0px 120px; width: 340px; font-size: 16px;}
-.yui-skin-saaskit .saaskit-landing-main p {margin: 0px 0px 0px 120px; width: 340px; font-size: 14px; line-height: 1.16em; margin-bottom: 1.25em;}
-.yui-skin-saaskit .saaskit-landing-main .plans {margin: 25px 0px 0px 70px; width: 200px; font-size: 20px; margin-bottom: 1em;
+.yui-skin-saaskit .saaskit-landing-main h4 { margin: 0px 0px 0px 120px; width: 340px; font-size: 16px; line-height: 1.16em; margin-bottom: 1.25em; }
+.yui-skin-saaskit .saaskit-landing-main ul li { margin: 0px 0px 0px 120px; width: 340px; font-size: 16px; }
+.yui-skin-saaskit .saaskit-landing-main p { margin: 0px 0px 0px 120px; width: 340px; font-size: 14px; line-height: 1.16em; margin-bottom: 1.25em; }
+.yui-skin-saaskit .saaskit-landing-main .plans { margin: 25px 0px 0px 70px; width: 200px; font-size: 20px; margin-bottom: 1em;
      -moz-border-radius: 15px;
 	     -webkit-border-radius: 15px;
 }
@@ -61,11 +61,13 @@
 .yui-skin-saaskit .saaskit-landing-img {margin: -470px 0px 0px 260px; width:720px; height:480px; margin-bottom: -1em;}
 
 /* Landing Extra */
-.yui-skin-saaskit .saaskit-landing-extra { width:100%; }
-.yui-skin-saaskit .saaskit-landing-extra .benefits_list { width: 95%; margin:0px 0px 0px 50px;}
-.yui-skin-saaskit .saaskit-landing-extra .benefit {width:280px; float:left; margin: 20px 30px 0px 0px;}
-.yui-skin-saaskit .saaskit-landing-extra .benefit h5 {font-size:120%; font-weight:600;}
-.yui-skin-saaskit .saaskit-landing-extra .benefit p {width:85%; margin: 10px 0px 0px 20px; font-size: 12px; margin-bottom: 30px;}
+.yui-skin-saaskit .saaskit-landing-extra {width: 100%; margin: 0px 0px 0px 0px; }
+/*.yui-skin-saaskit .saaskit-landing-extra .benefits_list { width: 95%; margin: 0px 0px 10px 50px;}
+*/
+.yui-skin-saaskit .saaskit-landing-extra .benefits_list { margin: 0px 0px 0px 30px; width: 900px; font-size: 16px; line-height: 1.16em; margin-bottom: 0.8em; }
+.yui-skin-saaskit .saaskit-landing-extra .benefit { width:30%; float:left; margin: 20px 30px 0px 0px;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit h5 { font-size:120%; font-weight:600;}
+.yui-skin-saaskit .saaskit-landing-extra .benefit p { width:85%; margin: 10px 0px 0px 20px; font-size: 12px; margin-bottom: 30px;}
 
 /* Body */
 .yui-skin-saaskit .saaskit-bd  { width: 95%;}

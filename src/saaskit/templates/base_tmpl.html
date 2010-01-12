@@ -52,8 +52,7 @@
 						  <li><a href="{% main_site_url account_dashboard %}">{% trans "My account" %}</a></li>	
 					      <li><a href="{% url user_signout %}?next=/">{% trans "Sign out" %}</a></li>
 					    {% else %}
-					      <li><a href="{% url user_signin %}">{% trans "Sign up" %}</a></li>
-					      <li><a href="{% url user_signin %}">{% trans "Log in" %}</a></li>					
+					      <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>					
 						  <li><a href="/contact">{% trans "Help" %}</a></li>		
 					    {% endif %}
 					  </ul>		
@@ -86,7 +85,6 @@
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 		{% block extra_js %}
 		  {% compressed_js 'all' %}
-		  {% include "facebox_js.html" %}
 		{% endblock %}	
     </body>
 </html>

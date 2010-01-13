@@ -45,7 +45,7 @@ install_requires = [
         'Fabric',
         'python-memcached',
 
-	    'django-error-capture-middleware',        
+        'django-error-capture-middleware',        
         'django-notification',
         'django-paypal',
         'django-frontendadmin',
@@ -84,7 +84,7 @@ dependency_links = [
 ]
 
 setup(name="saaskit-core",
-            version="0.1",
+            version="1.0",
             description="Software as a Service Core toolkit",
             author="SaaSkit",
             author_email="admin@saaskit.org",

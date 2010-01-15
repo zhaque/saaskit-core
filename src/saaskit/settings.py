@@ -335,6 +335,23 @@ PAYPAL_WPP_USER = ""
 PAYPAL_WPP_PASSWORD = ""
 PAYPAL_WPP_SIGNATURE = ""
 
+# Prepaid Settings
+
+PREPAID_ITEM_PREFIX = 'P'
+PREPAID_UNIT_COST = '1'
+PREPAID_MIN_WITHDRAWAL = '20'
+PREPAID_AUTO_APPROVE_WITHDRAWALS = 'True'
+ROOT_URL = 'http://example.com:8001/'
+
+RECHARGE_TEXT = 'Point Purchase'
+
+PREPAID_UNIT_PACKS = (
+	(10, '1.29'),
+	(100, '12.49'),
+	(250, '29.99'),
+	(500, '57.99'),
+	(1000, '109.99'),
+)
 
 # Local settings for development / production
 try:

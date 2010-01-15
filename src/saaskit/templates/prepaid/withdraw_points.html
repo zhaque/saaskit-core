@@ -1,5 +1,5 @@
 {% if can_withdraw %}
-<b>Withdraw Points</b><br />
+Withdraw Points<br/>
 <form action="{% url prepaid-withdraw %}" method="post">
 	{{ withdrawal_form.as_p }}
 	<input type="submit" value="Withdraw" />
@@ -7,4 +7,4 @@
 {% else %}
 You need at least {{ min_withdrawal }} point{{ min_withdrawal|pluralize }} to perform a withdrawal.
 {% endif %}
-<br /><br />
+

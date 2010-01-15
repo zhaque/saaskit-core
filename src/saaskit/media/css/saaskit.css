@@ -85,7 +85,8 @@
 .yui-skin-saaskit .saaskit-bd p { margin:15px 0; font-size:12px; line-height:20px; }
 .yui-skin-saaskit .saaskit-bd .saaskit-block{  -moz-border-radius-topleft: 4px;
   -moz-border-radius-topright: 4px; margin-bottom:20px; padding-bottom: 20px; background: transparent; padding-top:1px;}
-.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-content {padding-left: 15px; padding-right:15px; padding-bottom:20px;}
+.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-block-menu { padding-left:15px; padding-right:15px; padding-bottom:20px; }
+.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-block-content { padding-left:15px; padding-right:15px; padding-bottom:20px; }
 
 /* Extend block and header to have rounded corners */
 .yui-skin-saaskit.rounded #hd .yui-g,
@@ -190,9 +191,12 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .yui-skin-saaskit .saaskit-bd h4 { color: #456; }
 .yui-skin-saaskit .saaskit-bd h5 { color: #456; }
 .yui-skin-saaskit .saaskit-bd { background-color:#EBEBEB; color: #333; }
-.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-content { border-left: 1px solid #ddd;
+.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-block-menu { border-left: 1px solid #ddd;
   border-top: 1px solid #ddd; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;
   background: #fff;}
+.yui-skin-saaskit .saaskit-bd .saaskit-block .saaskit-block-content { border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;
+  background: #eee;}
 
 /* Sidebar */
 .yui-skin-saaskit .saaskit-bd .saaskit-sidebar h3 { background: #fff; border-bottom:1px solid #ccc;border-right:1px solid #ccc; border-left:1px solid #ddd; border-top:1px solid #ddd; color: #333; }

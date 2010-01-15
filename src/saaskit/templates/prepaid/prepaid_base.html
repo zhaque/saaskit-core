@@ -1,0 +1,11 @@
+      <p> 
+	    <a href="{% url prepaid-index %}">
+	      <img src="{{ MEDIA_URL }}saaskit/img/icons/basket_put.png" alt="Buy points" width="16" height="16" align="center">
+	      {% trans "Buy points" %}</a>&nbsp;&nbsp;|&nbsp; 
+        <a href="{% url prepaid-withdraw %}">
+	      <img src="{{ MEDIA_URL }}saaskit/img/icons/table.png" alt="Recent transactions" width="16" height="16" align="center">
+          {% trans "Recent transactions" %}</a>&nbsp;&nbsp;|&nbsp;
+        <a href="{% url prepaid-withdraw %}">
+	      <img src="{{ MEDIA_URL }}saaskit/img/icons/basket_remove.png" alt="Withdraw points" width="16" height="16" align="center">
+          {% trans "Withdraw points" %}</a>
+      </p>

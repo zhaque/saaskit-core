@@ -17,7 +17,6 @@ install_requires = [
         'django-filter',
         'django-mailer',
         'django-mptt',
-        'django-notification==0.1.4',
         'django-oembed',
         'django-piston',
         'django-rosetta',
@@ -46,6 +45,7 @@ install_requires = [
         'python-memcached',
 
         'django-error-capture-middleware',        
+        'django-notification',
         'django-paypal',
         'django-frontendadmin',
         'django-profiles',

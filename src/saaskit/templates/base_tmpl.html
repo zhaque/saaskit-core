@@ -44,6 +44,7 @@
 						    </form> 
 						  </li>
 						{% endblock %}						
+
 						{% if user.is_authenticated %}		 
 					      <li><a href="">{{user}}</a></li>	
 					    {% ifequal user request.muaccount.owner %}

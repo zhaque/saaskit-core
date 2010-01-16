@@ -1,0 +1,9 @@
+{% load i18n %}
+
+<p> 
+<a href="{% url muaccounts_member_list %}">{% trans "Current members" %}</a> | 
+<a href ="{% url muaccounts_add_member %}">{% trans "Invite new" %}</a> |
+<a href ="{% url muaccounts_manage_advanced %}">{% trans "Manage invitations" %}</a> |
+<a href ="{% url invitations_contacts %}">{% trans "Import contacts" %}</a> |
+<a href ="{% url manage_contacts %}">{% trans "Manage contacts" %}</a>
+</p>

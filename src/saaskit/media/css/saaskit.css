@@ -210,3 +210,19 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 /* Custom Classes */
 .yui-skin-saaskit .gray { color:#999; }
 .yui-skin-saaskit .highlight { background-color:#ffffcc; }
+
+
+/* Uni-form related overrides */
+.uniForm .multiField, .uniForm .blockLabels .multiField { width: 60%; }
+.uniForm .formHint, .uniForm .blockLabels .formHint { width: 40%; margin-top: .3em; }
+.uniForm .textInput, .uniForm select, .uniForm textarea, .uniForm .passwordInput{ border: 2px solid #dfdfdf; background:#fff; }
+.ctrlHolder.focused .textInput, .ctrlHolder.focused textarea { border-color: #DFD77D; }
+.uniForm .buttonHolder { padding: 10px; background-color: #fafafa; font-size:14px; border-bottom:1px solid #ddd; border-right:1px solid #ddd; border-top:1px solid #eee; border-left:1px solid #ddd; }
+.uniForm a.button:link, a.button:visited, a.button:hover, a.button:active, button.button { color: #222; display:block; float:left; margin:0 7px 0 0; background-color: #eee; border:1px solid #bfbfbf; font-size: 1em; line-height: 1.3em; font-weight:bold; cursor:pointer; padding:5px 10px 6px 7px; text-decoration: none; }
+.uniForm button.button { width:auto; overflow:visible; padding:4px 10px 3px 7px; /* IE6 */ }
+.uniForm button.button[type] { padding:5px 10px 5px 7px; /* Firefox */ line-height:17px; /* Safari */ }
+.uniForm *:first-child+html button.button[type] { padding:4px 10px 3px 7px; /* IE7 */ } 
+.uniForm button.button img, a.button img { margin:0 3px -3px 0 !important; padding:0; border:none; width:16px; height:16px; }
+.uniForm button.button:hover, a.button:hover { background-color:#dedede; } 
+.uniForm button.button:active, a.button:active { background-color:#e5e5e5; }
+

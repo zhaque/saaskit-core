@@ -10,19 +10,19 @@ install_requires = [
         'Django==1.1.1',
         'PIL==1.1.6',
         'PyYAML==3.09',
-        'South==0.62',
+        'South==0.6.2',
         'django-autoslug==1.3.8',
         'django-compress==1.0.1',
-        'django-counteri==0.1.5',
-        'django-debug-toolbar==-0.8.1',
-        'django-email-confirmationi==0.2',
+        'django-counter==0.1.5',
+        'django-debug-toolbar==0.8.1',
+        'django-email-confirmation==0.2.dev1',
         'django-extensions==0.4.1',
         'django-filter==0.5.2',
         'django-friends==0.1.4',
-        'django-mailer==0.2',
-        'django-mptt==0.3',
+        'django-mailer==0.2.0dev1',
+        'django-mptt==0.3-pre',
         'django-oembed==0.1.1',
-        'django-paginationi==1.0.5.1',
+        'django-pagination==1.0.5.1',
         'django-piston==0.2.2',
         'django-rosetta==0.5.1',
         'django-tagging==0.3',
@@ -38,7 +38,7 @@ install_requires = [
         'setuptools==0.6c11',
         'simplejson==2.0.9',
         'sorl-thumbnail==3.2.5',
-        'vobject==-0.8.1c',
+        'vobject==0.8.1c',
         'ybrowserauth==1.2',
 
         'Fabric',
@@ -69,7 +69,7 @@ install_requires = [
 extras_require = dict(
     test = [
         'coverage==3.2',
-        'windmilli==1.3',
+        'windmill==1.3',
     ]
 )
 

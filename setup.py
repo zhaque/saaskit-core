@@ -59,11 +59,11 @@ install_requires = [
         'django-sso',
         'django-uni-form',
 
-        'saaskit-main-site',
-        'saaskit-user-site',
+        'saaskit-main',
         'saaskit-muaccounts',
-        'saaskit-subscription',
         'saaskit-prepaid',
+        'saaskit-subscription',
+        'saaskit-user',
 ]
 
 extras_require = dict(

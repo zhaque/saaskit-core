@@ -43,7 +43,7 @@ install_requires = [
 
         'Fabric',
 
-        'django-app-media',
+        'app-media',
         'django-ab',
         'django-authopenid',
         'django-contact',
@@ -59,7 +59,6 @@ install_requires = [
         'django-sso',
         'django-uni-form',
 
-        'saaskit-mobile',
         'saaskit-main-site',
         'saaskit-user-site',
         'saaskit-muaccounts',

@@ -29,7 +29,7 @@ install_requires = [
         'django-templatesadmin==0.6',
         'django-tinymce==1.5',
         'gdata==2.0.6',
-        'html5lib==0.11.1',
+        'html5lib==0.90',
         'pisa==3.0.32',
         'python-dateutil==1.4.1',
         'python-memcached==1.45',

@@ -57,6 +57,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = '<gmail account>'
 EMAIL_HOST_PASSWORD = '<gmail password>'
+EMAIL_SUBJECT_PREFIX = '[saaskit.org]'
 EMAIL_PORT = 587
 " > ./src/saaskit/local_settings.py
 

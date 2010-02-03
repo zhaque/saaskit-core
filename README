@@ -9,7 +9,6 @@ Table of Contents
         3.2 Templates
         3.3 Static Files
         3.4 Sites
-        3.5 Shadowbox JS library
 4 Django-pages-cms integration
     4.1 Adding CMS Content Example
     4.2 CMS Only Pages
@@ -148,18 +147,6 @@ EMAIL_PORT = 587
     `user_sites' use site with ID 2 (default:
     usersites.example.com).  This allows to have separate static
     Pages for both projects.
-
-3.5 Shadowbox JS library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Shadowbox v3.0b has been used in the project. The stylesheet used by 
-    shadowbox is located under /media/css while the images are stored 
-    under /media/img/sb-resources. The entire JS library has been dumped
-    under /media/js/sb/. For such an implementation, the paths to the 
-    images has been modified in the stylesheet and also the colors of the
-    text shown in the pop-ups. To use Shadowbox, simply include the 
-    stylesheet and the js library(shadowbox.js). Then, change the link 
-    markups to include the attribute <rel="shadowbox"> for single popup
-    and <rel="shadowbox[Group]"> to group them as a collection/gallery.
 
 4 Plans & Pricing and Quota
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

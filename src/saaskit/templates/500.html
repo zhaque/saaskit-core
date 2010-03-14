@@ -3,6 +3,13 @@
 {% block head_title %}{{ block.super }} : {% trans "It's broke calling the engineers now" %}{% endblock %}
 
 {% block content %}
-HELLO 500
-{% endblock %}
+Oops, an error occured. An administrator has been notified.
+{% if id %}
+    The tracking number for this issue is 
+    {% if bug_url %}
+        <a href="{{ bug_url }}">{{ id }}</a>.
+    {% else %}
+        {{ id }}.
+    {% endif %}
+{% endif %}{% endblock %}
 

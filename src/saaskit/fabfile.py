@@ -173,11 +173,21 @@ def user_setup():
 def webapp_setup():
     """get source from repository and build it"""
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB', 'SOURCE_PATH')
-    
-    sudo('cd /webapp; rm -f -r %(host_string)s; git clone %(git_path)s %(host_string)s;' \
-         % env, pty=True)
-    
+    sudo('cd /webapp; rm -f -r %(host_string)s; git clone %(git_path)s %(host_string)s;' % env, pty=True)
     build_webapp()
+    load_data()
+
+def load_data():
+    sudo('cd /webapp/%s; ./bin/main_site loaddata ./%s/fixtures/exampledata.json;' % (env.host_string, env.SOURCE_PATH), pty=True)
+    sudo('cd /webapp/%s; ./bin/main_site loaddata ./%s/sites.json;' % (env.host_string, env.SOURCE_PATH), pty=True)
+
+def build_webapp():
+    render_put('deploy/_local_settings.py', 
+               '/webapp/%s/%s/local_settings.py' % (env.host_string, env.SOURCE_PATH), env)
+    render_put('deploy/sites.json', 
+               '/webapp/%s/%s/sites.json' % (env.host_string, env.SOURCE_PATH), env)
+    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg;' % env.host_string, pty=True)
+    sudo('chown -R webapp:www-data /webapp', pty=True)
 
 def update_webapp():
     sudo('cd /webapp/%s; git pull origin master;' % env.host_string, pty=True)
@@ -186,21 +196,6 @@ def update_webapp():
 
 def touchy_touch():
     sudo('cd /webapp/%s/bin; touch main_site.wsgi; touch user_site.wsgi;' % env.host_string, pty=True)
-
-def build_webapp():
-    #create local settings
-    render_put('deploy/_local_settings.py', 
-               '/webapp/%s/%s/local_settings.py' % (env.host_string, env.SOURCE_PATH), 
-               env)
-    #copy sites fixture
-    render_put('deploy/sites.json', 
-               '/webapp/%s/%s/sites.json' % (env.host_string, env.SOURCE_PATH), 
-               env)
-    
-    #buildout the project
-    sudo('cd /webapp/%s; python ./bootstrap.py -c ./production.cfg; ./bin/buildout -v -c ./production.cfg; ./bin/main_site loaddata ./%s/sites.json;' \
-            % (env.host_string, env.SOURCE_PATH), pty=True)
-    sudo('chown -R webapp:www-data /webapp', pty=True)
 
 def nginx_setup():
     """setup nginx"""

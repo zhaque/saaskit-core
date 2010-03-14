@@ -20,7 +20,7 @@
 	    <div id="{% block doctype %}doc3{% endblock %}" class="{% block class %}yui-t5{% endblock %}">
             <div id="hd" class="saaskit-hd">
 				{% block logo %} 
-				  <div class="logo"><a href="/"><h1>SaaSkit | </h1></a></div>
+				  <div class="logo"><h1><a href="/">SaaSkit</a> | </h1></div>
 				{% endblock %}
 
 				{% block sitename %} 				
@@ -44,6 +44,7 @@
 						    </form> 
 						  </li>
 						{% endblock %}						
+
 						{% if user.is_authenticated %}		 
 					      <li><a href="">{{user}}</a></li>	
 					    {% ifequal user request.muaccount.owner %}
@@ -52,7 +53,7 @@
 						  <li><a href="{% main_site_url account_dashboard %}">{% trans "My account" %}</a></li>	
 					      <li><a href="{% url user_signout %}?next=/">{% trans "Sign out" %}</a></li>
 					    {% else %}
-					      <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>
+					      <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>					
 						  <li><a href="/contact">{% trans "Help" %}</a></li>		
 					    {% endif %}
 					  </ul>		

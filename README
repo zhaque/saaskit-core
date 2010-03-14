@@ -9,7 +9,6 @@ Table of Contents
         3.2 Templates
         3.3 Static Files
         3.4 Sites
-        3.5 Shadowbox JS library
 4 Django-pages-cms integration
     4.1 Adding CMS Content Example
     4.2 CMS Only Pages
@@ -40,7 +39,8 @@ Table of Contents
  
 1.2 Starting the Project
 ~~~~~~~~~~~~~~~~~
-  1. Create local setting, for example:
+  1. Create local setting for your development enviornment.
+
 echo "
 DATABASE_ENGINE = 'postgresql_psycopg2'
 DATABASE_NAME = 'saaskit'
@@ -50,16 +50,15 @@ DATABASE_HOST = ''
 DATABASE_PORT = '5432'
 
 CACHE_BACKEND = 'dummy:///'
-
 MAIN_SITE_PORT = 8001
 
-" > ./src/saaskit/local_settings.py
-  2. Setup your local smtp server, postfix for example. Or add following lines to local_settings.py to use gmail smtp:
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = '<gmail account>'
 EMAIL_HOST_PASSWORD = '<gmail password>'
+EMAIL_SUBJECT_PREFIX = '[saaskit.org]'
 EMAIL_PORT = 587
+" > ./src/saaskit/local_settings.py
 
   2. python ./bootstrap.py -c ./buildout.cfg # or production.cfg
   3. ./bin/buildout -c ./buildout.cfg #or production.cfg
@@ -148,18 +147,6 @@ EMAIL_PORT = 587
     `user_sites' use site with ID 2 (default:
     usersites.example.com).  This allows to have separate static
     Pages for both projects.
-
-3.5 Shadowbox JS library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Shadowbox v3.0b has been used in the project. The stylesheet used by 
-    shadowbox is located under /media/css while the images are stored 
-    under /media/img/sb-resources. The entire JS library has been dumped
-    under /media/js/sb/. For such an implementation, the paths to the 
-    images has been modified in the stylesheet and also the colors of the
-    text shown in the pop-ups. To use Shadowbox, simply include the 
-    stylesheet and the js library(shadowbox.js). Then, change the link 
-    markups to include the attribute <rel="shadowbox"> for single popup
-    and <rel="shadowbox[Group]"> to group them as a collection/gallery.
 
 4 Plans & Pricing and Quota
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

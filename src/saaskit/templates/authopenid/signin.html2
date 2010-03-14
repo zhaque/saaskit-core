@@ -1,0 +1,117 @@
+{% extends "base_tmpl.html" %}
+{% load i18n uni_form_tags thumbnail muaccounts_tags %}
+{% block class %}{% endblock %}
+{% block column %}{% endblock %}{% block grid %}yui-gb{% endblock %}
+
+{% block head_title %}{% trans "Sign in" %}{% endblock %}
+
+<h2>{% trans "Sign in" %}</h2>
+{% if msg %}
+<br />
+	<p class="warning">{{ msg }}</p>
+{% endif %}
+
+{% block content %}
+<div class="yui-u first">
+  <div class="saaskit-block">
+    <h3>{% trans "Sign in" %}</h3>
+      <div class="saaskit-content">
+	    <form class="uniForm" action="" method="post">
+	      <fieldset class="inlineLabels">
+	        <legend>{% trans "Your Account ID" %}</legend>
+	        {{ form2|as_uni_form }}
+	      </fieldset>
+		  <div class="buttonHolder">
+		    <button class="button" type="submit">
+		      <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="blogin" alt="Sign in" />{% trans 'Sign in' %}
+		    </button>        
+    	    <div class="clear"></div>
+    	  </div>
+	    </form>
+	    <a id="password_reset_link" href="{% url auth_password_reset %}">{% trans "Reset password" %}</a>
+	    <form id="password_reset_form" method="post" action="" class="uniForm" style="display:none;">
+	      <fieldset class="inlineLabels">
+	        {{ password_reset_form|as_uni_form }}
+	      </fieldset>
+	      <div class="buttonHolder">
+		    <button class="button" type="submit">
+		      <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="{{ password_reset_action }}" alt="Reset" />{% trans 'Reset' %}
+		    </button>        
+    	    <div class="clear"></div>
+	      </div>
+	    </form>
+      </div> 
+  </div>
+</div>
+
+<div class="yui-u">
+  <div class="saaskit-block">
+    <h3>{% trans "Open ID" %}</h3>
+      <div class="saaskit-content">
+	  <form action="" method="post" class="uniForm">
+	    <input type="hidden" name="action" value="verify" />
+	      <fieldset class="inlineLabels">
+	        <legend>{% trans "Select OpenID" %}</legend>
+	          <div id="openid_btns"></div>
+	          <p>{{ form1.openid_url }}</p>
+	      </fieldset>
+		  <div class="buttonHolder">
+			<button class="button" type="submit">
+			  <img src="{{ MEDIA_URL }}saaskit/img/icons/tick.png" name="openid_submit" alt="Sign in with OpenID" />{% trans 'Sign in with OpenID' %}
+			</button>        
+	      <div class="clear"></div>
+		  </div>
+	  </form>
+      </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block defunct %}
+<div class="yui-u"> 
+	<form id="registration_form" method="post" action="" class="uniForm">
+	  <fieldset class="inlineLabels">
+	    <legend>{% trans "Registration Form" %}</legend>
+	    {{ register_form|as_uni_form }}
+	    <div class="buttonHolder">
+	      <input type="submit" name="{{ register_action }}" value="{% trans 'Register' %}" />
+	    </div>
+	  </fieldset>
+	</form>
+</div>
+{% if request.REQUEST.muaccount %}
+{% get_muaccount request.REQUEST.muaccount as ref_mua %}
+<div id="logo">
+  <a href="/" title="{% trans 'back to home page' %}">
+  {% if ref_mua.logo %}
+    <img src="{% thumbnail ref_mua.logo 143x59 %}" id="site-logo">
+  {% else %}
+    <h2>{{ ref_mua.name }}</h2>
+  {% endif %}
+  </a>
+  <p>{{ ref_mua.tag_line }}</p>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+{{block.super}}
+
+<script type="text/javascript" src="{{ MEDIA_URL }}saaskit/js/openid-jquery.js"></script>
+<script type="text/javascript">
+openid.img_path = "{{ MEDIA_URL }}saaskit/img/open-id/";
+$(document).ready(function() {
+    //openId form initialization
+    openid.init('id_openid_url');
+
+    //password_reset form show/hide
+    if ( $('#password_reset_form .ctrlHolder').is('.error') )
+    	$('#password_reset_form').show();
+     
+    $('#password_reset_link').click(function() {
+    	  $('#password_reset_form').toggle("slow");
+        return false;
+    });
+});
+</script>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base_tmpl.html" %}
 {% load i18n uni_form_tags thumbnail muaccounts_tags %}
 {% block class %}{% endblock %}
-{% block column %}{% endblock %}{% block grid %}yui-gb{% endblock %}
+{% block column %}{% endblock %}{% block grid %}yui-g{% endblock %}
 
 {% block head_title %}{% trans "Sign in" %}{% endblock %}
 
@@ -32,9 +32,6 @@
 	    </div>
 	  </form>
 	</div>
-</div> 
-
-<div class="yui-u"> 
 	<form id="openid_form" name="openid_form" action="" method="post" class="uniForm">
 	  <input type="hidden" name="action" value="verify" />
 	  <fieldset>
@@ -52,7 +49,7 @@
 </div> 
 
 <div class="yui-u"> 
-	<form id="registration_form" method="post" action="" class="uniForm">
+	<form method="post" action="" class="uniForm">
 	  <fieldset class="inlineLabels">
 	    <legend>{% trans "Registration Form" %}</legend>
 	    {{ register_form|as_uni_form }}
@@ -61,6 +58,7 @@
 	    </div>
 	  </fieldset>
 	</form>
+</div>
 {% endblock %}
 
 {% block defunct %}

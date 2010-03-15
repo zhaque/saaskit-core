@@ -24,7 +24,7 @@ install_requires = [
         'django-oembed==0.1.1',
         'django-pagination==1.0.5.1',
         'django-piston==0.2.2',
-        'django-rosetta==0.5.1',
+        'django-rosetta==0.5.3',
         'django-tagging==0.3',
         'django-templatesadmin==0.6',
         'django-tinymce==1.5',

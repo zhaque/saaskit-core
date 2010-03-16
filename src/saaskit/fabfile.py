@@ -198,7 +198,7 @@ def touchy_touch():
     sudo('cd /webapp/%s/bin; touch main_site.wsgi; touch user_site.wsgi;' % env.host_string, pty=True)
 
 def nginx_setup():
-    """setup nginx"""
+    production_settings()
     require('SOURCE_PATH')
     sudo('apt-get -y install nginx', pty=True)
     sudo('/etc/init.d/nginx stop; rm -f /etc/nginx/sites-enabled/default;', pty=True)
@@ -215,7 +215,7 @@ def nginx_setup():
     sudo('/etc/init.d/nginx start', pty=True)
 
 def apache2_setup():
-    """ setup apache2 """
+    production_settings()
     sudo('apt-get -y install apache2 apache2.2-common apache2-mpm-worker apache2-threaded-dev libapache2-mod-wsgi libapache2-mod-rpaf', pty=True)
     sudo('apache2ctl stop; a2dissite 000-default;', pty=True)
     

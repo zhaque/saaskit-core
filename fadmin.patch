@@ -1,0 +1,13 @@
+diff --git a/frontendadmin/views.py b/frontendadmin/views.py
+index efd16a2..0f379bf 100644
+--- a/frontendadmin/views.py
++++ b/frontendadmin/views.py
+@@ -159,7 +159,7 @@ def add(request, app_label, model_name, mode_name='add',
+             # Return to last page
+             if request.is_ajax():
+                 return success(request)
+-            return _handle_repsonse(request, instance)
++            return _handle_response(request, instance)
+     else:
+         form = instance_form()
+     template_context = {

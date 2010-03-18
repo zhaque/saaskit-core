@@ -16,7 +16,7 @@
 	  <form id="auth_form" class="uniForm" action="" method="post">
 	    <fieldset class="inlineLabels">
 	      <legend>{% trans "Sign In Using Your Account ID" %}</legend>
-	      {{ form2|as_uni_form }}
+	      {{ form|as_uni_form }}
 	      <div class="buttonHolder">
 	        <input type="submit" name="blogin" value="{% trans 'Sign in' %}" />
 	      </div>
@@ -32,20 +32,6 @@
 	    </div>
 	  </form>
 	</div>
-	<form id="openid_form" name="openid_form" action="" method="post" class="uniForm">
-	  <input type="hidden" name="action" value="verify" />
-	  <fieldset>
-	    <legend>{% trans "Sign In Using Your OpenID URL" %}</legend>
-	      <div id="openid_choice">
-	        <p>{% trans "Please click your account provider:"%}</p>
-	        <div id="openid_btns"></div>
-	      </div>
-	      <div id="openid_input_area">
-	        <label for="id_openid_url">{% trans "OpenId URL :" %}</label>{{ form1.openid_url }}
-	        <input name="openid_submit" type="submit" value="{% trans 'Sign in with OpenID' %}">
-	      </div>
-	  </fieldset>
-	</form>
 </div> 
 
 <div class="yui-u"> 
@@ -80,13 +66,8 @@
 {% block extra_js %}
 {{block.super}}
 
-<script type="text/javascript" src="{{ MEDIA_URL }}saaskit/js/openid-jquery.js"></script>
 <script type="text/javascript">
-openid.img_path = "{{ MEDIA_URL }}saaskit/img/open-id/";
 $(document).ready(function() {
-    //openId form initialization
-    openid.init('id_openid_url');
-
     //password_reset form show/hide
     if ( $('#password_reset_form .ctrlHolder').is('.error') )
     	$('#password_reset_form').show();

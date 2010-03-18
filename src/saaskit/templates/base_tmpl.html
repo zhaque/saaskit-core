@@ -51,9 +51,9 @@
 					      <li><a href="{% url muaccounts_manage_general %}">{% trans "Manage site" %}</a></li>					
 					    {% endifequal %}
 						  <li><a href="{% main_site_url account_dashboard %}">{% trans "My account" %}</a></li>	
-					      <li><a href="{% url user_signout %}?next=/">{% trans "Sign out" %}</a></li>
+					      <li><a href="{% url auth_logout %}?next=/">{% trans "Sign out" %}</a></li>
 					    {% else %}
-					      <li><a href="{% url user_signin %}">{% trans "Sign in" %}</a></li>					
+					      <li><a href="{% url auth_login %}">{% trans "Sign in" %}</a></li>					
 						  <li><a href="/contact">{% trans "Help" %}</a></li>		
 					    {% endif %}
 					  </ul>		

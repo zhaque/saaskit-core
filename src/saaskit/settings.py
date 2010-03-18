@@ -79,7 +79,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'sso.middleware.SingleSignOnMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django_authopenid.middleware.OpenIDMiddleware',
     'subscription.middleware.SubscriptionMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'pagination.middleware.PaginationMiddleware',
@@ -104,7 +103,6 @@ INSTALLED_APPS = (
     'contact',
     'emailconfirmation',
     'registration',
-    'django_authopenid',
     'django_extensions',
     'django_pipes',
     'notification',
@@ -143,7 +141,6 @@ INSTALLED_APPS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
-    'django_authopenid.context_processors.authopenid',
     )
 TEMPLATE_DIRS = ( os.path.join(KIT_ROOT, 'templates').replace('\\','/'), )
 

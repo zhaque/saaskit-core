@@ -228,10 +228,10 @@ COMPRESS_JS = {
 
 ACCOUNT_ACTIVATION_DAYS=7
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = '/accounts/signin/'
+LOGIN_URL = '/accounts/login/'
 
 SSO_URL = '/sso/'
-LOGOUT_URL = '/accounts/signout/'
+LOGOUT_URL = '/accounts/logout/'
 
 
 QUOTAS = {

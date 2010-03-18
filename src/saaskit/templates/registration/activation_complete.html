@@ -1,0 +1,8 @@
+{% extends "base_tmpl.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Activation complete" %} {% endblock %} 
+{% block content %}
+<h2>{% trans "Activation complete." %}</h2>
+<p>{% url auth_login as login_url %}{% blocktrans %}Now you can <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+{% endblock %}

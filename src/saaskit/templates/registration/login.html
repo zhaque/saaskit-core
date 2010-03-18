@@ -31,20 +31,9 @@
 	      <input type="submit" name="{{ password_reset_action }}" value="{% trans 'Reset' %}" />
 	    </div>
 	  </form>
+	  <a href="{% url registration_register %}">{% trans "Register" %}</a>
 	</div>
 </div> 
-
-<div class="yui-u"> 
-	<form method="post" action="" class="uniForm">
-	  <fieldset class="inlineLabels">
-	    <legend>{% trans "Registration Form" %}</legend>
-	    {{ register_form|as_uni_form }}
-	    <div class="buttonHolder">
-	      <input type="submit" name="{{ register_action }}" value="{% trans 'Register' %}" />
-	    </div>
-	  </fieldset>
-	</form>
-</div>
 {% endblock %}
 
 {% block defunct %}

@@ -70,7 +70,7 @@ EMAIL_PORT = 587
   1. It should be working copy, i.e. buildout have done.
   2. export DJANGO_SETTINGS_MODULE=saaskit.settings # replace saaskit by your package name
   3. setup/modify fabfile.py with common, stage and production settings for the project.
-  4. ./bin/fab production_setup --fabfile=./src/saaskit/fabfile.py or stage_setup to setup the enviornment
+  4. ./bin/fab setup_production --fabfile=./src/saaskit/fabfile.py or setup_stage to setup the enviornment
   5. user update_stage, update_production for minor updates and release_production or release_stage from version release same applies for rollback_stage and rollback_production.  
 
 

@@ -31,7 +31,7 @@ def prompts():
     	ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
     	ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
     	ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
-    	ifnotsetted('UBUNTU_VERSION', 'jaunty', True, "Ubuntu version name")
+    	ifnotsetted('UBUNTU_VERSION', 'karmic', True, "Ubuntu version name")
     	ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
     	ifnotsetted('PAYPAL_TEST', 'True', True, "PAYPAL TEST (True or False)?", r'^(True|False)$')	
 
@@ -41,7 +41,7 @@ def common_settings():
     env.POSTGRES_USER = 'saaskit' 
     env.POSTGRES_PASSWORD = 'saaskitS3n89mkk'
     env.POSTGRES_DB = 'saaskit'
-    env.UBUNTU_VERSION = 'jaunty'
+    env.UBUNTU_VERSION = 'karmic'
 
 def stage_settings():
     common_settings()

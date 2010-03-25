@@ -45,7 +45,6 @@ install_requires = [
 
         'app-media',
         'django-ab',
-        'django-authopenid',
         'django-contact',
         'django-error-capture-middleware',
         'django-frontendadmin',

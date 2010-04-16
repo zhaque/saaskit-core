@@ -1,5 +1,8 @@
+{% extends "account_tmpl.html" %}
 {% load i18n %}
 
+{% block content %}
+  {% block nav_2 %}
       <p> 
 	    <a href="{% url prepaid-index %}">
 	      <img src="{{ MEDIA_URL }}saaskit/img/icons/basket_put.png" alt="Buy points" width="16" height="16" align="center">
@@ -11,3 +14,7 @@
 	      <img src="{{ MEDIA_URL }}saaskit/img/icons/basket_remove.png" alt="Withdraw points" width="16" height="16" align="center">
           {% trans "Withdraw points" %}</a>
       </p>
+  {% endblock %}
+  {% block prepaid_content %}
+  {% endblock %}
+{% endblock %}

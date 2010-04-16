@@ -210,16 +210,8 @@ EMAIL_PORT = 587
 6.1.1 Used
 ----------
     Apps actually used by sample code.
-* django-authopenid
-  Used for signup/login process.
-  - [http://bitbucket.org/benoitc/django-authopenid/wiki/Home]
-  - [http://bitbucket.org/benoitc/django-authopenid/wiki/Getting_started]
-  + django-registration
-    Used internally by django-authopenid.
+* django-registration
     - [http://bitbucket.org/ubernostrum/django-registration/wiki/Home]
-  + python-openid
-    Python library for OpenID, used internally by django-authopenid.
-    - [http://openidenabled.com/python-openid/]
 * django-contact
   Contact Us form for the website
   - [http://github.com/rcoyner/django-contact]

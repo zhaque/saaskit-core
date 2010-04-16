@@ -46,7 +46,7 @@
 						{% endblock %}						
 
 						{% if user.is_authenticated %}		 
-					      <li><a href="{% url profiles_edit_profile %}">{{user}}</a></li>	
+					      <li><a href="{% url edit_user %}">{{user}}</a></li>	
 					    {% ifequal user request.muaccount.owner %}
 					      <li><a href="{% url muaccounts_manage_general %}">{% trans "Manage site" %}</a></li>					
 					    {% endifequal %}

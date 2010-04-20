@@ -52,7 +52,7 @@ def stage_settings():
 
 def production_settings():
     common_settings()
-    env.host_string = 'answerlog.net'
+    env.host_string = 'crowdsense.com'
     env.VPS_IP = '97.107.129.224'
     env.PAYPAL_EMAIL = 'admin_1255085897_biz@crowdsense.com'
     env.PAYPAL_TEST = 'True'

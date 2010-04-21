@@ -41,7 +41,7 @@ def common_settings():
     env.POSTGRES_USER = 'saaskit' 
     env.POSTGRES_PASSWORD = 'saaskitS3n89mkk'
     env.POSTGRES_DB = 'saaskit'
-    env.UBUNTU_VERSION = 'jaunty'
+    env.UBUNTU_VERSION = 'karmic'
 
 def stage_settings():
     common_settings()

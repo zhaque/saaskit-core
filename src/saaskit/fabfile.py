@@ -31,7 +31,7 @@ def prompts():
     	ifnotsetted('POSTGRES_USER', 'saaskit', True, "PostgreSQL user name")
     	ifnotsetted('POSTGRES_PASSWORD', 'saaskitS3n89mkk', True, "PostgreSQL user's password")
     	ifnotsetted('POSTGRES_DB', 'saaskit', True, "PostgreSQL DATABASE")
-    	ifnotsetted('UBUNTU_VERSION', 'jaunty', True, "Ubuntu version name")
+    	ifnotsetted('UBUNTU_VERSION', 'karmic', True, "Ubuntu version name")
     	ifnotsetted('PAYPAL_EMAIL', 'admin_1255085897_biz@crowdsense.com', True, "PAYPAL EMAIL")
     	ifnotsetted('PAYPAL_TEST', 'True', True, "PAYPAL TEST (True or False)?", r'^(True|False)$')	
 
@@ -139,10 +139,10 @@ def github_setup():
 def postgresql_setup():
     require('POSTGRES_USER', 'POSTGRES_PASSWORD', 'POSTGRES_DB')
     
-    sudo('apt-get -y install postgresql-8.3 postgresql-client-8.3 libpq-dev', pty=True)
+    sudo('apt-get -y install postgresql-8.4 postgresql-client-8.4 libpq-dev', pty=True)
     
-    render_put('deploy/postgresql/pg_hba.conf', '/etc/postgresql/8.3/main/pg_hba.conf', env)
-    sudo('/etc/init.d/postgresql-8.3 restart', pty=True)
+    render_put('deploy/postgresql/pg_hba.conf', '/etc/postgresql/8.4/main/pg_hba.conf', env)
+    sudo('/etc/init.d/postgresql-8.4 restart', pty=True)
     
     run('sudo -u postgres psql -c "create user %s with password \'%s\'"' \
         % (env.POSTGRES_USER, env.POSTGRES_PASSWORD), pty=True)

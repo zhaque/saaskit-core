@@ -57,6 +57,7 @@ install_requires = [
         'django-registration',
         'django-sso',
         'django-uni-form',
+        'django-wurfl',
 
         'saaskit-main',
         'saaskit-muaccounts',

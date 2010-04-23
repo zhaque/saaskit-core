@@ -85,6 +85,7 @@ MIDDLEWARE_CLASSES = (
     'sso.middleware.SingleSignOnMiddleware',
     'muaccount_content.middleware.FlatpageFallbackMiddleware',
     'django_error_capture_middleware.ErrorCaptureMiddleware',
+    'wurfl.middleware.DeviceMiddleware',
 )
 
 ROOT_URLCONF = 'saaskit.urls'
@@ -123,6 +124,7 @@ INSTALLED_APPS = (
     'django_counter',
     'rosetta',
     'django_error_capture_middleware',    
+    'wurfl',
 
     # own
     'muaccounts',

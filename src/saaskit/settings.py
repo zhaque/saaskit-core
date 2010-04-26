@@ -302,8 +302,8 @@ LANGUAGES = (
 # Prepare CSS files for configured color schemes
 for codename, _, css_file in MUACCOUNTS_THEMES[0][2]:
      COMPRESS_CSS[codename] = {
-         'source_filenames' : ( (_default_css_files[0], css_file,)
-                                + _default_css_files[1:] ),
+         'source_filenames' : ( _default_css_files + (css_file,)
+                                ),
          'output_filename' : 'style.%s.css' % codename,
          }
 

@@ -60,6 +60,7 @@ EMAIL_SUBJECT_PREFIX = '[saaskit.org]'
 EMAIL_PORT = 587
 " > ./src/saaskit/local_settings.py
 
+  1.1 unzip parts/saaskit-core/wurfl-latest.zip -d .
   2. python ./bootstrap.py -c ./buildout.cfg # or production.cfg
   3. ./bin/buildout -c ./buildout.cfg #or production.cfg
   4. ./bin/main_site runserver 8001 # marketing site

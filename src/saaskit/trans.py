@@ -44,9 +44,11 @@ def list_languages():
         )
     return languages
 
-def run():
+def run(language=None):
   languages = list_languages()
   for lang, lang_name, po in languages:
+    if language and lang != language:
+      continue
     for app, path, po_file in po:
       messages = po_file.untranslated_entries()
       print 'Language: %s, app: %s, untranslated: %d' % (lang_name, app, len(messages))

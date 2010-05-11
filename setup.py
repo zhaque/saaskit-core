@@ -28,7 +28,7 @@ install_requires = [
         'django-tagging==0.3',
         'django-templatesadmin==0.6',
         'django-tinymce==1.5',
-        'gdata==2.0.6',
+        'gdata==2.0.9',
         'html5lib==0.90',
         'pisa==3.0.32',
         'python-dateutil==1.4.1',

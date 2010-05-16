@@ -2,6 +2,7 @@
 .project
 .pydevproject
 .pydevproject.bak
+wurfl.xml
 
 #buildout's specific
 .installed.cfg

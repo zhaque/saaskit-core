@@ -58,7 +58,7 @@ install_requires = [
         'django-sso',
         'django-uni-form',
         'django-wurfl',
-        'pylevenshtein',
+        'python-Levenshtein',
 
         'saaskit-main',
         'saaskit-muaccounts',

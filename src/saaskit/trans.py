@@ -55,7 +55,7 @@ def run(language=None):
       for msg in messages:
         try:
 #          print '%s to %s' % (msg.msgid, lang)
-          msg.msgstr = fix_nls(msg.msgid, translate(msg.msgid, to=lang))
+          msg.msgstr = fix_nls(msg.msgid, translate(msg.msgid, src=settings.LANGUAGE_CODE[:2], to=lang[:2]))
 #          print msg.msgstr
         except TypeError:
           pass

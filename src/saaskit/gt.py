@@ -24,7 +24,7 @@ def translate(text,src='', to='en'):
              })
     retText=''
     for text in getSplits(text):
-            params['q'] = text
+            params['q'] = text.encode('utf-8')
             resp = simplejson.load(urllib.urlopen('%s' % (baseUrl), data = urllib.urlencode(params)))
             try:
                     retText += resp['responseData']['translatedText']

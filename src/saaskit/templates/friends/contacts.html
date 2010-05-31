@@ -9,13 +9,7 @@
 <div class="saaskit-block">
   <h3>{% trans "Import contacts" %}</h3>
     <div class="saaskit-content">
-	    <p> 
-		<a href="{% url muaccounts_member_list %}">{% trans "Current members" %}</a> | 
-        <a href ="{% url muaccounts_add_member %}">{% trans "Invite new" %}</a> |
-        <a href ="{% url muaccounts_manage_advanced %}">{% trans "Manage invitations" %}</a> |
-        <a href ="{% url invitations_contacts %}">{% trans "Import contacts" %}</a> |
-        <a href ="{% url manage_contacts %}">{% trans "Manage contacts" %}</a>
-		</p>
+    {% include "friends/members_menu.html" %}    
         <hr/>
     {% for import_form in import_forms %}
     <h4>{{ import_form.title }}</h4>

@@ -5,7 +5,7 @@ from uni_form.helpers import FormHelper
 
 class UserProfileForm(forms.ModelForm):
     email = forms.EmailField(label=_('Email'), help_text=_('Email'), required=True)
-    real_name = forms.CharField(label="Real Field", help_text="I am real")
+    real_name = forms.CharField(label=_("Real Field"), help_text=_("I am real"))
 
     def __init__(self, *args, **kwargs):
         instance = kwargs.pop('instance', None)

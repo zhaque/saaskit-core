@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.conf import settings
 from django.core.xheaders import populate_xheaders
 from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext as _
 
 from django.contrib.flatpages.views import DEFAULT_TEMPLATE
 
@@ -54,7 +55,7 @@ def mu_flatpage(request, url, queryset=MUFlatPage.objects.all()):
             if not customized.use_default:
                 return flatpage(request, url, queryset.filter(muaccount=request.muaccount))
         else:
-            raise Http404('Current page %s is not active.' % url)
+            raise Http404(_('Current page %s is not active.') % url)
 
     except queryset.model.DoesNotExist:
         pass

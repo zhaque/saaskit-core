@@ -2,7 +2,7 @@
 {% blocktrans %}
 Name: {{ name }}
 Email: {{ email }}
-{% endblocktrans %}
 Message:
- 
+
 {{ body }}
+{% endblocktrans %}

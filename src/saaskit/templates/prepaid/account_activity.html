@@ -1,11 +1,11 @@
-{% load credits pagination_tags %}
+{% load credits pagination_tags i18n %}
 {% if request.user.prepaid_transactions.count %}
 {% autopaginate request.user.prepaid_transactions.all as transactions 10 %}
 <table id="account-activity">
 	<thead>
-		<th>Activity</th>
-		<th>Points</th>
-		<th>Total</th>
+		<th>{% trans 'Activity' %}</th>
+		<th>{% trans 'Points' %}</th>
+		<th>{% trans 'Total' %}</th>
 	</thead>
 	<tbody>
 		{% for t in transactions %}

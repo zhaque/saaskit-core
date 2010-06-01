@@ -1,10 +1,11 @@
+{% load i18n %}
 {% if can_withdraw %}
-Withdraw Points<br/>
+{% trans 'Withdraw Points' %}<br/>
 <form action="{% url prepaid-withdraw %}" method="post">
 	{{ withdrawal_form.as_p }}
-	<input type="submit" value="Withdraw" />
+	<input type="submit" value="{% trans 'Withdraw' %}" />
 </form>
 {% else %}
-You need at least {{ min_withdrawal }} point{{ min_withdrawal|pluralize }} to perform a withdrawal.
+{% blocktrans with min_withdrawal|pluralize as pluralized_min_withdrawal %}You need at least {{ min_withdrawal }} point{{ pluralized_min_withdrawal }} to perform a withdrawal{% endblocktrans %}.
 {% endif %}
 

@@ -8,44 +8,68 @@
 	<h3>{% trans "Take the Tour" %}</h3>
 	    <div class="saaskit-content">
 
-		<h4>Manage Subscriptions & Business Models</h4>
+		<h4>{% trans 'Manage Subscriptions & Business Models' %}</h4>
+		  {% blocktrans %}
 			<p>Our Quota management system enables you to effectively manage subscriptions and billing. Limit features based on subscription level by enforcing or offering multiple levels of subscription to your users. SaaSkit quota management system lets you allocate specific features to specific subscriptions.</p>
+		  {% endblocktrans %}
+		  {% blocktrans %}
 			<p>Saaskit currently supports Paypal, a free to sign-up, fast and secure payment system that will get you started with your business in no time. We're in the process of adding more payment gateways as demand dictates.</p>
+		  {% endblocktrans %}
+		  {% blocktrans %}
 			<p>It's your business and you call the shots. Choose a business model that fits you - subscription or prepaid. Our subscription plan is designed for answerlog clients while prepaid is for end-users.</p>
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/business_models.png" alt="Business Models" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/business_models.png" alt="{% trans 'Business Models' %}" width="600" height="400"></p>
 		
-		<h4>3rd Party API & Developer Support</h4>
+		<h4>{% trans '3rd Party API & Developer Support' %}</h4>
+		  {% blocktrans %}
 			<p> Easily share your application data with 3rd party developers as API. Saaskit also enables you to seemlessly intergrate your application with APIs of web services like Google, Twitter, Facebook and more. Saaskit supports OpenID standard; meaning that users have the freedom to use their existing account credentials to log-in to your app. This helps you leverage on the existing user base. </p>
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/3rd_api.png" alt="3rd Party API" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/3rd_api.png" alt="{% trans '3rd Party API' %}" width="600" height="400"></p>
 		
-		<h4>Google Adsense</h4>	
+		<h4>{% trans 'Google Adsense' %}</h4>	
+		  {% blocktrans %}
 			<p>Saaskit supports Google Adsense & other Ad networks, this enables your clients to generate revenue by serving ads from Google AdSense™ advertising service on their sites. Saaskit Google Adsense module provides easy-to-use ad blocks, protects users from displaying more ads in a page than the maximum allowed by Google, offers simple controls for troubleshooting ads before they go live, lets you quickly effect site-wide script update when Google performs minor changes in the ad scripts. </p>
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/google_adsense.png" alt="Google Adsense Support" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/google_adsense.png" alt="{% trans 'Google Adsense Support' %}" width="600" height="400"></p>
 
-		<h4>Google Analytics</h4>
+		<h4>{% trans 'Google Analytics' %}</h4>
+		  {% blocktrans %}
 			<p>Get insights into your site traffic & use this information to plan and implement effective marketing strategies with Saaskit's Google analytics support. Saaskit also offers webmaster tools to enable you better manage your search engine placement in Google and other major search engines.</p>
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/google_analytics.png" alt="Google Analytics" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/google_analytics.png" alt="{% trans 'Google Analytics' %}" width="600" height="400"></p>
 		
-		<h4>Application Customization</h4>
+		<h4>{% trans 'Application Customization' %}</h4>
+		  {% blocktrans %}
 			<p>Give your users the privilege of deciding on the look & feel of their hosted application with customizable domain names, themes and layouts. Users can also import contacts from their existing accounts with other web service providers i.e. Yahoo!, Google, AOL and any other provider that supports the Open ID standard into their hosted applications.</p>
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/app_customization.png" alt="App Customization" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/app_customization.png" alt="{% trans 'App Customization' %}" width="600" height="400"></p>
 
-		<h4>Multilingual</h4>
+		<h4>{% trans 'Multilingual' %}</h4>
+		  {% blocktrans %}
 			<p>Saaskit is a truly global service that enables you to reach users in the global market in their local languages - we currently support English, Germany, French and Russian with more to follow. With Saaskit, language is no-longer a barrier to your success but a key to it. Open doors to global citizens and empower them to connect and share knowledge.</p>
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/multilingual.png" alt="Multilingual" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/multilingual.png" alt="{% trans 'Multilingual' %}" width="600" height="400"></p>
 
-		<h4>Powered by Django Web framework</h4>
+		<h4>{% trans 'Powered by Django Web framework' %}</h4>
+		  {% blocktrans %}
 			<p>Saaskit is built on Django - a solid web framework that allows for rapid development of efficient, clean and high performing web apps on the run. Django is open source and benefits from extensive support of the open source community of developers. With Saaskit, your future is guaranteed! </p>
+		  {% endblocktrans %}
+		  {% blocktrans %}
 			<p>We also offer open source version of Saaskit which allows for full customization, this requires some coding "know-how" to work well. Develop your application "on the fly" with our "polls App" and tutorials, no hassles! no delays!</p>
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/opensource_source.png" alt="Open Source" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/opensource_source.png" alt="{% trans 'Open Source' %}" width="600" height="400"></p>
 
-		<h4>Mobile Ready!</h4>
+		<h4>{% trans 'Mobile Ready!' %}</h4>
+		  {% blocktrans %}
 			<p>SaaSkit offers support for mobile devices and applications, so whether it's an iPhone, Blackberry or Android, all that that a user has to do is tweak the provided template & be ready to go! Connect from anywhere! SaaSkit mobile support includes a simplified interface and mobile friendly features. User experience with the mobile app. is enhanced when using devices with big screen, In-built Wi-Fi, good usability and a full fledged browser.</p>       
-		    <p><img src="{{ MEDIA_URL }}saaskit/img/mobile_ready.png" alt="Mobile Ready" width="600" height="400"></p>
+		  {% endblocktrans %}
+		    <p><img src="{{ MEDIA_URL }}saaskit/img/mobile_ready.png" alt="{% trans 'Mobile Ready' %}" width="600" height="400"></p>
 
-		<h4>Google and Yahoo Contacts Import</h4>
+		<h4>{% trans 'Google and Yahoo Contacts Import' %}</h4>
+		  {% blocktrans %}
 			<p>SaaSkit offers support for mobile devices and applications, so whether it's an iPhone, Blackberry or Android, all that that a user has to do is tweak the provided template & be ready to go! Connect from anywhere! SaaSkit mobile support includes a simplified interface and mobile friendly features. User experience with the mobile app. is enhanced when using devices with big screen, In-built Wi-Fi, good usability and a full fledged browser.</p>       
-    		<p><img src="{{ MEDIA_URL }}saaskit/img/contacts_import.png" alt="Contacts Import" width="600" height="400"></p>
+		  {% endblocktrans %}
+    		<p><img src="{{ MEDIA_URL }}saaskit/img/contacts_import.png" alt="{% trans 'Contacts Import' %}" width="600" height="400"></p>
 
   </div>
 </div>

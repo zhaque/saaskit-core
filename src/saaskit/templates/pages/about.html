@@ -7,11 +7,16 @@
 <div class="saaskit-block">
   <h3>{% trans "About SaaSkit" %}</h3>
     <div class="saaskit-content">
+  {% blocktrans %}
 	<p>
 	SaaSkit is a complete SaaS-type website template, ready for deployment. SaaSkit is a complete SaaS-type website template, ready for deployment. SaaSkit is a complete SaaS-type website template, ready for deployment. SaaSkit is a complete SaaS-type website template, ready for deployment.
 	</p>
-	<h4>Key features</h4>
+  {% endblocktrans %}
+	<h4>{% trans 'Key features' %}</h4>
+  {% blocktrans %}
 	<p>SaaSkit is a complete SaaS-type website template, ready for deployment. SaaSkit is a complete SaaS-type website template, ready for deployment.</p>		
+  {% endblocktrans %}
+  {% blocktrans %}
 	<ul>
 		<li>3rd Party API & Developer Support (API)</li>
 		<li>Google Adsense</li>		
@@ -23,14 +28,23 @@
 		<li>Manage Subscriptions & Business Models (Billing)</li>
 		<li>Mobile Ready!(Mobile)</li> 
 	</ul>	  
-	<h4>Services & Support</h4>
+  {% endblocktrans %}
+	<h4>{% trans 'Services & Support' %}</h4>
+  {% blocktrans %}
 	<p>saaskit.org help you get the most out of your SaaSKit whether you're using it personally or professionally. We get beginners up and running and give advanced users guidance with more complex usage; offering advice and support for each step along the way.</p>
+  {% endblocktrans %}
 
+  {% blocktrans %}
 	<p>Providing peace of mind for enterprises, SaaSKit services gives your enterprise exactly what you would need in terms of security, customization and integration with third party products for substantially less money than proprietary alternatives.</p>
+  {% endblocktrans %}
 
+  {% blocktrans %}
 	<p>saaskit.org can also help you with deploying, customizing or integrating specific parts of your SaaSKit App. Be rest assured that your App will be in good hands.</p>
+  {% endblocktrans %}
 
+  {% blocktrans %}
 	<p>For more information regarding SaaSKit services by saaskit.org, please drop a mail: <a href="mailto:admin@saaskit.org">admin@saaskit.org</a></p>
+  {% endblocktrans %}
 	</div>
 </div>
 {% endblock %}

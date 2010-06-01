@@ -31,7 +31,7 @@
     </div>
 
     <div class="saaskit-landing-img">
-    	<img src="{{ MEDIA_URL }}saaskit/img/screenshot.png" alt="Subscription App Screenshot" width="720" height="480" align="" style="margin-left:5em;">
+    	<img src="{{ MEDIA_URL }}saaskit/img/screenshot.png" alt="{% trans 'Subscription App Screenshot' %}" width="720" height="480" align="" style="margin-left:5em;">
     </div>
 
   </div>
@@ -43,19 +43,21 @@
   <div class="benefits_list" style="margin-left:15%;">
 
     <div class="benefit" style="float:left">
-      <h5><img src="{{ MEDIA_URL }}saaskit/img/icons/chart_pie_add.png" alt="Business Models" width="16" height="16">
+      <h5><img src="{{ MEDIA_URL }}saaskit/img/icons/chart_pie_add.png" alt="{% trans 'Business Models' %}" width="16" height="16">
 	  &nbsp;{% trans "Prepaid or Recurring" %}</h5>
+	   {% blocktrans %}
       <p>Supports your choice of recurring billing period as well as prepaid and page view based billing. Supports trail subscription, discounts, user points system and cash withdrawal." %}</p>
+	   {% endblocktrans %}
     </div>
 
     <div class="benefit" style="float:left">
-      <h5><img src="{{ MEDIA_URL }}saaskit/img/icons/bricks.png" alt="SaaSkit Flexibility" width="16" height="16">
+      <h5><img src="{{ MEDIA_URL }}saaskit/img/icons/bricks.png" alt="{% trans 'SaaSkit Flexibility' %}" width="16" height="16">
 	  &nbsp;{% trans "Built-in Flexibility" %}</h5>
       <p>{% trans "Built in support for mobile templates, Integrated with 3rd party API such as Google, Yahoo, Twitter Facebook and more, OpenID ready, support for exposing your application data to 3rd party developers, built in localization support." %}</p>
     </div>
 
     <div class="benefit" style="float:left">
-      <h5><img src="{{ MEDIA_URL }}saaskit/img/icons/plugin_link.png" alt="SaaSkit Customization" width="16" height="16">
+      <h5><img src="{{ MEDIA_URL }}saaskit/img/icons/plugin_link.png" alt="{% trans 'SaaSkit Customization' %}" width="16" height="16">
 	  &nbsp;{% trans "Mass Customization" %}</h5>
       <p>{% trans "Clients can select domain or sub-domain based account, customize themes and language, make application public or private, use their Adsense account for revenue generation and Analytics code for stats." %}</p>
     </div>

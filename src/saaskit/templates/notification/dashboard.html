@@ -9,7 +9,7 @@
    <a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a> |
 	</p>
   <hr/>
-    <p>{# <a href="{% url notification_mark_all_seen %}">mark all seen</a> | #}
+    <p>{# <a href="{% url notification_mark_all_seen %}">{% trans 'mark all seen' %}</a> | #}
     <a href="{% url notification_feed_for_user %}">{% trans "RSS" %}</a></p>
 
     <ul>{% for notice in notices %}

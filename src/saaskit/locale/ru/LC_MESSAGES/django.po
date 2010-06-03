@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-06 23:10+0000\n"
+"POT-Creation-Date: 2010-06-03 21:24+0400\n"
 "PO-Revision-Date: 2009-12-03 15:52\n"
 "Last-Translator: <admin@example.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,20 +16,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.5.1\n"
 
-#: settings.py:260
+#: settings.py:295
 msgid "English"
 msgstr ""
 
-#: settings.py:261
+#: settings.py:296
 msgid "German"
 msgstr ""
 
-#: settings.py:262
+#: settings.py:297
 msgid "French"
 msgstr ""
 
-#: settings.py:263
+#: settings.py:298
 msgid "Russian"
+msgstr ""
+
+#: settings.py:299
+msgid "Swedish"
 msgstr ""
 
 #: apps/muaccount_adsense/forms.py:17
@@ -37,9 +41,9 @@ msgid "Submit"
 msgstr ""
 
 #: apps/muaccount_adsense/forms.py:18 apps/muaccount_content/forms.py:19
-#: templates/friends/invite_form.html:11
-#: templates/profiles/create_profile.html:28
-#: templates/profiles/edit_profile.html:27
+#: templates/contact/contact.html:26 templates/friends/invite_form.html:11
+#: templates/profiles/create_profile.html:25
+#: templates/profiles/edit_profile.html:25
 msgid "Cancel"
 msgstr ""
 
@@ -79,6 +83,11 @@ msgstr ""
 msgid "flat pages"
 msgstr ""
 
+#: apps/muaccount_content/views.py:58
+#, python-format
+msgid "Current page %s is not active."
+msgstr ""
+
 #: apps/page_view_quotas/management.py:12
 msgid "Page view quota almost ends!"
 msgstr ""
@@ -106,12 +115,21 @@ msgstr ""
 msgid "Your site was suspended."
 msgstr ""
 
-#: apps/saaskit_profile/forms.py:7 templates/authopenid/complete.html:45
+#: apps/saaskit_profile/forms.py:7 templates/friends/manage_contacts.html:21
 msgid "Email"
 msgstr ""
 
+#: apps/saaskit_profile/forms.py:8
+msgid "Real Field"
+msgstr ""
+
+#: apps/saaskit_profile/forms.py:8
+msgid "I am real"
+msgstr ""
+
 #: apps/saaskit_profile/management.py:11
-msgid "Welcome to SaaS kit!"
+#, fuzzy
+msgid "Welcome to SaaSkit!"
 msgstr "Добро пожаловать на SaaS kit!"
 
 #: apps/saaskit_profile/management.py:11
@@ -206,124 +224,110 @@ msgstr ""
 msgid "Plans and Pricing"
 msgstr ""
 
-#: templates/account_tmpl.html:10
-msgid "Bounty Points"
+#: templates/account_tmpl.html:10 templates/prepaid/account_activity.html:7
+msgid "Points"
 msgstr ""
 
 #: templates/account_tmpl.html:12
 msgid "Invoices"
 msgstr ""
 
-#: templates/base_tmpl.html:30
-msgid "Toolkit for building subscription based webapps"
+#: templates/account_tmpl.html:20 templates/base_tmpl.html:57
+#: templates/pages/sidebar_tmpl.html:4
+msgid "Help"
 msgstr ""
 
-#: templates/base_tmpl.html:30
-msgid "Fast!"
+#: templates/account_tmpl.html:21 templates/pages/sidebar_tmpl.html:5
+msgid ""
+"\n"
+"    <p>Tiger Woods eventuella otrohetsskandal är inte bara en nyhet i "
+"världspressen. Ryktena sprids via skräppost och med ett litet musklick "
+"riskerar nyfikna läsare att få sin dator infekterad.</p>\n"
+"    "
 msgstr ""
 
-#: templates/base_tmpl.html:49 templates/friends/contacts.html:5
+#: templates/base_tmpl.html:39
+msgid "Select language"
+msgstr ""
+
+#: templates/base_tmpl.html:51 templates/friends/contacts.html:5
 #: templates/friends/invite.html:4 templates/friends/manage_contacts.html:5
 #: templates/friends/member_list.html:4
 msgid "Manage site"
 msgstr ""
 
-#: templates/base_tmpl.html:51
+#: templates/base_tmpl.html:53
 msgid "My account"
 msgstr ""
 
-#: templates/base_tmpl.html:52
+#: templates/base_tmpl.html:54
 msgid "Sign out"
 msgstr ""
 
-#: templates/base_tmpl.html:54 templates/authopenid/signin.html:6
-#: templates/authopenid/signin.html.py:8 templates/authopenid/signin.html:21
+#: templates/base_tmpl.html:56 templates/registration/login.html:6
+#: templates/registration/login.html:8 templates/registration/login.html:21
 msgid "Sign in"
 msgstr ""
 
-#: templates/base_tmpl.html:55
-msgid "Help"
+#: templates/base_tmpl.html:79
+msgid "Copyright"
 msgstr ""
 
-#: templates/base_tmpl.html:77 templates/pages/about.html:4
+#: templates/base_tmpl.html:79 templates/pages/about.html:4
 msgid "About us"
 msgstr ""
 
-#: templates/base_tmpl.html:77
+#: templates/base_tmpl.html:79
 msgid "Help & Support"
 msgstr ""
 
-#: templates/base_tmpl.html:77 templates/pages/privacy.html:3
+#: templates/base_tmpl.html:79 templates/pages/privacy.html:5
 msgid "Privacy & Copyright"
 msgstr ""
 
-#: templates/base_tmpl.html:77
+#: templates/base_tmpl.html:79
 msgid "Terms"
 msgstr ""
 
 #: templates/admin/associate.html:4 templates/admin/associate.html.py:20
-#: templates/authopenid/associate.html:4
-#: templates/authopenid/dissociate.html:16
-#: templates/authopenid/password_change_form.html:17
-#: templates/authopenid/password_change_form.html:53
-#: templates/profiles/create_profile.html:13
-#: templates/profiles/edit_profile.html:13
 msgid "Associate OpenID"
 msgstr ""
 
-#: templates/admin/associate.html:6 templates/authopenid/associate.html:6
+#: templates/admin/associate.html:6
 msgid "OpenID associations"
 msgstr ""
 
-#: templates/admin/associate.html:12 templates/authopenid/associate.html:12
+#: templates/admin/associate.html:12
 msgid "Openid url"
 msgstr ""
 
-#: templates/admin/associate.html:18 templates/authopenid/dissociate.html:14
-#: templates/authopenid/password_change_form.html:15
-#: templates/authopenid/password_change_form.html:51
-#: templates/profiles/create_profile.html:11
+#: templates/admin/associate.html:18 templates/profiles/create_profile.html:11
 #: templates/profiles/edit_profile.html:11
 msgid "Manage Profile"
 msgstr ""
 
-#: templates/admin/associate.html:19 templates/authopenid/dissociate.html:15
-#: templates/authopenid/password_change_form.html:16
-#: templates/authopenid/password_change_form.html:52
-#: templates/profiles/create_profile.html:12
+#: templates/admin/associate.html:19 templates/profiles/create_profile.html:12
 #: templates/profiles/edit_profile.html:12
 msgid "Passwords"
 msgstr ""
 
-#: templates/admin/associate.html:21 templates/authopenid/dissociate.html:4
-#: templates/authopenid/dissociate.html:6
-#: templates/authopenid/dissociate.html:17
-#: templates/authopenid/dissociate.html:27
-#: templates/authopenid/password_change_form.html:18
-#: templates/authopenid/password_change_form.html:54
-#: templates/profiles/create_profile.html:14
-#: templates/profiles/edit_profile.html:14
+#: templates/admin/associate.html:21
 msgid "Dissociate OpenID"
 msgstr ""
 
-#: templates/admin/associate.html:29 templates/authopenid/associate.html:21
-#: templates/authopenid/password_change_form.html:93
+#: templates/admin/associate.html:29
 msgid "Add a new OpenID URL"
 msgstr ""
 
-#: templates/admin/associate.html:31 templates/authopenid/associate.html:23
-#: templates/authopenid/password_change_form.html:95
+#: templates/admin/associate.html:31
 msgid "Please click your account provider"
 msgstr ""
 
-#: templates/admin/associate.html:35 templates/authopenid/associate.html:27
-#: templates/authopenid/password_change_form.html:99
-#: templates/authopenid/signin.html:47
+#: templates/admin/associate.html:35
 msgid "OpenId URL :"
 msgstr ""
 
-#: templates/admin/associate.html:36 templates/authopenid/associate.html:28
-#: templates/authopenid/password_change_form.html:100
+#: templates/admin/associate.html:36
 msgid "Add OpenID"
 msgstr ""
 
@@ -335,178 +339,51 @@ msgstr ""
 msgid "Templates admin"
 msgstr ""
 
-#: templates/authopenid/complete.html:4 templates/authopenid/complete.html:7
-msgid "Your OpenID is verified! "
-msgstr ""
-
-#: templates/authopenid/complete.html:8
-msgid ""
-"\n"
-"\t<p>Your OpenID can now be associated with a new or existing membership. "
-"You can change the association later in your preferences.</p>\n"
-"\t"
-msgstr ""
-
-#: templates/authopenid/complete.html:12
-msgid "Associate your OpenID"
-msgstr ""
-
-#: templates/authopenid/complete.html:13
-msgid ""
-"\n"
-"\t<p>If you're joining <strong>Sitename</strong>, associate your OpenID with "
-"a new account. If you're already a member, associate with your existing "
-"account.</p>\n"
-"\t"
-msgstr ""
-
-#: templates/authopenid/complete.html:19 templates/authopenid/complete.html:29
-msgid "Please correct errors below:"
-msgstr ""
-
-#: templates/authopenid/complete.html:43
-msgid "A new account"
-msgstr ""
-
-#: templates/authopenid/complete.html:44 templates/authopenid/complete.html:59
-msgid "Username"
-msgstr ""
-
-#: templates/authopenid/complete.html:58
-msgid "An exisiting account"
-msgstr ""
-
-#: templates/authopenid/complete.html:60
-msgid "Password"
-msgstr ""
-
-#: templates/authopenid/dissociate.html:25
-msgid "Dissociate OpenID URL"
-msgstr ""
-
-#: templates/authopenid/dissociate.html:26
-#, python-format
-msgid "Confirm to dissociate %(openid_url)s from your account"
-msgstr ""
-
-#: templates/authopenid/failure.html:3 templates/authopenid/failure.html:5
-msgid "OpenID failed"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:4
-msgid "Set password or Open ID"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:5
-msgid "Change password or Open ID"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:12
-msgid "Set password"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:21
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:26
-#: templates/authopenid/password_change_form.html:67
-msgid "New password:"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:31
-#: templates/authopenid/password_change_form.html:72
-msgid "Confirm password:"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:37
-msgid "Set my password"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:48
-msgid "Change password"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:57
-msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:62
-msgid "Old password:"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:78
-msgid "Change my password"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:83
-#: templates/authopenid/password_change_form.html:88
-#: templates/authopenid/password_change_form.html:105
-msgid "Associate other OpenID"
-msgstr ""
-
-#: templates/authopenid/password_change_form.html:86
-msgid "dissociate"
-msgstr ""
-
-#: templates/authopenid/signin.html:18
-msgid "Sign In Using Your Account ID"
-msgstr ""
-
-#: templates/authopenid/signin.html:25
-msgid "Reset password"
-msgstr ""
-
-#: templates/authopenid/signin.html:31
-msgid "Reset"
-msgstr ""
-
-#: templates/authopenid/signin.html:41
-msgid "Sign In Using Your OpenID URL"
-msgstr ""
-
-#: templates/authopenid/signin.html:43
-msgid "Please click your account provider:"
-msgstr ""
-
-#: templates/authopenid/signin.html:48
-msgid "Sign in with OpenID"
-msgstr ""
-
-#: templates/authopenid/signin.html:57
-#: templates/registration/registration_form.html:4
-#: templates/registration/registration_form.html:7
-msgid "Registration Form"
-msgstr ""
-
-#: templates/authopenid/signin.html:60
-#: templates/registration/registration_form.html:13
-msgid "Register"
-msgstr ""
-
-#: templates/authopenid/signin.html:70
-msgid "back to home page"
-msgstr ""
-
-#: templates/contact_form/contact_form.html:4
-#: templates/contact_form/contact_form_sent.html:4
+#: templates/contact/contact.html:4 templates/contact/sent.html:4
 #: templates/paypal/shortcut.html:34
 msgid "Contact us"
 msgstr ""
 
-#: templates/contact_form/contact_form_sent.html:4
+#: templates/contact/contact.html:8
+msgid "Need help - contact us"
+msgstr ""
+
+#: templates/contact/contact.html:10
+msgid ""
+"\n"
+"\t\t\t<p>Welcome to SaaS Kit Support page. Here you will find all the "
+"possible links where you can get the best possible help/troubleshooting with "
+"your customized version of SaaS Kit.</p>\n"
+"\t    "
+msgstr ""
+
+#: templates/contact/contact.html:13
+msgid ""
+"\n"
+"\t\t\t<p>Have a question or comment regarding our service? contact us via "
+"the form below and we'll be in touch with you at the earliest convenience.</"
+"p>\n"
+"\t    "
+msgstr ""
+
+#: templates/contact/contact.html:18 templates/profiles/create_profile.html:17
+#: templates/profiles/edit_profile.html:17
+msgid "Required fields"
+msgstr ""
+
+#: templates/contact/contact.html:23
+msgid "Send message"
+msgstr ""
+
+#: templates/contact/sent.html:4
 msgid "Thanks - message sent"
 msgstr ""
 
-#: templates/contact_form/contact_form_sent.html:8
+#: templates/contact/sent.html:8
 msgid "Message Sent!"
 msgstr ""
 
-#: templates/contact_form/contact_form_sent.html:9
+#: templates/contact/sent.html:10
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta "
 "tincidunt tortor eget suscipit. Pellentesque a tortor ac ipsum mattis "
@@ -515,7 +392,7 @@ msgid ""
 "nec semper urna."
 msgstr ""
 
-#: templates/contact_form/contact_form_sent.html:10
+#: templates/contact/sent.html:11
 msgid ""
 "Vivamus sit amet dolor ac arcu porttitor aliquet. Aliquam erat volutpat. Cum "
 "sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus "
@@ -548,50 +425,21 @@ msgstr ""
 
 #: templates/friends/contacts.html:5 templates/friends/invite.html:4
 #: templates/friends/manage_contacts.html:5
-#: templates/friends/member_list.html:4
+#: templates/friends/member_list.html:4 templates/friends/member_list.html:9
 msgid "Members"
 msgstr ""
 
 #: templates/friends/contacts.html:5 templates/friends/contacts.html.py:10
-#: templates/friends/contacts.html:16 templates/friends/invite.html:15
 #: templates/friends/manage_contacts.html:5
-#: templates/friends/manage_contacts.html:16
-#: templates/friends/member_list.html:15
+#: templates/friends/members_menu.html:7
 msgid "Import contacts"
 msgstr ""
 
-#: templates/friends/contacts.html:13 templates/friends/invite.html:12
-#: templates/friends/manage_contacts.html:13
-#: templates/friends/member_list.html:4 templates/friends/member_list.html:9
-#: templates/friends/member_list.html:12
-msgid "Current members"
-msgstr ""
-
-#: templates/friends/contacts.html:14 templates/friends/invite.html:4
-#: templates/friends/invite.html.py:13
-#: templates/friends/manage_contacts.html:14
-#: templates/friends/member_list.html:13
-msgid "Invite new"
-msgstr ""
-
-#: templates/friends/contacts.html:15 templates/friends/invite.html:14
-#: templates/friends/manage_contacts.html:15
-#: templates/friends/member_list.html:14
-msgid "Manage invitations"
-msgstr ""
-
-#: templates/friends/contacts.html:17 templates/friends/invite.html:16
-#: templates/friends/manage_contacts.html:10
-#: templates/friends/manage_contacts.html:17
-#: templates/friends/member_list.html:16
-msgid "Manage contacts"
-msgstr ""
-
-#: templates/friends/contacts.html:28 templates/friends/contacts.html.py:41
+#: templates/friends/contacts.html:22 templates/friends/contacts.html.py:35
 msgid "Import"
 msgstr ""
 
-#: templates/friends/contacts.html:46
+#: templates/friends/contacts.html:40
 #, python-format
 msgid ""
 "\n"
@@ -619,56 +467,86 @@ msgstr ""
 msgid "to add more users"
 msgstr ""
 
-#: templates/friends/invite.html:19
+#: templates/friends/invite.html:4 templates/friends/members_menu.html:5
+msgid "Invite new"
+msgstr ""
+
+#: templates/friends/invite.html:13
 msgid ""
 "If you'd like to invite someone to join your site, you can enter their email "
 "address and a message for them below or you may"
 msgstr ""
 
-#: templates/friends/invite.html:19
+#: templates/friends/invite.html:13
 msgid "import your contacts"
 msgstr ""
 
-#: templates/friends/invite.html:30
+#: templates/friends/invite.html:24
 msgid "Invitations Sent"
 msgstr ""
 
-#: templates/friends/invite.html:36
+#: templates/friends/invite.html:30
 #: templates/subscription/subscription_list_fragment.html:6
 msgid "DATE_FORMAT"
 msgstr ""
 
-#: templates/friends/invite.html:47
+#: templates/friends/invite.html:41
 msgid "No invitations sent."
 msgstr ""
 
-#: templates/friends/invite.html:50
+#: templates/friends/invite.html:44
 msgid "Invitation Requests Received"
 msgstr ""
 
-#: templates/friends/invite.html:56 templates/subscription/invoice.html:6
+#: templates/friends/invite.html:50 templates/subscription/invoice.html:6
 #: templates/subscription/invoice_history.html:21
 msgid "DATETIME_FORMAT"
 msgstr ""
 
-#: templates/friends/invite.html:61 templates/friends/invite_form.html:8
+#: templates/friends/invite.html:55 templates/friends/invite_form.html:8
 msgid "Invite"
 msgstr ""
 
-#: templates/friends/invite.html:62
+#: templates/friends/invite.html:56
 msgid "Reject"
 msgstr ""
 
-#: templates/friends/invite.html:69
+#: templates/friends/invite.html:63
 msgid "No join requests sent."
 msgstr ""
 
-#: templates/friends/manage_contacts.html:35
+#: templates/friends/manage_contacts.html:10
+#: templates/friends/members_menu.html:8
+msgid "Manage contacts"
+msgstr ""
+
+#: templates/friends/manage_contacts.html:20
+msgid "Name"
+msgstr ""
+
+#: templates/friends/manage_contacts.html:29
 msgid "Unknown"
 msgstr ""
 
-#: templates/friends/manage_contacts.html:53
+#: templates/friends/manage_contacts.html:47
 msgid "No contacts."
+msgstr ""
+
+#: templates/friends/member_list.html:4 templates/friends/member_list.html:9
+#: templates/friends/members_menu.html:4
+msgid "Current members"
+msgstr ""
+
+#: templates/friends/member_list.html:16
+msgid "Username"
+msgstr ""
+
+#: templates/friends/member_list.html:17
+msgid "Member Since"
+msgstr ""
+
+#: templates/friends/members_menu.html:6
+msgid "Manage invitations"
 msgstr ""
 
 #: templates/frontendadmin/form_ajax.html:9
@@ -677,6 +555,11 @@ msgstr ""
 
 #: templates/frontendadmin/form_ajax.html:10
 msgid "submit"
+msgstr ""
+
+#: templates/muaccounts/muaccount_list.html:3
+#: templates/muaccounts/muaccount_list.html:22
+msgid "Your mu accounts"
 msgstr ""
 
 #: templates/muaccounts/muaccount_list.html:6
@@ -700,8 +583,12 @@ msgid ""
 "your plan."
 msgstr ""
 
-#: templates/muaccounts/muaccount_list.html:22
-msgid "Your mu accounts"
+#: templates/muaccounts/muaccount_list.html:28
+msgid "Visit"
+msgstr ""
+
+#: templates/muaccounts/muaccount_list.html:29
+msgid "Manage"
 msgstr ""
 
 #: templates/muaccounts/muaccount_list.html:31
@@ -774,67 +661,301 @@ msgstr ""
 
 #: templates/notification/welcome/full.html:1
 #: templates/notification/welcome/notice.html:1
-msgid "Welcome to the SaaS kit example project!"
-msgstr ""
+#, fuzzy
+msgid "Welcome to the SaaSkit example project!"
+msgstr "Добро пожаловать на SaaS kit!"
 
 #: templates/pages/about.html:8
 #, fuzzy
-msgid "About SaaS kit"
+msgid "About SaaSkit"
 msgstr "Добро пожаловать на SaaS kit!"
 
-#: templates/pages/privacy.html:8
+#: templates/pages/about.html:10
+msgid ""
+"\n"
+"\t<p>\n"
+"\tSaaSkit is a complete SaaS-type website template, ready for deployment. "
+"SaaSkit is a complete SaaS-type website template, ready for deployment. "
+"SaaSkit is a complete SaaS-type website template, ready for deployment. "
+"SaaSkit is a complete SaaS-type website template, ready for deployment.\n"
+"\t</p>\n"
+"  "
+msgstr ""
+
+#: templates/pages/about.html:15
+msgid "Key features"
+msgstr ""
+
+#: templates/pages/about.html:16
+msgid ""
+"\n"
+"\t<p>SaaSkit is a complete SaaS-type website template, ready for deployment. "
+"SaaSkit is a complete SaaS-type website template, ready for deployment.</p>\t"
+"\t\n"
+"  "
+msgstr ""
+
+#: templates/pages/about.html:19
+msgid ""
+"\n"
+"\t<ul>\n"
+"\t\t<li>3rd Party API & Developer Support (API)</li>\n"
+"\t\t<li>Google Adsense</li>\t\t\n"
+"\t\t<li>Google Analytics</li>\n"
+"\t\t<li>Application Customization (Customization)</li>\n"
+"\t\t<li>Truly Global! (Multilingual)</li>\n"
+"\t\t<li>Google and Yahoo Contacts Import (Marketing)</li>\t\t\n"
+"\t\t<li>Powered by Django Web framework (Future-proof)</li>\n"
+"\t\t<li>Manage Subscriptions & Business Models (Billing)</li>\n"
+"\t\t<li>Mobile Ready!(Mobile)</li> \n"
+"\t</ul>\t  \n"
+"  "
+msgstr ""
+
+#: templates/pages/about.html:32
+msgid "Services & Support"
+msgstr ""
+
+#: templates/pages/about.html:33
+msgid ""
+"\n"
+"\t<p>saaskit.org help you get the most out of your SaaSKit whether you're "
+"using it personally or professionally. We get beginners up and running and "
+"give advanced users guidance with more complex usage; offering advice and "
+"support for each step along the way.</p>\n"
+"  "
+msgstr ""
+
+#: templates/pages/about.html:37
+msgid ""
+"\n"
+"\t<p>Providing peace of mind for enterprises, SaaSKit services gives your "
+"enterprise exactly what you would need in terms of security, customization "
+"and integration with third party products for substantially less money than "
+"proprietary alternatives.</p>\n"
+"  "
+msgstr ""
+
+#: templates/pages/about.html:41
+msgid ""
+"\n"
+"\t<p>saaskit.org can also help you with deploying, customizing or "
+"integrating specific parts of your SaaSKit App. Be rest assured that your "
+"App will be in good hands.</p>\n"
+"  "
+msgstr ""
+
+#: templates/pages/about.html:45
+msgid ""
+"\n"
+"\t<p>For more information regarding SaaSKit services by saaskit.org, please "
+"drop a mail: <a href=\"mailto:admin@saaskit.org\">admin@saaskit.org</a></p>\n"
+"  "
+msgstr ""
+
+#: templates/pages/index.html:6
+msgid "Toolkit for building subscription based web application Fast!"
+msgstr ""
+
+#: templates/pages/index.html:10
+msgid "Toolkit for building subscription based web applications"
+msgstr ""
+
+#: templates/pages/index.html:10
+msgid "Fast!"
+msgstr ""
+
+#: templates/pages/index.html:11
+msgid "Features includes.."
+msgstr ""
+
+#: templates/pages/index.html:13 templates/pages/tour.html:27
+msgid "3rd Party API"
+msgstr ""
+
+#: templates/pages/index.html:14
+msgid "OpenID"
+msgstr ""
+
+#: templates/pages/index.html:15 templates/pages/tour.html:72
+msgid "Contacts Import"
+msgstr ""
+
+#: templates/pages/index.html:16
+msgid "Mobile access"
+msgstr ""
+
+#: templates/pages/index.html:17 templates/pages/tour.html:47
+#: templates/pages/tour.html.py:51
+msgid "Multilingual"
+msgstr ""
+
+#: templates/pages/index.html:18
+msgid "EC2 Deployment"
+msgstr ""
+
+#: templates/pages/index.html:19
+msgid "Built-in App API"
+msgstr ""
+
+#: templates/pages/index.html:20 templates/pages/tour.html:29
+msgid "Google Adsense"
+msgstr ""
+
+#: templates/pages/index.html:21
+msgid "Paypal"
+msgstr ""
+
+#: templates/pages/index.html:22
+msgid "Custom Themes"
+msgstr ""
+
+#: templates/pages/index.html:23 templates/pages/tour.html:35
+#: templates/pages/tour.html.py:39
+msgid "Google Analytics"
+msgstr ""
+
+#: templates/pages/index.html:24
+msgid "and more ..."
+msgstr ""
+
+#: templates/pages/index.html:27
+msgid "See Plans & Pricing"
+msgstr ""
+
+#: templates/pages/index.html:27
+msgid "21 day free trial, sign-up in 3 minutes!"
+msgstr ""
+
+#: templates/pages/index.html:30
+msgid "Take a Tour"
+msgstr ""
+
+#: templates/pages/index.html:34
+msgid "Subscription App Screenshot"
+msgstr ""
+
+#: templates/pages/index.html:46 templates/pages/tour.html:21
+msgid "Business Models"
+msgstr ""
+
+#: templates/pages/index.html:47
+msgid "Prepaid or Recurring"
+msgstr ""
+
+#: templates/pages/index.html:48
+msgid ""
+"\n"
+"      <p>Supports your choice of recurring billing period as well as prepaid "
+"and page view based billing. Supports trail subscription, discounts, user "
+"points system and cash withdrawal.\" %}</p>\n"
+"\t   "
+msgstr ""
+
+#: templates/pages/index.html:54
+msgid "SaaSkit Flexibility"
+msgstr ""
+
+#: templates/pages/index.html:55
+msgid "Built-in Flexibility"
+msgstr ""
+
+#: templates/pages/index.html:56
+msgid ""
+"Built in support for mobile templates, Integrated with 3rd party API such as "
+"Google, Yahoo, Twitter Facebook and more, OpenID ready, support for exposing "
+"your application data to 3rd party developers, built in localization support."
+msgstr ""
+
+#: templates/pages/index.html:60
+msgid "SaaSkit Customization"
+msgstr ""
+
+#: templates/pages/index.html:61
+msgid "Mass Customization"
+msgstr ""
+
+#: templates/pages/index.html:62
+msgid ""
+"Clients can select domain or sub-domain based account, customize themes and "
+"language, make application public or private, use their Adsense account for "
+"revenue generation and Analytics code for stats."
+msgstr ""
+
+#: templates/pages/privacy.html:9
 msgid "Privacy Policy"
 msgstr ""
 
-#: templates/pages/privacy.html:10
+#: templates/pages/privacy.html:11
 msgid "Information Gathering and Usage"
 msgstr ""
 
-#: templates/pages/privacy.html:11
+#: templates/pages/privacy.html:12
 msgid "Data Storage"
 msgstr ""
 
-#: templates/pages/privacy.html:12
+#: templates/pages/privacy.html:13
 msgid "Disclosure"
 msgstr ""
 
-#: templates/pages/privacy.html:13
+#: templates/pages/privacy.html:14
 msgid "Changes"
 msgstr ""
 
-#: templates/pages/privacy.html:14
+#: templates/pages/privacy.html:15
 msgid "Questions"
 msgstr ""
 
-#: templates/pages/tc.html:3
+#: templates/pages/sidebar_tmpl.html:8
+msgid ""
+"\n"
+"    <p>NOTICE - Have questions? Got suggestion? Want to help us with "
+"translation? Want to know more about our services or support? Not happy with "
+"something? Found a bug? Or you just want to get something off of your "
+"chest.. Click here use answerlog! You can find us at <a href = \"http://"
+"saaskit.answerlog.net\">http://saaskit.answerlog.net </a> and join the "
+"discussion!\n"
+"    "
+msgstr ""
+
+#: templates/pages/sidebar_tmpl.html:11
+msgid ""
+"\n"
+"\t<p>By opting for SaaS Kit's Commercial License, you can get access to a "
+"range of services available to you and your business, ensuring SaaS Kit "
+"works for you all the time.</p>\n"
+"    "
+msgstr ""
+
+#: templates/pages/tc.html:5
 msgid "Terms and Conditions"
 msgstr ""
 
-#: templates/pages/tc.html:8
+#: templates/pages/tc.html:9
 msgid "Terms of Service"
 msgstr ""
 
-#: templates/pages/tc.html:10
+#: templates/pages/tc.html:11
 msgid "Account Terms"
 msgstr ""
 
-#: templates/pages/tc.html:11
+#: templates/pages/tc.html:12
 msgid "Payment, Refunds, Upgrading and Downgrading Terms"
 msgstr ""
 
-#: templates/pages/tc.html:12
+#: templates/pages/tc.html:13
 msgid "Cancellation and Termination"
 msgstr ""
 
-#: templates/pages/tc.html:13
+#: templates/pages/tc.html:14
 msgid "Modifications to the Service and Prices"
 msgstr ""
 
-#: templates/pages/tc.html:14
+#: templates/pages/tc.html:15
 msgid "Copyright and Content Ownership"
 msgstr ""
 
-#: templates/pages/tc.html:15
+#: templates/pages/tc.html:16
 msgid "General Conditions"
 msgstr ""
 
@@ -844,6 +965,167 @@ msgstr ""
 
 #: templates/pages/tour.html:8
 msgid "Take the Tour"
+msgstr ""
+
+#: templates/pages/tour.html:11
+msgid "Manage Subscriptions & Business Models"
+msgstr ""
+
+#: templates/pages/tour.html:12
+msgid ""
+"\n"
+"\t\t\t<p>Our Quota management system enables you to effectively manage "
+"subscriptions and billing. Limit features based on subscription level by "
+"enforcing or offering multiple levels of subscription to your users. SaaSkit "
+"quota management system lets you allocate specific features to specific "
+"subscriptions.</p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:15
+msgid ""
+"\n"
+"\t\t\t<p>Saaskit currently supports Paypal, a free to sign-up, fast and "
+"secure payment system that will get you started with your business in no "
+"time. We're in the process of adding more payment gateways as demand "
+"dictates.</p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:18
+msgid ""
+"\n"
+"\t\t\t<p>It's your business and you call the shots. Choose a business model "
+"that fits you - subscription or prepaid. Our subscription plan is designed "
+"for answerlog clients while prepaid is for end-users.</p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:23
+msgid "3rd Party API & Developer Support"
+msgstr ""
+
+#: templates/pages/tour.html:24
+msgid ""
+"\n"
+"\t\t\t<p> Easily share your application data with 3rd party developers as "
+"API. Saaskit also enables you to seemlessly intergrate your application with "
+"APIs of web services like Google, Twitter, Facebook and more. Saaskit "
+"supports OpenID standard; meaning that users have the freedom to use their "
+"existing account credentials to log-in to your app. This helps you leverage "
+"on the existing user base. </p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:30
+msgid ""
+"\n"
+"\t\t\t<p>Saaskit supports Google Adsense & other Ad networks, this enables "
+"your clients to generate revenue by serving ads from Google AdSense™ "
+"advertising service on their sites. Saaskit Google Adsense module provides "
+"easy-to-use ad blocks, protects users from displaying more ads in a page "
+"than the maximum allowed by Google, offers simple controls for "
+"troubleshooting ads before they go live, lets you quickly effect site-wide "
+"script update when Google performs minor changes in the ad scripts. </p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:33
+msgid "Google Adsense Support"
+msgstr ""
+
+#: templates/pages/tour.html:36
+msgid ""
+"\n"
+"\t\t\t<p>Get insights into your site traffic & use this information to plan "
+"and implement effective marketing strategies with Saaskit's Google analytics "
+"support. Saaskit also offers webmaster tools to enable you better manage "
+"your search engine placement in Google and other major search engines.</p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:41
+msgid "Application Customization"
+msgstr ""
+
+#: templates/pages/tour.html:42
+msgid ""
+"\n"
+"\t\t\t<p>Give your users the privilege of deciding on the look & feel of "
+"their hosted application with customizable domain names, themes and layouts. "
+"Users can also import contacts from their existing accounts with other web "
+"service providers i.e. Yahoo!, Google, AOL and any other provider that "
+"supports the Open ID standard into their hosted applications.</p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:45
+msgid "App Customization"
+msgstr ""
+
+#: templates/pages/tour.html:48
+msgid ""
+"\n"
+"\t\t\t<p>Saaskit is a truly global service that enables you to reach users "
+"in the global market in their local languages - we currently support "
+"English, Germany, French and Russian with more to follow. With Saaskit, "
+"language is no-longer a barrier to your success but a key to it. Open doors "
+"to global citizens and empower them to connect and share knowledge.</p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:53
+msgid "Powered by Django Web framework"
+msgstr ""
+
+#: templates/pages/tour.html:54
+msgid ""
+"\n"
+"\t\t\t<p>Saaskit is built on Django - a solid web framework that allows for "
+"rapid development of efficient, clean and high performing web apps on the "
+"run. Django is open source and benefits from extensive support of the open "
+"source community of developers. With Saaskit, your future is guaranteed! </"
+"p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:57
+msgid ""
+"\n"
+"\t\t\t<p>We also offer open source version of Saaskit which allows for full "
+"customization, this requires some coding \"know-how\" to work well. Develop "
+"your application \"on the fly\" with our \"polls App\" and tutorials, no "
+"hassles! no delays!</p>\n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:60
+msgid "Open Source"
+msgstr ""
+
+#: templates/pages/tour.html:62
+msgid "Mobile Ready!"
+msgstr ""
+
+#: templates/pages/tour.html:63 templates/pages/tour.html.py:69
+msgid ""
+"\n"
+"\t\t\t<p>SaaSkit offers support for mobile devices and applications, so "
+"whether it's an iPhone, Blackberry or Android, all that that a user has to "
+"do is tweak the provided template & be ready to go! Connect from anywhere! "
+"SaaSkit mobile support includes a simplified interface and mobile friendly "
+"features. User experience with the mobile app. is enhanced when using "
+"devices with big screen, In-built Wi-Fi, good usability and a full fledged "
+"browser.</p>       \n"
+"\t\t  "
+msgstr ""
+
+#: templates/pages/tour.html:66
+msgid "Mobile Ready"
+msgstr ""
+
+#: templates/pages/tour.html:68
+msgid "Google and Yahoo Contacts Import"
 msgstr ""
 
 #: templates/paypal/shortcut.html:4
@@ -873,25 +1155,85 @@ msgstr ""
 msgid "Reasons"
 msgstr ""
 
-#: templates/prepaid/points.html:5 templates/prepaid/points.html.py:7
+#: templates/prepaid/account_activity.html:6
+msgid "Activity"
+msgstr ""
+
+#: templates/prepaid/account_activity.html:8
+msgid "Total"
+msgstr ""
+
+#: templates/prepaid/points.html:4
+msgid "Bounty Points"
+msgstr ""
+
+#: templates/prepaid/points.html:8 templates/prepaid/prepaid_base.html:8
+#: templates/prepaid/prepaid_base.html:9
+msgid "Buy points"
+msgstr ""
+
+#: templates/prepaid/points.html:12
+#, python-format
+msgid ""
+"\n"
+"\t\t<p>You have <b>%(points)s</b> point%(pluralized_points)s.<br />\n"
+"\t\tIt may take a moment for newly purchased points to appear.<br />\n"
+"    "
+msgstr ""
+
+#: templates/prepaid/points.html:16
+msgid "Click here to refresh"
+msgstr ""
+
+#: templates/prepaid/points.html:33
 msgid "Get Points"
 msgstr ""
 
-#: templates/prepaid/points.html:8
+#: templates/prepaid/points.html:35
+#, python-format
+msgid "%(points)s Point%(pluralized_points)s - $%(price)s"
+msgstr ""
+
+#: templates/prepaid/points.html:42
+msgid "Purchase"
+msgstr ""
+
+#: templates/prepaid/points.html:47
+#, python-format
+msgid "<p>Buy <b>%(q)s</b> point%(pluralized_q)s"
+msgstr ""
+
+#: templates/prepaid/prepaid_base.html:11
+#: templates/prepaid/prepaid_base.html:12
+msgid "Recent transactions"
+msgstr ""
+
+#: templates/prepaid/prepaid_base.html:14
+#: templates/prepaid/prepaid_base.html:15
+msgid "Withdraw points"
+msgstr ""
+
+#: templates/prepaid/withdraw_points.html:3
 msgid "Withdraw Points"
 msgstr ""
 
+#: templates/prepaid/withdraw_points.html:6
+msgid "Withdraw"
+msgstr ""
+
+#: templates/prepaid/withdraw_points.html:9
+#, python-format
+msgid ""
+"You need at least %(min_withdrawal)s point%(pluralized_min_withdrawal)s to "
+"perform a withdrawal"
+msgstr ""
+
 #: templates/profiles/create_profile.html:4
-#: templates/profiles/create_profile.html:9
+#: templates/profiles/create_profile.html:8
 msgid "Create profile"
 msgstr ""
 
-#: templates/profiles/create_profile.html:20
-#: templates/profiles/edit_profile.html:19
-msgid "Required fields"
-msgstr ""
-
-#: templates/profiles/create_profile.html:25
+#: templates/profiles/create_profile.html:22
 msgid "Save"
 msgstr ""
 
@@ -900,7 +1242,7 @@ msgstr ""
 msgid "Edit profile"
 msgstr ""
 
-#: templates/profiles/edit_profile.html:24
+#: templates/profiles/edit_profile.html:22
 msgid "Update"
 msgstr ""
 
@@ -925,6 +1267,41 @@ msgstr ""
 #: templates/registration/activate.html:6
 #, python-format
 msgid "Activation of account %(username)s complete."
+msgstr ""
+
+#: templates/registration/activation_complete.html:4
+msgid "Activation complete"
+msgstr ""
+
+#: templates/registration/activation_complete.html:6
+msgid "Activation complete."
+msgstr ""
+
+#: templates/registration/activation_complete.html:7
+#, python-format
+msgid "Now you can <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: templates/registration/login.html:18
+msgid "Sign In Using Your Account ID"
+msgstr ""
+
+#: templates/registration/login.html:25
+msgid "Reset password"
+msgstr ""
+
+#: templates/registration/login.html:31
+#: templates/registration/password_reset_form.html:8
+msgid "Reset"
+msgstr ""
+
+#: templates/registration/login.html:34
+#: templates/registration/registration_form.html:13
+msgid "Register"
+msgstr ""
+
+#: templates/registration/login.html:43
+msgid "back to home page"
 msgstr ""
 
 #: templates/registration/password_reset_complete.html:3
@@ -969,6 +1346,11 @@ msgstr ""
 
 #: templates/registration/registration_complete.html:7
 msgid "Now go check your email to receive confirmation e-mail."
+msgstr ""
+
+#: templates/registration/registration_form.html:4
+#: templates/registration/registration_form.html:7
+msgid "Registration Form"
 msgstr ""
 
 #: templates/subscription/confirm.html:4
@@ -1039,8 +1421,16 @@ msgstr ""
 msgid "pay"
 msgstr ""
 
-#: templates/subscription/plans.html:3
+#: templates/subscription/plans.html:5
 msgid "Choose your Plan"
+msgstr ""
+
+#: templates/subscription/plans.html:9
+msgid "21-day Free Trial on All Accounts"
+msgstr ""
+
+#: templates/subscription/plans.html:10
+msgid "Upgrade or downgrade whenever you like."
 msgstr ""
 
 #: templates/subscription/subscription_cancel.html:3
@@ -1094,24 +1484,6 @@ msgstr ""
 msgid "Pricing and Plans"
 msgstr ""
 
-#: templates/subscription/subscription_list.html:8
-msgid "Questions & Answers"
-msgstr ""
-
-#: templates/subscription/subscription_list.html:9
-msgid ""
-"\n"
-"        <h5>What forms of payment do you accept?</h5>\n"
-"        <p>Payments are via credit card and are processed by PayPal. PayPal "
-"accepts most major credit cards such as Visa, Mastercar d, American Express "
-"& Discover. We do not offer other forms of payment at this time.</p>\n"
-"\n"
-"        <h5>I have more questions!?</h5>\n"
-"        <p>Get in touch at support@curiousforest.com and I'll be happy to "
-"answer additional questions about the service!</p>\n"
-"\n"
-msgstr ""
-
 #: templates/subscription/subscription_list_fragment.html:5
 msgid "Current Plan"
 msgstr ""
@@ -1124,12 +1496,6 @@ msgstr ""
 msgid ""
 "Paypal will get money from your account itself. Or you may do it manually in "
 "your paypal account."
-msgstr ""
-
-#: templates/subscription/subscription_list_fragment.html:9
-msgid ""
-"Each month of service for less than the cost of a pizza :) Upgrade or "
-"downgrade whenever you like."
 msgstr ""
 
 #: templates/subscription/subscription_list_fragment.html:18

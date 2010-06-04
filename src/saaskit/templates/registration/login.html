@@ -23,7 +23,7 @@
 	    </fieldset>
 	  </form>
 	  <a id="password_reset_link" href="{% url auth_password_reset %}">{% trans "Reset password" %}</a>
-	  <form id="password_reset_form" method="post" action="" class="uniForm" style="display:none;">
+	  <form id="password_reset_form" method="post" action="{% url auth_password_reset %}" class="uniForm" style="display:none;">
 	    <fieldset class="inlineLabels">
 	      {{ password_reset_form|as_uni_form }}
 	    </fieldset>

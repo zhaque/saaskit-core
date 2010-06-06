@@ -4,11 +4,7 @@
 {% block head_title %}{{ block.super }} : {% trans "Bounty Points" %}{% endblock %}
 
 {% block prepaid_content %}
-<div class="saaskit-block">
-  <h3>{% trans "Buy points" %}</h3>
-    <div class="saaskit-block-menu">
-
-    <div class="saaskit-block-content">
+    <h4>{% trans "Buy points" %}</h4>
     {% blocktrans with points|pluralize as pluralized_points %}
 		<p>You have <b>{{ points }}</b> point{{ pluralized_points }}.<br />
 		It may take a moment for newly purchased points to appear.<br />
@@ -49,8 +45,5 @@
 				<br /><br />
 			</p>
 		{% endfor %}
-    </div>
-</div>
-</div>
 
 {% endblock %}

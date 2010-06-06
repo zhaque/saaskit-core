@@ -2,6 +2,9 @@
 {% load i18n %}
 
 {% block content %}
+<div class="saaskit-block">
+  <h3>{% trans "Points" %}</h3>
+    <div class="saaskit-block-menu">
   {% block nav_2 %}
       <p> 
 	    <a href="{% url prepaid-index %}">
@@ -15,6 +18,10 @@
           {% trans "Withdraw points" %}</a>
       </p>
   {% endblock %}
+    <div class="saaskit-block-content">
   {% block prepaid_content %}
   {% endblock %}
+    </div>
+</div>
+</div>
 {% endblock %}

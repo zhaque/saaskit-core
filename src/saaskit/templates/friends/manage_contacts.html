@@ -1,16 +1,15 @@
 {% extends "muaccounts/muaccounts_base.html" %}
 {% load i18n pagination_tags uni_form_tags %}
 
-
-{% block head_title %}{{block.super}} : {% trans "Manage site" %} : {% trans "Members" %} : {% trans "Import contacts" %} {% endblock %} 
+{% block head_title %}{{block.super}}{% trans "Manage site" %} : {% trans "Members" %} : {% trans "Manage contacts" %} {% endblock %} 
 
 {% block content %}
 
 <div class="saaskit-block">
   <h3>{% trans "Manage contacts" %}</h3>
-    <div class="saaskit-content">
+    <div class="saaskit-block-menu">
     {% include "friends/members_menu.html" %}    
-        <hr/>
+	<div class="saaskit-block-content">
 	{% with user.contacts.all as contacts %}
 	    {% autopaginate contacts %}
 	    {% if contacts %}
@@ -42,6 +41,7 @@
 	            {% paginate %}
               <li>
 	         </ul>
+	</div>
 		    <div class="clear"></div>
 	    {% else %}
 	        <p>{% trans "No contacts." %}</p>

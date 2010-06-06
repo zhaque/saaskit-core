@@ -3,13 +3,14 @@
 {% block title %}{% trans 'Your mu accounts' %}{% endblock %} 
 
 {% block content %}
+<div class="saaskit-block">
   <h3>{% trans "Manage mu accounts" %}</h3>
-
+    <div class="saaskit-block-menu">
 <p> 
 	<a href="{% url account_dashboard %}">{% trans "Messages" %}</a> | 
  <a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a> |
 	</p>
-<hr/>
+    <div class="saaskit-block-content">
   {% with mua_list|length as mua_count %}
     {% if mua_count < user.quotas.muaccounts %}
       {% frontendadmin_add mua_list %}
@@ -19,7 +20,7 @@
     {% endif %}
   {% endwith %}
   
-  <h3>{% trans "Your mu accounts" %}</h3>
+  <h4>{% trans "Your mu accounts" %}</h4>
   {% if mua_list %}
   <ul>
     {% for mua in mua_list %}
@@ -35,4 +36,7 @@
   {% else %}
   <p>{% trans "You have no mu accounts." %}</p>
   {% endif %}
+</div>
+</div>
+</div>
 {% endblock %}

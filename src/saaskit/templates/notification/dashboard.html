@@ -3,12 +3,14 @@
 
 
 {% block content %}
+<div class="saaskit-block">
     <h3>{% trans "Dashboard" %}</h3>
+    <div class="saaskit-block-menu">
   <p> 
 	<a href="{% url account_dashboard %}">{% trans "Messages" %}</a> | 
    <a href="{% url muaccounts_listing %}">{% trans "My Sites" %}</a> |
 	</p>
-  <hr/>
+    <div class="saaskit-block-content">
     <p>{# <a href="{% url notification_mark_all_seen %}">{% trans 'mark all seen' %}</a> | #}
     <a href="{% url notification_feed_for_user %}">{% trans "RSS" %}</a></p>
 
@@ -19,6 +21,9 @@
             <a href="{{notice.get_absolute_url}}">#</a></li>
         {% endfor %}
     </ul>    
+</div>
+</div>
+</div>
 {% endblock %}
 
 {% block sidebar %}

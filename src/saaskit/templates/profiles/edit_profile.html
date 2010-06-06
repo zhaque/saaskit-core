@@ -6,12 +6,12 @@
 {% block content %}
 <div class="saaskit-block">
   <h3>{% trans "Edit profile" %}</h3>
-    <div class="saaskit-content">
+    <div class="saaskit-block-menu">
 	    <p> 
 		<a href="{% url profiles_edit_profile %}">{% trans "Manage Profile" %}</a> | 
         <a href ="{% url auth_password_change %}">{% trans "Passwords" %}</a> |
 		</p>
-        <hr/>
+    <div class="saaskit-block-content">
       <form action="" method="POST" class="uniForm">
         <fieldset class="inlineLabels">
 	    <legend>* {% trans "Required fields" %}</legend> 		
@@ -28,6 +28,7 @@
     	</div>      
       </form>
     </div>
+</div>
 </div>
 {% endblock %}
 

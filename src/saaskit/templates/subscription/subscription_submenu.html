@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% if request.user.subscription %}		
+<p> 
+	<a href="{% url subscription_list %}">{% trans "Plans" %}</a> | 
+  <a href="{% url invoice_listing %}">{% trans "Invoices" %}</a>
+</p>
+{% endif %}

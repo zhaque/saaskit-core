@@ -6,6 +6,7 @@
 <div class="saaskit-block">
   <h3>{% trans "Invoice History" %}</h3>
   <div class="saaskit-block-menu">
+    {% include "subscription/subscription_submenu.html" %}    
 	<div class="saaskit-block-content">
   {% if transaction_list %}
   <table border="0" id="tasktable" style="max-width:600px;">

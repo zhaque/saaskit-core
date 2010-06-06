@@ -1,10 +1,9 @@
 {% load i18n paypal_buttons %}
-<div class="block">
   {% with request.user.subscription as us %}
   {% if us %}
-    <p class="text-center">{% trans "Current Plan" %}: {{ us.subscription }}</p>
-    <p class="text-center">{% trans "Expires" %}: {{ us.expires|date:_("DATE_FORMAT") }}</p>
-    <p class="text-center">{% trans "Paypal will get money from your account itself. Or you may do it manually in your paypal account." %}</p>
+    <h4>{% trans "Current Plan" %}: {{ us.subscription }}</h4>
+    <p>{% trans "Expires" %}: {{ us.expires|date:_("DATE_FORMAT") }}</p>
+    <p>{% trans "Paypal will get money from your account itself. Or you may do it manually in your paypal account." %}</p>
   {% else %}
     <p></p>
   {% endif %}
@@ -37,4 +36,3 @@
   {% endif %}
   
   {% endwith %}
-</div>

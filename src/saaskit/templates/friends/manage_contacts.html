@@ -13,12 +13,11 @@
 	{% with user.contacts.all as contacts %}
 	    {% autopaginate contacts %}
 	    {% if contacts %}
-     <table>
+     <table class="zebra">
      <thead>
        <tr>
          <td>{% trans 'Name' %}</td>
          <td>{% trans 'Email' %}</td>
-         <td>&nbsp;</td>
          <td>&nbsp;</td>
        </tr>
      </thead>

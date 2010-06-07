@@ -226,3 +226,14 @@ body.yui-skin-saaskit { color: #333; background-color: #EBEBEB; }
 .uniForm button.button:hover, a.button:hover { background-color:#dedede; } 
 .uniForm button.button:active, a.button:active { background-color:#e5e5e5; }
 
+/* Tables */
+.yui-skin-saaskit table { width:100%; margin-bottom:2em;  border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; border-left: 1px solid #ccc;}
+.yui-skin-saaskit table td, table th { padding:0.5em; }
+.yui-skin-saaskit table thead { background-color:#A0C2DE; color:#fff; font-weight:bold; }
+.yui-skin-saaskit table thead a { text-decoration:none; color:#fff; }
+.yui-skin-saaskit table thead a:hover { text-decoration:underline; }
+.yui-skin-saaskit table tbody a { text-decoration:underline;}
+.yui-skin-saaskit table tbody tr {background: #fff}
+
+.yui-skin-saaskit table.zebra tbody tr:nth-child(even) {background: #fff}
+.yui-skin-saaskit table.zebra tbody tr:nth-child(odd) {background: #f3f3f3}

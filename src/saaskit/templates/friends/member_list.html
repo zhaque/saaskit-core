@@ -10,7 +10,7 @@
     <div class="saaskit-block-menu">
     {% include "friends/members_menu.html" %}    
 	<div class="saaskit-block-content">
-     <table>
+     <table class="zebra">
      <thead>
        <tr>
          <td>{% trans 'Username' %}</td>
@@ -20,7 +20,7 @@
      </thead>
      <tbody>
 	   {% for member in member_list %}
-	     <tr class="{% cycle 'row1' 'row2' %}">
+	     <tr>
 	         <td>{{ member }}</td>
 	         <td>{{ member.date_joined|date }}</td>
 	         <td>

@@ -1,13 +1,15 @@
-{% extends "account_tmpl.html" %}
+{% extends "muaccounts/muaccounts_base.html" %}
+{% load i18n frontendadmin_tags %}
 
 {% block head %}
 {{ form.media }}
 {% endblock %}
 
 {% block content %}
-  <div class="block">
-    <div class="bd">
+<div class="saaskit-block">
+  <h3>{% trans "Content edit" %}</h3>
+    <div class="saaskit-block-content">
      {% block frontendadmin_content %}{% endblock %}
     </div>
-  </div>
+</div>
 {% endblock %}

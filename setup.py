@@ -33,7 +33,6 @@ install_requires = [
         'pisa==3.0.32',
         'python-dateutil==1.4.1',
         'python-memcached==1.45',
-        'python-openid==2.2.4',
         'Reportlab==2.3',
         'setuptools==0.6c11',
         'simplejson==2.0.9',
@@ -59,6 +58,7 @@ install_requires = [
         'django-uni-form',
         'django-wurfl',
         'python-Levenshtein',
+        'python-openid',
 
         'saaskit-main',
         'saaskit-muaccounts',

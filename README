@@ -41,7 +41,28 @@ Table of Contents
 ~~~~~~~~~~~~~~~~~
   1. Create a database for SaaSkit on your postgresql i.e. "SaasKit" also create relevant "user" and "password" which will be used for connection settings.
   2. Make sure postgresql in your PATH. for example your .profile file has the following PATH=$PATH:/Library/PostgreSQL/8.4/bin
-  3. Create local setting for your development enviornment.
+  3. For Postgres on Snow Leopard
+
+     64-BIT SUPPORT
+     Version 2.6 supports 64-bit execution (which is on by default).  Version 2.5 only supports 32-bit exe-cution. execution.
+     cution.
+
+     Like the version of Python, the python command can select between 32 and 64-bit execution (when both
+     are available).  Use:
+
+           % defaults write com.apple.versioner.python Prefer-32-Bit -bool yes
+
+     to make 32-bit execution the user default (using `/Library/Preferences/com.apple.versioner.python' will
+     set the system-wide default).  The environment variable VERSIONER_PYTHON_PREFER_32_BIT can also be used
+     (has precedence over the preference file):
+
+           % export VERSIONER_PYTHON_PREFER_32_BIT=yes # Bourne-like shells
+                or
+           % setenv VERSIONER_PYTHON_PREFER_32_BIT yes # C-like shells
+
+     Again, the preference setting and environmental variable applies to both python and pythonw.
+
+  4. Create local setting for your development enviornment.
 
 echo "
 DATABASE_ENGINE = 'postgresql_psycopg2'
@@ -62,10 +83,10 @@ EMAIL_SUBJECT_PREFIX = '[saaskit.org]'
 EMAIL_PORT = 587
 " > ./src/saaskit/local_settings.py
 
-  4. python ./bootstrap.py -c ./buildout.cfg # or production.cfg
-  5. ./bin/buildout -c ./buildout.cfg #or production.cfg
-  6. ./bin/main_site runserver 8001 # marketing site
-  7. ./bin/user_site runserver 8000 # user's site
+  5. python ./bootstrap.py -c ./buildout.cfg # or production.cfg
+  6. ./bin/buildout -c ./buildout.cfg #or production.cfg
+  7. ./bin/main_site runserver 8001 # marketing site
+  8. ./bin/user_site runserver 8000 # user's site
   
 1.3 Deployment
 ----------
